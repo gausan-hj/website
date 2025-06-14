@@ -2,55 +2,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>YC LEE ARCHITECT</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <div class="logo"><span class="yc">YC</span> LEE ARCHITECT</div>
-    <nav class="nav-bar">
-      <a href="index.html" data-key="home">Home</a>
-      <a href="projects.html" data-key="projects">Projects</a>
-      <a href="about.html" data-key="about">About</a>
-      <a href="contact.html" data-key="contact">Contact</a>
-    </nav>
-    <div class="lang-search">
-      <input type="text" class="lang-input" placeholder="Search Language..." oninput="filterLanguages(this.value)">
-      <div class="lang-list">
-        <div onclick="setLanguage('en')">English</div>
-        <div onclick="setLanguage('zh')">中文（简体）</div>
-        <div onclick="setLanguage('zht')">中文（繁體）</div>
-        <div onclick="setLanguage('lo')">ລາວ</div>
-        <div onclick="setLanguage('ja')">日本語</div>
-        <div onclick="setLanguage('ms')">Bahasa Melayu</div>
-      </div>
+    <div class="logo">YC LEE ARCHITECT</div>
+    <div class="lang-select">
+      <input class="lang-input" type="text" placeholder="Search Language..." oninput="filterLanguages()" onclick="toggleList()" />
+      <div class="lang-list" id="langList"></div>
     </div>
-  </header>
+  
+<nav class="nav-bar">
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-  <main>
-    <h1>
-      <span data-lang="en">Welcome to YC Lee Architect</span>
-      <span data-lang="zh">欢迎来到 YC 李建筑事务所</span>
-      <span data-lang="zht">歡迎來到 YC 李建築事務所</span>
-      <span data-lang="lo">ຍິນດີຕ້ອນຮັບສູ່ YC Lee Architect</span>
-      <span data-lang="ja">YCリー建築事務所へようこそ</span>
-      <span data-lang="ms">Selamat datang ke YC Lee Architect</span>
-    </h1>
-    <p>
-      <span data-lang="en">We design inspiring and functional spaces.</span>
-      <span data-lang="zh">我们设计充满灵感且实用的空间。</span>
-      <span data-lang="zht">我們設計充滿靈感且實用的空間。</span>
-      <span data-lang="lo">ພວກເຮົາອອກແບບສະຖານທີ່ໃຫ້ແຮງບັນດານໃຈ ແລະ ໃຊ້ງານໄດ້ຈິງ</span>
-      <span data-lang="ja">私たちはインスピレーションと機能性を備えた空間を設計します。</span>
-      <span data-lang="ms">Kami mereka bentuk ruang yang memberi inspirasi dan berfungsi.</span>
-    </p>
-  </main>
+</header>
+
+  <section class="hero">
+    <h1 data-lang="en">Craft · Architecture · Space</h1>
+    <h1 data-lang="zh">匠心 · 建筑 · 空间</h1>
+    <h1 data-lang="zh-TW">匠心・建築・空間</h1>
+    <h1 data-lang="la">ສ້າງສັນ · ສະຖາປັດຍະກຳ · ພື້ນທີ່</h1>
+    <h1 data-lang="ja">匠の技 · 建築 · 空間</h1>
+    <h1 data-lang="ms">Seni Bina · Reka Bentuk · Ruang</h1>
+  </section>
 
   <footer>
-    <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank">Facebook</a>
-  </footer>
+    &copy; 2025 YC Lee Architect. All rights reserved.
+  <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" class="fb-link">Facebook</a></footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
