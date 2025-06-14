@@ -3,29 +3,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title data-key="about">About</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="language.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - YC LEE ARCHITECT</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="logo"><span class="highlight">YC</span> Lee Architect</div>
-    <nav>
-      <ul id="nav-links">
-        <li><a href="index.html" data-key="home">Home</a></li>
-        <li><a href="projects.html" data-key="projects">Projects</a></li>
-        <li><a href="about.html" data-key="about">About</a></li>
-        <li><a href="contact.html" data-key="contact">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="language-selector">
-      <input type="text" id="language-search" placeholder="Search language..." />
-      <ul id="language-list"></ul>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="logo"><span class="yc">YC</span> LEE ARCHITECT</div>
+    <div class="lang-select">
+      <input class="lang-input" type="text" placeholder="Search Language..." data-key="search_placeholder" oninput="filterLanguages()" onclick="toggleList()" />
+      <div class="lang-list" id="langList"></div>
     </div>
-  </header>
-  <main>
-    <h1 data-key="about-title">About Us</h1>
-    <p data-key="about-description">YC Lee Architect is dedicated to delivering innovative and sustainable architectural solutions.</p>
-  </main>
+  
+<nav class="nav-bar">
+  <a href="index.html" data-key="home">Home</a>
+  <a href="projects.html" data-key="projects">Projects</a>
+  <a href="about.html" data-key="about">About</a>
+  <a href="contact.html" data-key="contact">Contact</a>
+</nav>
+
+</header>
+
+  <section class="hero">
+    <p data-lang="en">We are passionate about creating spaces that inspire. Founded by YC Lee, our studio merges artistry and functionality in every project.</p>
+    <p data-lang="zh">我们致力于打造富有灵感的空间。YC Lee 建筑事务所融合了艺术与功能于每一个项目中。</p>
+    <p data-lang="zh-TW">我們致力於打造充滿靈感的空間。YC Lee 建築事務所融合了藝術與功能於每一個項目中。</p>
+    <p data-lang="la">ພວກເຮົາສ້າງພື້ນທີ່ທີ່ສ້າງແຮງບັນດານໃຈ. ສະຖາປະນິກ YC Lee ໄด້ປະສົມປະສານສິລະປະແລະຄວາມຟັງເຊິ່ນໃນທຸກໆໂຄງການ.</p>
+    <p data-lang="ja">YC Lee によって設立された当事務所は、芸術性と機能性を融合させたインスピレーションあふれる空間づくりを目指します。</p>
+    <p data-lang="ms">Kami komited untuk mencipta ruang yang menginspirasikan. Diasaskan oleh YC Lee, studio ini menggabungkan seni dan fungsi dalam setiap projek.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 YC Lee Architect. All rights reserved. <br>
+    <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link">Facebook</a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

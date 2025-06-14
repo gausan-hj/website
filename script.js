@@ -1,22 +1,120 @@
+const languageMap = {'en': {'home': 'Home', 'projects': 'Projects', 'about': 'About', 'contact': 'Contact', 'search_placeholder': 'Search Language...'}, 'zh': {'home': '主页', 'projects': '作品', 'about': '关于我们', 'contact': '联系我们', 'search_placeholder': '搜索语言'}, 'zht': {'home': '主頁', 'projects': '作品', 'about': '關於我們', 'contact': '聯絡我們', 'search_placeholder': '搜尋語言'}, 'lo': {'home': 'ໜ້າຫຼັກ', 'projects': 'ໂຄງການ', 'about': 'ກ່ຽວກັບ', 'contact': 'ຕິດຕໍ່', 'search_placeholder': 'ຄົ້ນຫາພາສາ'}, 'ja': {'home': 'ホーム', 'projects': 'プロジェクト', 'about': '会社情報', 'contact': 'お問い合わせ', 'search_placeholder': '言語を検索'}, 'ms': {'home': 'Laman Utama', 'projects': 'Projek', 'about': 'Tentang Kami', 'contact': 'Hubungi Kami', 'search_placeholder': 'Cari Bahasa'}};
+
+const languages = [
+  { code: 'en', name: 'English' },
+  { code: 'zh', name: '中文（简体）' },
+  { code: 'zh-TW', name: '中文（繁體）' },
+  { code: 'la', name: 'ພາສາລາວ' },
+  { code: 'ja', name: '日本語' },
+  { code: 'ms', name: 'Bahasa Melayu' }
+];
+
+const langList = document.getElementById('langList');
+const langInput = document.querySelector('.lang-input');
+
+function toggleList() {
+  langList.style.display = langList.style.display === 'block' ? 'none' : 'block';
+  renderLangList('');
+}
+
+function renderLangList(filter) {
+  langList.innerHTML = '';
+  languages
+    .filter(l => l.name.toLowerCase().includes(filter.toLowerCase()) || l.code.includes(filter.toLowerCase()))
+    .forEach(lang => {
+      const item = document.createElement('div');
+      item.className = 'lang-item';
+      item.textContent = lang.name;
+      item.onclick = () => selectLanguage(lang.code);
+      langList.appendChild(item);
+    });
+}
+
+function filterLanguages() {
+  const input = langInput.value;
+  renderLangList(input);
+}
+
+function selectLanguage(code) {
+  localStorage.setItem('siteLang', code);
+  updateLanguage(code);
+  langList.style.display = 'none';
+}
+
+function updateLanguage(code) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.remove('active');
+    if (el.getAttribute('data-lang') === code) {
+      el.classList.add('active');
+    }
+  });
+}
+
+// 初始化语言
+const currentLang = localStorage.getItem('siteLang') || 'en';
+window.onload = () => {
+  updateLanguage(currentLang);
+  langInput.value = '';
+  renderLangList('');
+};
+
+
+function updateNavLanguage(lang) {
+  const labels = languageMap[lang] || languageMap['en'];
+  document.querySelectorAll("[data-key]").forEach(el => {
+    const key = el.getAttribute("data-key");
+    if (labels[key]) {
+      el.textContent = labels[key];
+    }
+  });
+}
 
 function toggleMenu() {
   const nav = document.querySelector(".nav-bar");
-  nav.classList.toggle("active");
+  nav.classList.toggle("show");
 }
+
+// 更新语言切换主逻辑
 function setLanguage(lang) {
-  localStorage.setItem("lang", lang);
-  updateLanguage();
-}
-function updateLanguage() {
-  const lang = localStorage.getItem("lang") || "en";
+  localStorage.setItem("language", lang);
   document.querySelectorAll("[data-lang]").forEach(el => {
-    el.style.display = el.getAttribute("data-lang") === lang ? "block" : "none";
+    el.style.display = (el.getAttribute("data-lang") === lang) ? "block" : "none";
   });
+  updateNavLanguage(lang);
+  const searchInput = document.querySelector(".lang-input");
+  if (languageMap[lang]?.search_placeholder) {
+    searchInput.placeholder = languageMap[lang].search_placeholder;
+  }
 }
-function filterLanguages(value) {
-  document.querySelectorAll(".lang-list div").forEach(div => {
-    div.style.display = div.innerText.toLowerCase().includes(value.toLowerCase()) ? "block" : "none";
+
+// 页面载入自动切换语言
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("language") || "en";
+  setLanguage(savedLang);
+});
+
+
+function setLanguage(lang) {
+  localStorage.setItem("language", lang);
+
+  // 显示对应语言的内容
+  document.querySelectorAll("[data-lang]").forEach(el => {
+    el.style.display = (el.getAttribute("data-lang") === lang) ? "inline" : "none";
   });
-  document.querySelector(".lang-list").style.display = "block";
+
+  updateNavLanguage(lang);
+
+  const searchInput = document.querySelector(".lang-input");
+  if (languageMap[lang]?.search_placeholder) {
+    searchInput.placeholder = languageMap[lang].search_placeholder;
+  }
 }
-window.onload = updateLanguage;
+
+const languageMap = {
+  en: { home: "Home", projects: "Projects", about: "About", contact: "Contact", search_placeholder: "Search Language..." },
+  zh: { home: "主页", projects: "作品", about: "关于我们", contact: "联系方式", search_placeholder: "搜索语言..." },
+  zht: { home: "主頁", projects: "作品", about: "關於我們", contact: "聯絡方式", search_placeholder: "搜尋語言..." },
+  lo: { home: "ໜ້າຫຼັກ", projects: "ໂຄງການ", about: "ກ່ຽວກັບ", contact: "ຕິດຕໍ່", search_placeholder: "ຄົ້ນຫາພາສາ..." },
+  ja: { home: "ホーム", projects: "作品", about: "会社情報", contact: "連絡先", search_placeholder: "言語を検索..." },
+  ms: { home: "Laman Utama", projects: "Projek", about: "Tentang Kami", contact: "Hubungi", search_placeholder: "Cari bahasa..." }
+};
