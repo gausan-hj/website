@@ -117,3 +117,21 @@ footer {
 .contact-form button:hover {
   background-color: #e65c00;
 }
+
+.nav-bar {
+  background-color: #0A1D3C;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.nav-bar a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-bar a:hover {
+  color: #FF6B00;
+}
