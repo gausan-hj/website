@@ -135,3 +135,28 @@ footer {
 .nav-bar a:hover {
   color: #FF6B00;
 }
+
+.lang-input {
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 1em;
+  border: none;
+  outline: none;
+  width: 200px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.lang-input::placeholder {
+  color: #aaa;
+}
+
+.lang-list {
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 8px;
+}
+
+.contact-info {
+  text-align: center;
+  font-size: 1.2em;
+}
