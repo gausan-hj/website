@@ -2,56 +2,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>YC Lee Architect</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="main.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YC LEE ARCHITECT</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>YC Lee Architect</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active" data-i18n="home">首頁</a></li>
-                <li><a href="projects.html" data-i18n="projects">項目作品</a></li>
-                <li><a href="about.html" data-i18n="about">關於我</a></li>
-                <li><a href="contact.html" data-i18n="contact">聯絡我們</a></li>
-                <li><select id="languageSwitcher">
-                    <option value="zh-Hans">简体中文</option>
-                    <option value="zh-Hant" selected>繁體中文</option>
-                    <option value="ms">马来文</option>
-                    <option value="en">English</option>
-                    <option value="ja">日本語</option>
-                </select></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="intro" data-i18n="intro">
-            歡迎來到 YC Lee Architect 官方網站。
-        </section>
-        <section id="rating">
-            <h2 data-i18n="rate_us">給我們評分</h2>
-            <form id="ratingForm">
-                <label for="stars">星級 (1-5):</label>
-                <input type="number" id="stars" name="stars" min="1" max="5">
-                <button type="submit" data-i18n="submit">提交</button>
-            </form>
-            <div id="ratingResult"></div>
-        </section>
-        <section id="time">
-            <h3 data-i18n="local_time">馬來西亞當地時間:</h3>
-            <div id="localTime"></div>
-        </section>
-        <section id="chatbot">
-            <h3 data-i18n="chatbot">聊天機器人</h3>
-            <input type="text" placeholder="輸入訊息..." />
-        </section>
-    </main>
-    <footer>
-        <p>聯絡我們: ycleearchitect@gmail.com | 05-807 6197</p>
-        <p><a href="https://www.facebook.com/share/16YU9b1d7y/" target="_blank">Facebook 專頁</a></p>
-    </footer>
+  <header>
+    <div class="logo">YC LEE ARCHITECT</div>
+    <div class="lang-select">
+      <input class="lang-input" type="text" placeholder="Search Language..." oninput="filterLanguages()" onclick="toggleList()" />
+      <div class="lang-list" id="langList"></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1 data-lang="en">Craft · Architecture · Space</h1>
+    <h1 data-lang="zh">匠心 · 建筑 · 空间</h1>
+    <h1 data-lang="zh-TW">匠心・建築・空間</h1>
+    <h1 data-lang="la">ສ້າງສັນ · ສະຖາປັດຍະກຳ · ພື້ນທີ່</h1>
+    <h1 data-lang="ja">匠の技 · 建築 · 空間</h1>
+    <h1 data-lang="ms">Seni Bina · Reka Bentuk · Ruang</h1>
+  </section>
+
+  <footer>
+    &copy; 2025 YC Lee Architect. All rights reserved.
+  <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" class="fb-link">Facebook</a></footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

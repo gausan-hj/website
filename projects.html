@@ -1,38 +1,34 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects - YCLEE Architect</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects - YC LEE ARCHITECT</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <nav>
-      <select id="languageSwitcher">
-        <option value="en">English</option>
-        <option value="zh-Hant">繁體中文</option>
-        <option value="zh-Hans">简体中文</option>
-        <option value="ms">Bahasa Melayu</option>
-        <option value="jp">日本语</option>
-      </select>
-      <ul>
-        <li><a href="index.html" class="nav-link" data-key="home">Home</a></li>
-        <li><a href="projects.html" class="nav-link active" data-key="projects">Projects</a></li>
-        <li><a href="about.html" class="nav-link" data-key="about">About</a></li>
-        <li><a href="contact.html" class="nav-link" data-key="contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="logo">YC LEE ARCHITECT</div>
+    <div class="lang-select">
+      <input class="lang-input" type="text" placeholder="Search Language..." oninput="filterLanguages()" onclick="toggleList()" />
+      <div class="lang-list" id="langList"></div>
+    </div>
   </header>
-  <main>
-    <section class="content">
-      <h1 data-key="projectsTitle">Our Projects</h1>
-      <p data-key="projectsDescription">We’ve led architecture across Perak, Genting, Kuantan, and more—ranging from luxury villas to Pullman Hotel.</p>
-    </section>
-  </main>
+
+  <section class="hero">
+    <h2 data-lang="en">Featured Projects</h2>
+    <h2 data-lang="zh">精选项目</h2>
+    <h2 data-lang="zh-TW">精選項目</h2>
+    <h2 data-lang="la">ໂຄງການເດັ່ນໆ</h2>
+    <h2 data-lang="ja">代表的なプロジェクト</h2>
+    <h2 data-lang="ms">Projek Pilihan</h2>
+  </section>
+
   <footer>
-    <p>&copy; 2025 YCLEE Architect</p>
+    &copy; 2025 YC Lee Architect. All rights reserved.
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
