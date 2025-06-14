@@ -17,8 +17,6 @@ header {
 }
 .logo .yc {
   color: orange;
-  font-weight: bold;
-  font-size: 1.5em;
 }
 .nav-bar {
   display: flex;
