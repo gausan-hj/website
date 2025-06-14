@@ -2,63 +2,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Contact - YC LEE ARCHITECT</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="logo">YC LEE ARCHITECT</div>
-    <div class="lang-select">
-      <input class="lang-input" type="text" placeholder="Search Language..." oninput="filterLanguages()" onclick="toggleList()" />
-      <div class="lang-list" id="langList"></div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="logo"><span class="yc">YC</span> LEE ARCHITECT</div>
+    <nav class="nav-bar">
+      <a href="index.html" data-key="home">Home</a>
+      <a href="projects.html" data-key="projects">Projects</a>
+      <a href="about.html" data-key="about">About</a>
+      <a href="contact.html" data-key="contact">Contact</a>
+    </nav>
+    <div class="lang-search">
+      <input type="text" class="lang-input" placeholder="Search Language..." oninput="filterLanguages(this.value)">
+      <div class="lang-list">
+        <div onclick="setLanguage('en')">English</div>
+        <div onclick="setLanguage('zh')">中文（简体）</div>
+        <div onclick="setLanguage('zht')">中文（繁體）</div>
+        <div onclick="setLanguage('lo')">ລາວ</div>
+        <div onclick="setLanguage('ja')">日本語</div>
+        <div onclick="setLanguage('ms')">Bahasa Melayu</div>
+      </div>
     </div>
-  
-<nav class="nav-bar">
-  <a href="index.html">Home</a>
-  <a href="projects.html">Projects</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-</header>
-
-  <section class="hero">
-    <form class="contact-form">
-      <label data-lang="en">Your Name:</label>
-      <label data-lang="zh">您的姓名：</label>
-      <label data-lang="zh-TW">您的姓名：</label>
-      <label data-lang="la">ຊື່ຂອງທ່ານ:</label>
-      <label data-lang="ja">お名前：</label>
-      <label data-lang="ms">Nama Anda:</label>
-      <input type="text" name="name" required />
-
-      <label data-lang="en">Email:</label>
-      <label data-lang="zh">电邮：</label>
-      <label data-lang="zh-TW">電郵：</label>
-      <label data-lang="la">ອີເມວ:</label>
-      <label data-lang="ja">メール：</label>
-      <label data-lang="ms">E-mel:</label>
-      <input type="email" name="email" required />
-
-      <label data-lang="en">Message:</label>
-      <label data-lang="zh">留言：</label>
-      <label data-lang="zh-TW">留言：</label>
-      <label data-lang="la">ຂໍ້ຄວາມ:</label>
-      <label data-lang="ja">メッセージ：</label>
-      <label data-lang="ms">Mesej:</label>
-      <textarea name="message" required></textarea>
-
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <footer>
-    &copy; 2025 YC Lee Architect. All rights reserved. <br>
-    <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" class="fb-link">Facebook</a>
-  </footer>
-
-  <script src="script.js"></script>
+  </header>
+  <main>
+    <h1>Contact Us</h1>
+    <p>电话号码: 05-807 6197</p>
+    <p>电邮: ycleearchitect@gmail.com</p>
+  </main>
 </body>
 </html>

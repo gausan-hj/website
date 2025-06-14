@@ -2,41 +2,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Projects - YC LEE ARCHITECT</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="logo">YC LEE ARCHITECT</div>
-    <div class="lang-select">
-      <input class="lang-input" type="text" placeholder="Search Language..." oninput="filterLanguages()" onclick="toggleList()" />
-      <div class="lang-list" id="langList"></div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="logo"><span class="yc">YC</span> LEE ARCHITECT</div>
+    <nav class="nav-bar">
+      <a href="index.html" data-key="home">Home</a>
+      <a href="projects.html" data-key="projects">Projects</a>
+      <a href="about.html" data-key="about">About</a>
+      <a href="contact.html" data-key="contact">Contact</a>
+    </nav>
+    <div class="lang-search">
+      <input type="text" class="lang-input" placeholder="Search Language..." oninput="filterLanguages(this.value)">
+      <div class="lang-list">
+        <div onclick="setLanguage('en')">English</div>
+        <div onclick="setLanguage('zh')">中文（简体）</div>
+        <div onclick="setLanguage('zht')">中文（繁體）</div>
+        <div onclick="setLanguage('lo')">ລາວ</div>
+        <div onclick="setLanguage('ja')">日本語</div>
+        <div onclick="setLanguage('ms')">Bahasa Melayu</div>
+      </div>
     </div>
-  
-<nav class="nav-bar">
-  <a href="index.html">Home</a>
-  <a href="projects.html">Projects</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  </header>
+  <main>
+    <h1 data-lang="en">Our Projects</h1>
+    <h1 data-lang="zh">我们的项目</h1>
+    <h1 data-lang="zht">我們的項目</h1>
+    <h1 data-lang="lo">ໂຄງການຂອງພວກເຮົາ</h1>
+    <h1 data-lang="ja">私たちのプロジェクト</h1>
+    <h1 data-lang="ms">Projek Kami</h1>
 
-</header>
-
-  <section class="hero">
-    <h2 data-lang="en">Featured Projects</h2>
-    <h2 data-lang="zh">精选项目</h2>
-    <h2 data-lang="zh-TW">精選項目</h2>
-    <h2 data-lang="la">ໂຄງການເດັ່ນໆ</h2>
-    <h2 data-lang="ja">代表的なプロジェクト</h2>
-    <h2 data-lang="ms">Projek Pilihan</h2>
-  </section>
-
-  <footer>
-    &copy; 2025 YC Lee Architect. All rights reserved.
-  </footer>
-
-  <script src="script.js"></script>
+    <p data-lang="en">We primarily operate in Perak, Genting, Kedah, Johor, Kuala Lumpur, and also internationally.</p>
+    <p data-lang="zh">我们主要负责霹雳、云顶、吉打、柔佛、吉隆坡等地区，也有海外项目。</p>
+    <p data-lang="zht">我們主要負責霹靂、雲頂、吉打、柔佛、吉隆坡等地區，也有海外項目。</p>
+    <p data-lang="lo">ພວກເຮົາຮັບຜິດຊອບໃນເຂດ Perak, Genting, Kedah, Johor, KL ແລະຕ່າງປະເທດດ້ວຍ</p>
+    <p data-lang="ja">私たちは主に霹靂、ゲンティン、ケダ、ジョホール、クアラルンプール、海外でも活動しています。</p>
+    <p data-lang="ms">Kami beroperasi di Perak, Genting, Kedah, Johor, Kuala Lumpur dan juga antarabangsa.</p>
+  </main>
 </body>
 </html>
