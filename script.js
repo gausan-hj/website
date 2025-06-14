@@ -57,3 +57,38 @@ window.onload = () => {
   langInput.value = '';
   renderLangList('');
 };
+
+
+function updateNavLanguage(lang) {
+  const labels = languageMap[lang] || languageMap['en'];
+  document.querySelectorAll("[data-key]").forEach(el => {
+    const key = el.getAttribute("data-key");
+    if (labels[key]) {
+      el.textContent = labels[key];
+    }
+  });
+}
+
+function toggleMenu() {
+  const nav = document.querySelector(".nav-bar");
+  nav.classList.toggle("show");
+}
+
+// 更新语言切换主逻辑
+function setLanguage(lang) {
+  localStorage.setItem("language", lang);
+  document.querySelectorAll("[data-lang]").forEach(el => {
+    el.style.display = (el.getAttribute("data-lang") === lang) ? "block" : "none";
+  });
+  updateNavLanguage(lang);
+  const searchInput = document.querySelector(".lang-input");
+  if (languageMap[lang]?.search_placeholder) {
+    searchInput.placeholder = languageMap[lang].search_placeholder;
+  }
+}
+
+// 页面载入自动切换语言
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("language") || "en";
+  setLanguage(savedLang);
+});

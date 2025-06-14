@@ -160,3 +160,48 @@ footer {
   text-align: center;
   font-size: 1.2em;
 }
+
+
+.logo {
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+.logo span.yc {
+  color: orange;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  font-size: 1.1em;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .nav-bar {
+    flex-direction: column;
+    display: none;
+    background-color: #002244;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .nav-bar.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    text-align: right;
+    padding: 10px;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.menu-toggle {
+  display: none;
+}
