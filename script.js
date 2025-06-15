@@ -9,6 +9,7 @@ const languages = [
   { code: 'ms', name: 'Bahasa Melayu' },
   { code: 'ko', name: '한국인' },
   { code: 'ru', name: 'Русский' },
+  { code: 'th', name: 'แบบไทย' },
 ];
 
 const langList = document.getElementById('langList');
