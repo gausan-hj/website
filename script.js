@@ -10,6 +10,17 @@ const languages = [
   { code: 'ko', name: '한국인' },
   { code: 'ru', name: 'Русский' },
   { code: 'th', name: 'แบบไทย' },
+  { code: 'vi', name: 'Tiếng Việt' },
+  { code: 'id', name: 'Bahasa Indonesia' },
+  { code: 'ar', name: 'العربية' },
+  { code: 'fr', name: 'Français' },
+  { code: 'es', name: 'Español' },
+  { code: 'de', name: 'Deutsch' },
+  { code: 'pt', name: 'Português' },
+  { code: 'it', name: 'Italiano' },
+  { code: 'nl', name: 'Nederlands' },
+  { code: 'sv', name: 'Svenska' },
+
 ];
 
 const langList = document.getElementById('langList');
