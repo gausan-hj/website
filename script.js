@@ -8,6 +8,7 @@ const languages = [
   { code: 'ja', name: '日本語' },
   { code: 'ms', name: 'Bahasa Melayu' },
   { code: 'ko', name: '한국인' },
+  { code: 'ru', name: 'Русский' },
 ];
 
 const langList = document.getElementById('langList');
