@@ -7,6 +7,7 @@ const languages = [
   { code: 'la', name: 'ພາສາລາວ' },
   { code: 'ja', name: '日本語' },
   { code: 'ms', name: 'Bahasa Melayu' }
+  { code: 'ko', name: '한국인' }
 ];
 
 const langList = document.getElementById('langList');
