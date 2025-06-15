@@ -135,14 +135,12 @@ footer {
 .nav-bar a:hover {
   color: #FF6B00;
 }
-.logo-text .yc {
-  color: orange;
-  font-weight: bold;
+.yc, .lee, .logo-full { 
+  color: #FF6600; /* YC橙色 */
+  font-size: 24px; /* 统一字号 */
 }
-
-.logo-text .lee {
-  color: white;
-}
+.lee, .logo-full { color: #FFFFFF; } /* Lee和全称恢复白色 */
+.lang-input { font-size: 14px; } /* 搜索框保持不变 */
 
 .lang-input {
   border-radius: 12px;
