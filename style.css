@@ -135,6 +135,14 @@ footer {
 .nav-bar a:hover {
   color: #FF6B00;
 }
+.logo-text .yc {
+  color: orange;
+  font-weight: bold;
+}
+
+.logo-text .lee {
+  color: white;
+}
 
 .lang-input {
   border-radius: 12px;
