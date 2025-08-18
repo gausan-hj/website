@@ -196,6 +196,35 @@ footer {
   text-align: center;
 }
 
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  animation: popIn 1s ease forwards, dragonMove 3s ease-in-out infinite;
+}
+
+.item img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.caption {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #ff6600;
+  text-align: center;
+}
+
 /* 跳出来动画 */
 @keyframes popIn {
   0% { transform: scale(0.5); opacity: 0; }
@@ -210,4 +239,5 @@ footer {
   50% { transform: rotate(0deg) translateX(0px); }
   75% { transform: rotate(-2deg) translateX(-3px); }
   100% { transform: rotate(0deg) translateX(0px); }
+}
 }
