@@ -109,3 +109,37 @@ function changeSlide(step) {
   currentIndex = (currentIndex + step + galleryImages.length) % galleryImages.length;
   lightboxImg.src = galleryImages[currentIndex];
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("lang-btn");
+  const list = document.getElementById("lang-list");
+  const items = list.querySelectorAll("li");
+
+  // 点击按钮展开/收起
+  btn.addEventListener("click", () => {
+    if (list.classList.contains("hidden")) {
+      list.classList.remove("hidden");
+      items.forEach((item, index) => {
+        setTimeout(() => {
+          item.style.opacity = "1";
+          item.style.transform = "translateY(0)";
+        }, index * 150);
+      });
+    } else {
+      items.forEach((item) => {
+        item.style.opacity = "0";
+        item.style.transform = "translateY(-10px)";
+      });
+      setTimeout(() => list.classList.add("hidden"), 400);
+    }
+  });
+
+  // 点击语言 -> 请求后端
+  items.forEach((item) => {
+    item.addEventListener("click", () => {
+      const lang = item.getAttribute("data-lang");
+      fetch(/set_language/${lang})
+        .then(() => location.reload()); // 刷新页面显示新语言
+    });
+  });
+});
