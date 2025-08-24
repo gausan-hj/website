@@ -53,4 +53,29 @@ h1 {
   50% { transform: rotate(0deg) translateX(0px); }
   75% { transform: rotate(-2deg) translateX(-5px); }
   100% { transform: rotate(0deg) translateX(0px); }
+
+}
+
+.independence-message {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+  padding: 15px 20px;
+  border-radius: 10px;
+  max-width: 320px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.independence-message h2 {
+  margin: 10px 0 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.independence-message p {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.5;
 }
