@@ -293,20 +293,3 @@ footer {
 .prev { left: 20px; }
 .next { right: 20px; }
 
-.merdeka-btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: linear-gradient(45deg, #ff0000, #0000ff);
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.merdeka-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-}
