@@ -58,8 +58,8 @@ h1 {
 
 .independence-message {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  bottom: 20px;   /* ✅ 左下角 */
+  left: 20px;     /* 靠左 */
   background: rgba(255, 255, 255, 0.8); /* 半透明背景 */
   padding: 15px 20px;
   border-radius: 10px;
