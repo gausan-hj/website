@@ -11,7 +11,7 @@ let index = 0;
 let showing = 0; // 0 表示 bg1 在上，1 表示 bg2 在上
 
 // 初始化
-bg1.style.backgroundImage = url(${images[0]});
+bg1.style.backgroundImage = `url(${images[0]})`;
 bg2.style.opacity = 0;
 
 function changeBackground() {
@@ -20,12 +20,12 @@ function changeBackground() {
   newImg.src = images[index];
   newImg.onload = () => {
     if (showing === 0) {
-      bg2.style.backgroundImage = url(${images[index]});
+      bg2.style.backgroundImage = `url(${images[index]})`;
       bg2.style.opacity = 1;
       bg1.style.opacity = 0;
       showing = 1;
     } else {
-      bg1.style.backgroundImage = url(${images[index]});
+      bg1.style.backgroundImage = `url(${images[index]})`;
       bg1.style.opacity = 1;
       bg2.style.opacity = 0;
       showing = 0;
@@ -139,3 +139,4 @@ function launchBalloons() {
 }
 
 launchBalloons();
+
