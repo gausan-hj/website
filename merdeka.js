@@ -11,7 +11,7 @@ let index = 0;
 let showing = 0; // 0 表示 bg1 在上，1 表示 bg2 在上
 
 // 初始化
-bg1.style.backgroundImage = `url(${images[0]})`;
+bg1.style.backgroundImage = url(${images[0]});
 bg2.style.opacity = 0;
 
 function changeBackground() {
@@ -20,12 +20,12 @@ function changeBackground() {
   newImg.src = images[index];
   newImg.onload = () => {
     if (showing === 0) {
-      bg2.style.backgroundImage = `url(${images[index]})`;
+      bg2.style.backgroundImage = url(${images[index]});
       bg2.style.opacity = 1;
       bg1.style.opacity = 0;
       showing = 1;
     } else {
-      bg1.style.backgroundImage = `url(${images[index]})`;
+      bg1.style.backgroundImage = url(${images[index]});
       bg1.style.opacity = 1;
       bg2.style.opacity = 0;
       showing = 0;
@@ -77,7 +77,6 @@ function createFirework() {
 }
 
 function animate() {
-  // 清空 canvas，但保持透明背景显示 div 背景
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   fireworks.forEach((f, i) => {
@@ -92,13 +91,12 @@ function animate() {
 setInterval(createFirework, 800);
 animate();
 
-// 画布大小自适应
 window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-
 });
 
+// =================== 气球 + 口号 ===================
 const slogans = [
   "🇲🇾 Bersatu Teguh",
   "🇬🇧 Unity is Strength",
@@ -122,21 +120,22 @@ function launchBalloons() {
       const text = document.createElement("div");
       text.className = "slogan-text";
       text.innerText = slogans[Math.floor(Math.random() * slogans.length)];
-      text.style.top = balloon.style.top || (Math.random() * 80 + "vh");
-      text.style.left = balloon.style.left;
+
+      // 气球的 top 位置（相对窗口）
+      const rect = balloon.getBoundingClientRect();
+      text.style.top = rect.top + "px";
+      text.style.left = rect.left + "px";
 
       container.appendChild(text);
-      setTimeout(() => text.remove(), 3000); // 文字3秒后消失
-      balloon.remove(); // 气球爆炸后消失
+      setTimeout(() => text.remove(), 3000); // 文字 3 秒后消失
+      balloon.remove(); // 气球消失
     });
 
     container.appendChild(balloon);
 
-    // 气球10秒后自动消失（如果没人点）
+    // 气球 10 秒后自动消失
     setTimeout(() => balloon.remove(), 10000);
-  }, 2000); // 每2秒出现一个气球
+  }, 2000); // 每 2 秒出现一个气球
 }
 
-  launchBalloons();
-}
-
+launchBalloons();
