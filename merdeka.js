@@ -91,12 +91,13 @@ function animate() {
 setInterval(createFirework, 800);
 animate();
 
+// 画布大小自适应
 window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
 
-// =================== 气球 + 口号 ===================
+// =================== 气球 + 标语 ===================
 const slogans = [
   "🇲🇾 Bersatu Teguh",
   "🇬🇧 Unity is Strength",
@@ -121,19 +122,18 @@ function launchBalloons() {
       text.className = "slogan-text";
       text.innerText = slogans[Math.floor(Math.random() * slogans.length)];
 
-      // 气球的 top 位置（相对窗口）
       const rect = balloon.getBoundingClientRect();
       text.style.top = rect.top + "px";
       text.style.left = rect.left + "px";
 
       container.appendChild(text);
-      setTimeout(() => text.remove(), 3000); // 文字 3 秒后消失
-      balloon.remove(); // 气球消失
+      setTimeout(() => text.remove(), 3000);
+      balloon.remove();
     });
 
     container.appendChild(balloon);
 
-    // 气球 10 秒后自动消失
+    // 气球 10 秒后自动消失（如果没人点）
     setTimeout(() => balloon.remove(), 10000);
   }, 2000); // 每 2 秒出现一个气球
 }
