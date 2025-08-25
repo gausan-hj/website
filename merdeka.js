@@ -8,9 +8,8 @@ const images = [
 ];
 
 let index = 0;
-let showing = 0; // 0 表示 bg1 在上，1 表示 bg2 在上
+let showing = 0; 
 
-// 初始化
 bg1.style.backgroundImage = `url(${images[0]})`;
 bg2.style.opacity = 0;
 
@@ -32,11 +31,9 @@ function changeBackground() {
     }
   };
 }
-
-// 每 15 秒切换一次背景
 setInterval(changeBackground, 15000);
 
-// =================== 烟花效果 ===================
+// =================== 烟花 (永远显示) ===================
 const canvas = document.getElementById('fireworks');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
@@ -78,65 +75,77 @@ function createFirework() {
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
   fireworks.forEach((f, i) => {
     f.update();
     f.draw();
     if (f.life <= 0) fireworks.splice(i, 1);
   });
-
   requestAnimationFrame(animate);
 }
-
 setInterval(createFirework, 800);
 animate();
 
-// 画布大小自适应
 window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
 
-// =================== 气球 + 标语 ===================
-const slogans = [
-  "🇲🇾 Bersatu Teguh",
-  "🇬🇧 Unity is Strength",
-  "🇨🇳 团结就是力量"
-];
+// =================== 只在国庆日 (8月31日) 出现 ===================
+const today = new Date();
+const isMerdekaDay = (today.getMonth() === 7 && today.getDate() === 31); 
 
-function launchBalloons() {
-  const container = document.getElementById("balloon-container");
+if (isMerdekaDay) {
+  // 🎈 气球
+  const slogans = [
+    "🇲🇾 Bersatu Teguh",
+    "🇬🇧 Unity is Strength",
+    "🇨🇳 团结就是力量"
+  ];
 
-  setInterval(() => {
-    const balloon = document.createElement("div");
-    balloon.className = "balloon";
+  function launchBalloons() {
+    const container = document.getElementById("balloon-container");
 
-    // 随机颜色 & 位置
-    const colors = ["red", "blue", "green", "orange", "purple", "yellow"];
-    balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
-    balloon.style.left = Math.random() * 90 + "vw";
+    setInterval(() => {
+      const balloon = document.createElement("div");
+      balloon.className = "balloon";
 
-    // 点击爆炸显示文字
-    balloon.addEventListener("click", () => {
-      const text = document.createElement("div");
-      text.className = "slogan-text";
-      text.innerText = slogans[Math.floor(Math.random() * slogans.length)];
+      const colors = ["red", "blue", "green", "orange", "purple", "yellow"];
+      balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+      balloon.style.left = Math.random() * 90 + "vw";
 
-      const rect = balloon.getBoundingClientRect();
-      text.style.top = rect.top + "px";
-      text.style.left = rect.left + "px";
+      balloon.addEventListener("click", () => {
+        const text = document.createElement("div");
+        text.className = "slogan-text";
+        text.innerText = slogans[Math.floor(Math.random() * slogans.length)];
+        text.style.left = balloon.style.left;
+        text.style.top = "50%";
 
-      container.appendChild(text);
-      setTimeout(() => text.remove(), 3000);
-      balloon.remove();
-    });
+        container.appendChild(text);
+        setTimeout(() => text.remove(), 3000);
+        balloon.remove();
+      });
 
-    container.appendChild(balloon);
+      container.appendChild(balloon);
+      setTimeout(() => balloon.remove(), 10000);
+    }, 2000);
+  }
+  launchBalloons();
 
-    // 气球 10 秒后自动消失（如果没人点）
-    setTimeout(() => balloon.remove(), 10000);
-  }, 2000); // 每 2 秒出现一个气球
+  // 🎉 彩带效果
+  function launchConfetti() {
+    const confettiContainer = document.createElement("div");
+    confettiContainer.id = "confetti-container";
+    document.body.appendChild(confettiContainer);
+
+    setInterval(() => {
+      const confetti = document.createElement("div");
+      confetti.className = "confetti";
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.background = hsl(${Math.random() * 360}, 100%, 50%);
+      confettiContainer.appendChild(confetti);
+
+      setTimeout(() => confetti.remove(), 5000);
+    }, 200);
+  }
+  launchConfetti();
 }
-
-launchBalloons();
-
