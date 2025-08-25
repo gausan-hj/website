@@ -88,7 +88,7 @@ h1 {
   overflow: hidden;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 5;
 }
 
 .balloon {
@@ -123,3 +123,4 @@ h1 {
   80% { opacity: 1; }
   100% { opacity: 0; transform: scale(1.2); }
 }
+
