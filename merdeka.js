@@ -137,8 +137,6 @@ function launchBalloons() {
   }, 2000); // 每2秒出现一个气球
 }
 
-// 只在 8月31日 自动触发
-const today = new Date();
-if (today.getMonth() + 1 === 8 && today.getDate() === 31) {
   launchBalloons();
 }
+
