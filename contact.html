@@ -1,56 +1,390 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact - YC LEE ARCHITECT</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #0a192f 0%, #152642 100%);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* 头部样式 */
+    header {
+      background: rgba(10, 25, 47, 0.9);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    
+    .yc {
+      color: #ff7b00;
+    }
+    
+    .lee-architect {
+      color: white;
+    }
+    
+    .lang-select {
+      position: relative;
+      margin-left: 20px;
+    }
+    
+    .lang-input {
+      padding: 8px 12px;
+      border-radius: 4px;
+      border: 2px solid #ff7b00;
+      width: 180px;
+      color: #333;
+      background: rgba(255, 255, 255, 0.9);
+    }
+    
+    .lang-list {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      width: 100%;
+      border-radius: 4px;
+      margin-top: 5px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: none;
+      z-index: 100;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    
+    .lang-list.show {
+      display: block;
+    }
+    
+    .lang-option {
+      padding: 8px 12px;
+      color: #333;
+      cursor: pointer;
+    }
+    
+    .lang-option:hover {
+      background: #f0f0f0;
+    }
+    
+    /* 导航栏样式 */
+    .nav-bar {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+    
+    .nav-bar a:hover {
+      background: #ff7b00;
+      color: #0a192f;
+    }
+    
+    /* 主要内容区域 */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    .contact-container {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 40px;
+      max-width: 800px;
+      width: 100%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      margin-bottom: 40px;
+      border: 1px solid rgba(255, 123, 0, 0.2);
+    }
+    
+    .contact-title {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #ff7b00;
+    }
+    
+    .contact-info {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      background: rgba(10, 25, 47, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid #ff7b00;
+    }
+    
+    /* 重新设计的社交图标样式 */
+    .social-section {
+      margin-top: 40px;
+      width: 100%;
+    }
+    
+    .social-title {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: #ff7b00;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .social-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #ff7b00;
+      border-radius: 3px;
+    }
+    
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    
+    .social-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      width: 120px;
+    }
+    
+    .social-icon {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 32px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      margin-bottom: 15px;
+      border: 2px solid transparent;
+    }
+    
+    .social-icon:hover {
+      transform: translateY(-5px) scale(1.1);
+    }
+    
+    .social-name {
+      background: rgba(10, 25, 47, 0.9);
+      padding: 8px 16px;
+      border-radius: 20px;
+      opacity: 1;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      text-align: center;
+      width: 100%;
+      color: white;
+      border: 1px solid rgba(255, 123, 0, 0.3);
+    }
+    
+    .social-item:hover .social-name {
+      background: #ff7b00;
+      color: #0a192f;
+    }
+    
+    /* 特定社交图标效果 */
+    .facebook-icon:hover {
+      background-color: #3b5998;
+      box-shadow: 0 10px 20px rgba(59, 89, 152, 0.4);
+      border-color: #3b5998;
+    }
+    
+    .instagram-icon:hover {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      box-shadow: 0 10px 20px rgba(220, 39, 67, 0.4);
+      border-color: #dc2743;
+    }
+    
+    .tiktok-icon:hover {
+      background: linear-gradient(45deg, #00f2ea, #ff0050);
+      box-shadow: 0 10px 20px rgba(0, 242, 234, 0.4);
+      border-color: #ff0050;
+    }
+    
+    /* 页脚样式 */
+    footer {
+      background: rgba(10, 25, 47, 0.9);
+      text-align: center;
+      padding: 20px;
+      margin-top: auto;
+      border-top: 1px solid rgba(255, 123, 0, 0.3);
+    }
+    
+    .fb-link {
+      color: #ff7b00;
+      text-decoration: none;
+      margin-top: 10px;
+      display: inline-block;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    
+    .fb-link:hover {
+      text-decoration: underline;
+      color: #ff9d44;
+    }
+    
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .logo-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .nav-bar {
+        justify-content: center;
+      }
+      
+      .contact-container {
+        padding: 20px;
+      }
+      
+      .contact-title {
+        font-size: 2rem;
+      }
+      
+      .contact-info {
+        font-size: 1rem;
+      }
+      
+      .social-icons {
+        gap: 20px;
+      }
+      
+      .social-item {
+        width: 100px;
+      }
+      
+      .social-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="logo-container">
-  <div class="logo-text">
-    <span class="yc">YC</span>
-    <span class="lee Architect"> LEE  Architect</span>
-  </div>
-  <div class="lang-select">
-    <input class="lang-input" type="text" placeholder="Search Language..." data-key="search_placeholder" oninput="filterLanguages()" onclick="toggleList()" />
-    <div class="lang-list" id="langList"></div>
-  </div>
-</div>
+      <div class="logo-text">
+        <span class="yc">YC</span>
+        <span class="lee-architect"> LEE Architect</span>
+      </div>
+      <div class="lang-select">
+        <input class="lang-input" type="text" placeholder="Search Language..." onclick="toggleList()" />
+        <div class="lang-list" id="langList">
+          <div class="lang-option" onclick="selectLanguage('en')">English</div>
+          <div class="lang-option" onclick="selectLanguage('zh')">中文 (简体)</div>
+          <div class="lang-option" onclick="selectLanguage('zh-TW')">中文 (繁體)</div>
+          <div class="lang-option" onclick="selectLanguage('la')">ພາສາລາວ (老挝语)</div>
+          <div class="lang-option" onclick="selectLanguage('ja')">日本語 (日语)</div>
+          <div class="lang-option" onclick="selectLanguage('ms')">Bahasa Melayu (马来语)</div>
+          <div class="lang-option" onclick="selectLanguage('ko')">한국어 (韩语)</div>
+          <div class="lang-option" onclick="selectLanguage('ru')">Русский (俄语)</div>
+          <div class="lang-option" onclick="selectLanguage('th')">ไทย (泰语)</div>
+        </div>
+      </div>
+    </div>
   
-<nav class="nav-bar">
-  <a href="index.html" data-key="home">Home</a>
-  <a href="projects.html" data-key="projects">Projects</a>
-  <a href="about.html" data-key="about">About</a>
-  <a href="contact.html" data-key="contact">Contact</a>
-</nav>
-
-</header>
+    <nav class="nav-bar">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <section class="hero">
-    <form class="contact-form">
-      <label data-lang="en">Phone number: 05-807 6197
-        Email: ycleearchitect@gmail.com</label>
-      <label data-lang="zh">电话号码：05-807 6197
-        电邮：ycleearchitect@gmail.com</label>
-      <label data-lang="zh-TW">電話號碼：05-807 6197
-        電郵：ycleearchitect@gmail.com</label>
-      <label data-lang="la">ເບີໂທລະສັບ: 05-807 6197
-        ອີເມວ: ycleearchitect@gmail.com</label>
-      <label data-lang="ja">電話番号: 05-807 6197
-        メールアドレス: yclearchitect@gmail.com</label>
-      <label data-lang="ms">Nombor telefon: 05-807 6197
-        E-mel: ycleearchitect@gmail.com</label>
-      <label data-lang="ko">전화번호: 05-807 6197
-        이메일: ycleearchitect@gmail.com</label>
-      <label data-lang="ru">Номер телефона: 05-807 6197
-        Электронная почта: ycleearchitect@gmail.com</label>
-      <label data-lang="th"> เบอร์โทรศัพท์: 05-807 6197
-        อีเมล: ycleearchitect@gmail.com</label>
-
-    </form>
+    <div class="contact-container">
+      <h1 class="contact-title">Contact Us</h1>
+      
+      <div class="contact-info">
+        <p>Phone number: 05-807 6197</p>
+        <p>Email: ycleearchitect@gmail.com</p>
+      </div>
+      
+      <div class="social-section">
+        <h2 class="social-title">Follow Us</h2>
+        <div class="social-icons">
+          <div class="social-item">
+            <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="social-icon facebook-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <span class="social-name">Facebook</span>
+          </div>
+          
+          <div class="social-item">
+            <a href="https://www.instagram.com" target="_blank" class="social-icon instagram-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <span class="social-name">Instagram</span>
+          </div>
+          
+          <div class="social-item">
+            <a href="https://www.tiktok.com" target="_blank" class="social-icon tiktok-icon">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <span class="social-name">TikTok</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
@@ -58,6 +392,51 @@
     <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link">Facebook</a>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // 语言选择功能
+    function toggleList() {
+      const langList = document.getElementById('langList');
+      langList.classList.toggle('show');
+    }
+    
+    function selectLanguage(lang) {
+      const langInput = document.querySelector('.lang-input');
+      const langList = document.getElementById('langList');
+      
+      // 根据选择的语言更新输入框文本
+      const options = {
+        'en': 'English',
+        'zh': '中文 (简体)',
+        'zh-TW': '中文 (繁體)',
+        'la': 'ພາສາລາວ (老挝语)',
+        'ja': '日本語 (日语)',
+        'ms': 'Bahasa Melayu (马来语)',
+        'ko': '한국어 (韩语)',
+        'ru': 'Русский (俄语)',
+        'th': 'ไทย (泰语)'
+      };
+      
+      langInput.value = options[lang] || 'Select Language';
+      langList.classList.remove('show');
+      
+      // 这里可以添加实际的语言切换逻辑
+      console.log('Selected language:', lang);
+    }
+    
+    // 点击页面其他区域关闭语言列表
+    document.addEventListener('click', function(event) {
+      const langSelect = document.querySelector('.lang-select');
+      const langList = document.getElementById('langList');
+      
+      if (!langSelect.contains(event.target)) {
+        langList.classList.remove('show');
+      }
+    });
+    
+    // 阻止语言输入框的点击事件冒泡
+    document.querySelector('.lang-input').addEventListener('click', function(event) {
+      event.stopPropagation();
+    });
+  </script>
 </body>
 </html>
