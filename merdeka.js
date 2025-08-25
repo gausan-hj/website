@@ -96,4 +96,49 @@ animate();
 window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+
 });
+
+const slogans = [
+  "🇲🇾 Bersatu Teguh",
+  "🇬🇧 Unity is Strength",
+  "🇨🇳 团结就是力量"
+];
+
+function launchBalloons() {
+  const container = document.getElementById("balloon-container");
+
+  setInterval(() => {
+    const balloon = document.createElement("div");
+    balloon.className = "balloon";
+
+    // 随机颜色 & 位置
+    const colors = ["red", "blue", "green", "orange", "purple", "yellow"];
+    balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+    balloon.style.left = Math.random() * 90 + "vw";
+
+    // 点击爆炸显示文字
+    balloon.addEventListener("click", () => {
+      const text = document.createElement("div");
+      text.className = "slogan-text";
+      text.innerText = slogans[Math.floor(Math.random() * slogans.length)];
+      text.style.top = balloon.style.top || (Math.random() * 80 + "vh");
+      text.style.left = balloon.style.left;
+
+      container.appendChild(text);
+      setTimeout(() => text.remove(), 3000); // 文字3秒后消失
+      balloon.remove(); // 气球爆炸后消失
+    });
+
+    container.appendChild(balloon);
+
+    // 气球10秒后自动消失（如果没人点）
+    setTimeout(() => balloon.remove(), 10000);
+  }, 2000); // 每2秒出现一个气球
+}
+
+// 只在 8月31日 自动触发
+const today = new Date();
+if (today.getMonth() + 1 === 8 && today.getDate() === 31) {
+  launchBalloons();
+}
