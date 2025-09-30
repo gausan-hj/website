@@ -1,199 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects - YC LEE ARCHITECT</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Architect Projects Gallery</title>
   <style>
-    /* 封面 */
-    .album-cover {
-      text-align: center;
-      margin: 30px auto;
-      cursor: pointer;
-      max-width: 400px;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0d1b2a; /* 深蓝背景 */
+      color: white;
     }
-    .album-cover img {
+    h2 {
+      text-align: center;
+      margin: 20px 0;
+      color: orange; /* 标题橙色 */
+    }
+    /* 相册网格通用样式 */
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .gallery-item img {
       width: 100%;
       border-radius: 10px;
-      transition: transform 0.3s;
-    }
-    .album-cover img:hover {
-      transform: scale(1.05);
-    }
-    .album-cover h3 {
-      margin-top: 10px;
-      font-size: 1.2rem;
-    }
-
-    /* 相册 */
-    .gallery {
-      display: none; /* 默认隐藏 */
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 10px;
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 10px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
       cursor: pointer;
       transition: transform 0.3s;
     }
-    .gallery img:hover {
+    .gallery-item img:hover {
       transform: scale(1.05);
     }
-
-    /* 灯箱 */
+    /* 灯箱样式 */
     .lightbox {
-      display: none;
       position: fixed;
       z-index: 1000;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      text-align: center;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
     }
-    .lightbox img {
-      max-width: 90%;
+    .lightbox-content {
+      max-width: 80%;
       max-height: 80%;
-      margin-top: 5%;
-      border-radius: 8px;
     }
-    .controls {
-      margin-top: 20px;
-    }
-    .controls button {
-      padding: 10px 20px;
-      margin: 0 10px;
-      border: none;
-      border-radius: 5px;
-      background: white;
+    .lightbox .close {
+      position: absolute;
+      top: 20px; right: 30px;
+      font-size: 40px;
+      color: white;
       cursor: pointer;
-      font-size: 1rem;
     }
-    .controls button:hover {
-      background: #ddd;
+    .lightbox .prev, .lightbox .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-size: 30px;
+      user-select: none;
     }
+    .lightbox .prev { left: 20px; }
+    .lightbox .next { right: 20px; }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo-container">
-      <div class="logo-text">
-        <span class="yc">YC</span>
-        <span class="lee Architect"> LEE  Architect</span>
-      </div>
-      <div class="lang-select">
-        <input class="lang-input" type="text" placeholder="Search Language..." data-key="search_placeholder" oninput="filterLanguages()" onclick="toggleList()" />
-        <div class="lang-list" id="langList"></div>
-      </div>
-    </div>
-  
-    <nav class="nav-bar">
-      <a href="index.html" data-key="home">Home</a>
-      <a href="projects.html" data-key="projects">Projects</a>
-      <a href="about.html" data-key="about">About</a>
-      <a href="contact.html" data-key="contact">Contact</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h2 data-lang="en">Featured Projects</h2>
-    <h2 data-lang="zh">精选项目</h2>
-    <h2 data-lang="zh-TW">精選項目</h2>
-    <h2 data-lang="la">ໂຄງການເດັ່ນໆ</h2>
-    <h2 data-lang="ja">代表的なプロジェクト</h2>
-    <h2 data-lang="ms">Projek Pilihan</h2>
-    <h2 data-lang="ko">추천 프로젝트</h2>
-    <h2 data-lang="ru">Избранные проекты</h2>
-    <h2 data-lang="th"> โปรเจ็กต์เด่น</h2>
-    <h2 data-lang="vi">Dự Án Tiêu Biểu</h2>
-    <h2 data-lang="id">Proyek Unggulan</h2>
-    <h2 data-lang="ar" dir="rtl">المشاريع المميزة</h2>
-    <h2 data-lang="fr">Projets en Vedette</h2>
-    <h2 data-lang="es">Proyectos Destacados</h2>
-    <h2 data-lang="de">Ausgewählte Projekte</h2>
-    <h2 data-lang="pt">Projetos em Destaque</h2>
-    <h2 data-lang="it">Progetti in Evidenza</h2>
-    <h2 data-lang="nl">Uitgelichte Projecten</h2>
-    <h2 data-lang="sv">Utvalda Projekt</h2>
+  <!-- ✅ Project 1 相册（旧的） -->
+  <section id="project1-gallery">
+    <h2>Project 1 Gallery</h2>
+    <div class="gallery-container">
+      <div class="gallery-item"><img src="images/project1-1.jpg" alt="Project 1 - Image 1" onclick="openLightbox1(0)"></div>
+      <div class="gallery-item"><img src="images/project1-2.jpg" alt="Project 1 - Image 2" onclick="openLightbox1(1)"></div>
+      <div class="gallery-item"><img src="images/project1-3.jpg" alt="Project 1 - Image 3" onclick="openLightbox1(2)"></div>
+      <div class="gallery-item"><img src="images/project1-4.jpg" alt="Project 1 - Image 4" onclick="openLightbox1(3)"></div>
+    </div>
   </section>
 
-  <!-- 封面 -->
-  <div class="album-cover" onclick="showGallery()">
-    <img src="images/photo1.jpg" alt="Project Album Cover">
-    <h3>👷‍♂ Site Meeting & Inspection 👷‍♀
-Ensuring progress, quality, and safety on site. ✅
-</h3>
+  <!-- Project 1 灯箱 -->
+  <div id="lightbox1" class="lightbox">
+    <span class="close" onclick="closeLightbox1()">&times;</span>
+    <img class="lightbox-content" id="lightboxImg1">
+    <a class="prev" onclick="changeSlide1(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide1(1)">&#10095;</a>
   </div>
 
-  <!-- 相册组 -->
-  <div id="gallery" class="gallery">
-    <img src="images/photo1.jpg" onclick="openLightbox(0)">
-    <img src="images/photo2.jpg" onclick="openLightbox(1)">
-    <img src="images/photo3.jpg" onclick="openLightbox(2)">
-    <img src="images/photo4.jpg" onclick="openLightbox(3)">
-    <img src="images/photo5.jpg" onclick="openLightbox(4)">
-    <img src="images/photo6.jpg" onclick="openLightbox(5)">
-    <img src="images/photo7.jpg" onclick="openLightbox(6)">
-    <img src="images/photo8.jpg" onclick="openLightbox(7)">
-    <img src="images/photo9.jpg" onclick="openLightbox(8)">
-    <img src="images/photo10.jpg" onclick="openLightbox(9)">
-    <img src="images/photo11.jpg" onclick="openLightbox(10)">
-    <img src="images/photo12.jpg" onclick="openLightbox(11)">
-    <img src="images/photo13.jpg" onclick="openLightbox(12)">
-    <img src="images/photo14.jpg" onclick="openLightbox(13)">
-    <img src="images/photo15.jpg" onclick="openLightbox(14)">
-    <img src="images/photo16.jpg" onclick="openLightbox(15)">
-  </div>
-
-  <!-- 灯箱 -->
-  <div id="lightbox" class="lightbox">
-    <img id="lightboxImg" src="">
-    <div class="controls">
-      <button onclick="changeSlide(-1)">Prev</button>
-      <button onclick="closeLightbox()">Close</button>
-      <button onclick="changeSlide(1)">Next</button>
+  <!-- ✅ Project 2 相册（新的，8 张照片） -->
+  <section id="project2-gallery">
+    <h2>Project 2 Gallery</h2>
+    <div class="gallery-container">
+      <div class="gallery-item"><img src="images/project2-1.jpg" alt="Project 2 - Image 1" onclick="openLightbox2(0)"></div>
+      <div class="gallery-item"><img src="images/project2-2.jpg" alt="Project 2 - Image 2" onclick="openLightbox2(1)"></div>
+      <div class="gallery-item"><img src="images/project2-3.jpg" alt="Project 2 - Image 3" onclick="openLightbox2(2)"></div>
+      <div class="gallery-item"><img src="images/project2-4.jpg" alt="Project 2 - Image 4" onclick="openLightbox2(3)"></div>
+      <div class="gallery-item"><img src="images/project2-5.jpg" alt="Project 2 - Image 5" onclick="openLightbox2(4)"></div>
+      <div class="gallery-item"><img src="images/project2-6.jpg" alt="Project 2 - Image 6" onclick="openLightbox2(5)"></div>
+      <div class="gallery-item"><img src="images/project2-7.jpg" alt="Project 2 - Image 7" onclick="openLightbox2(6)"></div>
+      <div class="gallery-item"><img src="images/project2-8.jpg" alt="Project 2 - Image 8" onclick="openLightbox2(7)"></div>
     </div>
-  </div>
+  </section>
 
-  <footer>
-    &copy; 2025 YC Lee Architect. All rights reserved.
-  </footer>
+  <!-- Project 2 灯箱 -->
+  <div id="lightbox2" class="lightbox">
+    <span class="close" onclick="closeLightbox2()">&times;</span>
+    <img class="lightbox-content" id="lightboxImg2">
+    <a class="prev" onclick="changeSlide2(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide2(1)">&#10095;</a>
+  </div>
 
   <script>
-    let currentIndex = 0;
-    const images = [
-      "images/photo1.jpg","images/photo2.jpg","images/photo3.jpg","images/photo4.jpg",
-      "images/photo5.jpg","images/photo6.jpg","images/photo7.jpg","images/photo8.jpg",
-      "images/photo9.jpg","images/photo10.jpg","images/photo11.jpg","images/photo12.jpg",
-      "images/photo13.jpg","images/photo14.jpg","images/photo15.jpg","images/photo16.jpg"
+    /* ✅ Project 1 JS */
+    let currentIndex1 = 0;
+    let images1 = [
+      "images/project1-1.jpg",
+      "images/project1-2.jpg",
+      "images/project1-3.jpg",
+      "images/project1-4.jpg"
     ];
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightboxImg");
+    function openLightbox1(index) {
+      currentIndex1 = index;
+      document.getElementById("lightbox1").style.display = "flex";
+      document.getElementById("lightboxImg1").src = images1[index];
+    }
+    function closeLightbox1() {
+      document.getElementById("lightbox1").style.display = "none";
+    }
+    function changeSlide1(n) {
+      currentIndex1 += n;
+      if (currentIndex1 < 0) currentIndex1 = images1.length - 1;
+      if (currentIndex1 >= images1.length) currentIndex1 = 0;
+      document.getElementById("lightboxImg1").src = images1[currentIndex1];
+    }
 
-    function showGallery() {
-      document.getElementById("gallery").style.display = "grid";
-      document.querySelector(".album-cover").style.display = "none";
+    /* ✅ Project 2 JS */
+    let currentIndex2 = 0;
+    let images2 = [
+      "images/project2-1.jpg",
+      "images/project2-2.jpg",
+      "images/project2-3.jpg",
+      "images/project2-4.jpg",
+      "images/project2-5.jpg",
+      "images/project2-6.jpg",
+      "images/project2-7.jpg",
+      "images/project2-8.jpg"
+    ];
+    function openLightbox2(index) {
+      currentIndex2 = index;
+      document.getElementById("lightbox2").style.display = "flex";
+      document.getElementById("lightboxImg2").src = images2[index];
     }
-    function openLightbox(index) {
-      currentIndex = index;
-      lightbox.style.display = "block";
-      lightboxImg.src = images[index];
+    function closeLightbox2() {
+      document.getElementById("lightbox2").style.display = "none";
     }
-    function closeLightbox() {
-      lightbox.style.display = "none";
-    }
-    function changeSlide(step) {
-      currentIndex = (currentIndex + step + images.length) % images.length;
-      lightboxImg.src = images[currentIndex];
+    function changeSlide2(n) {
+      currentIndex2 += n;
+      if (currentIndex2 < 0) currentIndex2 = images2.length - 1;
+      if (currentIndex2 >= images2.length) currentIndex2 = 0;
+      document.getElementById("lightboxImg2").src = images2[currentIndex2];
     }
   </script>
+
 </body>
 </html>
