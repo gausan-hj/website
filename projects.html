@@ -237,44 +237,57 @@
     &copy; 2025 YC Lee Architect. All rights reserved.
   </footer>
 
-  <script>
-    let currentIndex = 0;
-    let currentGallery = [];
+<script>
+  let currentIndex = 0;
+  let currentGallery = [];
 
-    const images1 = [
-      "images/photo1.jpg","images/photo2.jpg","images/photo3.jpg","images/photo4.jpg",
-      "images/photo5.jpg","images/photo6.jpg","images/photo7.jpg","images/photo8.jpg",
-      "images/photo9.jpg","images/photo10.jpg"
-    ];
-    const images2 = [
-      "images/project2-1.jpg","images/project2-2.jpg","images/project2-3.jpg",
-      "images/project2-4.jpg","images/project2-5.jpg","images/project2-6.jpg"
-    ];
+  const images1 = [
+    "images/photo1.jpg","images/photo2.jpg","images/photo3.jpg","images/photo4.jpg",
+    "images/photo5.jpg","images/photo6.jpg","images/photo7.jpg","images/photo8.jpg",
+    "images/photo9.jpg","images/photo10.jpg"
+  ];
+  const images2 = [
+    "images/project2-1.jpg","images/project2-2.jpg","images/project2-3.jpg",
+    "images/project2-4.jpg","images/project2-5.jpg","images/project2-6.jpg"
+  ];
 
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightboxImg");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
 
-    function toggleGallery(id) {
-      const gallery = document.getElementById(id);
-      gallery.classList.toggle('active');
-      window.scrollTo({ top: gallery.offsetTop - 50, behavior: 'smooth' });
+  // ✅ 新增改良逻辑：打开新相册时关闭其他相册
+  function toggleGallery(id) {
+    const allGalleries = document.querySelectorAll('.gallery');
+    const clickedGallery = document.getElementById(id);
+
+    // 如果当前相册已经是展开的，则关闭它
+    if (clickedGallery.classList.contains('active')) {
+      clickedGallery.classList.remove('active');
+      return;
     }
 
-    function openLightbox(index, galleryName) {
-      currentGallery = (galleryName === 'images1') ? images1 : images2;
-      currentIndex = index;
-      lightbox.style.display = "block";
-      lightboxImg.src = currentGallery[index];
-    }
+    // 否则先关闭所有，再打开目标相册
+    allGalleries.forEach(g => g.classList.remove('active'));
+    clickedGallery.classList.add('active');
 
-    function closeLightbox() {
-      lightbox.style.display = "none";
-    }
+    // 平滑滚动到目标相册
+    window.scrollTo({ top: clickedGallery.offsetTop - 50, behavior: 'smooth' });
+  }
 
-    function changeSlide(step) {
-      currentIndex = (currentIndex + step + currentGallery.length) % currentGallery.length;
-      lightboxImg.src = currentGallery[currentIndex];
-    }
-  </script>
+  function openLightbox(index, galleryName) {
+    currentGallery = (galleryName === 'images1') ? images1 : images2;
+    currentIndex = index;
+    lightbox.style.display = "block";
+    lightboxImg.src = currentGallery[index];
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = "none";
+  }
+
+  function changeSlide(step) {
+    currentIndex = (currentIndex + step + currentGallery.length) % currentGallery.length;
+    lightboxImg.src = currentGallery[currentIndex];
+  }
+</script>
 </body>
 </html>
