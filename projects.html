@@ -6,167 +6,127 @@
   <title>Projects - YC LEE ARCHITECT</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      background-color: #0b1a33;
-      color: white;
-      font-family: "Poppins", sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+  body {
+    background-color: #0d1b2a;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
 
-    header {
-      background-color: #10264d;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  .album-section {
+    padding: 20px;
+    text-align: center;
+  }
 
-    .logo-text .yc {
-      color: orange;
-      font-weight: bold;
-    }
-    .logo-text {
-      font-size: 1.3rem;
-      font-weight: bold;
-    }
+  .album-button {
+    background-color: #ff8800;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    margin: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+  }
 
-    .nav-bar a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      transition: color 0.3s;
-    }
-    .nav-bar a:hover {
-      color: orange;
-    }
+  .album-button:hover {
+    background-color: #ffaa33;
+    transform: scale(1.05);
+  }
 
-    .hero {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(90deg, #0b1a33, #132e57);
-    }
-    .hero h2 {
-      font-size: 2rem;
-      color: orange;
-      margin-bottom: 10px;
-    }
+  /* ✅ 艺术感相册布局 */
+  .gallery {
+    display: none;
+    column-count: 4; /* 可调整列数 */
+    column-gap: 15px;
+    margin: 30px auto;
+    max-width: 1200px;
+    transition: all 0.6s ease;
+  }
 
-    /* 封面卡片区 */
-    .albums {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      padding: 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
+  /* ✅ 当展开时显示 */
+  .gallery.active {
+    display: block;
+    animation: fadeIn 0.8s ease;
+  }
 
-    .album-card {
-      background: #162b52;
-      border-radius: 15px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    .album-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.5);
-    }
+  /* ✅ Masonry风格的图片 */
+  .gallery img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    break-inside: avoid;
+    cursor: pointer;
+  }
 
-    .album-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .album-card h3 {
-      padding: 15px;
-      text-align: center;
-      font-size: 1.1rem;
-      color: white;
-      background-color: #132a4d;
-      margin: 0;
-    }
+  .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 136, 0, 0.5);
+  }
 
-    /* 相册展开区 */
-    .gallery {
-      display: none;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 10px;
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 10px;
-      animation: fadeIn 0.5s;
-    }
-    .gallery.active {
-      display: grid;
-    }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-    .gallery img {
-      width: 100%;
-      height: 140px;
-      border-radius: 10px;
-      object-fit: cover;
-      transition: transform 0.3s;
-      cursor: pointer;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
+  /* ✅ 弹窗样式保持 */
+  #lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 60px;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  #lightbox img {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    border-radius: 10px;
+  }
 
-    /* 灯箱样式 */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      text-align: center;
-      backdrop-filter: blur(3px);
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      margin-top: 5%;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(255,255,255,0.2);
-    }
+  .close {
+    position: absolute;
+    top: 30px; right: 50px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
-    .controls {
-      margin-top: 20px;
-    }
-    .controls button {
-      padding: 10px 20px;
-      margin: 0 10px;
-      border: none;
-      border-radius: 8px;
-      background: orange;
-      color: #0b1a33;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .controls button:hover {
-      background: #ffb84d;
-    }
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 35px;
+    font-weight: bold;
+    color: #ff8800;
+    padding: 10px;
+    transform: translateY(-50%);
+    transition: 0.3s;
+  }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #10264d;
-      color: white;
-      margin-top: 40px;
-    }
-  </style>
+  .prev:hover, .next:hover {
+    color: white;
+  }
+
+  .prev { left: 5%; }
+  .next { right: 5%; }
+
+  /* ✅ 响应式优化 */
+  @media screen and (max-width: 900px) {
+    .gallery { column-count: 2; }
+  }
+  @media screen and (max-width: 600px) {
+    .gallery { column-count: 1; }
+  }
+</style>
 </head>
 <body>
   <header>
