@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,77 +5,173 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About - YC LEE ARCHITECT</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a1a2f;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      background-color: #0d2344;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      border-bottom: 3px solid #ff7b00;
+    }
+
+    .logo-text {
+      font-size: 1.6rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .yc {
+      color: #ff7b00;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 18px;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff7b00;
+    }
+
+    /* ---------- Hero Section ---------- */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to bottom right, #0d2344, #142f52);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #ff7b00;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 10px auto;
+      line-height: 1.7;
+      color: #e0e6ef;
+    }
+
+    /* ---------- About Content ---------- */
+    .about-content {
+      padding: 80px 15%;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      position: relative;
+    }
+
+    .about-content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 10%;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, #ff7b00, transparent);
+    }
+
+    .about-block {
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 4px solid #ff7b00;
+      padding: 40px;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .about-block:hover {
+      transform: translateY(-5px);
+    }
+
+    .about-block h2 {
+      color: #ff7b00;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    .about-block p {
+      line-height: 1.8;
+      font-size: 1rem;
+      color: #dce4f0;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #0d2344;
+      border-top: 3px solid #ff7b00;
+      color: #e0e6ef;
+      font-size: 0.9rem;
+    }
+
+    .fb-link {
+      color: #ff7b00;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .fb-link:hover {
+      color: #ffffff;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="logo-container">
-  <div class="logo-text">
-    <span class="yc">YC</span>
-    <span class="lee Architect"> LEE  Architect</span>
-  </div>
-  <div class="lang-select">
-    <input class="lang-input" type="text" placeholder="Search Language..." data-key="search_placeholder" oninput="filterLanguages()" onclick="toggleList()" />
-    <div class="lang-list" id="langList"></div>
-  </div>
-</div>
-  
-<nav class="nav-bar">
-  <a href="index.html" data-key="home">Home</a>
-  <a href="projects.html" data-key="projects">Projects</a>
-  <a href="about.html" data-key="about">About</a>
-  <a href="contact.html" data-key="contact">Contact</a>
-</nav>
-
-</header>
+    <div class="logo-text">
+      <span class="yc">YC</span>
+      <span> LEE Architect</span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <section class="hero">
+    <h1>About Us</h1>
     <p data-lang="en">We primarily serve: Perak, Genting, Kedah, Johor, Kuala Lumpur, and also handle overseas projects.</p>
     <p data-lang="zh">我们主要服务于：霹雳州、云顶高原、吉打州、柔佛州、吉隆坡，并承接海外项目。</p>
-    <p data-lang="zh-TW">我們主要服務於：霹靂州、雲頂高原、吉打州、柔佛州、吉隆坡，並承接海外計畫。</p>
-    <p data-lang="la">ພວກເຮົາໃຫ້ບໍລິການຕົ້ນຕໍ: Perak, Genting, Kedah, Johor, Kuala Lumpur, ແລະຍັງຈັດການໂຄງການຢູ່ຕ່າງປະເທດ.</p>
-    <p data-lang="ja">当社は主にペラ州、ゲンティン、ケダ州、ジョホール州、クアラルンプールにサービスを提供しており、海外プロジェクトも取り扱っています。</p>
     <p data-lang="ms">Kami berkhidmat terutamanya: Perak, Genting, Kedah, Johor, Kuala Lumpur, dan juga mengendalikan projek luar negara.</p>
-    <p data-lang="ko">우리는 주로 페락, 겐팅, 케다, 조호르, 쿠알라룸푸르에 서비스를 제공하며, 해외 프로젝트도 진행합니다.</p>
-    <p data-lang="ru">В основном мы обслуживаем: Перак, Гентинг, Кедах, Джохор, Куала-Лумпур, а также занимаемся зарубежными проектами.</p>
-    <p data-lang="th">เราให้บริการเป็นหลัก: เประ, เก็นติ้ง, เคดาห์, ยะโฮร์, กัวลาลัมเปอร์ และยังดูแลโครงการในต่างประเทศอีกด้วย</p>  
-    <p data-lang="vi">Chúng tôi chủ yếu phục vụ tại: Perak, Genting, Kedah, Johor, Kuala Lumpur và cũng nhận các dự án quốc tế.</p>
-    <p data-lang="id">Kami terutama melayani: Perak, Genting, Kedah, Johor, Kuala Lumpur, dan juga menangani proyek di luar negeri.</p>
-    <p data-lang="ar" dir="rtl">نحن نخدم بشكل أساسي في: بيراك، جنتنج، كيدا، جوهور، كوالالمبور، ونتولى أيضًا مشاريع دولية.</p>
-    <p data-lang="fr">Nous desservons principalement : Perak, Genting, Kedah, Johor, Kuala Lumpur, et nous gérons également des projets à l'international.</p>
-    <p data-lang="es">Atendemos principalmente en: Perak, Genting, Kedah, Johor, Kuala Lumpur, y también manejamos proyectos internacionales.</p>
-    <p data-lang="de">Wir bedienen hauptsächlich: Perak, Genting, Kedah, Johor, Kuala Lumpur, und übernehmen auch internationale Projekte.</p>
-    <p data-lang="pt">Atendemos principalmente: Perak, Genting, Kedah, Johor, Kuala Lumpur, e também realizamos projetos no exterior.</p>
-    <p data-lang="it">Serviamo principalmente: Perak, Genting, Kedah, Johor, Kuala Lumpur, e gestiamo anche progetti all'estero.</p>
-    <p data-lang="nl">Wij bedienen voornamelijk: Perak, Genting, Kedah, Johor, Kuala Lumpur, en nemen ook internationale projecten aan.</p>
-    <p data-lang="sv">Vi betjänar främst: Perak, Genting, Kedah, Johor, Kuala Lumpur och hanterar även internationella projekt.</p>
-    
   </section>
 
+  <section class="about-content">
+    <div class="about-block">
+      <h2>我们的理念 / Our Philosophy</h2>
+      <p>建筑，不只是结构与空间，更是人与环境之间的对话。我们致力于以简洁、稳重与优雅的设计语言，创造出能经得起时间考验的作品。</p>
+    </div>
+
+    <div class="about-block">
+      <h2>我们的使命 / Our Mission</h2>
+      <p>以专业精神与创意思维，打造功能与美感并存的建筑。我们专注于细节，尊重每一个场地、材料与人的故事。</p>
+    </div>
+
+    <div class="about-block">
+      <h2>我们的团队 / Our Team</h2>
+      <p>由经验丰富的建筑师与设计师组成，结合不同领域的专长，共同为客户提供完整与高效的设计解决方案。</p>
+    </div>
   </section>
 
-  </section>
-
-<section class="gallery">
-  <h2>我们的作品</h2>
-  <div class="photo-grid">
-    <img src="images/photo1.jpg" alt="photo1">
-    <img src="images/photo2.jpg" alt="photo2">
-    <img src="images/photo3.jpg" alt="photo3">
-    <img src="images/photo4.jpg" alt="photo4">
-    <img src="images/photo5.jpg" alt="photo5">
-    <img src="images/photo6.jpg" alt="photo6">
-    <img src="images/photo7.jpg" alt="photo7">
-    <img src="images/photo8.jpg" alt="photo8">
-    <img src="images/photo9.jpg" alt="photo9">
-    <img src="images/photo10.jpg" alt="photo10">
-    <img src="images/photo11.jpg" alt="photo11">
-    <img src="images/photo12.jpg" alt="photo12">
-    <img src="images/photo13.jpg" alt="photo13">
-    <img src="images/photo14.jpg" alt="photo14">
-    <img src="images/photo15.jpg" alt="photo15">
-    <img src="images/photo16.jpg" alt="photo16">
-  </div>
-</section>
   <footer>
     &copy; 2025 YC Lee Architect. All rights reserved. <br>
     <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link">Facebook</a>
