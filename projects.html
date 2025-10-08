@@ -6,48 +6,121 @@
   <title>Projects - YC LEE ARCHITECT</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* 封面 */
-    .album-cover {
-      text-align: center;
-      margin: 30px auto;
-      cursor: pointer;
-      max-width: 400px;
-    }
-    .album-cover img {
-      width: 100%;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
-    .album-cover img:hover {
-      transform: scale(1.05);
-    }
-    .album-cover h3 {
-      margin-top: 10px;
-      font-size: 1.2rem;
+    body {
+      background-color: #0b1a33;
+      color: white;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
-    /* 相册 */
-    .gallery {
-      display: none; /* 默认隐藏 */
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 10px;
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 10px;
+    header {
+      background-color: #10264d;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
+    .logo-text .yc {
+      color: orange;
+      font-weight: bold;
+    }
+    .logo-text {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color 0.3s;
+    }
+    .nav-bar a:hover {
+      color: orange;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(90deg, #0b1a33, #132e57);
+    }
+    .hero h2 {
+      font-size: 2rem;
+      color: orange;
+      margin-bottom: 10px;
+    }
+
+    /* 封面卡片区 */
+    .albums {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .album-card {
+      background: #162b52;
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .album-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+    }
+
+    .album-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .album-card h3 {
+      padding: 15px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: white;
+      background-color: #132a4d;
+      margin: 0;
+    }
+
+    /* 相册展开区 */
+    .gallery {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 10px;
+      animation: fadeIn 0.5s;
+    }
+    .gallery.active {
+      display: grid;
+    }
+
     .gallery img {
       width: 100%;
-      height: 150px;
+      height: 140px;
+      border-radius: 10px;
       object-fit: cover;
-      border-radius: 8px;
-      cursor: pointer;
       transition: transform 0.3s;
+      cursor: pointer;
     }
     .gallery img:hover {
       transform: scale(1.05);
     }
 
-    /* 灯箱 */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 灯箱样式 */
     .lightbox {
       display: none;
       position: fixed;
@@ -56,15 +129,18 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.95);
       text-align: center;
+      backdrop-filter: blur(3px);
     }
     .lightbox img {
       max-width: 90%;
       max-height: 80%;
       margin-top: 5%;
-      border-radius: 8px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.2);
     }
+
     .controls {
       margin-top: 20px;
     }
@@ -72,49 +148,58 @@
       padding: 10px 20px;
       margin: 0 10px;
       border: none;
-      border-radius: 5px;
-      background: white;
+      border-radius: 8px;
+      background: orange;
+      color: #0b1a33;
       cursor: pointer;
-      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s;
     }
     .controls button:hover {
-      background: #ddd;
+      background: #ffb84d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #10264d;
+      color: white;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo-container">
-      <div class="logo-text">
-        <span class="yc">YC</span>
-        <span class="lee Architect"> LEE  Architect</span>
-      </div>
-      <div class="lang-select">
-        <input class="lang-input" type="text" placeholder="Search Language..." data-key="search_placeholder" oninput="filterLanguages()" onclick="toggleList()" />
-        <div class="lang-list" id="langList"></div>
-      </div>
+    <div class="logo-text">
+      <span class="yc">YC</span> LEE Architect
     </div>
-  
     <nav class="nav-bar">
-      <a href="index.html" data-key="home">Home</a>
-      <a href="projects.html" data-key="projects">Projects</a>
-      <a href="about.html" data-key="about">About</a>
-      <a href="contact.html" data-key="contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h2 data-lang="en">Featured Projects</h2>
-    <!-- 其他语言标题省略 -->
+    <h2>Featured Projects</h2>
+    <p>Explore our recent site works and inspections</p>
   </section>
 
-  <!-- 封面 1 -->
-  <div class="album-cover" onclick="showGallery('gallery1')">
-    <img src="images/photo1.jpg" alt="Project Album Cover">
-    <h3>👷‍♂ Site Meeting & Inspection 👷‍♀</h3>
-  </div>
+  <!-- 项目卡片区 -->
+  <section class="albums">
+    <div class="album-card" onclick="toggleGallery('gallery1')">
+      <img src="images/photo1.jpg" alt="Project 1">
+      <h3>👷‍♂ Site Meeting & Inspection 👷‍♀</h3>
+    </div>
 
-  <!-- 相册组 1 -->
+    <div class="album-card" onclick="toggleGallery('gallery2')">
+      <img src="images/project2-1.jpg" alt="Project 2">
+      <h3>🏢 Quality Check: By YC Lee Architect’s Eye 🏢</h3>
+    </div>
+  </section>
+
+  <!-- 相册内容 1 -->
   <div id="gallery1" class="gallery">
     <img src="images/photo1.jpg" onclick="openLightbox(0, 'images1')">
     <img src="images/photo2.jpg" onclick="openLightbox(1, 'images1')">
@@ -126,21 +211,9 @@
     <img src="images/photo8.jpg" onclick="openLightbox(7, 'images1')">
     <img src="images/photo9.jpg" onclick="openLightbox(8, 'images1')">
     <img src="images/photo10.jpg" onclick="openLightbox(9, 'images1')">
-    <img src="images/photo11.jpg" onclick="openLightbox(10, 'images1')">
-    <img src="images/photo12.jpg" onclick="openLightbox(11, 'images1')">
-    <img src="images/photo13.jpg" onclick="openLightbox(12, 'images1')">
-    <img src="images/photo14.jpg" onclick="openLightbox(13, 'images1')">
-    <img src="images/photo15.jpg" onclick="openLightbox(14, 'images1')">
-    <img src="images/photo16.jpg" onclick="openLightbox(15, 'images1')">
   </div>
 
-  <!-- 封面 2 -->
-  <div class="album-cover" onclick="showGallery('gallery2')">
-    <img src="images/project2-1.jpg" alt="Project 2 Album Cover">
-    <h3>🏢 Quality Check: By Yc Lee Architect’s Eye on Site 🏢</h3>
-  </div>
-
-  <!-- 相册组 2 (8 张照片) -->
+  <!-- 相册内容 2 -->
   <div id="gallery2" class="gallery">
     <img src="images/project2-1.jpg" onclick="openLightbox(0, 'images2')">
     <img src="images/project2-2.jpg" onclick="openLightbox(1, 'images2')">
@@ -148,8 +221,6 @@
     <img src="images/project2-4.jpg" onclick="openLightbox(3, 'images2')">
     <img src="images/project2-5.jpg" onclick="openLightbox(4, 'images2')">
     <img src="images/project2-6.jpg" onclick="openLightbox(5, 'images2')">
-    <img src="images/project2-7.jpg" onclick="openLightbox(6, 'images2')">
-    <img src="images/project2-8.jpg" onclick="openLightbox(7, 'images2')">
   </div>
 
   <!-- 灯箱 -->
@@ -169,33 +240,37 @@
   <script>
     let currentIndex = 0;
     let currentGallery = [];
+
     const images1 = [
       "images/photo1.jpg","images/photo2.jpg","images/photo3.jpg","images/photo4.jpg",
       "images/photo5.jpg","images/photo6.jpg","images/photo7.jpg","images/photo8.jpg",
-      "images/photo9.jpg","images/photo10.jpg","images/photo11.jpg","images/photo12.jpg",
-      "images/photo13.jpg","images/photo14.jpg","images/photo15.jpg","images/photo16.jpg"
+      "images/photo9.jpg","images/photo10.jpg"
     ];
     const images2 = [
-      "images/project2-1.jpg","images/project2-2.jpg","images/project2-3.jpg","images/project2-4.jpg",
-      "images/project2-5.jpg","images/project2-6.jpg","images/project2-7.jpg","images/project2-8.jpg"
+      "images/project2-1.jpg","images/project2-2.jpg","images/project2-3.jpg",
+      "images/project2-4.jpg","images/project2-5.jpg","images/project2-6.jpg"
     ];
 
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightboxImg");
 
-    function showGallery(id) {
-      document.getElementById(id).style.display = "grid";
-      event.currentTarget.style.display = "none";
+    function toggleGallery(id) {
+      const gallery = document.getElementById(id);
+      gallery.classList.toggle('active');
+      window.scrollTo({ top: gallery.offsetTop - 50, behavior: 'smooth' });
     }
+
     function openLightbox(index, galleryName) {
       currentGallery = (galleryName === 'images1') ? images1 : images2;
       currentIndex = index;
       lightbox.style.display = "block";
       lightboxImg.src = currentGallery[index];
     }
+
     function closeLightbox() {
       lightbox.style.display = "none";
     }
+
     function changeSlide(step) {
       currentIndex = (currentIndex + step + currentGallery.length) % currentGallery.length;
       lightboxImg.src = currentGallery[currentIndex];
