@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,56 +5,165 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>YC LEE ARCHITECT</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ---------- 全局样式 ---------- */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #0c1c36, #061224);
+      color: white;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      background-color: rgba(10, 25, 50, 0.9);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 60px;
+      border-bottom: 2px solid rgba(255, 166, 0, 0.5);
+    }
+
+    .logo-text {
+      font-size: 1.7rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .yc {
+      color: orange;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 18px;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: orange;
+    }
+
+    /* ---------- Hero Section ---------- */
+    .hero {
+      height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(to bottom right, #0c1c36, #132d52);
+      overflow: hidden;
+    }
+
+    /* 动态橙色光晕 */
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,165,0,0.2) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      border-radius: 50%;
+      animation: glow 6s infinite alternate ease-in-out;
+    }
+
+    @keyframes glow {
+      from { transform: scale(1); opacity: 0.6; }
+      to { transform: scale(1.2); opacity: 1; }
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: orange;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin: 0;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-line {
+      width: 80px;
+      height: 3px;
+      background: orange;
+      margin: 25px 0;
+      border-radius: 2px;
+      animation: lineGrow 1.5s ease-out;
+    }
+
+    @keyframes lineGrow {
+      from { width: 0; opacity: 0; }
+      to { width: 80px; opacity: 1; }
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #cfd7e6;
+      max-width: 600px;
+      margin: 10px auto 0;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeIn 2s 1s forwards;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #0b1b33;
+      border-top: 2px solid rgba(255,165,0,0.4);
+      font-size: 0.9rem;
+      color: #cfd7e6;
+    }
+
+    .fb-link {
+      color: orange;
+      text-decoration: none;
+      margin-left: 10px;
+      transition: 0.3s;
+    }
+
+    .fb-link:hover {
+      color: white;
+    }
+  </style>
 </head>
+
 <body>
   <header>
-    <div class="logo-container">
-  <div class="logo-text">
-    <span class="yc">YC</span>
-    <span class="lee Architect"> LEE  Architect</span>
-  </div>
-  <div class="lang-select">
-    <input class="lang-input" type="text" placeholder="Search Language..." data-key="search_placeholder" oninput="filterLanguages()" onclick="toggleList()" />
-    <div class="lang-list" id="langList"></div>
-  </div>
-</div>
-  
-<nav class="nav-bar">
-  <a href="index.html" data-key="home">Home</a>
-  <a href="projects.html" data-key="projects">Projects</a>
-  <a href="about.html" data-key="about">About</a>
-  <a href="contact.html" data-key="contact">Contact</a>
-</nav>
-
-</header>
+    <div class="logo-text">
+      <span class="yc">YC</span> LEE Architect
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <section class="hero">
     <h1 data-lang="en">Craft · Architecture · Space</h1>
-    <h1 data-lang="zh">匠心 · 建筑 · 空间</h1>
-    <h1 data-lang="zh-TW">匠心・建築・空間</h1>
-    <h1 data-lang="la">ສ້າງສັນ · ສະຖາປັດຍະກຳ · ພື້ນທີ່</h1>
-    <h1 data-lang="ja">匠の技 · 建築 · 空間</h1>
-    <h1 data-lang="ms">Seni Bina · Reka Bentuk · Ruang</h1>
-    <h1 data-lang="ko">공예 · 건축 · 우주</h1>
-    <h1 data-lang="ru">Ремесло · Архитектура · Космос</h1>
-    <h1 data-lang="th"> งานฝีมือ · สถาปัตยกรรม · อวกาศ</h1>
-    <h1 data-lang="vi">Thủ công · Kiến trúc · Không gian</h1>
-    <h1 data-lang="id">Kerajinan · Arsitektur · Ruang</h1>
-    <h1 data-lang="ar" dir="rtl">حِرَف · العمارة · الفضاء</h1>
-    <h1 data-lang="fr">Artisanat · Architecture · Espace</h1>
-    <h1 data-lang="es">Artesanía · Arquitectura · Espacio</h1>
-    <h1 data-lang="de">Handwerk · Architektur · Raum</h1>
-    <h1 data-lang="pt">Artesanato · Arquitetura · Espaço</h1>
-    <h1 data-lang="it">Artigianato · Architettura · Spazio</h1>
-    <h1 data-lang="nl">Ambacht · Architectuur · Ruimte</h1>
-    <h1 data-lang="sv">Hantverk · Arkitektur · Rymd</h1>
+    <div class="hero-line"></div>
+    <p data-lang="en">Designing timeless spaces that connect people, structure, and emotion through the language of architecture.</p>
   </section>
 
   <footer>
     &copy; 2025 YC Lee Architect. All rights reserved.
-  <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link">Facebook</a></footer>
-
-  <script src="script.js"></script>
-
+    <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link">Facebook</a>
+  </footer>
 </body>
 </html>
