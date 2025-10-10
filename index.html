@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* 基本重置 */
     * {
       margin: 0;
       padding: 0;
@@ -16,12 +15,53 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      background-color: #001f3f; /* 深蓝底色 */
+      background-color: #001f3f;
       color: white;
       overflow-x: hidden;
     }
 
-    /* 星空背景层 */
+    /* ===== 导航栏 ===== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(0, 15, 40, 0.85);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 50px;
+      border-bottom: 1px solid orange;
+      backdrop-filter: blur(6px);
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    header h1 span {
+      color: orange;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: orange;
+    }
+
+    /* ===== 星空背景 ===== */
     #stars {
       position: fixed;
       top: 0;
@@ -30,22 +70,22 @@
       height: 100%;
       background: radial-gradient(white, rgba(255,255,255,0) 70%) repeat;
       background-size: 2px 2px;
-      z-index: 0; /* 确保在最底层 */
+      z-index: 0;
       animation: moveStars 200s linear infinite;
     }
 
     @keyframes moveStars {
-      from {background-position: 0 0;}
-      to {background-position: -10000px 5000px;}
+      from { background-position: 0 0; }
+      to { background-position: -10000px 5000px; }
     }
 
-    /* 英雄区 */
+    /* ===== 英雄区 ===== */
     .hero {
       position: relative;
-      z-index: 2; /* 确保文字在星空之上 */
+      z-index: 2;
       text-align: center;
-      padding-top: 25vh;
-      padding-bottom: 20vh;
+      padding-top: 30vh;
+      padding-bottom: 25vh;
       background: rgba(0, 0, 0, 0.4);
       animation: fadeIn 2s ease-out;
     }
@@ -64,7 +104,6 @@
       animation: fadeInUp 2.2s ease-out;
     }
 
-    /* View Projects 按钮 */
     .btn {
       display: inline-block;
       padding: 12px 28px;
@@ -88,7 +127,7 @@
       50% { transform: translateY(-6px); }
     }
 
-    /* 页面滚动淡入效果 */
+    /* ===== 滚动淡入区块 ===== */
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
@@ -100,7 +139,6 @@
       transform: translateY(0);
     }
 
-    /* 底部区块示例 */
     .section {
       position: relative;
       z-index: 1;
@@ -113,18 +151,35 @@
     @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
     @keyframes slideIn { from {opacity: 0; transform: translateY(-40px);} to {opacity: 1; transform: translateY(0);} }
     @keyframes fadeInUp { from {opacity: 0; transform: translateY(40px);} to {opacity: 1; transform: translateY(0);} }
+
   </style>
 </head>
 <body>
 
+  <!-- 星空背景 -->
   <div id="stars"></div>
 
+  <!-- 导航栏 -->
+  <header>
+    <h1><span>YC</span> LEE Architect</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 英雄区 -->
   <section class="hero">
     <h1>Welcome to YC LEE ARCHITECT</h1>
     <p>Designing spaces that inspire creativity and comfort.</p>
     <a href="projects.html" class="btn">View Projects</a>
   </section>
 
+  <!-- 下方内容区 -->
   <section class="section fade-in">
     <h2>About Us</h2>
     <p>We are an architectural firm dedicated to creating sustainable and aesthetic designs.</p>
@@ -136,7 +191,7 @@
   </section>
 
   <script>
-    // 滚动淡入动画控制
+    // 滚动淡入动画
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
