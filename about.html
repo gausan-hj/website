@@ -3,195 +3,216 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects - YC LEE ARCHITECT</title>
+  <title>About - YC LEE ARCHITECT</title>
   <link rel="stylesheet" href="style.css">
-<style>
-  body {
-    background-color: #0b1a33;
-    color: white;
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a1a2f;
+      color: #ffffff;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
 
-  header {
-    background-color: #10264d;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    /* 背景动画层 */
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      background: radial-gradient(circle at bottom left, #ff7b0011, transparent 60%),
+                  radial-gradient(circle at top right, #ff7b0011, transparent 60%),
+                  #0a1a2f;
+      animation: bgMove 20s linear infinite alternate;
+    }
 
-  .logo-text .yc {
-    color: orange;
-    font-weight: bold;
-  }
-  .logo-text {
-    font-size: 1.3rem;
-    font-weight: bold;
-  }
+    @keyframes bgMove {
+      0% {
+        background-position: 0% 0%;
+      }
+      100% {
+        background-position: 100% 100%;
+      }
+    }
 
-  .nav-bar a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    transition: color 0.3s;
-  }
-  .nav-bar a:hover {
-    color: orange;
-  }
+    /* 光线动画 */
+    .orange-lines {
+      position: fixed;
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        100deg,
+        rgba(255, 123, 0, 0.08) 0,
+        rgba(255, 123, 0, 0.08) 2px,
+        transparent 4px,
+        transparent 80px
+      );
+      animation: moveLines 40s linear infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
 
-  .hero {
-    text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(90deg, #0b1a33, #132e57);
-  }
-  .hero h2 {
-    font-size: 2rem;
-    color: orange;
-    margin-bottom: 10px;
-  }
+    @keyframes moveLines {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-25%);
+      }
+    }
 
-  /* 封面卡片区 */
-  .albums {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    padding: 40px;
-    max-width: 1200px;
-    margin: auto;
-  }
+    /* ---------- Header ---------- */
+    header {
+      position: relative;
+      z-index: 5;
+      background-color: #0d2344cc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      border-bottom: 3px solid #ff7b00;
+      backdrop-filter: blur(6px);
+    }
 
-  .album-card {
-    background: #162b52;
-    border-radius: 15px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  }
-  .album-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
-  }
+    .logo-text {
+      font-size: 1.6rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-  .album-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  .album-card h3 {
-    padding: 15px;
-    text-align: center;
-    font-size: 1.1rem;
-    color: white;
-    background-color: #132a4d;
-    margin: 0;
-  }
+    .yc {
+      color: #ff7b00;
+    }
 
-  /* ✅ 艺术感相册布局（Masonry风格） */
-  .gallery {
-    display: none;
-    column-count: 4; /* 列数可改为3或5 */
-    column-gap: 15px;
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 10px;
-    animation: fadeIn 0.6s ease;
-  }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 18px;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
 
-  .gallery.active {
-    display: block;
-  }
+    nav a:hover {
+      color: #ff7b00;
+    }
 
-  .gallery img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    object-fit: cover;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    break-inside: avoid;
-    cursor: pointer;
-  }
+    /* ---------- Hero Section ---------- */
+    .hero {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to bottom right, #0d2344aa, #142f52aa);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(4px);
+    }
 
-  .gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(255, 136, 0, 0.5);
-  }
+    .hero h1 {
+      font-size: 3rem;
+      color: #ff7b00;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 10px auto;
+      line-height: 1.7;
+      color: #e0e6ef;
+    }
 
-  /* 灯箱样式 */
-  .lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    text-align: center;
-    backdrop-filter: blur(3px);
-  }
+    /* ---------- About Content ---------- */
+    .about-content {
+      position: relative;
+      z-index: 3;
+      padding: 80px 15%;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
 
-  .lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    margin-top: 5%;
-    border-radius: 12px;
-    box-shadow: 0 0 25px rgba(255,255,255,0.2);
-  }
+    .about-content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 10%;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, #ff7b00, transparent);
+    }
 
-  .controls {
-    margin-top: 20px;
-  }
+    .about-block {
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 4px solid #ff7b00;
+      padding: 40px;
+      border-radius: 12px;
+      transform: translateY(40px);
+      opacity: 0;
+      transition: all 0.8s ease-out;
+      backdrop-filter: blur(4px);
+    }
 
-  .controls button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    border: none;
-    border-radius: 8px;
-    background: orange;
-    color: #0b1a33;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
+    .about-block.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
 
-  .controls button:hover {
-    background: #ffb84d;
-  }
+    .about-block h2 {
+      color: #ff7b00;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
 
-  footer {
-    text-align: center;
-    padding: 20px;
-    background: #10264d;
-    color: white;
-    margin-top: 40px;
-  }
+    .about-block p {
+      line-height: 1.8;
+      font-size: 1rem;
+      color: #dce4f0;
+    }
 
-  /* 响应式设计 */
-  @media screen and (max-width: 1000px) {
-    .gallery { column-count: 3; }
-  }
-  @media screen and (max-width: 700px) {
-    .gallery { column-count: 2; }
-  }
-  @media screen and (max-width: 500px) {
-    .gallery { column-count: 1; }
-  }
-</style>
+    /* ---------- Footer ---------- */
+    footer {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #0d2344cc;
+      border-top: 3px solid #ff7b00;
+      color: #e0e6ef;
+      font-size: 0.9rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .fb-link {
+      color: #ff7b00;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .fb-link:hover {
+      color: #ffffff;
+    }
+  </style>
 </head>
 <body>
+  <!-- 背景动画层 -->
+  <div class="bg-animation"></div>
+  <div class="orange-lines"></div>
+
   <header>
     <div class="logo-text">
-      <span class="yc">YC</span> LEE Architect
+      <span class="yc">YC</span>
+      <span> LEE Architect</span>
     </div>
-    <nav class="nav-bar">
+    <nav>
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
       <a href="about.html">About</a>
@@ -200,112 +221,47 @@
   </header>
 
   <section class="hero">
-    <h2>Featured Projects</h2>
-    <p>Explore our recent site works and inspections</p>
+    <h1>About Us</h1>
+    <p>We primarily serve: Perak, Genting, Kedah, Johor, Kuala Lumpur, and also handle overseas projects.</p>
   </section>
 
-  <!-- 项目卡片区 -->
-  <section class="albums">
-    <div class="album-card" onclick="toggleGallery('gallery1')">
-      <img src="images/photo1.jpg" alt="Project 1">
-      <h3>👷‍♂ Site Meeting & Inspection 👷‍♀</h3>
+  <section class="about-content">
+    <div class="about-block">
+      <h2>Our Philosophy</h2>
+      <p>Architecture is not merely about structures and spaces—it is about the dialogue between people and their environment. We aim to design spaces that balance simplicity, elegance, and timelessness.</p>
     </div>
 
-    <div class="album-card" onclick="toggleGallery('gallery2')">
-      <img src="images/project2-1.jpg" alt="Project 2">
-      <h3>🏢 Quality Check: By YC Lee Architect’s Eye 🏢</h3>
+    <div class="about-block">
+      <h2>Our Mission</h2>
+      <p>We are committed to crafting designs that unite function and beauty. Every detail matters—from materials to form—to ensure each project tells its own unique story.</p>
+    </div>
+
+    <div class="about-block">
+      <h2>Our Team</h2>
+      <p>Our team consists of passionate architects and designers from various disciplines, working together to deliver professional, creative, and sustainable solutions for every project.</p>
     </div>
   </section>
-
-  <!-- 相册内容 1 -->
-  <div id="gallery1" class="gallery">
-    <img src="images/photo1.jpg" onclick="openLightbox(0, 'images1')">
-    <img src="images/photo2.jpg" onclick="openLightbox(1, 'images1')">
-    <img src="images/photo3.jpg" onclick="openLightbox(2, 'images1')">
-    <img src="images/photo4.jpg" onclick="openLightbox(3, 'images1')">
-    <img src="images/photo5.jpg" onclick="openLightbox(4, 'images1')">
-    <img src="images/photo6.jpg" onclick="openLightbox(5, 'images1')">
-    <img src="images/photo7.jpg" onclick="openLightbox(6, 'images1')">
-    <img src="images/photo8.jpg" onclick="openLightbox(7, 'images1')">
-    <img src="images/photo9.jpg" onclick="openLightbox(8, 'images1')">
-    <img src="images/photo10.jpg" onclick="openLightbox(9, 'images1')">
-  </div>
-
-  <!-- 相册内容 2 -->
-  <div id="gallery2" class="gallery">
-    <img src="images/project2-1.jpg" onclick="openLightbox(0, 'images2')">
-    <img src="images/project2-2.jpg" onclick="openLightbox(1, 'images2')">
-    <img src="images/project2-3.jpg" onclick="openLightbox(2, 'images2')">
-    <img src="images/project2-4.jpg" onclick="openLightbox(3, 'images2')">
-    <img src="images/project2-5.jpg" onclick="openLightbox(4, 'images2')">
-    <img src="images/project2-6.jpg" onclick="openLightbox(5, 'images2')">
-  </div>
-
-  <!-- 灯箱 -->
-  <div id="lightbox" class="lightbox">
-    <img id="lightboxImg" src="">
-    <div class="controls">
-      <button onclick="changeSlide(-1)">Prev</button>
-      <button onclick="closeLightbox()">Close</button>
-      <button onclick="changeSlide(1)">Next</button>
-    </div>
-  </div>
 
   <footer>
-    &copy; 2025 YC Lee Architect. All rights reserved.
+    &copy; 2025 YC Lee Architect. All rights reserved. <br>
+    <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link">Facebook</a>
   </footer>
 
-<script>
-  let currentIndex = 0;
-  let currentGallery = [];
+  <script>
+    // 滚动时触发淡入
+    const blocks = document.querySelectorAll('.about-block');
 
-  const images1 = [
-    "images/photo1.jpg","images/photo2.jpg","images/photo3.jpg","images/photo4.jpg",
-    "images/photo5.jpg","images/photo6.jpg","images/photo7.jpg","images/photo8.jpg",
-    "images/photo9.jpg","images/photo10.jpg"
-  ];
-  const images2 = [
-    "images/project2-1.jpg","images/project2-2.jpg","images/project2-3.jpg",
-    "images/project2-4.jpg","images/project2-5.jpg","images/project2-6.jpg"
-  ];
+    const revealOnScroll = () => {
+      blocks.forEach(block => {
+        const rect = block.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          block.classList.add('visible');
+        }
+      });
+    };
 
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightboxImg");
-
-  // ✅ 新增改良逻辑：打开新相册时关闭其他相册
-  function toggleGallery(id) {
-    const allGalleries = document.querySelectorAll('.gallery');
-    const clickedGallery = document.getElementById(id);
-
-    // 如果当前相册已经是展开的，则关闭它
-    if (clickedGallery.classList.contains('active')) {
-      clickedGallery.classList.remove('active');
-      return;
-    }
-
-    // 否则先关闭所有，再打开目标相册
-    allGalleries.forEach(g => g.classList.remove('active'));
-    clickedGallery.classList.add('active');
-
-    // 平滑滚动到目标相册
-    window.scrollTo({ top: clickedGallery.offsetTop - 50, behavior: 'smooth' });
-  }
-
-  function openLightbox(index, galleryName) {
-    currentGallery = (galleryName === 'images1') ? images1 : images2;
-    currentIndex = index;
-    lightbox.style.display = "block";
-    lightboxImg.src = currentGallery[index];
-  }
-
-  function closeLightbox() {
-    lightbox.style.display = "none";
-  }
-
-  function changeSlide(step) {
-    currentIndex = (currentIndex + step + currentGallery.length) % currentGallery.length;
-    lightboxImg.src = currentGallery[currentIndex];
-  }
-</script>
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 </body>
 </html>
