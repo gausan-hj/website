@@ -251,21 +251,29 @@
     <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link">Facebook</a>
   </footer>
 
-  <script>
-    /* ---------- 动态星点生成 ---------- */
-    const starsContainer = document.getElementById("stars");
-    for (let i = 0; i < 60; i++) {
-      const star = document.createElement("div");
-      star.classList.add("star");
-      const size = Math.random() * 2 + 1;
-      const duration = Math.random() * 6 + 4;
-      star.style.width = ${size}px;
-      star.style.height = ${size}px;
-      star.style.top = ${Math.random() * 100}%;
-      star.style.left = ${Math.random() * 100}%;
-      star.style.animationDuration = ${duration}s;
-      starsContainer.appendChild(star);
-    }
+ <script>
+  /* ---------- 动态星点生成 ---------- */
+  const starsContainer = document.getElementById("stars");
+  for (let i = 0; i < 60; i++) {
+    const star = document.createElement("div");
+    star.classList.add("star");
+    const size = Math.random() * 2 + 1;
+    const duration = Math.random() * 6 + 4;
+    star.style.width = ${size}px;
+    star.style.height = ${size}px;
+    star.style.top = ${Math.random() * 100}%;
+    star.style.left = ${Math.random() * 100}%;
+    star.style.animationDuration = ${duration}s;
+    starsContainer.appendChild(star);
+  }
+
+  /* ---------- 修复：立即显示文字与按钮 ---------- */
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.hero h1, .hero-line, .hero p, .hero .btn, footer')
+      .forEach(el => {
+        el.classList.add('show');
+      });
+  });
 
     /* ---------- 滚动淡入逻辑（增强版） ---------- */
     const fadeElems = document.querySelectorAll(".hero h1, .hero-line, .hero p, .hero .btn, footer");
