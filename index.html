@@ -251,7 +251,7 @@
     <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link">Facebook</a>
   </footer>
 
- <script>
+<script>
   /* ---------- 动态星点生成 ---------- */
   const starsContainer = document.getElementById("stars");
   for (let i = 0; i < 60; i++) {
@@ -274,30 +274,6 @@
         el.classList.add('show');
       });
   });
-
-    /* ---------- 滚动淡入逻辑（增强版） ---------- */
-    const fadeElems = document.querySelectorAll(".hero h1, .hero-line, .hero p, .hero .btn, footer");
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
-      });
-    }, { threshold: 0.3 });
-
-    fadeElems.forEach(el => observer.observe(el));
-
-    function revealInView() {
-      fadeElems.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.8) {
-          el.classList.add("show");
-        }
-      });
-    }
-
-    window.addEventListener('load', revealInView);
-    window.addEventListener('resize', revealInView);
-    window.addEventListener('scroll', revealInView);
-  </script>
+</script>
 </body>
 </html>
