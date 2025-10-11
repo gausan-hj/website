@@ -4,188 +4,226 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects - YC LEE ARCHITECT</title>
-  <link rel="stylesheet" href="style.css">
-<style>
-  body {
-    background-color: #0b1a33;
-    color: white;
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
-  }
 
-  header {
-    background-color: #10264d;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  .logo-text .yc {
-    color: orange;
-    font-weight: bold;
-  }
-  .logo-text {
-    font-size: 1.3rem;
-    font-weight: bold;
-  }
+    body {
+      background-color: #0a1a2f;
+      color: white;
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+    }
 
-  .nav-bar a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    transition: color 0.3s;
-  }
-  .nav-bar a:hover {
-    color: orange;
-  }
+    /* ====== 导航栏统一样式 ====== */
+    header {
+      background-color: #0a1a2f;
+      border-bottom: 3px solid orange;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+    }
 
-  .hero {
-    text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(90deg, #0b1a33, #132e57);
-  }
-  .hero h2 {
-    font-size: 2rem;
-    color: orange;
-    margin-bottom: 10px;
-  }
+    .logo-text {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
 
-  /* 封面卡片区 */
-  .albums {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    padding: 40px;
-    max-width: 1200px;
-    margin: auto;
-  }
+    .logo-text .yc {
+      color: orange;
+    }
 
-  .album-card {
-    background: #162b52;
-    border-radius: 15px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  }
-  .album-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
-  }
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
 
-  .album-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  .album-card h3 {
-    padding: 15px;
-    text-align: center;
-    font-size: 1.1rem;
-    color: white;
-    background-color: #132a4d;
-    margin: 0;
-  }
+    .nav-bar a:hover {
+      color: orange;
+    }
 
-  /* ✅ 艺术感相册布局（Masonry风格） */
-  .gallery {
-    display: none;
-    column-count: 4; /* 列数可改为3或5 */
-    column-gap: 15px;
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 10px;
-    animation: fadeIn 0.6s ease;
-  }
+    /* ====== 顶部封面区 ====== */
+    .hero {
+      text-align: center;
+      padding: 120px 20px 60px;
+      background: linear-gradient(90deg, #0b1a33, #132e57);
+      animation: fadeInDown 1.2s ease;
+    }
 
-  .gallery.active {
-    display: block;
-  }
+    .hero h2 {
+      font-size: 2.5rem;
+      color: orange;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
 
-  .gallery img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    object-fit: cover;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    break-inside: avoid;
-    cursor: pointer;
-  }
+    .hero p {
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
 
-  .gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(255, 136, 0, 0.5);
-  }
+    /* ====== 相册封面卡 ====== */
+    .albums {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 60px 10%;
+      margin-top: 20px;
+    }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+    .album-card {
+      background: #162b52;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transform: translateY(50px);
+      opacity: 0;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
 
-  /* 灯箱样式 */
-  .lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    text-align: center;
-    backdrop-filter: blur(3px);
-  }
+    .album-card.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
 
-  .lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    margin-top: 5%;
-    border-radius: 12px;
-    box-shadow: 0 0 25px rgba(255,255,255,0.2);
-  }
+    .album-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(255,140,0,0.4);
+    }
 
-  .controls {
-    margin-top: 20px;
-  }
+    .album-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
 
-  .controls button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    border: none;
-    border-radius: 8px;
-    background: orange;
-    color: #0b1a33;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
+    .album-card h3 {
+      text-align: center;
+      padding: 18px;
+      background-color: #132a4d;
+      color: white;
+      font-size: 1.1rem;
+    }
 
-  .controls button:hover {
-    background: #ffb84d;
-  }
+    /* ====== 相册画廊 ====== */
+    .gallery {
+      display: none;
+      column-count: 4;
+      column-gap: 15px;
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 10px;
+      animation: fadeIn 1s ease;
+    }
 
-  footer {
-    text-align: center;
-    padding: 20px;
-    background: #10264d;
-    color: white;
-    margin-top: 40px;
-  }
+    .gallery.active {
+      display: block;
+    }
 
-  /* 响应式设计 */
-  @media screen and (max-width: 1000px) {
-    .gallery { column-count: 3; }
-  }
-  @media screen and (max-width: 700px) {
-    .gallery { column-count: 2; }
-  }
-  @media screen and (max-width: 500px) {
-    .gallery { column-count: 1; }
-  }
-</style>
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+      break-inside: avoid;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(255,140,0,0.4);
+    }
+
+    /* ====== 灯箱样式 ====== */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      text-align: center;
+      backdrop-filter: blur(3px);
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      margin-top: 5%;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.3);
+    }
+
+    .controls {
+      margin-top: 20px;
+    }
+
+    .controls button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 8px;
+      background: orange;
+      color: #0b1a33;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .controls button:hover {
+      background: #ffb84d;
+    }
+
+    /* ====== 页脚 ====== */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #0a1a2f;
+      border-top: 2px solid orange;
+      color: white;
+      margin-top: 60px;
+    }
+
+    /* ====== 动画与响应式 ====== */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media screen and (max-width: 1000px) {
+      .gallery { column-count: 3; }
+    }
+
+    @media screen and (max-width: 700px) {
+      .gallery { column-count: 2; }
+    }
+
+    @media screen and (max-width: 500px) {
+      .gallery { column-count: 1; }
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <div class="logo-text">
@@ -193,7 +231,7 @@
     </div>
     <nav class="nav-bar">
       <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
+      <a href="projects.html" style="color: orange;">Projects</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -204,41 +242,31 @@
     <p>Explore our recent site works and inspections</p>
   </section>
 
-  <!-- 项目卡片区 -->
+  <!-- 相册封面卡片区 -->
   <section class="albums">
-    <div class="album-card" onclick="toggleGallery('gallery1')">
-      <img src="images/photo1.jpg" alt="Project 1">
+    <div class="album-card">
+      <img src="images/photo1.jpg" alt="Project 1" onclick="toggleGallery('gallery1')">
       <h3>👷‍♂ Site Meeting & Inspection 👷‍♀</h3>
     </div>
 
-    <div class="album-card" onclick="toggleGallery('gallery2')">
-      <img src="images/project2-1.jpg" alt="Project 2">
+    <div class="album-card">
+      <img src="images/project2-1.jpg" alt="Project 2" onclick="toggleGallery('gallery2')">
       <h3>🏢 Quality Check: By YC Lee Architect’s Eye 🏢</h3>
     </div>
   </section>
 
-  <!-- 相册内容 1 -->
+  <!-- 相册内容 -->
   <div id="gallery1" class="gallery">
     <img src="images/photo1.jpg" onclick="openLightbox(0, 'images1')">
     <img src="images/photo2.jpg" onclick="openLightbox(1, 'images1')">
     <img src="images/photo3.jpg" onclick="openLightbox(2, 'images1')">
     <img src="images/photo4.jpg" onclick="openLightbox(3, 'images1')">
-    <img src="images/photo5.jpg" onclick="openLightbox(4, 'images1')">
-    <img src="images/photo6.jpg" onclick="openLightbox(5, 'images1')">
-    <img src="images/photo7.jpg" onclick="openLightbox(6, 'images1')">
-    <img src="images/photo8.jpg" onclick="openLightbox(7, 'images1')">
-    <img src="images/photo9.jpg" onclick="openLightbox(8, 'images1')">
-    <img src="images/photo10.jpg" onclick="openLightbox(9, 'images1')">
   </div>
 
-  <!-- 相册内容 2 -->
   <div id="gallery2" class="gallery">
     <img src="images/project2-1.jpg" onclick="openLightbox(0, 'images2')">
     <img src="images/project2-2.jpg" onclick="openLightbox(1, 'images2')">
     <img src="images/project2-3.jpg" onclick="openLightbox(2, 'images2')">
-    <img src="images/project2-4.jpg" onclick="openLightbox(3, 'images2')">
-    <img src="images/project2-5.jpg" onclick="openLightbox(4, 'images2')">
-    <img src="images/project2-6.jpg" onclick="openLightbox(5, 'images2')">
   </div>
 
   <!-- 灯箱 -->
@@ -255,57 +283,54 @@
     &copy; 2025 YC Lee Architect. All rights reserved.
   </footer>
 
-<script>
-  let currentIndex = 0;
-  let currentGallery = [];
+  <script>
+    let currentIndex = 0;
+    let currentGallery = [];
 
-  const images1 = [
-    "images/photo1.jpg","images/photo2.jpg","images/photo3.jpg","images/photo4.jpg",
-    "images/photo5.jpg","images/photo6.jpg","images/photo7.jpg","images/photo8.jpg",
-    "images/photo9.jpg","images/photo10.jpg"
-  ];
-  const images2 = [
-    "images/project2-1.jpg","images/project2-2.jpg","images/project2-3.jpg",
-    "images/project2-4.jpg","images/project2-5.jpg","images/project2-6.jpg"
-  ];
+    const images1 = [
+      "images/photo1.jpg","images/photo2.jpg","images/photo3.jpg","images/photo4.jpg"
+    ];
+    const images2 = [
+      "images/project2-1.jpg","images/project2-2.jpg","images/project2-3.jpg"
+    ];
 
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightboxImg");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
 
-  // ✅ 新增改良逻辑：打开新相册时关闭其他相册
-  function toggleGallery(id) {
-    const allGalleries = document.querySelectorAll('.gallery');
-    const clickedGallery = document.getElementById(id);
-
-    // 如果当前相册已经是展开的，则关闭它
-    if (clickedGallery.classList.contains('active')) {
-      clickedGallery.classList.remove('active');
-      return;
+    function toggleGallery(id) {
+      const galleries = document.querySelectorAll(".gallery");
+      galleries.forEach(g => g.classList.remove("active"));
+      const clicked = document.getElementById(id);
+      clicked.classList.add("active");
+      window.scrollTo({ top: clicked.offsetTop - 100, behavior: "smooth" });
     }
 
-    // 否则先关闭所有，再打开目标相册
-    allGalleries.forEach(g => g.classList.remove('active'));
-    clickedGallery.classList.add('active');
+    function openLightbox(index, galleryName) {
+      currentGallery = (galleryName === "images1") ? images1 : images2;
+      currentIndex = index;
+      lightbox.style.display = "block";
+      lightboxImg.src = currentGallery[index];
+    }
 
-    // 平滑滚动到目标相册
-    window.scrollTo({ top: clickedGallery.offsetTop - 50, behavior: 'smooth' });
-  }
+    function closeLightbox() {
+      lightbox.style.display = "none";
+    }
 
-  function openLightbox(index, galleryName) {
-    currentGallery = (galleryName === 'images1') ? images1 : images2;
-    currentIndex = index;
-    lightbox.style.display = "block";
-    lightboxImg.src = currentGallery[index];
-  }
+    function changeSlide(step) {
+      currentIndex = (currentIndex + step + currentGallery.length) % currentGallery.length;
+      lightboxImg.src = currentGallery[currentIndex];
+    }
 
-  function closeLightbox() {
-    lightbox.style.display = "none";
-  }
-
-  function changeSlide(step) {
-    currentIndex = (currentIndex + step + currentGallery.length) % currentGallery.length;
-    lightboxImg.src = currentGallery[currentIndex];
-  }
-</script>
+    // 滚动动画触发
+    const cards = document.querySelectorAll('.album-card');
+    window.addEventListener('scroll', () => {
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          card.classList.add('visible');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
