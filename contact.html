@@ -6,7 +6,7 @@
   <title>Contact - YC LEE ARCHITECT</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* 全局设置 */
+    /* ===== 全局设置 ===== */
     * {
       margin: 0;
       padding: 0;
@@ -22,7 +22,7 @@
       flex-direction: column;
     }
 
-    /* 顶部区域 */
+    /* ===== 顶部导航栏 ===== */
     header {
       background: rgba(10, 25, 47, 0.95);
       padding: 20px 60px;
@@ -71,7 +71,7 @@
       width: 100%;
     }
 
-    /* 内容区域 */
+    /* ===== 内容 ===== */
     .hero {
       flex: 1;
       display: flex;
@@ -116,7 +116,7 @@
       margin: 8px 0;
     }
 
-    /* 社交媒体 */
+    /* ===== 社交媒体区 ===== */
     .social-section {
       margin-top: 40px;
     }
@@ -136,6 +136,13 @@
       flex-wrap: wrap;
     }
 
+    .social-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
     .social-icon {
       width: 75px;
       height: 75px;
@@ -148,29 +155,44 @@
       border: 2px solid #ff7b00;
       transition: all 0.3s ease;
       text-decoration: none;
+      position: relative;
     }
 
-    .social-icon:hover {
-      background: #ff7b00;
-      color: #0a192f;
-      transform: scale(1.1);
-      box-shadow: 0 0 15px rgba(255, 123, 0, 0.4);
+    /* 悬停品牌色动画 */
+    .social-item:nth-child(1) .social-icon:hover {
+      background: #1877f2; /* Facebook 蓝 */
+      border-color: #1877f2;
+      color: white;
+    }
+    .social-item:nth-child(2) .social-icon:hover {
+      background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf, #4f5bd5);
+      border: none;
+      color: white;
+    }
+    .social-item:nth-child(3) .social-icon:hover {
+      background: linear-gradient(45deg, #25f4ee, #000000, #fe2c55);
+      color: white;
+      border: none;
     }
 
+    /* 名称淡入效果 */
     .social-name {
       margin-top: 10px;
       font-size: 0.9rem;
       color: #ddd;
       font-weight: 500;
+      opacity: 0;
+      transform: translateY(5px);
+      transition: all 0.4s ease;
     }
 
-    .social-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .social-item:hover .social-name {
+      opacity: 1;
+      transform: translateY(0);
+      color: #ffb86b;
     }
 
-    /* 页脚 */
+    /* ===== 页脚 ===== */
     footer {
       background: rgba(10, 25, 47, 0.9);
       text-align: center;
@@ -191,26 +213,22 @@
       color: #ff9b35;
     }
 
-    /* 响应式 */
+    /* ===== 响应式 ===== */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
         padding: 20px;
         gap: 10px;
       }
-
       nav a {
         margin: 5px 10px;
       }
-
       .contact-container {
         padding: 30px 20px;
       }
-
       .contact-title {
         font-size: 2rem;
       }
-
       .social-icons {
         gap: 25px;
       }
