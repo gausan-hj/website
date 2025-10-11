@@ -71,7 +71,7 @@
       width: 100%;
     }
 
-    /* ===== 内容 ===== */
+    /* ===== 内容区域 ===== */
     .hero {
       flex: 1;
       display: flex;
@@ -132,15 +132,16 @@
     .social-icons {
       display: flex;
       justify-content: center;
-      gap: 40px;
+      gap: 30px;
       flex-wrap: wrap;
+      transition: all 0.4s ease;
     }
 
     .social-item {
       display: flex;
-      flex-direction: column;
       align-items: center;
       position: relative;
+      transition: all 0.4s ease;
     }
 
     .social-icon {
@@ -153,43 +154,59 @@
       font-size: 30px;
       color: #ff7b00;
       border: 2px solid #ff7b00;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
       text-decoration: none;
-      position: relative;
+      z-index: 2;
     }
 
-    /* 悬停品牌色动画 */
-    .social-item:nth-child(1) .social-icon:hover {
-      background: #1877f2; /* Facebook 蓝 */
+    /* 展开时的文字条 */
+    .social-label {
+      position: absolute;
+      left: 90px;
+      background: rgba(255, 123, 0, 0.15);
+      border: 1px solid #ff7b00;
+      color: #ffb870;
+      padding: 12px 18px;
+      border-radius: 10px;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.4s ease;
+      font-weight: 500;
+      font-size: 1rem;
+      pointer-events: none;
+    }
+
+    .social-item:hover .social-label {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* 悬停颜色变化 */
+    .social-item.facebook:hover .social-icon {
+      background: #1877f2;
       border-color: #1877f2;
       color: white;
     }
-    .social-item:nth-child(2) .social-icon:hover {
+
+    .social-item.instagram:hover .social-icon {
       background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf, #4f5bd5);
-      border: none;
       color: white;
+      border: none;
     }
-    .social-item:nth-child(3) .social-icon:hover {
+
+    .social-item.tiktok:hover .social-icon {
       background: linear-gradient(45deg, #25f4ee, #000000, #fe2c55);
       color: white;
       border: none;
     }
 
-    /* 名称淡入效果 */
-    .social-name {
-      margin-top: 10px;
-      font-size: 0.9rem;
-      color: #ddd;
-      font-weight: 500;
-      opacity: 0;
-      transform: translateY(5px);
-      transition: all 0.4s ease;
+    /* 被挤开的动画 */
+    .social-icons:hover .social-item {
+      transform: translateX(10px);
     }
-
-    .social-item:hover .social-name {
-      opacity: 1;
-      transform: translateY(0);
-      color: #ffb86b;
+    .social-item:hover {
+      transform: translateX(0);
     }
 
     /* ===== 页脚 ===== */
@@ -230,7 +247,11 @@
         font-size: 2rem;
       }
       .social-icons {
-        gap: 25px;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .social-item .social-label {
+        left: 100px;
       }
     }
   </style>
@@ -262,23 +283,25 @@
       <div class="social-section">
         <h2 class="social-title">Follow Us</h2>
         <div class="social-icons">
-          <div class="social-item">
+          <div class="social-item facebook">
             <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="social-icon">
               <i class="fab fa-facebook-f"></i>
             </a>
-            <span class="social-name">Facebook</span>
+            <div class="social-label">Facebook</div>
           </div>
-          <div class="social-item">
+
+          <div class="social-item instagram">
             <a href="https://www.instagram.com/yc.lee.architect?igsh=eG1wcDR6aHhoaXp1" target="_blank" class="social-icon">
               <i class="fab fa-instagram"></i>
             </a>
-            <span class="social-name">Instagram</span>
+            <div class="social-label">Instagram</div>
           </div>
-          <div class="social-item">
+
+          <div class="social-item tiktok">
             <a href="https://www.tiktok.com/@yc.lee.architect?_t=ZS-8zAnw9m4YeP&_r=1" target="_blank" class="social-icon">
               <i class="fab fa-tiktok"></i>
             </a>
-            <span class="social-name">TikTok</span>
+            <div class="social-label">TikTok</div>
           </div>
         </div>
       </div>
