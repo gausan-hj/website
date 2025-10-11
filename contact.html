@@ -3,35 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gallery - YC LEE ARCHITECT</title>
+  <title>Contact - YC LEE ARCHITECT</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
+    /* ===== 全局设置 ===== */
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0a1a2f;
-      color: #ffffff;
-      overflow-x: hidden;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    /* ---------- Header ---------- */
+    body {
+      background: linear-gradient(135deg, #081524 0%, #0f2745 100%);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== 顶部导航栏 ===== */
     header {
-      background-color: #0d2344;
+      background: rgba(10, 25, 47, 0.95);
+      padding: 20px 60px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 60px;
-      border-bottom: 3px solid #ff7b00;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      border-bottom: 2px solid #ff7b00;
+      flex-wrap: wrap;
     }
 
     .logo-text {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: bold;
       letter-spacing: 1px;
-      white-space: nowrap;
     }
 
     .yc {
@@ -41,158 +46,271 @@
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 18px;
-      font-size: 1rem;
-      transition: color 0.3s ease;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: 0.3s;
+      position: relative;
     }
 
     nav a:hover {
       color: #ff7b00;
     }
 
-    /* ---------- Social Media ---------- */
-    .socials {
-      display: flex;
-      gap: 15px;
-      align-items: center;
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: #ff7b00;
+      transition: width 0.3s;
     }
 
-    .social {
-      position: relative;
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ===== 内容区域 ===== */
+    .hero {
+      flex: 1;
       display: flex;
+      justify-content: center;
       align-items: center;
-      overflow: hidden;
-      padding: 8px 12px;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .contact-container {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
       border-radius: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      transition: all 0.4s ease;
-    }
-
-    .social i {
-      font-size: 1.2rem;
-      color: #ff7b00;
+      padding: 50px;
+      max-width: 750px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 123, 0, 0.2);
       transition: 0.3s;
     }
 
-    .social span {
-      opacity: 0;
-      margin-left: 8px;
-      color: white;
+    .contact-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-title {
+      font-size: 2.5rem;
+      color: #ff7b00;
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+    }
+
+    .contact-info {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 35px;
+      color: #d8e0ec;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+    }
+
+    /* ===== 社交媒体区 ===== */
+    .social-section {
+      margin-top: 40px;
+    }
+
+    .social-title {
+      font-size: 1.6rem;
+      color: #ff7b00;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      transition: all 0.4s ease;
+    }
+
+    .social-item {
+      display: flex;
+      align-items: center;
+      position: relative;
+      transition: all 0.4s ease;
+    }
+
+    .social-icon {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      color: #ff7b00;
+      border: 2px solid #ff7b00;
+      transition: all 0.4s ease;
+      text-decoration: none;
+      z-index: 2;
+    }
+
+    /* 展开时的文字条 */
+    .social-label {
+      position: absolute;
+      left: 90px;
+      background: rgba(255, 123, 0, 0.15);
+      border: 1px solid #ff7b00;
+      color: #ffb870;
+      padding: 12px 18px;
+      border-radius: 10px;
       white-space: nowrap;
+      opacity: 0;
       transform: translateX(-10px);
       transition: all 0.4s ease;
-      font-size: 0.9rem;
+      font-weight: 500;
+      font-size: 1rem;
+      pointer-events: none;
     }
 
-    .social:hover {
-      background: #ff7b00;
-    }
-
-    .social:hover i {
-      color: #0a1a2f;
-    }
-
-    .social:hover span {
+    .social-item:hover .social-label {
       opacity: 1;
       transform: translateX(0);
-      color: #0a1a2f;
     }
 
-    /* ---------- Gallery Section ---------- */
-    .gallery {
-      padding: 80px 10%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+    /* 悬停颜色变化 */
+    .social-item.facebook:hover .social-icon {
+      background: #1877f2;
+      border-color: #1877f2;
+      color: white;
     }
 
-    .photo {
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      background: #142f52;
-      animation: floatIn 3s ease-in-out infinite alternate;
+    .social-item.instagram:hover .social-icon {
+      background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf, #4f5bd5);
+      color: white;
+      border: none;
     }
 
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
+    .social-item.tiktok:hover .social-icon {
+      background: linear-gradient(45deg, #25f4ee, #000000, #fe2c55);
+      color: white;
+      border: none;
     }
 
-    .photo:hover img {
-      transform: scale(1.1);
+    /* 被挤开的动画 */
+    .social-icons:hover .social-item {
+      transform: translateX(10px);
+    }
+    .social-item:hover {
+      transform: translateX(0);
     }
 
-    @keyframes floatIn {
-      from { transform: translateY(0); opacity: 1; }
-      to { transform: translateY(10px); opacity: 0.95; }
-    }
-
-    /* ---------- Footer ---------- */
+    /* ===== 页脚 ===== */
     footer {
+      background: rgba(10, 25, 47, 0.9);
       text-align: center;
-      padding: 40px 20px;
-      background-color: #0d2344;
-      border-top: 3px solid #ff7b00;
-      color: #e0e6ef;
+      padding: 25px;
       font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 123, 0, 0.2);
     }
 
     .fb-link {
       color: #ff7b00;
       text-decoration: none;
-      font-weight: bold;
+      margin-left: 5px;
+      font-weight: 500;
       transition: 0.3s;
     }
 
     .fb-link:hover {
-      color: #ffffff;
+      color: #ff9b35;
+    }
+
+    /* ===== 响应式 ===== */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px;
+      }
+      nav a {
+        margin: 5px 10px;
+      }
+      .contact-container {
+        padding: 30px 20px;
+      }
+      .contact-title {
+        font-size: 2rem;
+      }
+      .social-icons {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .social-item .social-label {
+        left: 100px;
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
     <div class="logo-text">
-      <span class="yc">YC</span>
-      <span> LEE Architect</span>
+      <span class="yc">YC</span> LEE Architect
     </div>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <div class="socials">
-      <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="social">
-        <i class="fab fa-facebook-f"></i><span>Facebook</span>
-      </a>
-      <a href="#" class="social">
-        <i class="fab fa-instagram"></i><span>Instagram</span>
-      </a>
-      <a href="#" class="social">
-        <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
-      </a>
-    </div>
   </header>
 
-  <!-- Gallery Section -->
-  <section class="gallery">
-    <div class="photo"><img src="https://picsum.photos/500/300?random=1" alt="Project 1"></div>
-    <div class="photo"><img src="https://picsum.photos/500/300?random=2" alt="Project 2"></div>
-    <div class="photo"><img src="https://picsum.photos/500/300?random=3" alt="Project 3"></div>
-    <div class="photo"><img src="https://picsum.photos/500/300?random=4" alt="Project 4"></div>
-    <div class="photo"><img src="https://picsum.photos/500/300?random=5" alt="Project 5"></div>
-    <div class="photo"><img src="https://picsum.photos/500/300?random=6" alt="Project 6"></div>
+  <section class="hero">
+    <div class="contact-container">
+      <h1 class="contact-title">Contact Us</h1>
+
+      <div class="contact-info">
+        <p><strong>Phone:</strong> 05-807 6197</p>
+        <p><strong>Email:</strong> ycleearchitect@gmail.com</p>
+        <p><strong>Office Hours:</strong> Monday – Friday, 9:00 AM – 5:00 PM</p>
+      </div>
+
+      <div class="social-section">
+        <h2 class="social-title">Follow Us</h2>
+        <div class="social-icons">
+          <div class="social-item facebook">
+            <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <div class="social-label">Facebook</div>
+          </div>
+
+          <div class="social-item instagram">
+            <a href="https://www.instagram.com/yc.lee.architect?igsh=eG1wcDR6aHhoaXp1" target="_blank" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <div class="social-label">Instagram</div>
+          </div>
+
+          <div class="social-item tiktok">
+            <a href="https://www.tiktok.com/@yc.lee.architect?_t=ZS-8zAnw9m4YeP&_r=1" target="_blank" class="social-icon">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <div class="social-label">TikTok</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
-    &copy; 2025 YC Lee Architect. All rights reserved. <br>
+    &copy; 2025 YC Lee Architect. All rights reserved.
     <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link">Facebook</a>
   </footer>
-
 </body>
 </html>
