@@ -28,7 +28,7 @@
       justify-content: space-around;
       align-items: flex-end;
       opacity: 1;
-      transition: opacity 2s ease;
+      transition: opacity 1s ease; /* 缩短淡出时间 */
     }
 
     .building {
@@ -37,15 +37,15 @@
       border: 2px solid #fff5;
       border-radius: 4px 4px 0 0;
       transform: scaleY(0);
-      animation: rise 2s ease forwards;
+      animation: rise 1s ease forwards; /* 缩短升起时间 */
     }
 
     .building:nth-child(1) { height: 200px; animation-delay: 0s; }
-    .building:nth-child(2) { height: 300px; animation-delay: 0.3s; }
-    .building:nth-child(3) { height: 260px; animation-delay: 0.6s; }
-    .building:nth-child(4) { height: 350px; animation-delay: 0.9s; }
-    .building:nth-child(5) { height: 230px; animation-delay: 1.2s; }
-    .building:nth-child(6) { height: 280px; animation-delay: 1.5s; }
+    .building:nth-child(2) { height: 300px; animation-delay: 0.15s; }
+    .building:nth-child(3) { height: 260px; animation-delay: 0.3s; }
+    .building:nth-child(4) { height: 350px; animation-delay: 0.45s; }
+    .building:nth-child(5) { height: 230px; animation-delay: 0.6s; }
+    .building:nth-child(6) { height: 280px; animation-delay: 0.75s; }
 
     @keyframes rise {
       0% { transform: scaleY(0); }
@@ -56,7 +56,7 @@
     .logo {
       opacity: 0;
       transform: scale(0.8);
-      transition: opacity 2s ease, transform 2s ease;
+      transition: opacity 0.5s ease, transform 0.5s ease; /* 缩短淡入时间 */
       width: 180px;
       height: auto;
       z-index: 10;
@@ -69,8 +69,8 @@
       letter-spacing: 2px;
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 2s ease, transform 2s ease;
-      margin-top: 20px; /* ✅ 加大间距 */
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      margin-top: 20px;
       z-index: 10;
     }
 
@@ -103,25 +103,25 @@
   <div class="text"><span class="highlight">YC</span> LEE ARCHITECT</div>
 
   <script>
-    // 5秒后淡出建筑，淡入logo与文字
+    // 2秒后淡出建筑，淡入logo与文字
     setTimeout(() => {
       document.querySelector('.city').style.opacity = 0;
       document.querySelector('.logo').style.opacity = 1;
       document.querySelector('.logo').style.transform = 'scale(1)';
       document.querySelector('.text').style.opacity = 1;
       document.querySelector('.text').style.transform = 'translateY(0)';
+    }, 2000);
+
+    // 3.5秒后logo与文字放大再缩小然后淡出
+    setTimeout(() => {
+      document.querySelector('.logo').style.animation = 'pulse 1.5s forwards';
+      document.querySelector('.text').style.animation = 'pulse 1.5s forwards';
+    }, 3500);
+
+    // 5秒后跳转到主页
+    setTimeout(() => {
+      window.location.href = "index2.html";
     }, 5000);
-
-    // 8秒后logo与文字放大再缩小然后淡出
-    setTimeout(() => {
-      document.querySelector('.logo').style.animation = 'pulse 2s forwards';
-      document.querySelector('.text').style.animation = 'pulse 2s forwards';
-    }, 8000);
-
-    // 10秒后跳转到主页
-    setTimeout(() => {
-      window.location.href = "index2.html"; // ✅ 你的网站主页
-    }, 10000);
   </script>
 </body>
 </html>
