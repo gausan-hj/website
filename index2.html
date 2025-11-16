@@ -35,30 +35,33 @@
     }
     .yc { color: orange; }
 
-    /* 导航栏 */
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 18px;
       font-size: 1rem;
       transition: color 0.3s ease;
     }
     nav a:hover { color: orange; }
 
-    /* ---------- 🌐 语言按钮放在导航栏右边 ---------- */
+    /* ---------- 🌐 语言按钮（现在在导航栏里面） ---------- */
     .lang-box {
       position: relative;
-      display: inline-block;
     }
 
     .lang-btn {
-      background-color: #0b1b33;
-      color: orange;
-      padding: 8px 18px;
+      background: transparent;
       border: 1px solid orange;
-      border-radius: 8px;
+      color: orange;
+      padding: 6px 14px;
+      border-radius: 6px;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 0.9rem;
     }
 
     .lang-list {
@@ -212,17 +215,17 @@
       <a href="projects.html" data-lang-key="nav_projects">Projects</a>
       <a href="about.html" data-lang-key="nav_about">About</a>
       <a href="contact.html" data-lang-key="nav_contact">Contact</a>
-    </nav>
 
-    <!-- 🌐 语言按钮（放在导航栏右边） -->
-    <div class="lang-box">
-      <button class="lang-btn">🌐 Language</button>
-      <div class="lang-list">
-        <a onclick="switchLang('en')">English</a>
-        <a onclick="switchLang('zh-CN')">中文</a>
-        <a onclick="switchLang('ms-MY')">BM</a>
+      <!-- 🌐 语言按钮（现在在导航栏里面） -->
+      <div class="lang-box">
+        <button class="lang-btn">🌐 Language</button>
+        <div class="lang-list">
+          <a onclick="switchLang('en')">English</a>
+          <a onclick="switchLang('zh-CN')">中文</a>
+          <a onclick="switchLang('ms-MY')">BM</a>
+        </div>
       </div>
-    </div>
+    </nav>
   </header>
 
   <section class="hero">
