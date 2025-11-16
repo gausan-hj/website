@@ -48,6 +48,23 @@
       color: orange;
     }
 
+    /* 语言切换按钮 */
+    #lang-switcher button {
+      margin-left: 10px;
+      padding: 6px 12px;
+      border: 1px solid orange;
+      border-radius: 5px;
+      background: transparent;
+      color: orange;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #lang-switcher button:hover {
+      background: orange;
+      color: #0c1c36;
+    }
+
     /* ---------- Hero Section ---------- */
     .hero {
       height: 85vh;
@@ -175,22 +192,31 @@
       <a href="about.html" data-lang-key="nav_about">About</a>
       <a href="contact.html" data-lang-key="nav_contact">Contact</a>
     </nav>
+    <!-- 语言切换按钮容器 -->
+    <div id="lang-switcher">
+      <button onclick="switchLang('en')">EN</button>
+      <button onclick="switchLang('zh-CN')">中文</button>
+      <button onclick="switchLang('ms-MY')">BM</button>
+    </div>
   </header>
 
   <section class="hero">
     <h1 data-lang-key="hero_title">Craft · Architecture · Space</h1>
     <div class="hero-line"></div>
-    <p data-lang-key="hero_description">Designing timeless spaces that connect people, structure, and emotion through the language of architecture.</p>
+    <p data-lang-key="hero_desc">
+      Designing timeless spaces that connect people, structure, and emotion through the language of architecture.
+    </p>
     <a href="projects.html" class="btn" data-lang-key="btn_view_projects">View Projects</a>
   </section>
 
   <footer>
     &copy; 2025 YC Lee Architect. All rights reserved.
-    <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link" data-lang-key="footer_facebook">Facebook</a>
+    <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link">Facebook</a>
   </footer>
 
   <script>
-    // ---------- 多语言加载 ----------
+    let currentLang = 'en';
+
     async function loadLang(lang) {
       try {
         const res = await fetch(`lang/${lang}.json`);
@@ -199,17 +225,18 @@
           const key = el.getAttribute('data-lang-key');
           if (data[key]) el.textContent = data[key];
         });
+        currentLang = lang;
       } catch(e) {
         console.error('加载语言文件失败:', e);
       }
     }
 
-    // 默认语言为英文
-    let currentLang = 'en';
-    loadLang(currentLang);
+    function switchLang(lang) {
+      loadLang(lang);
+    }
 
-    // 可根据需要添加语言切换，例如：
-    // loadLang('zh-CN');
+    // 默认加载英文
+    loadLang(currentLang);
   </script>
 </body>
 </html>
