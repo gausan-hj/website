@@ -73,9 +73,6 @@
       cursor: pointer;
       font-size: 14px;
       transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
     .lang-btn:hover {
@@ -83,40 +80,18 @@
       transform: scale(1.05);
     }
 
-    .lang-list-container {
+    .lang-list {
       display: none;
       position: absolute;
       right: 0;
       background-color: #102542;
-      width: 280px;
+      width: 200px;
       max-height: 400px;
       border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
-      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      overflow-y: auto;
       margin-top: 6px;
       z-index: 10;
-    }
-
-    .lang-search {
-      width: 100%;
-      padding: 12px 15px;
-      background-color: #0b1b33;
-      border: none;
-      border-bottom: 1px solid rgba(255,165,0,0.3);
-      color: white;
-      font-size: 14px;
-      box-sizing: border-box;
-    }
-
-    .lang-search:focus {
-      outline: none;
-      border-bottom: 1px solid orange;
-    }
-
-    .lang-list {
-      max-height: 350px;
-      overflow-y: auto;
-      padding: 5px 0;
     }
 
     .lang-list::-webkit-scrollbar {
@@ -133,13 +108,11 @@
     }
 
     .lang-list a {
-      padding: 10px 15px;
+      padding: 10px 14px;
       display: block;
       color: white;
       text-decoration: none;
-      transition: all 0.2s ease;
       border-bottom: 1px solid rgba(255,255,255,0.05);
-      font-size: 14px;
     }
 
     .lang-list a:hover {
@@ -147,7 +120,7 @@
       color: orange;
     }
 
-    .lang-box:hover .lang-list-container {
+    .lang-box:hover .lang-list {
       display: block;
     }
 
@@ -284,8 +257,8 @@
         align-self: flex-end;
       }
       
-      .lang-list-container {
-        width: 260px;
+      .lang-list {
+        width: 180px;
         right: -20px;
       }
       
@@ -316,11 +289,64 @@
     <!-- 🌐 语言按钮（放在header右侧） -->
     <div class="lang-box">
       <button class="lang-btn">🌐 Language</button>
-      <div class="lang-list-container">
-        <input type="text" class="lang-search" placeholder="Search language..." id="langSearch">
-        <div class="lang-list" id="langList">
-          <!-- 语言列表将通过JavaScript动态生成 -->
-        </div>
+      <div class="lang-list">
+        <a onclick="switchLang('en')">English</a>
+        <a onclick="switchLang('zh-CN')">中文</a>
+        <a onclick="switchLang('zh-TW')">繁體中文</a>
+        <a onclick="switchLang('ms-MY')">Bahasa Melayu</a>
+        <a onclick="switchLang('ja')">日本語</a>
+        <a onclick="switchLang('ko')">한국어</a>
+        <a onclick="switchLang('fr')">Français</a>
+        <a onclick="switchLang('de')">Deutsch</a>
+        <a onclick="switchLang('es')">Español</a>
+        <a onclick="switchLang('it')">Italiano</a>
+        <a onclick="switchLang('pt')">Português</a>
+        <a onclick="switchLang('ru')">Русский</a>
+        <a onclick="switchLang('hi')">हिन्दी</a>
+        <a onclick="switchLang('ar')">العربية</a>
+        <a onclick="switchLang('tr')">Türkçe</a>
+        <a onclick="switchLang('th')">ไทย</a>
+        <a onclick="switchLang('vi')">Tiếng Việt</a>
+        <a onclick="switchLang('id')">Bahasa Indonesia</a>
+        <a onclick="switchLang('nl')">Nederlands</a>
+        <a onclick="switchLang('sv')">Svenska</a>
+        <a onclick="switchLang('no')">Norsk</a>
+        <a onclick="switchLang('da')">Dansk</a>
+        <a onclick="switchLang('fi')">Suomi</a>
+        <a onclick="switchLang('pl')">Polski</a>
+        <a onclick="switchLang('cs')">Čeština</a>
+        <a onclick="switchLang('hu')">Magyar</a>
+        <a onclick="switchLang('ro')">Română</a>
+        <a onclick="switchLang('sk')">Slovenčina</a>
+        <a onclick="switchLang('sl')">Slovenščina</a>
+        <a onclick="switchLang('hr')">Hrvatski</a>
+        <a onclick="switchLang('sr')">Српски</a>
+        <a onclick="switchLang('bg')">Български</a>
+        <a onclick="switchLang('uk')">Українська</a>
+        <a onclick="switchLang('he')">עברית</a>
+        <a onclick="switchLang('fa')">فارسی</a>
+        <a onclick="switchLang('ur')">اردو</a>
+        <a onclick="switchLang('bn')">বাংলা</a>
+        <a onclick="switchLang('ta')">தமிழ்</a>
+        <a onclick="switchLang('te')">తెలుగు</a>
+        <a onclick="switchLang('ml')">മലയാളം</a>
+        <a onclick="switchLang('kn')">ಕನ್ನಡ</a>
+        <a onclick="switchLang('mr')">मराठी</a>
+        <a onclick="switchLang('gu')">ગુજરાતી</a>
+        <a onclick="switchLang('pa')">ਪੰਜਾਬੀ</a>
+        <a onclick="switchLang('si')">සිංහල</a>
+        <a onclick="switchLang('ne')">नेपाली</a>
+        <a onclick="switchLang('my')">မြန်မာ</a>
+        <a onclick="switchLang('km')">ខ្មែរ</a>
+        <a onclick="switchLang('lo')">ລາວ</a>
+        <a onclick="switchLang('am')">አማርኛ</a>
+        <a onclick="switchLang('sw')">Kiswahili</a>
+        <a onclick="switchLang('yo')">Yorùbá</a>
+        <a onclick="switchLang('ig')">Igbo</a>
+        <a onclick="switchLang('zu')">isiZulu</a>
+        <a onclick="switchLang('xh')">isiXhosa</a>
+        <a onclick="switchLang('st')">Sesotho</a>
+        <a onclick="switchLang('tn')">Setswana</a>
       </div>
     </div>
   </header>
@@ -338,142 +364,18 @@
   </footer>
 
   <script>
-    // 语言数据 - 使用您提供的语言列表
-    const languages = [
-      { code: 'en', name: 'English', native: 'English' },
-      { code: 'zh-CN', name: 'Chinese (Simplified)', native: '中文' },
-      { code: 'zh-TW', name: 'Chinese (Traditional)', native: '繁體中文' },
-      { code: 'ms-MY', name: 'Malay', native: 'Bahasa Melayu' },
-      { code: 'ja', name: 'Japanese', native: '日本語' },
-      { code: 'ko', name: 'Korean', native: '한국어' },
-      { code: 'fr', name: 'French', native: 'Français' },
-      { code: 'de', name: 'German', native: 'Deutsch' },
-      { code: 'es', name: 'Spanish', native: 'Español' },
-      { code: 'it', name: 'Italian', native: 'Italiano' },
-      { code: 'pt', name: 'Portuguese', native: 'Português' },
-      { code: 'ru', name: 'Russian', native: 'Русский' },
-      { code: 'hi', name: 'Hindi', native: 'हिन्दी' },
-      { code: 'ar', name: 'Arabic', native: 'العربية' },
-      { code: 'tr', name: 'Turkish', native: 'Türkçe' },
-      { code: 'th', name: 'Thai', native: 'ไทย' },
-      { code: 'vi', name: 'Vietnamese', native: 'Tiếng Việt' },
-      { code: 'id', name: 'Indonesian', native: 'Bahasa Indonesia' },
-      { code: 'nl', name: 'Dutch', native: 'Nederlands' },
-      { code: 'sv', name: 'Swedish', native: 'Svenska' },
-      { code: 'no', name: 'Norwegian', native: 'Norsk' },
-      { code: 'da', name: 'Danish', native: 'Dansk' },
-      { code: 'fi', name: 'Finnish', native: 'Suomi' },
-      { code: 'pl', name: 'Polish', native: 'Polski' },
-      { code: 'cs', name: 'Czech', native: 'Čeština' },
-      { code: 'hu', name: 'Hungarian', native: 'Magyar' },
-      { code: 'ro', name: 'Romanian', native: 'Română' },
-      { code: 'sk', name: 'Slovak', native: 'Slovenčina' },
-      { code: 'sl', name: 'Slovenian', native: 'Slovenščina' },
-      { code: 'hr', name: 'Croatian', native: 'Hrvatski' },
-      { code: 'sr', name: 'Serbian', native: 'Српски' },
-      { code: 'bg', name: 'Bulgarian', native: 'Български' },
-      { code: 'uk', name: 'Ukrainian', native: 'Українська' },
-      { code: 'he', name: 'Hebrew', native: 'עברית' },
-      { code: 'fa', name: 'Persian', native: 'فارسی' },
-      { code: 'ur', name: 'Urdu', native: 'اردو' },
-      { code: 'bn', name: 'Bengali', native: 'বাংলা' },
-      { code: 'ta', name: 'Tamil', native: 'தமிழ்' },
-      { code: 'te', name: 'Telugu', native: 'తెలుగు' },
-      { code: 'ml', name: 'Malayalam', native: 'മലയാളം' },
-      { code: 'kn', name: 'Kannada', native: 'ಕನ್ನಡ' },
-      { code: 'mr', name: 'Marathi', native: 'मराठी' },
-      { code: 'gu', name: 'Gujarati', native: 'ગુજરાતી' },
-      { code: 'pa', name: 'Punjabi', native: 'ਪੰਜਾਬੀ' },
-      { code: 'si', name: 'Sinhala', native: 'සිංහල' },
-      { code: 'ne', name: 'Nepali', native: 'नेपाली' },
-      { code: 'my', name: 'Burmese', native: 'မြန်မာ' },
-      { code: 'km', name: 'Khmer', native: 'ខ្មែរ' },
-      { code: 'lo', name: 'Lao', native: 'ລາວ' },
-      { code: 'am', name: 'Amharic', native: 'አማርኛ' },
-      { code: 'sw', name: 'Swahili', native: 'Kiswahili' },
-      { code: 'yo', name: 'Yoruba', native: 'Yorùbá' },
-      { code: 'ig', name: 'Igbo', native: 'Igbo' },
-      { code: 'zu', name: 'Zulu', native: 'isiZulu' },
-      { code: 'xh', name: 'Xhosa', native: 'isiXhosa' },
-      { code: 'st', name: 'Sotho', native: 'Sesotho' },
-      { code: 'tn', name: 'Tswana', native: 'Setswana' }
-    ];
-
-    // 生成语言列表
-    function generateLangList() {
-      const langList = document.getElementById('langList');
-      langList.innerHTML = '';
-      
-      languages.forEach(lang => {
-        const langItem = document.createElement('a');
-        langItem.href = '#';
-        langItem.innerHTML = `${lang.native}`;
-        langItem.onclick = (e) => {
-          e.preventDefault();
-          switchLang(lang.code);
-          document.querySelector('.lang-list-container').style.display = 'none';
-        };
-        langList.appendChild(langItem);
-      });
-    }
-
-    // 语言搜索功能
-    document.getElementById('langSearch').addEventListener('input', function(e) {
-      const searchTerm = e.target.value.toLowerCase();
-      const langItems = document.querySelectorAll('.lang-list a');
-      
-      langItems.forEach(item => {
-        const text = item.textContent.toLowerCase();
-        if (text.includes(searchTerm)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    });
-
-    // 语言切换功能
     async function switchLang(lang) {
       try {
-        // 在实际应用中，这里应该从服务器获取对应语言的JSON文件
-        // const res = await fetch(`lang/${lang}.json`);
-        // const data = await res.json();
-        
-        // 这里仅作演示，实际使用时请取消注释上面的代码
-        const data = {
-          'nav_home': 'Home',
-          'nav_projects': 'Projects',
-          'nav_about': 'About',
-          'nav_contact': 'Contact',
-          'hero_title': 'Craft · Architecture · Space',
-          'hero_text': 'Designing timeless spaces that connect people, structure, and emotion through the language of architecture.',
-          'btn_view_projects': 'View Projects'
-        };
-        
+        const res = await fetch(`lang/${lang}.json`);
+        const data = await res.json();
         document.querySelectorAll("[data-lang-key]").forEach(el => {
           const key = el.getAttribute("data-lang-key");
           if (data[key]) el.textContent = data[key];
         });
-        
-        // 更新按钮显示当前语言
-        const selectedLang = languages.find(l => l.code === lang);
-        if (selectedLang) {
-          document.querySelector('.lang-btn').innerHTML = `🌐 ${selectedLang.native}`;
-        }
       } catch(err) {
         console.error("语言加载失败:", err);
       }
     }
-
-    // 初始化语言列表
-    generateLangList();
-
-    // 点击页面其他地方关闭语言选择框
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.lang-box')) {
-        document.querySelector('.lang-list-container').style.display = 'none';
-      }
-    });
   </script>
 
 </body>
