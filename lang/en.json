@@ -1,11 +1,9 @@
 {
-  "home": "Home",
-  "projects": "Projects",
-  "about": "About",
-  "contact": "Contact",
-  "intro": "Welcome to YC Lee Architect official website.",
-  "rate_us": "Rate Us",
-  "submit": "Submit",
-  "local_time": "Local Time in Malaysia:",
-  "chatbot": "Chatbot"
+  "nav_home": "Home",
+  "nav_projects": "Projects",
+  "nav_about": "About",
+  "nav_contact": "Contact",
+  "hero_title": "Craft · Architecture · Space",
+  "hero_text": "Designing timeless spaces that connect people, structure, and emotion through the language of architecture.",
+  "btn_view_projects": "View Projects"
 }
