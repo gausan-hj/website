@@ -20,11 +20,11 @@
       background-color: rgba(10, 25, 50, 0.9);
       backdrop-filter: blur(8px);
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 18px 60px;
+      justify-content: space-between;
+      padding: 18px 40px;
       border-bottom: 2px solid rgba(255, 166, 0, 0.5);
-      position: relative;
+      flex-wrap: wrap;
     }
 
     .logo-text {
@@ -37,10 +37,17 @@
       color: orange;
     }
 
+    nav {
+      display: flex;
+      gap: 18px;
+      flex: 1;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 18px;
       font-size: 1rem;
       transition: color 0.3s ease;
     }
@@ -53,17 +60,17 @@
     .lang-dropdown {
       position: relative;
       display: inline-block;
-      margin-left: 20px;
     }
 
     .dropbtn {
-      background-color: transparent;
-      color: orange;
-      padding: 6px 12px;
+      background-color: rgba(0,0,0,0);
+      color: white;
+      padding: 8px 16px;
       font-size: 1rem;
-      border: 1px solid orange;
-      border-radius: 5px;
+      border: 2px solid orange;
+      border-radius: 6px;
       cursor: pointer;
+      transition: all 0.3s ease;
     }
 
     .dropbtn:hover {
@@ -74,19 +81,21 @@
     .dropdown-content {
       display: none;
       position: absolute;
+      right: 0;
       background-color: #0b1b33;
       min-width: 120px;
       border: 1px solid orange;
-      border-radius: 5px;
+      border-radius: 6px;
       z-index: 1;
-      margin-top: 5px;
+      overflow: hidden;
     }
 
     .dropdown-content a {
-      color: orange;
-      padding: 8px 12px;
+      color: white;
+      padding: 10px 16px;
       text-decoration: none;
       display: block;
+      transition: all 0.3s ease;
     }
 
     .dropdown-content a:hover {
@@ -109,9 +118,9 @@
       position: relative;
       background: linear-gradient(to bottom right, #0c1c36, #132d52);
       overflow: hidden;
+      padding: 0 20px;
     }
 
-    /* 动态橙色光晕 */
     .hero::before {
       content: "";
       position: absolute;
@@ -168,7 +177,6 @@
       animation: fadeIn 2s 1s forwards;
     }
 
-    /* ---------- View Projects 按钮 ---------- */
     .btn {
       display: inline-block;
       padding: 12px 32px;
@@ -213,12 +221,12 @@
     }
   </style>
 </head>
-
 <body>
   <header>
     <div class="logo-text">
       <span class="yc">YC</span> LEE Architect
     </div>
+
     <nav>
       <a href="index.html" data-lang-key="nav_home">Home</a>
       <a href="projects.html" data-lang-key="nav_projects">Projects</a>
@@ -226,7 +234,6 @@
       <a href="contact.html" data-lang-key="nav_contact">Contact</a>
     </nav>
 
-    <!-- 语言下拉选择 -->
     <div class="lang-dropdown">
       <button class="dropbtn">Language ▼</button>
       <div class="dropdown-content">
@@ -238,10 +245,12 @@
   </header>
 
   <section class="hero">
-    <h1 data-lang="en">Craft · Architecture · Space</h1>
+    <h1 data-lang-key="hero_title">Craft · Architecture · Space</h1>
     <div class="hero-line"></div>
-    <p data-lang="en">Designing timeless spaces that connect people, structure, and emotion through the language of architecture.</p>
-    <a href="projects.html" class="btn" data-lang="en">View Projects</a>
+    <p data-lang-key="hero_desc">
+      Designing timeless spaces that connect people, structure, and emotion through the language of architecture.
+    </p>
+    <a href="projects.html" class="btn" data-lang-key="btn_view_projects">View Projects</a>
   </section>
 
   <footer>
@@ -251,20 +260,15 @@
 
   <script>
     function switchLang(lang) {
+      const elements = document.querySelectorAll('[data-lang-key]');
       fetch(`lang/${lang}.json`)
         .then(res => res.json())
         .then(data => {
-          // header 和 hero 文本切换
-          document.querySelectorAll('[data-lang]').forEach(el => {
-            const key = el.getAttribute('data-lang');
-            if (data[key]) el.textContent = data[key];
-          });
-          document.querySelectorAll('[data-lang-key]').forEach(el => {
+          elements.forEach(el => {
             const key = el.getAttribute('data-lang-key');
-            if (data[key]) el.textContent = data[key];
+            if(data[key]) el.textContent = data[key];
           });
-        })
-        .catch(err => console.error('加载语言失败', err));
+        });
     }
   </script>
 </body>
