@@ -33,11 +33,9 @@
       font-weight: bold;
       letter-spacing: 1px;
     }
+    .yc { color: orange; }
 
-    .yc {
-      color: orange;
-    }
-
+    /* 导航栏 */
     nav a {
       color: white;
       text-decoration: none;
@@ -45,54 +43,49 @@
       font-size: 1rem;
       transition: color 0.3s ease;
     }
+    nav a:hover { color: orange; }
 
-    nav a:hover {
-      color: orange;
+    /* ---------- 🌐 语言按钮放在导航栏右边 ---------- */
+    .lang-box {
+      position: relative;
+      display: inline-block;
     }
 
-    /* ---------- 语言按钮（永远在最前） ---------- */
-    .lang-dropdown {
-      position: fixed;     /* 永远浮在左上角 */
-      top: 15px;
-      left: 20px;
-      z-index: 9999;       /* 页面最高层 */
-    }
-
-    .dropbtn {
+    .lang-btn {
       background-color: #0b1b33;
       color: orange;
       padding: 8px 18px;
-      font-size: 14px;
       border: 1px solid orange;
       border-radius: 8px;
       cursor: pointer;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #102542;
-      min-width: 120px;
-      border-radius: 8px;
-      margin-top: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-      overflow: hidden;
-    }
-
-    .dropdown-content a {
-      color: white;
-      padding: 10px 14px;
-      text-decoration: none;
-      display: block;
       font-size: 14px;
     }
 
-    .dropdown-content a:hover {
+    .lang-list {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #102542;
+      min-width: 140px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .lang-list a {
+      padding: 10px 14px;
+      display: block;
+      color: white;
+      text-decoration: none;
+    }
+
+    .lang-list a:hover {
       background-color: #1a335c;
       color: orange;
     }
 
-    .lang-dropdown:hover .dropdown-content {
+    .lang-box:hover .lang-list {
       display: block;
     }
 
@@ -123,7 +116,7 @@
 
     @keyframes glow {
       from { transform: scale(1); opacity: 0.6; }
-      to { transform: scale(1.2); opacity: 1; }
+      to   { transform: scale(1.2); opacity: 1; }
     }
 
     .hero h1 {
@@ -138,7 +131,7 @@
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     .hero-line {
@@ -152,7 +145,7 @@
 
     @keyframes lineGrow {
       from { width: 0; opacity: 0; }
-      to { width: 80px; opacity: 1; }
+      to   { width: 80px; opacity: 1; }
     }
 
     .hero p {
@@ -176,8 +169,8 @@
       letter-spacing: 1px;
       transition: all 0.3s ease;
       box-shadow: 0 0 10px rgba(255,165,0,0.4);
-      animation: fadeIn 2s 1.5s forwards;
       opacity: 0;
+      animation: fadeIn 2s 1.5s forwards;
     }
 
     .btn:hover {
@@ -203,23 +196,11 @@
       transition: 0.3s;
     }
 
-    .fb-link:hover {
-      color: white;
-    }
+    .fb-link:hover { color: white; }
   </style>
 </head>
 
 <body>
-
-  <!-- 🔥 永远看得见的语言按钮 -->
-  <div class="lang-dropdown">
-    <button class="dropbtn">🌐 Language</button>
-    <div class="dropdown-content">
-      <a onclick="switchLang('en')">English</a>
-      <a onclick="switchLang('zh-CN')">中文</a>
-      <a onclick="switchLang('ms-MY')">BM</a>
-    </div>
-  </div>
 
   <header>
     <div class="logo-text">
@@ -232,6 +213,16 @@
       <a href="about.html" data-lang-key="nav_about">About</a>
       <a href="contact.html" data-lang-key="nav_contact">Contact</a>
     </nav>
+
+    <!-- 🌐 语言按钮（放在导航栏右边） -->
+    <div class="lang-box">
+      <button class="lang-btn">🌐 Language</button>
+      <div class="lang-list">
+        <a onclick="switchLang('en')">English</a>
+        <a onclick="switchLang('zh-CN')">中文</a>
+        <a onclick="switchLang('ms-MY')">BM</a>
+      </div>
+    </div>
   </header>
 
   <section class="hero">
