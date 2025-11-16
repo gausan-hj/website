@@ -17,71 +17,17 @@
 
     /* ---------- Header ---------- */
     header {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 30px;
-      padding: 18px 40px;
       background-color: rgba(10, 25, 50, 0.9);
       backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 60px;
       border-bottom: 2px solid rgba(255, 166, 0, 0.5);
-      flex-wrap: wrap;
       position: relative;
-      z-index: 5;
+      z-index: 10; /* 确保 dropdown 永远在最前 */
     }
 
-    /* ---------- 语言下拉 ---------- */
-    .lang-dropdown {
-      position: relative;
-      display: inline-block;
-      z-index: 10;
-    }
-
-    .dropbtn {
-      background-color: rgba(10,25,50,0.8);
-      color: orange;
-      padding: 8px 16px;
-      font-size: 1rem;
-      border: 2px solid orange;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .dropbtn:hover {
-      background-color: orange;
-      color: #0c1c36;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: rgba(10,25,50,0.95);
-      min-width: 120px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
-      border-radius: 6px;
-      margin-top: 5px;
-      overflow: hidden;
-    }
-
-    .dropdown-content a {
-      color: white;
-      padding: 10px 14px;
-      text-decoration: none;
-      display: block;
-      transition: background 0.3s;
-    }
-
-    .dropdown-content a:hover {
-      background-color: orange;
-      color: #0c1c36;
-    }
-
-    .lang-dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    /* ---------- Logo ---------- */
     .logo-text {
       font-size: 1.7rem;
       font-weight: bold;
@@ -92,7 +38,6 @@
       color: orange;
     }
 
-    /* ---------- Nav ---------- */
     nav a {
       color: white;
       text-decoration: none;
@@ -103,6 +48,50 @@
 
     nav a:hover {
       color: orange;
+    }
+
+    /* ---------- 语言按钮 ---------- */
+    .lang-dropdown {
+      position: absolute;
+      left: 20px;
+      top: 18px;
+    }
+
+    .dropbtn {
+      background-color: #0b1b33;
+      color: orange;
+      padding: 8px 18px;
+      font-size: 14px;
+      border: 1px solid orange;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #102542;
+      min-width: 120px;
+      border-radius: 8px;
+      margin-top: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 10px 14px;
+      text-decoration: none;
+      display: block;
+      font-size: 14px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #1a335c;
+      color: orange;
+    }
+
+    .lang-dropdown:hover .dropdown-content {
+      display: block;
     }
 
     /* ---------- Hero Section ---------- */
@@ -196,7 +185,6 @@
       box-shadow: 0 0 20px rgba(255,165,0,0.6);
     }
 
-    /* ---------- Footer ---------- */
     footer {
       text-align: center;
       padding: 25px;
@@ -216,21 +204,23 @@
     .fb-link:hover {
       color: white;
     }
+
   </style>
 </head>
 
 <body>
-  <header>
-    <!-- 语言选择按钮在最左边 -->
-    <div class="lang-dropdown">
-      <button class="dropbtn">Language ▼</button>
-      <div class="dropdown-content">
-        <a href="#" onclick="switchLang('en')">English</a>
-        <a href="#" onclick="switchLang('zh-CN')">中文</a>
-        <a href="#" onclick="switchLang('ms-MY')">BM</a>
-      </div>
-    </div>
 
+  <!-- ---------- 语言选择按钮（最上层） ---------- -->
+  <div class="lang-dropdown">
+    <button class="dropbtn">🌐 Language</button>
+    <div class="dropdown-content">
+      <a onclick="switchLang('en')">English</a>
+      <a onclick="switchLang('zh-CN')">中文</a>
+      <a onclick="switchLang('ms-MY')">BM</a>
+    </div>
+  </div>
+
+  <header>
     <div class="logo-text">
       <span class="yc">YC</span> LEE Architect
     </div>
@@ -244,10 +234,10 @@
   </header>
 
   <section class="hero">
-    <h1 data-lang="en">Craft · Architecture · Space</h1>
+    <h1 data-lang-key="hero_title">Craft · Architecture · Space</h1>
     <div class="hero-line"></div>
-    <p data-lang="en">Designing timeless spaces that connect people, structure, and emotion through the language of architecture.</p>
-    <a href="projects.html" class="btn">View Projects</a>
+    <p data-lang-key="hero_text">Designing timeless spaces that connect people, structure, and emotion through the language of architecture.</p>
+    <a href="projects.html" class="btn" data-lang-key="btn_view_projects">View Projects</a>
   </section>
 
   <footer>
@@ -256,11 +246,19 @@
   </footer>
 
   <script>
-    // 语言切换 JS 钩子
-    function switchLang(lang) {
-      console.log("切换语言:", lang);
-      // 后续你可以从 lang 文件夹里读取对应 JSON 并替换文本
+    async function switchLang(lang) {
+      try {
+        const res = await fetch(`lang/${lang}.json`);
+        const data = await res.json();
+        document.querySelectorAll("[data-lang-key]").forEach(el => {
+          const key = el.getAttribute("data-lang-key");
+          if (data[key]) el.textContent = data[key];
+        });
+      } catch(err) {
+        console.error("语言加载失败:", err);
+      }
     }
   </script>
+
 </body>
 </html>
