@@ -20,13 +20,18 @@
       background-color: rgba(10, 25, 50, 0.9);
       backdrop-filter: blur(8px);
       display: flex;
-      justify-content: flex-start; /* 左对齐 */
+      justify-content: space-between; /* 左右分布 */
       align-items: flex-start;
-      gap: 40px; /* logo、nav、语言按钮间距 */
       padding: 18px 60px;
       border-bottom: 2px solid rgba(255, 166, 0, 0.5);
       position: relative;
       z-index: 5;
+    }
+
+    .header-left {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
     }
 
     .logo-text {
@@ -39,26 +44,24 @@
     /* ---------- 导航栏（竖排） ---------- */
     nav {
       display: flex;
-      flex-direction: column; /* 竖排 */
+      flex-direction: column;
       gap: 12px;
-      min-width: 100px; /* 固定最小宽度 */
+      min-width: 100px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       font-size: 1rem;
-      white-space: nowrap; /* 不换行 */
+      white-space: nowrap;
       transition: color 0.3s ease;
     }
     nav a:hover { color: orange; }
 
-    /* ---------- 语言按钮（新位置：右上角） ---------- */
+    /* ---------- 语言按钮（放在header右侧） ---------- */
     .lang-box {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 100;
+      position: relative;
+      display: inline-block;
     }
 
     .lang-btn {
@@ -87,6 +90,7 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
       overflow: hidden;
       margin-top: 6px;
+      z-index: 10;
     }
 
     .lang-list a {
@@ -217,7 +221,13 @@
     @media (max-width: 768px) {
       header {
         padding: 15px 20px;
-        gap: 20px;
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .header-left {
+        width: 100%;
+        justify-content: space-between;
       }
       
       .logo-text {
@@ -229,8 +239,7 @@
       }
       
       .lang-box {
-        top: 15px;
-        right: 15px;
+        align-self: flex-end;
       }
       
       .hero h1 {
@@ -244,27 +253,29 @@
 <body>
 
   <header>
-    <div class="logo-text">
-      <span class="yc">YC</span> LEE Architect
+    <div class="header-left">
+      <div class="logo-text">
+        <span class="yc">YC</span> LEE Architect
+      </div>
+
+      <nav>
+        <a href="index.html" data-lang-key="nav_home">Home</a>
+        <a href="projects.html" data-lang-key="nav_projects">Projects</a>
+        <a href="about.html" data-lang-key="nav_about">About</a>
+        <a href="contact.html" data-lang-key="nav_contact">Contact</a>
+      </nav>
     </div>
 
-    <nav>
-      <a href="index.html" data-lang-key="nav_home">Home</a>
-      <a href="projects.html" data-lang-key="nav_projects">Projects</a>
-      <a href="about.html" data-lang-key="nav_about">About</a>
-      <a href="contact.html" data-lang-key="nav_contact">Contact</a>
-    </nav>
+    <!-- 🌐 语言按钮（放在header右侧） -->
+    <div class="lang-box">
+      <button class="lang-btn">🌐 Language</button>
+      <div class="lang-list">
+        <a onclick="switchLang('en')">English</a>
+        <a onclick="switchLang('zh-CN')">中文</a>
+        <a onclick="switchLang('ms-MY')">BM</a>
+      </div>
+    </div>
   </header>
-
-  <!-- 🌐 语言按钮（新位置：右上角） -->
-  <div class="lang-box">
-    <button class="lang-btn">🌐 Language</button>
-    <div class="lang-list">
-      <a onclick="switchLang('en')">English</a>
-      <a onclick="switchLang('zh-CN')">中文</a>
-      <a onclick="switchLang('ms-MY')">BM</a>
-    </div>
-  </div>
 
   <section class="hero">
     <h1 data-lang-key="hero_title">Craft · Architecture · Space</h1>
