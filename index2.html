@@ -25,7 +25,7 @@
       padding: 18px 60px;
       border-bottom: 2px solid rgba(255, 166, 0, 0.5);
       position: relative;
-      z-index: 10; /* 确保 dropdown 永远在最前 */
+      z-index: 5;
     }
 
     .logo-text {
@@ -50,11 +50,12 @@
       color: orange;
     }
 
-    /* ---------- 语言按钮 ---------- */
+    /* ---------- 语言按钮（永远在最前） ---------- */
     .lang-dropdown {
-      position: absolute;
+      position: fixed;     /* 永远浮在左上角 */
+      top: 15px;
       left: 20px;
-      top: 18px;
+      z-index: 9999;       /* 页面最高层 */
     }
 
     .dropbtn {
@@ -75,6 +76,7 @@
       border-radius: 8px;
       margin-top: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      overflow: hidden;
     }
 
     .dropdown-content a {
@@ -204,13 +206,12 @@
     .fb-link:hover {
       color: white;
     }
-
   </style>
 </head>
 
 <body>
 
-  <!-- ---------- 语言选择按钮（最上层） ---------- -->
+  <!-- 🔥 永远看得见的语言按钮 -->
   <div class="lang-dropdown">
     <button class="dropbtn">🌐 Language</button>
     <div class="dropdown-content">
