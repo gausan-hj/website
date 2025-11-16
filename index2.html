@@ -1,225 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>YC LEE ARCHITECT</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #0c1c36, #061224);
-      color: white;
-      min-height: 100vh;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>YC LEE ARCHITECT</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #0c1c36, #061224);
+    color: white;
+    min-height: 100vh;
+  }
 
-    header {
-      background-color: rgba(10, 25, 50, 0.9);
-      backdrop-filter: blur(8px);
-      display: flex;
-      padding: 18px 60px;
-      border-bottom: 2px solid rgba(255, 166, 0, 0.5);
-      align-items: flex-start;
-      position: relative;
-      z-index: 1;
-    }
+  header {
+    background-color: rgba(10, 25, 50, 0.9);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between; /* 左右分开 */
+    align-items: flex-start;
+    padding: 18px 60px;
+    border-bottom: 2px solid rgba(255, 166, 0, 0.5);
+    position: relative;
+    z-index: 1;
+  }
 
-    .logo-text {
-      font-size: 1.7rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      color: white;
-      margin-right: 40px;
-    }
-    .yc { color: orange; }
+  .logo-text {
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  .yc { color: orange; }
 
-    nav {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+  nav {
+    display: flex;
+    flex-direction: column; /* 竖排导航 */
+    gap: 12px;
+  }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-    nav a:hover { color: orange; }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  nav a:hover { color: orange; }
 
-    /* ---------- 语言按钮固定右上角 ---------- */
-    .lang-box {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 9999;
-    }
+  /* ---------- 语言按钮 header 内靠右 ---------- */
+  .lang-box {
+    position: relative;
+    display: inline-block;
+  }
 
-    .lang-btn {
-      background-color: #0b1b33;
-      color: orange;
-      padding: 8px 18px;
-      border: 1px solid orange;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-    }
+  .lang-btn {
+    background-color: #0b1b33;
+    color: orange;
+    padding: 8px 18px;
+    border: 1px solid orange;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+  }
 
-    .lang-list {
-      display: none;
-      position: absolute;
-      right: 0;
-      background-color: #102542;
-      min-width: 140px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-      overflow: hidden;
-      margin-top: 6px;
-    }
+  .lang-list {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #102542;
+    min-width: 140px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    overflow: hidden;
+    margin-top: 6px;
+  }
 
-    .lang-list a {
-      padding: 10px 14px;
-      display: block;
-      color: white;
-      text-decoration: none;
-    }
+  .lang-list a {
+    padding: 10px 14px;
+    display: block;
+    color: white;
+    text-decoration: none;
+  }
 
-    .lang-list a:hover {
-      background-color: #1a335c;
-      color: orange;
-    }
+  .lang-list a:hover {
+    background-color: #1a335c;
+    color: orange;
+  }
 
-    .lang-box:hover .lang-list {
-      display: block;
-    }
+  .lang-box:hover .lang-list {
+    display: block;
+  }
 
-    /* ---------- Hero Section ---------- */
-    .hero {
-      height: 85vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      background: linear-gradient(to bottom right, #0c1c36, #132d52);
-      overflow: hidden;
-    }
+  .hero {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(to bottom right, #0c1c36, #132d52);
+    overflow: hidden;
+  }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(255,165,0,0.2) 0%, transparent 70%);
-      top: -100px;
-      right: -100px;
-      border-radius: 50%;
-      animation: glow 6s infinite alternate ease-in-out;
-    }
+  .hero h1 {
+    font-size: 3rem;
+    color: orange;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0;
+  }
 
-    @keyframes glow {
-      from { transform: scale(1); opacity: 0.6; }
-      to   { transform: scale(1.2); opacity: 1; }
-    }
+  .hero-line {
+    width: 80px;
+    height: 3px;
+    background: orange;
+    margin: 25px 0;
+    border-radius: 2px;
+  }
 
-    .hero h1 {
-      font-size: 3rem;
-      color: orange;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin: 0;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-    }
+  .hero p {
+    font-size: 1.2rem;
+    color: #cfd7e6;
+    max-width: 600px;
+    margin: 10px auto 30px;
+    line-height: 1.7;
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+  .btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 2px solid orange;
+    border-radius: 30px;
+    color: orange;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
 
-    .hero-line {
-      width: 80px;
-      height: 3px;
-      background: orange;
-      margin: 25px 0;
-      border-radius: 2px;
-      animation: lineGrow 1.5s ease-out;
-    }
+  .btn:hover {
+    background: orange;
+    color: #0c1c36;
+    transform: scale(1.05);
+  }
 
-    @keyframes lineGrow {
-      from { width: 0; opacity: 0; }
-      to   { width: 80px; opacity: 1; }
-    }
+  footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #0b1b33;
+    border-top: 2px solid rgba(255,165,0,0.4);
+    font-size: 0.9rem;
+    color: #cfd7e6;
+  }
 
-    .hero p {
-      font-size: 1.2rem;
-      color: #cfd7e6;
-      max-width: 600px;
-      margin: 10px auto 30px;
-      line-height: 1.7;
-      opacity: 0;
-      animation: fadeIn 2s 1s forwards;
-    }
+  .fb-link {
+    color: orange;
+    text-decoration: none;
+    margin-left: 10px;
+  }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 32px;
-      border: 2px solid orange;
-      border-radius: 30px;
-      color: orange;
-      font-weight: 600;
-      text-decoration: none;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(255,165,0,0.4);
-      opacity: 0;
-      animation: fadeIn 2s 1.5s forwards;
-    }
-
-    .btn:hover {
-      background: orange;
-      color: #0c1c36;
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255,165,0,0.6);
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background-color: #0b1b33;
-      border-top: 2px solid rgba(255,165,0,0.4);
-      font-size: 0.9rem;
-      color: #cfd7e6;
-    }
-
-    .fb-link {
-      color: orange;
-      text-decoration: none;
-      margin-left: 10px;
-      transition: 0.3s;
-    }
-
-    .fb-link:hover { color: white; }
-  </style>
+  .fb-link:hover { color: white; }
+</style>
 </head>
-
 <body>
 
-  <header>
-    <div class="logo-text">
-      <span class="yc">YC</span> LEE Architect
-    </div>
+<header>
+  <div class="logo-text">
+    <span class="yc">YC</span> LEE Architect
+  </div>
 
-    <nav>
-      <a href="index.html" data-lang-key="nav_home">Home</a>
-      <a href="projects.html" data-lang-key="nav_projects">Projects</a>
-      <a href="about.html" data-lang-key="nav_about">About</a>
-      <a href="contact.html" data-lang-key="nav_contact">Contact</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html" data-lang-key="nav_home">Home</a>
+    <a href="projects.html" data-lang-key="nav_projects">Projects</a>
+    <a href="about.html" data-lang-key="nav_about">About</a>
+    <a href="contact.html" data-lang-key="nav_contact">Contact</a>
+  </nav>
 
-  <!-- 🌐 语言按钮（右上角固定） -->
+  <!-- 语言按钮 header 内靠右 -->
   <div class="lang-box">
     <button class="lang-btn">🌐 Language</button>
     <div class="lang-list">
@@ -228,33 +184,34 @@
       <a onclick="switchLang('ms-MY')">BM</a>
     </div>
   </div>
+</header>
 
-  <section class="hero">
-    <h1 data-lang-key="hero_title">Craft · Architecture · Space</h1>
-    <div class="hero-line"></div>
-    <p data-lang-key="hero_text">Designing timeless spaces that connect people, structure, and emotion through the language of architecture.</p>
-    <a href="projects.html" class="btn" data-lang-key="btn_view_projects">View Projects</a>
-  </section>
+<section class="hero">
+  <h1 data-lang-key="hero_title">Craft · Architecture · Space</h1>
+  <div class="hero-line"></div>
+  <p data-lang-key="hero_text">Designing timeless spaces that connect people, structure, and emotion through the language of architecture.</p>
+  <a href="projects.html" class="btn" data-lang-key="btn_view_projects">View Projects</a>
+</section>
 
-  <footer>
-    &copy; 2025 YC Lee Architect. All rights reserved.
-    <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link">Facebook</a>
-  </footer>
+<footer>
+  &copy; 2025 YC Lee Architect. All rights reserved.
+  <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link">Facebook</a>
+</footer>
 
-  <script>
-    async function switchLang(lang) {
-      try {
-        const res = await fetch(`lang/${lang}.json`);
-        const data = await res.json();
-        document.querySelectorAll("[data-lang-key]").forEach(el => {
-          const key = el.getAttribute("data-lang-key");
-          if (data[key]) el.textContent = data[key];
-        });
-      } catch(err) {
-        console.error("语言加载失败:", err);
-      }
-    }
-  </script>
+<script>
+async function switchLang(lang) {
+  try {
+    const res = await fetch(`lang/${lang}.json`);
+    const data = await res.json();
+    document.querySelectorAll("[data-lang-key]").forEach(el => {
+      const key = el.getAttribute("data-lang-key");
+      if (data[key]) el.textContent = data[key];
+    });
+  } catch(err) {
+    console.error("语言加载失败:", err);
+  }
+}
+</script>
 
 </body>
 </html>
