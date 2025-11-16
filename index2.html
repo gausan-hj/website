@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>YC LEE ARCHITECT</title>
   <style>
-    /* ---------- 全局样式 ---------- */
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -14,7 +13,6 @@
       min-height: 100vh;
     }
 
-    /* ---------- Header ---------- */
     header {
       background-color: rgba(10, 25, 50, 0.9);
       backdrop-filter: blur(8px);
@@ -22,6 +20,8 @@
       padding: 18px 60px;
       border-bottom: 2px solid rgba(255, 166, 0, 0.5);
       align-items: flex-start;
+      position: relative;
+      z-index: 1;
     }
 
     .logo-text {
@@ -31,13 +31,11 @@
       color: white;
       margin-right: 40px;
     }
-
     .yc { color: orange; }
 
-    /* ---------- 竖排导航栏 ---------- */
     nav {
       display: flex;
-      flex-direction: column; /* 竖排 */
+      flex-direction: column;
       gap: 12px;
     }
 
@@ -47,13 +45,14 @@
       font-size: 1rem;
       transition: color 0.3s ease;
     }
-
     nav a:hover { color: orange; }
 
-    /* ---------- 语言按钮 ---------- */
+    /* ---------- 语言按钮固定右上角 ---------- */
     .lang-box {
-      margin-top: 12px; /* 和导航链接分开一点 */
-      position: relative;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
     }
 
     .lang-btn {
@@ -69,14 +68,13 @@
     .lang-list {
       display: none;
       position: absolute;
-      left: 100%; /* 从按钮右侧展开 */
-      top: 0;
+      right: 0;
       background-color: #102542;
       min-width: 140px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
       overflow: hidden;
-      margin-left: 6px;
+      margin-top: 6px;
     }
 
     .lang-list a {
@@ -218,18 +216,18 @@
       <a href="projects.html" data-lang-key="nav_projects">Projects</a>
       <a href="about.html" data-lang-key="nav_about">About</a>
       <a href="contact.html" data-lang-key="nav_contact">Contact</a>
-
-      <!-- 🌐 语言按钮 -->
-      <div class="lang-box">
-        <button class="lang-btn">🌐 Language</button>
-        <div class="lang-list">
-          <a onclick="switchLang('en')">English</a>
-          <a onclick="switchLang('zh-CN')">中文</a>
-          <a onclick="switchLang('ms-MY')">BM</a>
-        </div>
-      </div>
     </nav>
   </header>
+
+  <!-- 🌐 语言按钮（右上角固定） -->
+  <div class="lang-box">
+    <button class="lang-btn">🌐 Language</button>
+    <div class="lang-list">
+      <a onclick="switchLang('en')">English</a>
+      <a onclick="switchLang('zh-CN')">中文</a>
+      <a onclick="switchLang('ms-MY')">BM</a>
+    </div>
+  </div>
 
   <section class="hero">
     <h1 data-lang-key="hero_title">Craft · Architecture · Space</h1>
