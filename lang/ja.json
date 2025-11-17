@@ -1,11 +1,9 @@
 {
-  "home": "ホーム",
-  "projects": "プロジェクト",
-  "about": "私たちについて",
-  "contact": "お問い合わせ",
-  "intro": "YC Lee Architect公式ウェブサイトへようこそ。",
-  "rate_us": "評価する",
-  "submit": "送信",
-  "local_time": "マレーシア現地時間:",
-  "chatbot": "チャットボット"
+  "nav_home": "家",
+  "nav_projects": "プロジェクト",
+  "nav_about": "について",
+  "nav_contact": "接触",
+  "hero_title": "工芸・建築・空間",
+  "hero_text": "建築という言語を通じて、人、構造、感情をつなぐ時代を超越した空間をデザインします。",
+  "btn_view_projects": "プロジェクトを見る"
 }
