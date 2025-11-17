@@ -94,6 +94,10 @@
       z-index: 10;
     }
 
+    .lang-list-container.show {
+      display: block;
+    }
+
     .lang-search {
       width: 100%;
       padding: 10px 12px;
@@ -140,15 +144,12 @@
       text-decoration: none;
       font-size: 13px;
       border-bottom: 1px solid rgba(255,255,255,0.05);
+      cursor: pointer;
     }
 
     .lang-list a:hover {
       background-color: #1a335c;
       color: orange;
-    }
-
-    .lang-box:hover .lang-list-container {
-      display: block;
     }
 
     /* ---------- Hero Section ---------- */
@@ -315,8 +316,8 @@
 
     <!-- 🌐 语言按钮（放在header右侧） -->
     <div class="lang-box">
-      <button class="lang-btn">🌐 Language</button>
-      <div class="lang-list-container">
+      <button class="lang-btn" id="langBtn">🌐 Language</button>
+      <div class="lang-list-container" id="langContainer">
         <input type="text" class="lang-search" placeholder="Search language..." id="langSearch">
         <div class="lang-list">
           <!-- 常用语言放在前面 -->
@@ -452,8 +453,27 @@
   </footer>
 
   <script>
+    // 获取元素
+    const langBtn = document.getElementById('langBtn');
+    const langContainer = document.getElementById('langContainer');
+    const langSearch = document.getElementById('langSearch');
+
+    // 切换语言选择框显示/隐藏
+    function toggleLangMenu() {
+      langContainer.classList.toggle('show');
+      if (langContainer.classList.contains('show')) {
+        langSearch.focus();
+      }
+    }
+
+    // 点击语言按钮切换菜单
+    langBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      toggleLangMenu();
+    });
+
     // 搜索功能
-    document.getElementById('langSearch').addEventListener('input', function(e) {
+    langSearch.addEventListener('input', function(e) {
       const searchTerm = e.target.value.toLowerCase();
       const langItems = document.querySelectorAll('.lang-list a');
       
@@ -476,16 +496,42 @@
           const key = el.getAttribute("data-lang-key");
           if (data[key]) el.textContent = data[key];
         });
+        
+        // 关闭语言选择框
+        langContainer.classList.remove('show');
+        
+        // 更新按钮显示当前语言
+        const selectedLang = getLanguageName(lang);
+        if (selectedLang) {
+          langBtn.innerHTML = `🌐 ${selectedLang}`;
+        }
       } catch(err) {
         console.error("语言加载失败:", err);
       }
     }
 
+    // 获取语言名称
+    function getLanguageName(code) {
+      const langMap = {
+        'en': 'English',
+        'zh-CN': '中文',
+        'zh-TW': '繁體中文',
+        'ms-MY': 'Bahasa Melayu'
+        // 可以添加更多语言的映射
+      };
+      return langMap[code] || 'Language';
+    }
+
     // 点击页面其他地方关闭语言选择框
     document.addEventListener('click', function(e) {
       if (!e.target.closest('.lang-box')) {
-        document.querySelector('.lang-list-container').style.display = 'none';
+        langContainer.classList.remove('show');
       }
+    });
+
+    // 阻止语言选择框内的点击事件冒泡
+    langContainer.addEventListener('click', function(e) {
+      e.stopPropagation();
     });
   </script>
 
