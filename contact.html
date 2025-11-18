@@ -3,235 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact - YC LEE ARCHITECT</title>
+  <title data-lang="en">Contact - YC LEE ARCHITECT</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     /* ===== 全局设置 ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background: linear-gradient(135deg, #081524 0%, #0f2745 100%);
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background: linear-gradient(135deg, #081524 0%, #0f2745 100%); color: white; min-height: 100vh; display: flex; flex-direction: column; }
 
     /* ===== 顶部导航栏 ===== */
-    header {
-      background: rgba(10, 25, 47, 0.95);
-      padding: 20px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #ff7b00;
-      flex-wrap: wrap;
-    }
-
-    .logo-text {
-      font-size: 1.7rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    .yc {
-      color: #ff7b00;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 25px;
-      font-weight: 500;
-      transition: 0.3s;
-      position: relative;
-    }
-
-    nav a:hover {
-      color: #ff7b00;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background: #ff7b00;
-      transition: width 0.3s;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
+    header { background: rgba(10, 25, 47, 0.95); padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ff7b00; flex-wrap: wrap; }
+    .logo-text { font-size: 1.7rem; font-weight: bold; letter-spacing: 1px; }
+    .yc { color: #ff7b00; }
+    nav a { color: white; text-decoration: none; margin-left: 25px; font-weight: 500; transition: 0.3s; position: relative; }
+    nav a:hover { color: #ff7b00; }
+    nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0%; height: 2px; background: #ff7b00; transition: width 0.3s; }
+    nav a:hover::after { width: 100%; }
 
     /* ===== 内容 ===== */
-    .hero {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .contact-container {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(8px);
-      border-radius: 20px;
-      padding: 50px;
-      max-width: 750px;
-      width: 100%;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-      border: 1px solid rgba(255, 123, 0, 0.2);
-      transition: 0.3s;
-    }
-
-    .contact-container:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.3);
-    }
-
-    .contact-title {
-      font-size: 2.5rem;
-      color: #ff7b00;
-      margin-bottom: 25px;
-      letter-spacing: 1px;
-    }
-
-    .contact-info {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 35px;
-      color: #d8e0ec;
-    }
-
-    .contact-info p {
-      margin: 8px 0;
-    }
+    .hero { flex: 1; display: flex; justify-content: center; align-items: center; padding: 80px 20px; text-align: center; }
+    .contact-container { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(8px); border-radius: 20px; padding: 50px; max-width: 750px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.25); border: 1px solid rgba(255,123,0,0.2); transition: 0.3s; }
+    .contact-container:hover { transform: translateY(-5px); box-shadow: 0 14px 35px rgba(0,0,0,0.3); }
+    .contact-title { font-size: 2.5rem; color: #ff7b00; margin-bottom: 25px; letter-spacing: 1px; }
+    .contact-info { font-size: 1.1rem; line-height: 1.8; margin-bottom: 35px; color: #d8e0ec; }
+    .contact-info p { margin: 8px 0; }
 
     /* ===== 社交媒体区 ===== */
-    .social-section {
-      margin-top: 40px;
-    }
-
-    .social-title {
-      font-size: 1.6rem;
-      color: #ff7b00;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    .social-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-
-    .social-icon {
-      width: 75px;
-      height: 75px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      color: #ff7b00;
-      border: 2px solid #ff7b00;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      position: relative;
-    }
-
-    /* 悬停品牌色动画 */
-    .social-item:nth-child(1) .social-icon:hover {
-      background: #1877f2; /* Facebook 蓝 */
-      border-color: #1877f2;
-      color: white;
-    }
-    .social-item:nth-child(2) .social-icon:hover {
-      background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf, #4f5bd5);
-      border: none;
-      color: white;
-    }
-    .social-item:nth-child(3) .social-icon:hover {
-      background: linear-gradient(45deg, #25f4ee, #000000, #fe2c55);
-      color: white;
-      border: none;
-    }
-
-    /* 名称淡入效果 */
-    .social-name {
-      margin-top: 10px;
-      font-size: 0.9rem;
-      color: #ddd;
-      font-weight: 500;
-      opacity: 0;
-      transform: translateY(5px);
-      transition: all 0.4s ease;
-    }
-
-    .social-item:hover .social-name {
-      opacity: 1;
-      transform: translateY(0);
-      color: #ffb86b;
-    }
+    .social-section { margin-top: 40px; }
+    .social-title { font-size: 1.6rem; color: #ff7b00; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+    .social-icons { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .social-item { display: flex; flex-direction: column; align-items: center; position: relative; }
+    .social-icon { width: 75px; height: 75px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #ff7b00; border: 2px solid #ff7b00; transition: all 0.3s ease; text-decoration: none; position: relative; }
+    .social-item:nth-child(1) .social-icon:hover { background: #1877f2; border-color: #1877f2; color: white; }
+    .social-item:nth-child(2) .social-icon:hover { background: radial-gradient(circle at 30% 30%, #feda75,#d62976,#962fbf,#4f5bd5); border: none; color: white; }
+    .social-item:nth-child(3) .social-icon:hover { background: linear-gradient(45deg, #25f4ee,#000000,#fe2c55); color: white; border: none; }
+    .social-name { margin-top: 10px; font-size: 0.9rem; color: #ddd; font-weight: 500; opacity: 0; transform: translateY(5px); transition: all 0.4s ease; }
+    .social-item:hover .social-name { opacity: 1; transform: translateY(0); color: #ffb86b; }
 
     /* ===== 页脚 ===== */
-    footer {
-      background: rgba(10, 25, 47, 0.9);
-      text-align: center;
-      padding: 25px;
-      font-size: 0.9rem;
-      border-top: 1px solid rgba(255, 123, 0, 0.2);
-    }
-
-    .fb-link {
-      color: #ff7b00;
-      text-decoration: none;
-      margin-left: 5px;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    .fb-link:hover {
-      color: #ff9b35;
-    }
+    footer { background: rgba(10,25,47,0.9); text-align: center; padding: 25px; font-size: 0.9rem; border-top: 1px solid rgba(255,123,0,0.2); }
+    .fb-link { color: #ff7b00; text-decoration: none; margin-left: 5px; font-weight: 500; transition: 0.3s; }
+    .fb-link:hover { color: #ff9b35; }
 
     /* ===== 响应式 ===== */
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        padding: 20px;
-        gap: 10px;
-      }
-      nav a {
-        margin: 5px 10px;
-      }
-      .contact-container {
-        padding: 30px 20px;
-      }
-      .contact-title {
-        font-size: 2rem;
-      }
-      .social-icons {
-        gap: 25px;
-      }
+      header { flex-direction: column; padding: 20px; gap: 10px; }
+      nav a { margin: 5px 10px; }
+      .contact-container { padding: 30px 20px; }
+      .contact-title { font-size: 2rem; }
+      .social-icons { gap: 25px; }
     }
   </style>
 </head>
@@ -242,43 +61,43 @@
     </div>
 
     <nav>
-      <a href="index2.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="index2.html" data-lang="en">Home</a>
+      <a href="projects.html" data-lang="en">Projects</a>
+      <a href="about.html" data-lang="en">About</a>
+      <a href="contact.html" data-lang="en">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="contact-container">
-      <h1 class="contact-title">Contact Us</h1>
+      <h1 class="contact-title" data-lang="en">Contact Us</h1>
 
       <div class="contact-info">
-        <p><strong>Phone:</strong> 05-807 6197</p>
-        <p><strong>Email:</strong> ycleearchitect@gmail.com</p>
-        <p><strong>Office Hours:</strong> Monday – Friday, 9:00 AM – 5:00 PM</p>
+        <p data-lang="en"><strong>Phone:</strong> 05-807 6197</p>
+        <p data-lang="en"><strong>Email:</strong> ycleearchitect@gmail.com</p>
+        <p data-lang="en"><strong>Office Hours:</strong> Monday – Friday, 9:00 AM – 5:00 PM</p>
       </div>
 
       <div class="social-section">
-        <h2 class="social-title">Follow Us</h2>
+        <h2 class="social-title" data-lang="en">Follow Us</h2>
         <div class="social-icons">
           <div class="social-item">
             <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="social-icon">
               <i class="fab fa-facebook-f"></i>
             </a>
-            <span class="social-name">Facebook</span>
+            <span class="social-name" data-lang="en">Facebook</span>
           </div>
           <div class="social-item">
             <a href="https://www.instagram.com/yc.lee.architect?igsh=eG1wcDR6aHhoaXp1" target="_blank" class="social-icon">
               <i class="fab fa-instagram"></i>
             </a>
-            <span class="social-name">Instagram</span>
+            <span class="social-name" data-lang="en">Instagram</span>
           </div>
           <div class="social-item">
             <a href="https://www.tiktok.com/@yc.lee.architect?_t=ZS-8zAnw9m4YeP&_r=1" target="_blank" class="social-icon">
               <i class="fab fa-tiktok"></i>
             </a>
-            <span class="social-name">TikTok</span>
+            <span class="social-name" data-lang="en">TikTok</span>
           </div>
         </div>
       </div>
@@ -289,5 +108,7 @@
     &copy; 2025 YC Lee Architect. All rights reserved.
     <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link">Facebook</a>
   </footer>
+
+  <script src="lang.js"></script>
 </body>
 </html>
