@@ -20,5 +20,13 @@
   "project2_title": "🏢 品質檢查：YC Lee Architect 的專業視角 🏢",
   "btn_prev": "上一張",
   "btn_next": "下一張",
-  "btn_close": "關閉"
+  "btn_close": "關閉",
+  "about_title": "關於我們",
+  "about_subtitle": "我們主要服務：霹靂、雲頂、吉打、柔佛、吉隆坡，同時也承接海外項目。",
+  "philosophy_title": "我們的理念",
+  "philosophy_text": "建築不僅僅是結構和空間——它是人與環境之間的對話。我們旨在設計平衡簡約、優雅和永恆的空間。",
+  "mission_title": "我們的使命",
+  "mission_text": "我們致力於打造融合功能與美感的設計。從材料到形式，每一個細節都很重要——確保每個項目都講述自己獨特的故事。",
+  "team_title": "我們的團隊",
+  "team_text": "我們的團隊由來自不同學科的熱情建築師和設計師組成，共同努力為每個項目提供專業、創意和可持續的解決方案。"
 }
