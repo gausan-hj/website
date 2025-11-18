@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About - YC LEE ARCHITECT</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -200,6 +200,31 @@
     .fb-link:hover {
       color: #ffffff;
     }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      nav a {
+        margin: 0 10px;
+      }
+      
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .about-content {
+        padding: 60px 20px;
+      }
+      
+      .about-block {
+        padding: 25px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -213,32 +238,32 @@
       <span> LEE Architect</span>
     </div>
     <nav>
-      <a href="index2.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="index2.html" data-lang-key="nav_home">Home</a>
+      <a href="projects.html" data-lang-key="nav_projects">Projects</a>
+      <a href="about.html" data-lang-key="nav_about">About</a>
+      <a href="contact.html" data-lang-key="nav_contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>About Us</h1>
-    <p>We primarily serve: Perak, Genting, Kedah, Johor, Kuala Lumpur, and also handle overseas projects.</p>
+    <h1 data-lang-key="about_title">About Us</h1>
+    <p data-lang-key="about_subtitle">We primarily serve: Perak, Genting, Kedah, Johor, Kuala Lumpur, and also handle overseas projects.</p>
   </section>
 
   <section class="about-content">
     <div class="about-block">
-      <h2>Our Philosophy</h2>
-      <p>Architecture is not merely about structures and spaces—it is about the dialogue between people and their environment. We aim to design spaces that balance simplicity, elegance, and timelessness.</p>
+      <h2 data-lang-key="philosophy_title">Our Philosophy</h2>
+      <p data-lang-key="philosophy_text">Architecture is not merely about structures and spaces—it is about the dialogue between people and their environment. We aim to design spaces that balance simplicity, elegance, and timelessness.</p>
     </div>
 
     <div class="about-block">
-      <h2>Our Mission</h2>
-      <p>We are committed to crafting designs that unite function and beauty. Every detail matters—from materials to form—to ensure each project tells its own unique story.</p>
+      <h2 data-lang-key="mission_title">Our Mission</h2>
+      <p data-lang-key="mission_text">We are committed to crafting designs that unite function and beauty. Every detail matters—from materials to form—to ensure each project tells its own unique story.</p>
     </div>
 
     <div class="about-block">
-      <h2>Our Team</h2>
-      <p>Our team consists of passionate architects and designers from various disciplines, working together to deliver professional, creative, and sustainable solutions for every project.</p>
+      <h2 data-lang-key="team_title">Our Team</h2>
+      <p data-lang-key="team_text">Our team consists of passionate architects and designers from various disciplines, working together to deliver professional, creative, and sustainable solutions for every project.</p>
     </div>
   </section>
 
@@ -248,6 +273,40 @@
   </footer>
 
   <script>
+    // 语言存储和同步功能
+    const LANG_STORAGE_KEY = 'yc-lee-architect-lang';
+
+    // 初始化页面语言
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = getSavedLanguage();
+      applyLanguage(savedLang);
+    });
+
+    // 获取保存的语言
+    function getSavedLanguage() {
+      return localStorage.getItem(LANG_STORAGE_KEY) || 'en';
+    }
+
+    // 应用语言
+    async function applyLanguage(lang) {
+      try {
+        const res = await fetch(`lang/${lang}.json`);
+        const data = await res.json();
+        
+        document.querySelectorAll("[data-lang-key]").forEach(el => {
+          const key = el.getAttribute("data-lang-key");
+          if (data[key]) el.textContent = data[key];
+        });
+        
+      } catch(err) {
+        console.error("语言加载失败:", err);
+        // 如果语言文件加载失败，回退到英文
+        if (lang !== 'en') {
+          applyLanguage('en');
+        }
+      }
+    }
+
     // 滚动时触发淡入
     const blocks = document.querySelectorAll('.about-block');
 
