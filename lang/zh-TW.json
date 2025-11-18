@@ -3,7 +3,12 @@
   "nav_projects": "專案",
   "nav_about": "關於",
   "nav_contact": "接觸",
-  "hero_title": "工藝·建築·空間",
-  "hero_text": "設計通過建築語言將人、結構和情感聯繫起來的永恆空間。",
-  "btn_view_projects": "查看項目"
+  "contact_title": "聯繫我們",
+  "contact_phone": "電話：05-807 6197",
+  "contact_email": "電郵：ycleearchitect@gmail.com",
+  "contact_hours": "辦公時間：週一至週五，上午9:00 – 下午5:00",
+  "social_follow": "追蹤我們",
+  "social_facebook": "Facebook",
+  "social_instagram": "Instagram",
+  "social_tiktok": "TikTok"
 }
