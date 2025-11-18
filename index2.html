@@ -488,14 +488,13 @@
     });
 
     // 语言切换功能
-    async function switchLang(lang) {
-      try {
-        const res = await fetch(`lang/${lang}.json`);
-        const data = await res.json();
-        document.querySelectorAll("[data-lang-key]").forEach(el => {
-          const key = el.getAttribute("data-lang-key");
-          if (data[key]) el.textContent = data[key];
-        });
+function switchLang(lang) {
+  localStorage.setItem('selectedLang', lang); // 保存选择
+  applyLanguage(lang); // 更新主页内容
+  langContainer.classList.remove('show'); // 关闭菜单
+  const selectedLangName = getLanguageName(lang);
+  if(selectedLangName) langBtn.innerHTML = `🌐 ${selectedLangName}`;
+}
         
         // 关闭语言选择框
         langContainer.classList.remove('show');
