@@ -267,29 +267,29 @@
         flex-direction: column;
         gap: 15px;
       }
-      
+
       .header-left {
         width: 100%;
         justify-content: space-between;
       }
-      
+
       .logo-text {
         font-size: 1.4rem;
       }
-      
+
       nav {
         min-width: 80px;
       }
-      
+
       .lang-box {
         align-self: flex-end;
       }
-      
+
       .lang-list-container {
         width: 200px;
         right: -20px;
       }
-      
+
       .hero h1 {
         font-size: 2.2rem;
       }
@@ -325,10 +325,10 @@
           <a onclick="switchLang('zh-CN')">中文 (简体)</a>
           <a onclick="switchLang('zh-TW')">中文 (繁體)</a>
           <a onclick="switchLang('ms-MY')">Bahasa Melayu</a>
-          
+
           <!-- 分隔线 -->
           <div style="height: 1px; background: rgba(255,165,0,0.3); margin: 5px 0;"></div>
-          
+
           <!-- 其他语言 -->
           <a onclick="switchLang('af')">Afrikaans</a>
           <a onclick="switchLang('sq')">Shqip</a>
@@ -476,7 +476,7 @@
     langSearch.addEventListener('input', function(e) {
       const searchTerm = e.target.value.toLowerCase();
       const langItems = document.querySelectorAll('.lang-list a');
-      
+
       langItems.forEach(item => {
         const text = item.textContent.toLowerCase();
         if (text.includes(searchTerm)) {
@@ -488,17 +488,18 @@
     });
 
     // 语言切换功能
-function switchLang(lang) {
-  localStorage.setItem('selectedLang', lang); // 保存选择
-  applyLanguage(lang); // 更新主页内容
-  langContainer.classList.remove('show'); // 关闭菜单
-  const selectedLangName = getLanguageName(lang);
-  if(selectedLangName) langBtn.innerHTML = `🌐 ${selectedLangName}`;
-}
-        
+    async function switchLang(lang) {
+      try {
+        const res = await fetch(`lang/${lang}.json`);
+        const data = await res.json();
+        document.querySelectorAll("[data-lang-key]").forEach(el => {
+          const key = el.getAttribute("data-lang-key");
+          if (data[key]) el.textContent = data[key];
+        });
+
         // 关闭语言选择框
         langContainer.classList.remove('show');
-        
+
         // 更新按钮显示当前语言
         const selectedLang = getLanguageName(lang);
         if (selectedLang) {
