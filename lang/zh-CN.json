@@ -1,63 +1,32 @@
 {
-
-"nav_home": "首页",
-
-"nav_projects": "项目",
-
-"nav_about": "关于我们",
-
-"nav_contact": "联系我们",
-
-"hero_title": "工艺 · 建筑 · 空间",
-
-"hero_text": "通过建筑语言，设计永恒的空间，连接人、建筑和情感。",
-
-"btn_view_projects": "查看项目",
-
-"contact_title": "联系我们",
-
-"contact_phone": "电话：05-807 6197",
-
-"contact_email": "邮箱：ycleearchitect@gmail.com",
-
-"contact_hours": "办公时间：周一至周五，上午 9:00 至下午 5:00",
-
-"social_follow": "关注我们",
-
-"social_facebook": "Facebook",
-
-"social_instagram": "Instagram",
-
-"social_tiktok": "TikTok",
-
-"projects_title":  "精选项目",
-
-"projects_subtitle": "探索我们近期的现场工作和检查",
-
-"project1_title": "👷‍♂ 现场会议和检查 👷‍♀",
-
-"project2_title": "🏢 质量检查：来自 YC Lee Architect 的专业视角 🏢",
-
-"btn_prev": "上一页",
-
-"btn_next": "下一页",
-
-"btn_close": "关闭",
-
-"about_title": "关于我们",
-
-"about_subtitle": "我们的主要服务区域在霹雳州、云顶、吉打州、柔佛州和吉隆坡，我们也承接海外项目。",
-
-"philosophy_title": "我们的理念",
-
-"philosophy_text": "建筑不仅仅是结构和空间，更是人与环境之间的对话。我们致力于设计兼具简约、优雅和永恒的空间。",
-
-"mission_title":  "我们的使命",
-
-"mission_text": "我们致力于打造兼具功能性和美观性的设计。从材料到造型，每个细节都至关重要，确保每个项目都能讲述其独特的故事。",
-
-"team_title": "我们的团队",
-
-"team_text": "我们的团队由来自不同领域的充满热情的建筑师和设计师组成，他们携手合作，为每个项目提供专业、创意且可持续的解决方案。"
-
+  "nav_home": "家",
+  "nav_projects": "项目",
+  "nav_about": "关于",
+  "nav_contact": "接触",
+  "hero_title": "工艺·建筑·空间",
+  "hero_text": "设计永恒的空间，通过建筑语言连接人、结构和情感。",
+  "btn_view_projects": "查看项目",
+  "contact_title": "联系我们",
+  "contact_phone": "电话：05-807 6197",
+  "contact_email": "电子邮件：ycleearchitect@gmail.com",
+  "contact_hours": "办公时间：周一至周五，上午 9:00 – 下午 5:00",
+  "social_follow": "跟着我们",
+  "social_facebook": "Facebook",
+  "social_instagram": "Instagram",
+  "social_tiktok": "抖音",
+  "projects_title": "特色项目",
+  "projects_subtitle": "探索我们最近的现场工作和检查",
+  "project1_title": "👷‍♂ 现场会议和检查👷‍♀",
+  "project2_title": "🏢 质量检验：YC Lee 建筑师的专业视角 🏢",
+  "btn_prev": "以前的",
+  "btn_next": "下一个",
+  "btn_close": "关闭",
+  "about_title": "关于我们",
+  "about_subtitle": "我们主要服务于霹雳州、云顶、吉打、柔佛、吉隆坡，同时也承接海外项目。",
+  "philosophy_title": "我们的理念",
+  "philosophy_text": "建筑不仅仅是结构和空间——它是人与环境之间的对话。我们的目标是设计平衡简约、优雅和永恒的空间。",
+  "mission_title": "我们的使命",
+  "mission_text": "我们致力于创造融合功能性和美学的设计。从材料到形式，每个细节都很重要——确保每个项目都有自己独特的故事。",
+  "team_title": "我们的团队",
+  "team_text": "我们的团队由来自不同学科的充满热情的建筑师和设计师组成，他们共同努力为每个项目提供专业、创造性和可持续的解决方案。"
 }
