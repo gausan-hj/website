@@ -205,6 +205,7 @@
     <p data-lang-key="projects_subtitle">Explore our recent site works and inspections</p>
   </section>
 
+  <!-- 项目卡片 -->
   <section class="albums">
     <div class="album-card" onclick="toggleGallery('gallery1')">
       <img src="images/photo1.jpg" alt="Site Meeting & Inspection">
@@ -216,6 +217,7 @@
     </div>
   </section>
 
+  <!-- 相册内容 1 -->
   <div id="gallery1" class="gallery">
     <img src="images/photo1.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 1">
     <img src="images/photo2.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 2">
@@ -224,6 +226,7 @@
     <img src="images/photo5.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 5">
   </div>
 
+  <!-- 相册内容 2 -->
   <div id="gallery2" class="gallery">
     <img src="images/project2-1.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-1">
     <img src="images/project2-2.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-2">
@@ -232,12 +235,13 @@
     <img src="images/project2-5.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-5">
   </div>
 
+  <!-- 灯箱 -->
   <div id="lightbox" class="lightbox">
     <img id="lightboxImg" src="">
   </div>
 
   <!-- 固定导航按钮 -->
-  <div class="lightbox-controls-fixed">
+  <div id="lightboxControls" class="lightbox-controls-fixed" style="display: none;">
     <button onclick="changeSlide(-1)" data-lang-key="btn_prev">Prev</button>
     <button onclick="closeLightbox()" data-lang-key="btn_close">Close</button>
     <button onclick="changeSlide(1)" data-lang-key="btn_next">Next</button>
@@ -249,11 +253,12 @@
   </footer>
 
   <script>
-    // ==============================
+    // 图片画廊和灯箱
     let currentGallery = [];
     let currentIndex = 0;
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxControls = document.getElementById("lightboxControls");
 
     function openLightbox(imgElement, galleryId) {
       const gallery = document.getElementById(galleryId);
@@ -261,15 +266,16 @@
       currentIndex = currentGallery.indexOf(imgElement.src);
       updateLightbox();
       lightbox.style.display = "block";
+      lightboxControls.style.display = "flex"; // 显示固定按钮
     }
 
     function updateLightbox() {
       lightboxImg.src = currentGallery[currentIndex];
-      lightbox.style.display = "block";
     }
 
     function closeLightbox() {
       lightbox.style.display = "none";
+      lightboxControls.style.display = "none"; // 隐藏固定按钮
     }
 
     function changeSlide(step) {
@@ -285,10 +291,11 @@
 
     // 键盘导航
     document.addEventListener('keydown', e => {
-      if(currentGallery.length === 0) return;
-      if(e.key === 'ArrowLeft') changeSlide(-1);
-      if(e.key === 'ArrowRight') changeSlide(1);
-      if(e.key === 'Escape') closeLightbox();
+      if(lightbox.style.display === 'block') {
+        if(e.key === 'ArrowLeft') changeSlide(-1);
+        if(e.key === 'ArrowRight') changeSlide(1);
+        if(e.key === 'Escape') closeLightbox();
+      }
     });
 
     // 相册折叠/展开
@@ -301,7 +308,6 @@
       }
       allGalleries.forEach(g => g.classList.remove('active'));
       clickedGallery.classList.add('active');
-
       const headerHeight = document.querySelector('header').offsetHeight;
       window.scrollTo({ top: clickedGallery.offsetTop - headerHeight, behavior: 'smooth' });
     }
@@ -314,7 +320,7 @@
     });
     async function applyLanguage(lang) {
       try {
-        const res = await fetch(lang/${lang}.json);
+        const res = await fetch(`lang/${lang}.json`);
         const data = await res.json();
         document.querySelectorAll("[data-lang-key]").forEach(el => {
           const key = el.getAttribute("data-lang-key");
