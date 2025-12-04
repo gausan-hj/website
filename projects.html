@@ -214,38 +214,38 @@
   <!-- 项目卡片区 -->
   <section class="albums">
     <div class="album-card" onclick="toggleGallery('gallery1')">
-      <img src="images/photo1.jpg" alt="Project 1">
+      <img src="images/photo1.jpg" alt="Site Meeting & Inspection">
       <h3 data-lang-key="project1_title">👷‍♂ Site Meeting & Inspection 👷‍♀</h3>
     </div>
 
     <div class="album-card" onclick="toggleGallery('gallery2')">
-      <img src="images/project2-1.jpg" alt="Project 2">
+      <img src="images/project2-1.jpg" alt="Quality Check">
       <h3 data-lang-key="project2_title">🏢 Quality Check: By YC Lee Architect's Eye 🏢</h3>
     </div>
   </section>
 
   <!-- 相册内容 1 -->
   <div id="gallery1" class="gallery">
-    <img src="images/photo1.jpg" onclick="openLightbox(0, 'images1')">
-    <img src="images/photo2.jpg" onclick="openLightbox(1, 'images1')">
-    <img src="images/photo3.jpg" onclick="openLightbox(2, 'images1')">
-    <img src="images/photo4.jpg" onclick="openLightbox(3, 'images1')">
-    <img src="images/photo5.jpg" onclick="openLightbox(4, 'images1')">
-    <img src="images/photo6.jpg" onclick="openLightbox(5, 'images1')">
-    <img src="images/photo7.jpg" onclick="openLightbox(6, 'images1')">
-    <img src="images/photo8.jpg" onclick="openLightbox(7, 'images1')">
-    <img src="images/photo9.jpg" onclick="openLightbox(8, 'images1')">
-    <img src="images/photo10.jpg" onclick="openLightbox(9, 'images1')">
+    <img src="images/photo1.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 1">
+    <img src="images/photo2.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 2">
+    <img src="images/photo3.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 3">
+    <img src="images/photo4.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 4">
+    <img src="images/photo5.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 5">
+    <img src="images/photo6.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 6">
+    <img src="images/photo7.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 7">
+    <img src="images/photo8.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 8">
+    <img src="images/photo9.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 9">
+    <img src="images/photo10.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 10">
   </div>
 
   <!-- 相册内容 2 -->
   <div id="gallery2" class="gallery">
-    <img src="images/project2-1.jpg" onclick="openLightbox(0, 'images2')">
-    <img src="images/project2-2.jpg" onclick="openLightbox(1, 'images2')">
-    <img src="images/project2-3.jpg" onclick="openLightbox(2, 'images2')">
-    <img src="images/project2-4.jpg" onclick="openLightbox(3, 'images2')">
-    <img src="images/project2-5.jpg" onclick="openLightbox(4, 'images2')">
-    <img src="images/project2-6.jpg" onclick="openLightbox(5, 'images2')">
+    <img src="images/project2-1.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-1">
+    <img src="images/project2-2.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-2">
+    <img src="images/project2-3.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-3">
+    <img src="images/project2-4.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-4">
+    <img src="images/project2-5.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-5">
+    <img src="images/project2-6.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-6">
   </div>
 
   <!-- 灯箱 -->
@@ -263,81 +263,29 @@
     <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link">Facebook</a>
   </footer>
 
+  <!-- ============================== -->
+  <!-- JavaScript -->
+  <!-- ============================== -->
   <script>
-    // 语言存储和同步功能
-    const LANG_STORAGE_KEY = 'yc-lee-architect-lang';
-
-    // 初始化页面语言
-    document.addEventListener('DOMContentLoaded', function() {
-      const savedLang = getSavedLanguage();
-      applyLanguage(savedLang);
-    });
-
-    // 获取保存的语言
-    function getSavedLanguage() {
-      return localStorage.getItem(LANG_STORAGE_KEY) || 'en';
-    }
-
-    // 应用语言
-    async function applyLanguage(lang) {
-      try {
-        const res = await fetch(`lang/${lang}.json`);
-        const data = await res.json();
-        
-        document.querySelectorAll("[data-lang-key]").forEach(el => {
-          const key = el.getAttribute("data-lang-key");
-          if (data[key]) el.textContent = data[key];
-        });
-        
-      } catch(err) {
-        console.error("语言加载失败:", err);
-        // 如果语言文件加载失败，回退到英文
-        if (lang !== 'en') {
-          applyLanguage('en');
-        }
-      }
-    }
-
-    // 图片画廊功能
-    let currentIndex = 0;
+    // ==============================
+    // 灯箱与画廊功能（改进版）
+    // ==============================
     let currentGallery = [];
-
-    const images1 = [
-      "images/photo1.jpg","images/photo2.jpg","images/photo3.jpg","images/photo4.jpg",
-      "images/photo5.jpg","images/photo6.jpg","images/photo7.jpg","images/photo8.jpg",
-      "images/photo9.jpg","images/photo10.jpg"
-    ];
-    const images2 = [
-      "images/project2-1.jpg","images/project2-2.jpg","images/project2-3.jpg",
-      "images/project2-4.jpg","images/project2-5.jpg","images/project2-6.jpg"
-    ];
+    let currentIndex = 0;
 
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightboxImg");
 
-    function toggleGallery(id) {
-      const allGalleries = document.querySelectorAll('.gallery');
-      const clickedGallery = document.getElementById(id);
-
-      // 如果当前相册已经是展开的，则关闭它
-      if (clickedGallery.classList.contains('active')) {
-        clickedGallery.classList.remove('active');
-        return;
-      }
-
-      // 否则先关闭所有，再打开目标相册
-      allGalleries.forEach(g => g.classList.remove('active'));
-      clickedGallery.classList.add('active');
-
-      // 平滑滚动到目标相册
-      window.scrollTo({ top: clickedGallery.offsetTop - 50, behavior: 'smooth' });
+    function openLightbox(imgElement, galleryId) {
+      const gallery = document.getElementById(galleryId);
+      currentGallery = Array.from(gallery.querySelectorAll('img')).map(img => img.src);
+      currentIndex = currentGallery.indexOf(imgElement.src);
+      updateLightbox();
+      lightbox.style.display = "block";
     }
 
-    function openLightbox(index, galleryName) {
-      currentGallery = (galleryName === 'images1') ? images1 : images2;
-      currentIndex = index;
-      lightbox.style.display = "block";
-      lightboxImg.src = currentGallery[index];
+    function updateLightbox() {
+      lightboxImg.src = currentGallery[currentIndex];
     }
 
     function closeLightbox() {
@@ -346,10 +294,15 @@
 
     function changeSlide(step) {
       currentIndex = (currentIndex + step + currentGallery.length) % currentGallery.length;
-      lightboxImg.src = currentGallery[currentIndex];
+      updateLightbox();
     }
 
-    // 键盘导航支持
+    // 点击背景关闭灯箱
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // 键盘导航
     document.addEventListener('keydown', function(e) {
       if (lightbox.style.display === 'block') {
         if (e.key === 'ArrowLeft') changeSlide(-1);
@@ -357,6 +310,53 @@
         if (e.key === 'Escape') closeLightbox();
       }
     });
+
+    // 相册折叠/展开
+    function toggleGallery(id) {
+      const allGalleries = document.querySelectorAll('.gallery');
+      const clickedGallery = document.getElementById(id);
+
+      if (clickedGallery.classList.contains('active')) {
+        clickedGallery.classList.remove('active');
+        return;
+      }
+
+      allGalleries.forEach(g => g.classList.remove('active'));
+      clickedGallery.classList.add('active');
+
+      const headerHeight = document.querySelector('header').offsetHeight;
+      window.scrollTo({ top: clickedGallery.offsetTop - headerHeight, behavior: 'smooth' });
+    }
+
+    // ==============================
+    // 语言存储与同步
+    // ==============================
+    const LANG_STORAGE_KEY = 'yc-lee-architect-lang';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = getSavedLanguage();
+      applyLanguage(savedLang);
+    });
+
+    function getSavedLanguage() {
+      return localStorage.getItem(LANG_STORAGE_KEY) || 'en';
+    }
+
+    async function applyLanguage(lang) {
+      try {
+        const res = await fetch(`lang/${lang}.json`);
+        const data = await res.json();
+
+        document.querySelectorAll("[data-lang-key]").forEach(el => {
+          const key = el.getAttribute("data-lang-key");
+          if (data[key]) el.textContent = data[key];
+        });
+
+      } catch(err) {
+        console.error("语言加载失败:", err);
+        if (lang !== 'en') applyLanguage('en');
+      }
+    }
   </script>
 </body>
 </html>
