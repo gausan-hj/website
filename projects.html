@@ -22,37 +22,19 @@
       align-items: center;
     }
 
-    .logo-text .yc {
-      color: orange;
-      font-weight: bold;
-    }
-    .logo-text {
-      font-size: 1.3rem;
-      font-weight: bold;
-    }
-
-    .nav-bar a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      transition: color 0.3s;
-    }
-    .nav-bar a:hover {
-      color: orange;
-    }
+    .logo-text .yc { color: orange; font-weight: bold; }
+    .logo-text { font-size: 1.3rem; font-weight: bold; }
+    .nav-bar a { color: white; text-decoration: none; margin-left: 20px; transition: color 0.3s; }
+    .nav-bar a:hover { color: orange; }
 
     .hero {
       text-align: center;
       padding: 40px 20px;
       background: linear-gradient(90deg, #0b1a33, #132e57);
     }
-    .hero h2 {
-      font-size: 2rem;
-      color: orange;
-      margin-bottom: 10px;
-    }
+    .hero h2 { font-size: 2rem; color: orange; margin-bottom: 10px; }
 
-    /* 封面卡片区 */
+    /* 项目卡片 */
     .albums {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -61,7 +43,6 @@
       max-width: 1200px;
       margin: auto;
     }
-
     .album-card {
       background: #162b52;
       border-radius: 15px;
@@ -74,20 +55,8 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 15px rgba(0,0,0,0.5);
     }
-
-    .album-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .album-card h3 {
-      padding: 15px;
-      text-align: center;
-      font-size: 1.1rem;
-      color: white;
-      background-color: #132a4d;
-      margin: 0;
-    }
+    .album-card img { width: 100%; height: 200px; object-fit: cover; }
+    .album-card h3 { padding: 15px; text-align: center; font-size: 1.1rem; color: white; background-color: #132a4d; margin: 0; }
 
     /* 相册 Masonry */
     .gallery {
@@ -99,11 +68,7 @@
       padding: 10px;
       animation: fadeIn 0.6s ease;
     }
-
-    .gallery.active {
-      display: block;
-    }
-
+    .gallery.active { display: block; }
     .gallery img {
       width: 100%;
       border-radius: 12px;
@@ -113,16 +78,12 @@
       break-inside: avoid;
       cursor: pointer;
     }
-
     .gallery img:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 20px rgba(255, 136, 0, 0.5);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
     /* 灯箱样式 */
     .lightbox {
@@ -137,7 +98,6 @@
       text-align: center;
       backdrop-filter: blur(3px);
     }
-
     .lightbox img {
       max-width: 90%;
       max-height: 80%;
@@ -156,7 +116,6 @@
       gap: 15px;
       z-index: 1100;
     }
-
     .lightbox-controls-fixed button {
       padding: 10px 20px;
       border: none;
@@ -167,9 +126,38 @@
       font-weight: bold;
       transition: background 0.3s;
     }
+    .lightbox-controls-fixed button:hover { background: #ffb84d; }
 
-    .lightbox-controls-fixed button:hover {
-      background: #ffb84d;
+    /* 特色项目轮播 */
+    .featured-projects { text-align: center; padding: 40px 20px; }
+    .featured-slider {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      height: 400px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .featured-slider .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    .featured-slider .slide.active { opacity: 1; }
+    .featured-slider img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+    .featured-slider .caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 15px;
+      background: rgba(19,42,77,0.7);
+      color: white;
+      text-align: center;
+      font-weight: bold;
     }
 
     footer {
@@ -205,6 +193,25 @@
     <p data-lang-key="projects_subtitle">Explore our recent site works and inspections</p>
   </section>
 
+  <!-- 特色项目轮播 -->
+  <section class="featured-projects">
+    <h2 style="color:orange;">Solo Project Highlights</h2>
+    <div class="featured-slider" id="featuredSlider">
+      <div class="slide active">
+        <img src="images/solo_project1.jpg" alt="Solo Project 1">
+        <div class="caption">🏗 Solo Project 1 🏗</div>
+      </div>
+      <div class="slide">
+        <img src="images/solo_project2.jpg" alt="Solo Project 2">
+        <div class="caption">🏢 Solo Project 2 🏢</div>
+      </div>
+      <div class="slide">
+        <img src="images/solo_project3.jpg" alt="Solo Project 3">
+        <div class="caption">🏠 Solo Project 3 🏠</div>
+      </div>
+    </div>
+  </section>
+
   <!-- 项目卡片 -->
   <section class="albums">
     <div class="album-card" onclick="toggleGallery('gallery1')">
@@ -217,7 +224,7 @@
     </div>
   </section>
 
-  <!-- 相册内容 1 -->
+  <!-- 相册内容 -->
   <div id="gallery1" class="gallery">
     <img src="images/photo1.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 1">
     <img src="images/photo2.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 2">
@@ -231,7 +238,6 @@
     <img src="images/photo10.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 10">
   </div>
 
-  <!-- 相册内容 2 -->
   <div id="gallery2" class="gallery">
     <img src="images/project2-1.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-1">
     <img src="images/project2-2.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-2">
@@ -259,83 +265,71 @@
   </footer>
 
   <script>
-    // 图片画廊和灯箱
-    let currentGallery = [];
-    let currentIndex = 0;
+    // 特色项目轮播
+    const slides = document.querySelectorAll('#featuredSlider .slide');
+    let currentSlide = 0;
+    function showSlide(index) {
+      slides.forEach((slide,i)=>slide.classList.toggle('active',i===index));
+    }
+    setInterval(()=>{
+      currentSlide = (currentSlide+1)%slides.length;
+      showSlide(currentSlide);
+    },4000);
+
+    // 灯箱功能
+    let currentGallery = [], currentIndex = 0;
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightboxImg");
     const lightboxControls = document.getElementById("lightboxControls");
 
-    function openLightbox(imgElement, galleryId) {
+    function openLightbox(imgElement, galleryId){
       const gallery = document.getElementById(galleryId);
-      currentGallery = Array.from(gallery.querySelectorAll('img')).map(img => img.src);
+      currentGallery = Array.from(gallery.querySelectorAll('img')).map(img=>img.src);
       currentIndex = currentGallery.indexOf(imgElement.src);
       updateLightbox();
       lightbox.style.display = "block";
-      lightboxControls.style.display = "flex"; // 显示固定按钮
+      lightboxControls.style.display = "flex";
     }
-
-    function updateLightbox() {
-      lightboxImg.src = currentGallery[currentIndex];
-    }
-
-    function closeLightbox() {
-      lightbox.style.display = "none";
-      lightboxControls.style.display = "none"; // 隐藏固定按钮
-    }
-
-    function changeSlide(step) {
-      if(currentGallery.length === 0) return;
-      currentIndex = (currentIndex + step + currentGallery.length) % currentGallery.length;
+    function updateLightbox(){ lightboxImg.src = currentGallery[currentIndex]; }
+    function closeLightbox(){ lightbox.style.display = "none"; lightboxControls.style.display = "none"; }
+    function changeSlide(step){
+      if(currentGallery.length===0)return;
+      currentIndex=(currentIndex+step+currentGallery.length)%currentGallery.length;
       updateLightbox();
     }
-
-    // 点击背景关闭灯箱
-    lightbox.addEventListener('click', e => {
-      if(e.target === lightbox) closeLightbox();
-    });
-
-    // 键盘导航
-    document.addEventListener('keydown', e => {
-      if(lightbox.style.display === 'block') {
-        if(e.key === 'ArrowLeft') changeSlide(-1);
-        if(e.key === 'ArrowRight') changeSlide(1);
-        if(e.key === 'Escape') closeLightbox();
+    lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox();});
+    document.addEventListener('keydown',e=>{
+      if(lightbox.style.display==='block'){
+        if(e.key==='ArrowLeft') changeSlide(-1);
+        if(e.key==='ArrowRight') changeSlide(1);
+        if(e.key==='Escape') closeLightbox();
       }
     });
-
-    // 相册折叠/展开
-    function toggleGallery(id) {
-      const allGalleries = document.querySelectorAll('.gallery');
-      const clickedGallery = document.getElementById(id);
-      if(clickedGallery.classList.contains('active')) {
-        clickedGallery.classList.remove('active');
-        return;
-      }
-      allGalleries.forEach(g => g.classList.remove('active'));
+    function toggleGallery(id){
+      const allGalleries=document.querySelectorAll('.gallery');
+      const clickedGallery=document.getElementById(id);
+      if(clickedGallery.classList.contains('active')){clickedGallery.classList.remove('active');return;}
+      allGalleries.forEach(g=>g.classList.remove('active'));
       clickedGallery.classList.add('active');
-      const headerHeight = document.querySelector('header').offsetHeight;
-      window.scrollTo({ top: clickedGallery.offsetTop - headerHeight, behavior: 'smooth' });
+      const headerHeight=document.querySelector('header').offsetHeight;
+      window.scrollTo({top:clickedGallery.offsetTop-headerHeight, behavior:'smooth'});
     }
 
     // 语言功能
-    const LANG_STORAGE_KEY = 'yc-lee-architect-lang';
-    document.addEventListener('DOMContentLoaded', function() {
-      const savedLang = localStorage.getItem(LANG_STORAGE_KEY) || 'en';
+    const LANG_STORAGE_KEY='yc-lee-architect-lang';
+    document.addEventListener('DOMContentLoaded',function(){
+      const savedLang=localStorage.getItem(LANG_STORAGE_KEY)||'en';
       applyLanguage(savedLang);
     });
-    async function applyLanguage(lang) {
-      try {
-        const res = await fetch(`lang/${lang}.json`);
-        const data = await res.json();
-        document.querySelectorAll("[data-lang-key]").forEach(el => {
-          const key = el.getAttribute("data-lang-key");
-          if(data[key]) el.textContent = data[key];
+    async function applyLanguage(lang){
+      try{
+        const res=await fetch(`lang/${lang}.json`);
+        const data=await res.json();
+        document.querySelectorAll("[data-lang-key]").forEach(el=>{
+          const key=el.getAttribute("data-lang-key");
+          if(data[key]) el.textContent=data[key];
         });
-      } catch(err) {
-        console.error("语言加载失败:", err);
-        if(lang!=='en') applyLanguage('en');
-      }
+      }catch(err){console.error("语言加载失败:",err);if(lang!=='en')applyLanguage('en');}
     }
   </script>
 </body>
