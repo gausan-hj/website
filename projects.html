@@ -89,7 +89,7 @@
       margin: 0;
     }
 
-    /* ✅ 艺术感相册布局（Masonry风格） */
+    /* 相册 Masonry */
     .gallery {
       display: none;
       column-count: 4;
@@ -146,13 +146,19 @@
       box-shadow: 0 0 25px rgba(255,255,255,0.2);
     }
 
-    .controls {
-      margin-top: 20px;
+    /* 固定导航按钮 */
+    .lightbox-controls-fixed {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 15px;
+      z-index: 1100;
     }
 
-    .controls button {
+    .lightbox-controls-fixed button {
       padding: 10px 20px;
-      margin: 0 10px;
       border: none;
       border-radius: 8px;
       background: orange;
@@ -162,7 +168,7 @@
       transition: background 0.3s;
     }
 
-    .controls button:hover {
+    .lightbox-controls-fixed button:hover {
       background: #ffb84d;
     }
 
@@ -174,30 +180,18 @@
       margin-top: 40px;
     }
 
-    /* 响应式设计 */
-    @media screen and (max-width: 1000px) {
-      .gallery { column-count: 3; }
-    }
-    @media screen and (max-width: 700px) {
-      .gallery { column-count: 2; }
-    }
+    @media screen and (max-width: 1000px) { .gallery { column-count: 3; } }
+    @media screen and (max-width: 700px) { .gallery { column-count: 2; } }
     @media screen and (max-width: 500px) {
       .gallery { column-count: 1; }
-      header {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .nav-bar a {
-        margin: 0 10px;
-      }
+      header { flex-direction: column; gap: 10px; }
+      .nav-bar a { margin: 0 10px; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo-text">
-      <span class="yc">YC</span> LEE Architect
-    </div>
+    <div class="logo-text"><span class="yc">YC</span> LEE Architect</div>
     <nav class="nav-bar">
       <a href="index2.html" data-lang-key="nav_home">Home</a>
       <a href="projects.html" data-lang-key="nav_projects">Projects</a>
@@ -211,51 +205,42 @@
     <p data-lang-key="projects_subtitle">Explore our recent site works and inspections</p>
   </section>
 
-  <!-- 项目卡片区 -->
   <section class="albums">
     <div class="album-card" onclick="toggleGallery('gallery1')">
       <img src="images/photo1.jpg" alt="Site Meeting & Inspection">
       <h3 data-lang-key="project1_title">👷‍♂ Site Meeting & Inspection 👷‍♀</h3>
     </div>
-
     <div class="album-card" onclick="toggleGallery('gallery2')">
       <img src="images/project2-1.jpg" alt="Quality Check">
       <h3 data-lang-key="project2_title">🏢 Quality Check: By YC Lee Architect's Eye 🏢</h3>
     </div>
   </section>
 
-  <!-- 相册内容 1 -->
   <div id="gallery1" class="gallery">
     <img src="images/photo1.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 1">
     <img src="images/photo2.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 2">
     <img src="images/photo3.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 3">
     <img src="images/photo4.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 4">
     <img src="images/photo5.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 5">
-    <img src="images/photo6.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 6">
-    <img src="images/photo7.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 7">
-    <img src="images/photo8.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 8">
-    <img src="images/photo9.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 9">
-    <img src="images/photo10.jpg" onclick="openLightbox(this, 'gallery1')" alt="Photo 10">
   </div>
 
-  <!-- 相册内容 2 -->
   <div id="gallery2" class="gallery">
     <img src="images/project2-1.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-1">
     <img src="images/project2-2.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-2">
     <img src="images/project2-3.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-3">
     <img src="images/project2-4.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-4">
     <img src="images/project2-5.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-5">
-    <img src="images/project2-6.jpg" onclick="openLightbox(this, 'gallery2')" alt="Project2-6">
   </div>
 
-  <!-- 灯箱 -->
   <div id="lightbox" class="lightbox">
     <img id="lightboxImg" src="">
-    <div class="controls">
-      <button onclick="changeSlide(-1)" data-lang-key="btn_prev">Prev</button>
-      <button onclick="closeLightbox()" data-lang-key="btn_close">Close</button>
-      <button onclick="changeSlide(1)" data-lang-key="btn_next">Next</button>
-    </div>
+  </div>
+
+  <!-- 固定导航按钮 -->
+  <div class="lightbox-controls-fixed">
+    <button onclick="changeSlide(-1)" data-lang-key="btn_prev">Prev</button>
+    <button onclick="closeLightbox()" data-lang-key="btn_close">Close</button>
+    <button onclick="changeSlide(1)" data-lang-key="btn_next">Next</button>
   </div>
 
   <footer>
@@ -263,16 +248,10 @@
     <a href="https://www.facebook.com/share/1anBcGg8aw/" target="_blank" class="fb-link">Facebook</a>
   </footer>
 
-  <!-- ============================== -->
-  <!-- JavaScript -->
-  <!-- ============================== -->
   <script>
-    // ==============================
-    // 灯箱与画廊功能（改进版）
     // ==============================
     let currentGallery = [];
     let currentIndex = 0;
-
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightboxImg");
 
@@ -286,6 +265,7 @@
 
     function updateLightbox() {
       lightboxImg.src = currentGallery[currentIndex];
+      lightbox.style.display = "block";
     }
 
     function closeLightbox() {
@@ -293,34 +273,32 @@
     }
 
     function changeSlide(step) {
+      if(currentGallery.length === 0) return;
       currentIndex = (currentIndex + step + currentGallery.length) % currentGallery.length;
       updateLightbox();
     }
 
     // 点击背景关闭灯箱
     lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) closeLightbox();
+      if(e.target === lightbox) closeLightbox();
     });
 
     // 键盘导航
-    document.addEventListener('keydown', function(e) {
-      if (lightbox.style.display === 'block') {
-        if (e.key === 'ArrowLeft') changeSlide(-1);
-        if (e.key === 'ArrowRight') changeSlide(1);
-        if (e.key === 'Escape') closeLightbox();
-      }
+    document.addEventListener('keydown', e => {
+      if(currentGallery.length === 0) return;
+      if(e.key === 'ArrowLeft') changeSlide(-1);
+      if(e.key === 'ArrowRight') changeSlide(1);
+      if(e.key === 'Escape') closeLightbox();
     });
 
     // 相册折叠/展开
     function toggleGallery(id) {
       const allGalleries = document.querySelectorAll('.gallery');
       const clickedGallery = document.getElementById(id);
-
-      if (clickedGallery.classList.contains('active')) {
+      if(clickedGallery.classList.contains('active')) {
         clickedGallery.classList.remove('active');
         return;
       }
-
       allGalleries.forEach(g => g.classList.remove('active'));
       clickedGallery.classList.add('active');
 
@@ -328,33 +306,23 @@
       window.scrollTo({ top: clickedGallery.offsetTop - headerHeight, behavior: 'smooth' });
     }
 
-    // ==============================
-    // 语言存储与同步
-    // ==============================
+    // 语言功能
     const LANG_STORAGE_KEY = 'yc-lee-architect-lang';
-
     document.addEventListener('DOMContentLoaded', function() {
-      const savedLang = getSavedLanguage();
+      const savedLang = localStorage.getItem(LANG_STORAGE_KEY) || 'en';
       applyLanguage(savedLang);
     });
-
-    function getSavedLanguage() {
-      return localStorage.getItem(LANG_STORAGE_KEY) || 'en';
-    }
-
     async function applyLanguage(lang) {
       try {
-        const res = await fetch(`lang/${lang}.json`);
+        const res = await fetch(lang/${lang}.json);
         const data = await res.json();
-
         document.querySelectorAll("[data-lang-key]").forEach(el => {
           const key = el.getAttribute("data-lang-key");
-          if (data[key]) el.textContent = data[key];
+          if(data[key]) el.textContent = data[key];
         });
-
       } catch(err) {
         console.error("语言加载失败:", err);
-        if (lang !== 'en') applyLanguage('en');
+        if(lang!=='en') applyLanguage('en');
       }
     }
   </script>
