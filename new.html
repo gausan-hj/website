@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News - YC LEE ARCHITECT</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -13,98 +13,116 @@
       margin: 0;
       padding: 0;
     }
+
     header {
       background-color: #10264d;
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-    .logo-text .yc { color: orange; font-weight: bold; }
-    .logo-text { font-size: 1.3rem; font-weight: bold; }
+
+    .logo-text .yc {
+      color: orange;
+      font-weight: bold;
+    }
+    .logo-text {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
     .nav-bar a {
       color: white;
       text-decoration: none;
       margin-left: 20px;
       transition: color 0.3s;
     }
-    .nav-bar a:hover { color: orange; }
+    .nav-bar a:hover {
+      color: orange;
+    }
 
-    /* 轮播区 */
-    .news-slider-section {
+    .hero {
+      text-align: center;
       padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
+      background: linear-gradient(90deg, #0b1a33, #132e57);
     }
-    .news-slider {
+    .hero h2 {
+      font-size: 2rem;
+      color: orange;
+      margin-bottom: 10px;
+    }
+
+    /* ---------- 新闻轮播 ---------- */
+    .news-carousel {
       position: relative;
+      max-width: 900px;
+      margin: 30px auto;
       overflow: hidden;
       border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .news-slide {
+      display: none;
+      padding: 20px;
       background-color: #162b52;
+      transition: transform 0.5s ease, opacity 0.5s ease;
     }
-    .news-slide { display: none; padding: 20px; text-align: center; }
-    .news-slide.active { display: block; }
-    .news-slide img {
-      width: 100%;
-      max-height: 250px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-    .caption h3 { font-size: 1.3rem; color: orange; margin: 5px 0; }
-    .caption p { color: #bbb; margin: 3px 0; }
 
-    .news-slider-controls {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      padding: 0 10px;
-      box-sizing: border-box;
+    .news-slide.active {
+      display: block;
+      animation: fadeSlide 0.8s ease;
     }
-    .news-slider-controls button {
-      background: orange;
-      color: #0b1a33;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .news-slider-controls button:hover { background: #ffb84d; }
 
-    /* 新闻列表 */
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .news-slide h3 {
+      margin-top: 0;
+      color: orange;
+    }
+
+    .news-slide p {
+      margin: 10px 0 0;
+      line-height: 1.5;
+    }
+
+    /* ---------- 新闻列表 ---------- */
     .news-list {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 40px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 0 10px;
+      padding: 0 20px;
     }
+
     .news-item {
-      background: #132a4d;
+      background: #162b52;
       border-radius: 12px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 20px;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
     }
-    .news-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(255,136,0,0.5);
+
+    .news-item.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
-    .news-item img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
+
+    .news-item h4 {
+      margin: 0 0 10px;
+      color: orange;
     }
-    .news-item .news-content {
-      padding: 15px;
+
+    .news-item p {
+      margin: 0;
+      line-height: 1.4;
     }
-    .news-item h4 { color: orange; margin: 5px 0; font-size: 1.1rem; }
-    .news-item p { color: #bbb; margin: 3px 0; font-size: 0.9rem; }
 
     footer {
       text-align: center;
@@ -115,7 +133,13 @@
     }
 
     @media screen and (max-width: 700px) {
-      header { flex-direction: column; gap: 10px; }
+      .news-slide, .news-item {
+        padding: 15px;
+      }
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
       .nav-bar a { margin: 0 10px; }
     }
   </style>
@@ -126,72 +150,46 @@
     <nav class="nav-bar">
       <a href="index2.html" data-lang-key="nav_home">Home</a>
       <a href="projects.html" data-lang-key="nav_projects">Projects</a>
-      <a href="news.html" data-lang-key="nav_news">News</a>
       <a href="about.html" data-lang-key="nav_about">About</a>
       <a href="contact.html" data-lang-key="nav_contact">Contact</a>
+      <a href="news.html" data-lang-key="nav_news">News</a>
     </nav>
   </header>
 
+  <section class="hero">
+    <h2 data-lang-key="news_title">Latest News</h2>
+    <p data-lang-key="news_subtitle">Stay updated with our latest projects and insights</p>
+  </section>
+
   <!-- 新闻轮播 -->
-  <section class="news-slider-section">
-    <h2 data-lang-key="news_title" style="text-align:center; color:orange; margin-bottom:20px;">Latest News</h2>
-    <div class="news-slider" id="newsSlider">
-      <div class="news-slide active">
-        <img src="images/news1.jpg" alt="News 1">
-        <div class="caption">
-          <h3 data-lang-key="news1_title">🏢 Site Inspection Completed at Manjung Project</h3>
-          <p data-lang-key="news1_date">2025-12-01</p>
-          <p data-lang-key="news1_desc">Our team conducted a full site inspection, ensuring quality and safety standards are met at all levels.</p>
-        </div>
-      </div>
-      <div class="news-slide">
-        <img src="images/news2.jpg" alt="News 2">
-        <div class="caption">
-          <h3 data-lang-key="news2_title">🌟 New Apartment Project Approved in Perak</h3>
-          <p data-lang-key="news2_date">2025-11-25</p>
-          <p data-lang-key="news2_desc">YC Lee Architect received approval for a modern residential block in Perak. CCC and strata title will be applied.</p>
-        </div>
-      </div>
-      <div class="news-slide">
-        <img src="images/news3.jpg" alt="News 3">
-        <div class="caption">
-          <h3 data-lang-key="news3_title">🏠 Solo Villa Project @ Manjung Launched</h3>
-          <p data-lang-key="news3_date">2025-11-15</p>
-          <p data-lang-key="news3_desc">Our solo villa project in Manjung has officially started construction, focusing on modern design and comfort.</p>
-        </div>
-      </div>
+  <section class="news-carousel" id="newsCarousel">
+    <div class="news-slide active">
+      <h3 data-lang-key="news_slide1_title">🏢 New 35-Storey Apartment Completed @ Manjung</h3>
+      <p data-lang-key="news_slide1_desc">✅ CCC Approved + Strata Title 📜. This project highlights our attention to detail and quality inspection process.</p>
     </div>
-    <div class="news-slider-controls">
-      <button onclick="changeNewsSlide(-1)" data-lang-key="btn_prev">Prev</button>
-      <button onclick="changeNewsSlide(1)" data-lang-key="btn_next">Next</button>
+    <div class="news-slide">
+      <h3 data-lang-key="news_slide2_title">🛠 Site Inspection Completed Successfully</h3>
+      <p data-lang-key="news_slide2_desc">Our team conducted rigorous inspection ensuring compliance with safety and design standards.</p>
+    </div>
+    <div class="news-slide">
+      <h3 data-lang-key="news_slide3_title">🌿 Sustainability Focus in Recent Projects</h3>
+      <p data-lang-key="news_slide3_desc">We integrate eco-friendly designs and sustainable materials in all our projects.</p>
     </div>
   </section>
 
   <!-- 新闻列表 -->
-  <section class="news-list">
-    <div class="news-item">
-      <img src="images/news1.jpg" alt="News 1">
-      <div class="news-content">
-        <h4 data-lang-key="news1_title">🏢 Site Inspection Completed at Manjung Project</h4>
-        <p data-lang-key="news1_date">2025-12-01</p>
-        <p data-lang-key="news1_desc">Our team conducted a full site inspection, ensuring quality and safety standards are met at all levels.</p>
-      </div>
+  <section class="news-list" id="newsList">
+    <div class="news-item" data-lang-key="news_item1">
+      <h4>🏗 Project Milestone Achieved</h4>
+      <p>The structural framework of our flagship apartment project is now complete.</p>
     </div>
-    <div class="news-item">
-      <img src="images/news2.jpg" alt="News 2">
-      <div class="news-content">
-        <h4 data-lang-key="news2_title">🌟 New Apartment Project Approved in Perak</h4>
-        <p data-lang-key="news2_date">2025-11-25</p>
-        <p data-lang-key="news2_desc">YC Lee Architect received approval for a modern residential block in Perak. CCC and strata title will be applied.</p>
-      </div>
+    <div class="news-item" data-lang-key="news_item2">
+      <h4>📝 Design Award Won</h4>
+      <p>YC Lee Architect wins national architecture award for innovative residential design.</p>
     </div>
-    <div class="news-item">
-      <img src="images/news3.jpg" alt="News 3">
-      <div class="news-content">
-        <h4 data-lang-key="news3_title">🏠 Solo Villa Project @ Manjung Launched</h4>
-        <p data-lang-key="news3_date">2025-11-15</p>
-        <p data-lang-key="news3_desc">Our solo villa project in Manjung has officially started construction, focusing on modern design and comfort.</p>
-      </div>
+    <div class="news-item" data-lang-key="news_item3">
+      <h4>🔍 Quality Audit Passed</h4>
+      <p>All ongoing projects passed rigorous internal quality and safety audits.</p>
     </div>
   </section>
 
@@ -201,25 +199,36 @@
   </footer>
 
   <script>
-    // 新闻轮播
-    let currentNewsIndex = 0;
-    const slides = document.querySelectorAll('.news-slide');
-
-    function showNewsSlide(index) {
-      slides.forEach((slide, i) => slide.classList.remove('active'));
-      slides[index].classList.add('active');
+    // ---------- 新闻轮播 ----------
+    const slides = document.querySelectorAll(".news-slide");
+    let currentSlide = 0;
+    function showSlide(index) {
+      slides.forEach((s, i) => {
+        s.classList.remove("active");
+        if(i === index) s.classList.add("active");
+      });
     }
-
-    function changeNewsSlide(step) {
-      currentNewsIndex = (currentNewsIndex + step + slides.length) % slides.length;
-      showNewsSlide(currentNewsIndex);
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
     }
+    setInterval(nextSlide, 5000); // 每5秒切换一次
 
-    // 自动轮播
-    setInterval(() => { changeNewsSlide(1); }, 6000);
-    showNewsSlide(currentNewsIndex);
+    // ---------- 滑动显示新闻 ----------
+    const newsItems = document.querySelectorAll(".news-item");
+    function handleScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+      newsItems.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        if(itemTop < triggerBottom) {
+          item.classList.add("visible");
+        }
+      });
+    }
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // 初始化检查
 
-    // 多语言
+    // ---------- 多语言 ----------
     const LANG_STORAGE_KEY = 'yc-lee-architect-lang';
     document.addEventListener('DOMContentLoaded', function() {
       const savedLang = localStorage.getItem(LANG_STORAGE_KEY) || 'en';
@@ -233,7 +242,10 @@
           const key = el.getAttribute("data-lang-key");
           if(data[key]) el.textContent = data[key];
         });
-      } catch(err) { console.error("语言加载失败:", err); if(lang!=='en') applyLanguage('en'); }
+      } catch(err) {
+        console.error("语言加载失败:", err);
+        if(lang !== 'en') applyLanguage('en');
+      }
     }
   </script>
 </body>
