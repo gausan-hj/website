@@ -8,7 +8,7 @@
   <style>
     body {
       margin:0; padding:0;
-      font-family: "Poppins", sans-serif;
+      font-family:"Poppins",sans-serif;
       background-color:#0b1a33;
       color:white;
     }
@@ -22,40 +22,125 @@
     }
     .logo-text .yc { color:orange; font-weight:bold; }
     .logo-text { font-size:1.3rem; font-weight:bold; }
-    .nav-bar a { color:white; text-decoration:none; margin-left:20px; transition:0.3s; }
+
+    .nav-bar a {
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      transition:0.3s;
+    }
     .nav-bar a:hover { color:orange; }
 
-    .hero { text-align:center; padding:40px 20px; background: linear-gradient(90deg, #0b1a33, #132e57); }
+    .hero {
+      text-align:center;
+      padding:40px 20px;
+      background:linear-gradient(90deg,#0b1a33,#132e57);
+    }
     .hero h2 { font-size:2rem; color:orange; margin-bottom:10px; }
 
     /* 轮播新闻 */
-    .news-carousel { position:relative; max-width:1000px; margin: 0 auto 50px auto; overflow:hidden; border-radius:12px; }
-    .news-slide { display:none; position:relative; text-align:center; transition:opacity 1s ease; }
-    .news-slide.active { display:block; opacity:1; animation: fadeSlide 1s ease; }
-    .news-slide img { width:100%; max-height:400px; object-fit:cover; border-radius:12px; }
-    .news-slide h3 { position:absolute; bottom:60px; left:50%; transform:translateX(-50%); color:orange; background:rgba(0,0,0,0.6); padding:10px 20px; border-radius:8px; }
-    .news-slide p { position:absolute; bottom:20px; left:50%; transform:translateX(-50%); color:white; background:rgba(0,0,0,0.5); padding:8px 16px; border-radius:6px; max-width:90%; }
+    .news-carousel {
+      position:relative;
+      max-width:1000px;
+      margin:0 auto 50px auto;
+      overflow:hidden;
+      border-radius:12px;
+    }
+    .news-slide {
+      display:none;
+      position:relative;
+      text-align:center;
+      transition:opacity 1s ease;
+    }
+    .news-slide.active {
+      display:block;
+      opacity:1;
+      animation:fadeSlide 1s ease;
+    }
+    .news-slide img {
+      width:100%;
+      max-height:400px;
+      object-fit:cover;
+      border-radius:12px;
+    }
+    .news-slide h3 {
+      position:absolute;
+      bottom:60px;
+      left:50%;
+      transform:translateX(-50%);
+      color:orange;
+      background:rgba(0,0,0,0.6);
+      padding:10px 20px;
+      border-radius:8px;
+    }
+    .news-slide p {
+      position:absolute;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      color:white;
+      background:rgba(0,0,0,0.5);
+      padding:8px 16px;
+      border-radius:6px;
+      max-width:90%;
+    }
 
     @keyframes fadeSlide {
-      from { opacity:0; transform:translateY(20px);}
-      to { opacity:1; transform:translateY(0);}
+      from { opacity:0; transform:translateY(20px); }
+      to { opacity:1; transform:translateY(0); }
     }
 
     /* 新闻列表 */
-    .news-list { max-width:1000px; margin:auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:25px; padding:0 20px 50px 20px;}
-    .news-item { opacity:0; transform:translateY(20px); transition:all 0.8s ease; border-radius:12px; overflow:hidden; background:#162b52; box-shadow:0 4px 10px rgba(0,0,0,0.3);}
-    .news-item.visible { opacity:1; transform:translateY(0);}
-    .news-item img { width:100%; height:200px; object-fit:cover; }
-    .news-item h4 { color:orange; margin:10px 15px 5px 15px; }
-    .news-item p { color:white; margin:0 15px 15px 15px; }
+    .news-list {
+      max-width:1000px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:25px;
+      padding:0 20px 50px 20px;
+    }
+    .news-item {
+      opacity:0;
+      transform:translateY(20px);
+      transition:all 0.8s ease;
+      border-radius:12px;
+      overflow:hidden;
+      background:#162b52;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    }
+    .news-item.visible {
+      opacity:1;
+      transform:translateY(0);
+    }
+    .news-item img {
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+    .news-item h4 {
+      color:orange;
+      margin:10px 15px 5px 15px;
+    }
+    .news-item p {
+      color:white;
+      margin:0 15px 15px 15px;
+    }
 
-    footer { text-align:center; padding:20px; background:#10264d; margin-top:40px; }
+    footer {
+      text-align:center;
+      padding:20px;
+      background:#10264d;
+      margin-top:40px;
+    }
     footer a { color:white; text-decoration:none; margin-left:10px; }
 
-    @media screen and (max-width:700px){ .news-list { grid-template-columns: 1fr; } }
+    @media screen and (max-width:700px) {
+      .news-list { grid-template-columns:1fr; }
+    }
   </style>
 </head>
 <body>
+
   <header>
     <div class="logo-text"><span class="yc">YC</span> LEE Architect</div>
     <nav class="nav-bar">
@@ -72,7 +157,7 @@
     <p data-lang-key="news_subtitle">Stay updated with our recent projects and events</p>
   </section>
 
-  <!-- 新闻轮播 -->
+  <!-- 轮播 -->
   <section class="news-carousel" id="carousel"></section>
 
   <!-- 新闻列表 -->
@@ -84,98 +169,117 @@
   </footer>
 
   <script>
-    // ---------- 新闻数据，最新在前 ----------
+    // ---------- 新闻数据（最新放最前） ----------
     const newsData = [
       {
-        img: "images/news3.jpg",
-        titleKey: "news_slide3_title",
-        descKey: "news_slide3_desc",
-        defaultTitle: "🌿 Sustainability Focus in Recent Projects",
-        defaultDesc: "We integrate eco-friendly designs and sustainable materials in all our projects."
+        img:"images/news3.jpg",
+        titleKey:"news_slide3_title",
+        descKey:"news_slide3_desc",
+        defaultTitle:"🌿 Sustainability Focus in Recent Projects",
+        defaultDesc:"We integrate eco-friendly designs and sustainable materials in all our projects."
       },
       {
-        img: "images/news2.jpg",
-        titleKey: "news_slide2_title",
-        descKey: "news_slide2_desc",
-        defaultTitle: "🛠 Site Inspection Completed Successfully",
-        defaultDesc: "Our team conducted rigorous inspection ensuring compliance with safety and design standards."
+        img:"images/news2.jpg",
+        titleKey:"news_slide2_title",
+        descKey:"news_slide2_desc",
+        defaultTitle:"🛠 Site Inspection Completed Successfully",
+        defaultDesc:"Our team conducted rigorous inspection ensuring compliance with safety and design standards."
       },
       {
-        img: "images/news1.jpg",
-        titleKey: "news_slide1_title",
-        descKey: "news_slide1_desc",
-        defaultTitle: "🏢 New 35-Storey Apartment Completed @ Manjung",
-        defaultDesc: "✅ CCC Approved + Strata Title 📜. This project highlights our attention to detail and quality inspection process."
+        img:"images/news1.jpg",
+        titleKey:"news_slide1_title",
+        descKey:"news_slide1_desc",
+        defaultTitle:"🏢 New 35-Storey Apartment Completed @ Manjung",
+        defaultDesc:"✅ CCC Approved + Strata Title 📜 Quality and safety guaranteed."
       }
     ];
 
-    const carousel = document.getElementById('carousel');
-    const newsList = document.getElementById('newsList');
+    const carousel = document.getElementById("carousel");
+    const newsList = document.getElementById("newsList");
 
-    function renderNews() {
-      newsData.forEach((item, idx) => {
-        // 轮播
-        const slide = document.createElement('div');
-        slide.classList.add('news-slide');
-        if(idx===0) slide.classList.add('active');
-        slide.innerHTML = `<img src="${item.img}" alt="News ${idx+1}">
-                           <h3 data-lang-key="${item.titleKey}">${item.defaultTitle}</h3>
-                           <p data-lang-key="${item.descKey}">${item.defaultDesc}</p>`;
-        carousel.appendChild(slide);
+    // 渲染新闻（列表 + 轮播同步）
+    function renderNews(){
+      newsData.forEach((item,idx)=>{
 
         // 列表新闻
-        const listItem = document.createElement('div');
-        listItem.classList.add('news-item');
-        listItem.innerHTML = `<img src="${item.img}" alt="News ${idx+1}">
-                              <h4 data-lang-key="${item.titleKey}">${item.defaultTitle}</h4>
-                              <p data-lang-key="${item.descKey}">${item.defaultDesc}</p>`;
+        const listItem=document.createElement("div");
+        listItem.classList.add("news-item");
+        listItem.innerHTML=`
+          <img src="${item.img}">
+          <h4 data-lang-key="${item.titleKey}">${item.defaultTitle}</h4>
+          <p data-lang-key="${item.descKey}">${item.defaultDesc}</p>
+        `;
         newsList.appendChild(listItem);
+      });
+
+      // 轮播使用列表新闻内容
+      const listItemsRendered=document.querySelectorAll(".news-item");
+
+      listItemsRendered.forEach((li,idx)=>{
+        const img=li.querySelector("img").src;
+        const title=li.querySelector("h4").innerHTML;
+        const desc=li.querySelector("p").innerHTML;
+        const titleKey=li.querySelector("h4").getAttribute("data-lang-key");
+        const descKey=li.querySelector("p").getAttribute("data-lang-key");
+
+        const slide=document.createElement("div");
+        slide.classList.add("news-slide");
+        if(idx===0) slide.classList.add("active");
+
+        slide.innerHTML=`
+          <img src="${img}">
+          <h3 data-lang-key="${titleKey}">${title}</h3>
+          <p data-lang-key="${descKey}">${desc}</p>
+        `;
+        carousel.appendChild(slide);
       });
     }
 
     renderNews();
 
-    // ---------- 轮播自动切换 ----------
-    let slideIndex = 0;
-    function showNextSlide() {
-      const slides = document.querySelectorAll('.news-slide');
-      slides.forEach(s => s.classList.remove('active'));
-      slideIndex = (slideIndex + 1) % slides.length;
-      slides[slideIndex].classList.add('active');
+    // 自动切换轮播
+    let slideIndex=0;
+    function showNextSlide(){
+      const slides=document.querySelectorAll(".news-slide");
+      slides.forEach(s=>s.classList.remove("active"));
+      slideIndex=(slideIndex+1)%slides.length;
+      slides[slideIndex].classList.add("active");
     }
-    setInterval(showNextSlide, 5000); // 每5秒切换
+    setInterval(showNextSlide,5000);
 
-    // ---------- 滚动动画列表 ----------
-    const newsItems = document.querySelectorAll('.news-item');
-    function revealOnScroll() {
-      newsItems.forEach(item => {
-        const top = item.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if(top < windowHeight - 50) item.classList.add('visible');
+    // 新闻滚动出现动画
+    function revealOnScroll(){
+      const items=document.querySelectorAll(".news-item");
+      items.forEach(item=>{
+        const top=item.getBoundingClientRect().top;
+        if(top < window.innerHeight - 50){
+          item.classList.add("visible");
+        }
       });
     }
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
+    window.addEventListener("scroll",revealOnScroll);
+    window.addEventListener("load",revealOnScroll);
 
-    // ---------- 语言功能 ----------
-    const LANG_STORAGE_KEY = 'yc-lee-architect-lang';
-    document.addEventListener('DOMContentLoaded', function() {
-      const savedLang = localStorage.getItem(LANG_STORAGE_KEY) || 'en';
+    // 多语言系统
+    const LANG_STORAGE_KEY="yc-lee-architect-lang";
+    document.addEventListener("DOMContentLoaded",function(){
+      const savedLang=localStorage.getItem(LANG_STORAGE_KEY)||"en";
       applyLanguage(savedLang);
     });
+
     async function applyLanguage(lang){
       try{
-        const res = await fetch(`lang/${lang}.json`);
-        const data = await res.json();
+        const res=await fetch(`lang/${lang}.json`);
+        const data=await res.json();
         document.querySelectorAll("[data-lang-key]").forEach(el=>{
-          const key = el.getAttribute("data-lang-key");
-          if(data[key]) el.textContent = data[key];
+          const key=el.getAttribute("data-lang-key");
+          if(data[key]) el.textContent=data[key];
         });
       }catch(err){
-        console.error("语言加载失败:", err);
-        if(lang!=='en') applyLanguage('en');
+        console.error("语言加载失败:",err);
       }
     }
   </script>
+
 </body>
 </html>
