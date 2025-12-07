@@ -3,6 +3,7 @@
   "nav_projects": "Iiprojekthi",
   "nav_about": "Malunga",
   "nav_contact": "Uqhagamshelo",
+  "nav_news": "Iindaba",
   "hero_title": "I-craftfitecture · · · · khanda",
   "hero_text": "Ukuyila iindawo ezingenakufane, ukudibanisa abantu, izakhiwo kunye neemvakalelo ngolwimi lwezinto eziluncedo.",
   "btn_view_projects": "Jonga iiProjekthi",
@@ -16,8 +17,8 @@
   "social_tiktok": "Tiktok",
   "projects_title": "Iiprojekthi ezibonisiweyo",
   "projects_subtitle": "Jonga umsebenzi wethu wakutshanje kunye nokuhlolwa",
-  "project1_title": "👷Iintlanganiso zeSatiti kunye nokuhlolwa 👷",
-  "project2_title": "🏢Uvavanyo olusemgangathweni: Imbono yobungcali kwi-YC Lee Advietct 🏢",
+  "project1_title": "Iintlanganiso zeSatiti kunye nokuhlolwa 👷♀",
+  "project2_title": "Uvavanyo olusemgangathweni: Imbono yobungcali kwi-YC Lee Advietct 🏢",
   "btn_prev": "Ngaphambili",
   "btn_next": "Okulandelayo",
   "btn_close": "Vala",
@@ -28,5 +29,10 @@
   "mission_title": "Umsebenzi wethu",
   "mission_text": "Sizibophelele ekudaleni uyilo oluhlanganisa ukusebenza kunye ne-aesthetics. Kwizixhobo zokwenza izinto, zonke iinkcukacha ziqinisekisa ukuba iprojekthi nganye ixelela ibali layo elikhethekileyo.",
   "team_title": "Iqela lethu",
-  "team_text": "Iqela lethu linenkathalo yoyilo kunye nabayili abavela kwizifundo ezahlukeneyo, besebenza kunye ukubonelela ngobungcali, ubuchule, kunye nezisombululo ezizinzileyo zeprojekthi nganye."
+  "team_text": "Iqela lethu linenkathalo yoyilo kunye nabayili abavela kwizifundo ezahlukeneyo, besebenza kunye ukubonelela ngobungcali, ubuchule, kunye nezisombululo ezizinzileyo zeprojekthi nganye.",
+  "solo_section_title": "I-Solo Project",
+  "solo1_title": "🏢 ibhloko enye ye-35 I-CCC ✅ + isihloko seStrarata 📜",
+  "project3_title": "🏢 Ukuvunywa kwe-Toominiium enye yebhlokhi ye-BREAMP @End Sempah📍 Mukim Bentong, Daerah Bentong📝 ungene ngemvumelwano",
+  "news_slide1_desc": "✅ I-CCC yamkelwe isihloko + se-strata 📜 Inqanaba kunye nokhuseleko oluqinisekisiweyo.",
+  "news_slide1_title": "🏢 Indlu entsha engama-35 igqityiwe @ manjung"
 }

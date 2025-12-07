@@ -3,6 +3,7 @@
   "nav_projects": "Amaphrojekthi",
   "nav_about": "Maqondana",
   "nav_contact": "Thintana",
+  "nav_news": "izindaba",
   "hero_title": "Ubuhlakani · I-Architecture · Space",
   "hero_text": "Ukuklama izikhala ezingaphelelwa isikhathi, ukuxhuma abantu, izinhlaka kanye nemizwa ngolimi lwezokwakha.",
   "btn_view_projects": "Buka amaphrojekthi",
@@ -28,5 +29,10 @@
   "mission_title": "Umsebenzi wethu",
   "mission_text": "Sizibophezele ekwakheni ama-Design ahlanganisa ukusebenza kanye nama-aesthetics. Ukusuka ezingokweni ukuze kwakhiwe, yonke imininingwane yezindaba -Kuqinisekisa ukuthi iphrojekthi ngayinye itshela izindaba zayo ezihlukile.",
   "team_title": "Iqembu lethu",
-  "team_text": "Ithimba lethu linezibalo zozakhiwo ezinothando kanye nabaqambi abavela eziqondisweni ezahlukahlukene, zisebenza ngokubambisana ukuhlinzeka ngochwepheshe, ubuciko, nezixazululekezi nezixazululo zayo yonke iphrojekthi."
+  "team_text": "Ithimba lethu linezibalo zozakhiwo ezinothando kanye nabaqambi abavela eziqondisweni ezahlukahlukene, zisebenza ngokubambisana ukuhlinzeka ngochwepheshe, ubuciko, nezixazululekezi nezixazululo zayo yonke iphrojekthi.",
+  "solo_section_title": "Izithombe ezivelele ze-Solo Project",
+  "solo1_title": "🏢 Igumbi elilodwa le-block 35-Storey efulethini @ Manjung | I-CCC ✅ + Isihloko Strata 📜",
+  "project3_title": "Ukuvunywa kwe-condominium eyodwa ye-condomiinium eyodwa",
+  "news_slide1_desc": "✅ CCC ukuvunywa + isihloko strata 📜 Ikhwalithi nokuphepha kuqinisekisiwe.",
+  "news_slide1_title": "🏢 Ifulethi elisha le-35-Storey liqediwe @ Manjung"
 }

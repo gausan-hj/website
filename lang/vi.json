@@ -3,6 +3,7 @@
   "nav_projects": "Dự án",
   "nav_about": "Về",
   "nav_contact": "Liên hệ",
+  "nav_news": "tin tức",
   "hero_title": "Thủ công · Kiến trúc · Không gian",
   "hero_text": "Thiết kế những không gian vượt thời gian, kết nối con người, công trình kiến ​​trúc và cảm xúc thông qua ngôn ngữ kiến ​​trúc.",
   "btn_view_projects": "Xem dự án",
@@ -28,5 +29,10 @@
   "mission_title": "Sứ mệnh của chúng tôi",
   "mission_text": "Chúng tôi cam kết tạo ra các thiết kế kết hợp giữa chức năng và thẩm mỹ. Từ vật liệu đến hình thức, mọi chi tiết đều quan trọng—đảm bảo rằng mỗi dự án đều kể câu chuyện độc đáo của riêng mình.",
   "team_title": "Đội ngũ của chúng tôi",
-  "team_text": "Đội ngũ của chúng tôi bao gồm các kiến ​​trúc sư và nhà thiết kế đầy nhiệt huyết thuộc nhiều lĩnh vực khác nhau, cùng nhau làm việc để cung cấp các giải pháp chuyên nghiệp, sáng tạo và bền vững cho mọi dự án."
+  "team_text": "Đội ngũ của chúng tôi bao gồm các kiến ​​trúc sư và nhà thiết kế đầy nhiệt huyết thuộc nhiều lĩnh vực khác nhau, cùng nhau làm việc để cung cấp các giải pháp chuyên nghiệp, sáng tạo và bền vững cho mọi dự án.",
+  "solo_section_title": "Điểm nổi bật của dự án Solo",
+  "solo1_title": "🏢 Căn hộ 1 Block 35 tầng @ Manjung | CCC ✅ + Tiêu đề Strata 📜",
+  "project3_title": "🏢 Phê duyệt Khu chung cư một khối @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Đã phê duyệt và xác minh đệ trình",
+  "news_slide1_desc": "✅ Được CCC phê duyệt + Tiêu đề Strata 📜 Đảm bảo chất lượng và an toàn.",
+  "news_slide1_title": "🏢 Căn hộ 35 tầng mới hoàn thiện @ Manjung"
 }
