@@ -3,6 +3,7 @@
   "nav_projects": "Projolan",
   "nav_about": "Kira-kira",
   "nav_contact": "Hubungan",
+  "nav_news": "wartos",
   "hero_title": "Karajinan · Arsitéktur · Ruang",
   "hero_text": "Ngarancang rohangan agelsess, silih hubungan, struktur, sareng émosi liwat basa arsitéktur.",
   "btn_view_projects": "Ningali proyék",
@@ -16,8 +17,8 @@
   "social_tiktok": "Tantok",
   "projects_title": "Proyék anu diulas",
   "projects_subtitle": "Jelajah deui situs ayeuna sareng pamariksaan",
-  "project1_title": "👷 rapat situs sareng pamariksaan 👷",
-  "project2_title": "🏢 pamariksaan kualitas: sudut pandang profésional ti arsiték yc Lee🏢",
+  "project1_title": "👷♂ rapat situs sareng pamariksaan 👷♀",
+  "project2_title": "🏢 pamariksaan kualitas: sudut pandang profésional ti arsiték yc Lee",
   "btn_prev": "Saméméhna",
   "btn_next": "Teras",
   "btn_close": "Caket",
@@ -28,5 +29,10 @@
   "mission_title": "Misi urang",
   "mission_text": "Kami komitmen pikeun nyiptakeun desain anu nyampur fungsina sareng éstétika. Tina bahan pikeun ngabentuk, unggal rinci préparasi anu mastikeun yén unggal proyék nyarioskeun carita unik sorangan.",
   "team_title": "Tim urang",
-  "team_text": "Tim kami anu teu aya arsiték na sareng penduduk tina disiplinih, gawé bareng profésional, kreatif, sareng tahan solusi sustainable pikeun unggal proyék."
+  "team_text": "Tim kami anu teu aya arsiték na sareng penduduk tina disiplinih, gawé bareng profésional, kreatif, sareng tahan solusi sustainable pikeun unggal proyék.",
+  "solo_section_title": "Sorotan proyék solo",
+  "solo1_title": "🏢 Hiji blok apartemen 35-toko @ manung | CCC ✅ + Strata Strata 📜",
+  "project3_title": "🏢 Persetujuan pikeun kondominium blok",
+  "news_slide1_desc": "✅ CCC disatujuan + Judul Strata 📜 kualitas sareng kaamanan dijamin.",
+  "news_slide1_title": "🏢 apartemen 35 anyar réngsé @ Mangung"
 }

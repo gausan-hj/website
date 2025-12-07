@@ -3,6 +3,7 @@
   "nav_projects": "Loyihalar",
   "nav_about": "Haqida",
   "nav_contact": "Aloqa qilmoq",
+  "nav_news": "yangiliklar",
   "hero_title": "HARD · Arxitektura",
   "hero_text": "Arxitektura tonasidan odamlarni, inshootlarni va hissiyotlarni doimiy ravishda loyihalashtirish.",
   "btn_view_projects": "Loyihalarni ko'rish",
@@ -16,8 +17,8 @@
   "social_tiktok": "Tiktok",
   "projects_title": "Tanlangan loyihalar",
   "projects_subtitle": "Yaqinda saytlarimizning ishi va tekshiruvlarini o'rganing",
-  "project1_title": "👷 Sayt uchrashuvlari va tekshiruvlar 👷",
-  "project2_title": "🏢 Sifat tekshiruvi: YC Li arxitektsiyasidan professional istiqbol🏢",
+  "project1_title": "👷♂ Sayt uchrashuvlari va tekshiruvlar 👷♀",
+  "project2_title": "🏢 Sifat tekshiruvi: YC Li arxitektsiyasidan professional istiqbol",
   "btn_prev": "Oldingi",
   "btn_next": "Keyingisi",
   "btn_close": "Yaqin",
@@ -28,5 +29,10 @@
   "mission_title": "Bizning vazifamiz",
   "mission_text": "Biz funktsional imkoniyatlar va estetikani uyg'unlashtiradigan dizaynlarni yaratishga intilamiz. Har bir loyiha o'zining noyob hikoyasini aytadigan har bir batafsilroq materiallardan ajratib turadi.",
   "team_title": "Jamoamiz",
-  "team_text": "Bizning jamoamiz turli xil fanlardan bo'lgan turli xil fanlardan bo'lgan dizaynerlar har bir loyiha uchun professional, ijodiy va barqaror echimlarni ta'minlash uchun birgalikda ishlashadi."
+  "team_text": "Bizning jamoamiz turli xil fanlardan bo'lgan turli xil fanlardan bo'lgan dizaynerlar har bir loyiha uchun professional, ijodiy va barqaror echimlarni ta'minlash uchun birgalikda ishlashadi.",
+  "solo_section_title": "Yakkaxon loyihasi diqqatga sazovor joylari",
+  "solo1_title": "🏢 35 qavatli kvartira @ manjung | CCC ✅ + + Strata Sarlavha 📜",
+  "project3_title": "🏢 Bir blokdagi kondominium @ gentsifium @ gentsifium yodgorlik uchun tasdiqlash, Daerax Bentong topshirish tasdiqlangan va tasdiqlangan",
+  "news_slide1_desc": "✅ CCC tasdiqladi + Strata Sarlavhasi 📜 Sifat va xavfsizlik kafolatlangan.",
+  "news_slide1_title": "🏢 Yangi 35 qavatli kvartira tugadi @ manjung"
 }

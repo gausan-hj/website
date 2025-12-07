@@ -3,6 +3,7 @@
   "nav_projects": "Zvirongwa",
   "nav_about": "Nezve",
   "nav_contact": "Kusangana",
+  "nav_news": "Nhau",
   "hero_title": "Craftitecture · Space",
   "hero_text": "Kugadzira nzvimbo isina nguva, kubatanidza vanhu, zvivakwa, uye manzwiro kuburikidza nemutauro wekuvaka.",
   "btn_view_projects": "Wona mapurojekiti",
@@ -16,7 +17,7 @@
   "social_tiktok": "Tiktok",
   "projects_title": "Inoratidzwa Mapurojekiti",
   "projects_subtitle": "Ongorora yedu ichangoburwa saiti basa uye ongororo",
-  "project1_title": "👷 Site Misangano uye Ongorora👷",
+  "project1_title": "👷♂ Site Misangano uye Ongorora】",
   "project2_title": "🏢 Kuongororwa Kwemhando: Kuongorora kwehunyanzvi kubva kuYC LEE Architect 🏢",
   "btn_prev": "Yapfuura",
   "btn_next": "NEXT",
@@ -28,5 +29,10 @@
   "mission_title": "Basa Redu",
   "mission_text": "Isu takazvipira kugadzira zvigadzirwa zvinosanganisa mashandiro uye aesthetics. Kubva pamidziyo kusvika kune fomu, zvese zvinyoro-zvinhu-kuona kuti chirongwa chega chega chinotaura nyaya yayo yakasarudzika.",
   "team_title": "Timu yedu",
-  "team_text": "Chikwata chedu chinosanganisira shuwa vanogadzira nevanogadzira kubva kune dzakasiyana kurangwa, vachishanda pamwe chete kuti vape nyanzvi, yekugadzira, uye yekugadzirisa, uye nzvimbo dzekusimba dzepurogiramu yese."
+  "team_text": "Chikwata chedu chinosanganisira shuwa vanogadzira nevanogadzira kubva kune dzakasiyana kurangwa, vachishanda pamwe chete kuti vape nyanzvi, yekugadzira, uye yekugadzirisa, uye nzvimbo dzekusimba dzepurogiramu yese.",
+  "solo_section_title": "Solo Pro Project Pfungwa",
+  "solo1_title": "🏢 Imwe block 39-Store Alpartment @ manjung | CCC ✅ + strata zita 📜",
+  "project3_title": "Kubvumidzwa kweimwe-block condominium @ eleting smmphah📍 mukim Bonenng, Daera Bonong📝 Kuendesa Yakatenderwa & Verified",
+  "news_slide1_desc": "✅ CCC yakatenderwa + strata zita 📜 mhando uye kuchengetedza yakavimbiswa.",
+  "news_slide1_title": "🏢 New 35-Store Alpartment Yakapera @ manjung"
 }

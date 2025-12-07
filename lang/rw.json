@@ -3,6 +3,7 @@
   "nav_projects": "Imishinga",
   "nav_about": "Hafi",
   "nav_contact": "Twandikire",
+  "nav_news": "Amakuru",
   "hero_title": "Craft · yubatswe · umwanya",
   "hero_text": "Gushushanya ahantu hatagira igihe, guhuza abantu, inzego, n'amarangamutima binyuze mu rurimi rwububiko.",
   "btn_view_projects": "Reba Imishinga",
@@ -28,5 +29,10 @@
   "mission_title": "Inshingano zacu",
   "mission_text": "Twiyemeje gukora ibishushanyo mbonera bivanga imikorere na heesthetics. Biturutse kubikoresho bigamije, buri kintu kirambuye ibibazo - cyemeza ko buri mushinga uvuga inkuru yihariye.",
   "team_title": "Ikipe yacu",
-  "team_text": "Ikipe yacu igizwe na bavoka ishyaka hamwe nubwubatsi buturuka ku bande batandukanye, dukorera hamwe gutanga ibisubizo by'umwuga, guhanga, no kurangiza kuri buri mushinga."
+  "team_text": "Ikipe yacu igizwe na bavoka ishyaka hamwe nubwubatsi buturuka ku bande batandukanye, dukorera hamwe gutanga ibisubizo by'umwuga, guhanga, no kurangiza kuri buri mushinga.",
+  "solo_section_title": "Umushinga Solo Urubuga",
+  "solo1_title": "Guhagarika Alegi 35-Amagorofa @ Manjung | CCC ✅ + Umutwe Strata 📜",
+  "project3_title": "Kwemeza Ponderumium imwe @ Gucecekera Sempah Mukim Bentong, Daerah Bentong📝 kugandukira kandi agenzurwa",
+  "news_slide1_desc": "✅ CCC yemerewe + umutwe wa Strata 📜 ireme n'umutekano byemejwe.",
+  "news_slide1_title": "Inzu nshya y'amagorofa 35 yuzuye @ manjung"
 }

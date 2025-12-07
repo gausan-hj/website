@@ -3,6 +3,7 @@
   "nav_projects": "Mga proyekto",
   "nav_about": "Tungkol sa",
   "nav_contact": "Makipag -ugnay",
+  "nav_news": "Balita",
   "hero_title": "Craft · Arkitektura · Space",
   "hero_text": "Pagdidisenyo ng walang tiyak na oras na mga puwang, pagkonekta sa mga tao, istruktura, at emosyon sa pamamagitan ng wikang arkitektura.",
   "btn_view_projects": "Tingnan ang mga proyekto",
@@ -16,7 +17,7 @@
   "social_tiktok": "Tiktok",
   "projects_title": "Mga tampok na proyekto",
   "projects_subtitle": "Galugarin ang aming kamakailang trabaho sa site at inspeksyon",
-  "project1_title": "👷‍ Mga Pulong at Inspeksyon sa Lugar‍ 👷‍",
+  "project1_title": "👷‍ 👷‍ 👷‍ 👷‍ 👷‍ 👷‍ 👷‍",
   "project2_title": "🏢 kalidad ng inspeksyon: isang propesyonal na pananaw mula sa arkitekto ng yc lee 🏢",
   "btn_prev": "Nakaraan",
   "btn_next": "Susunod",
@@ -28,5 +29,10 @@
   "mission_title": "Ang aming misyon",
   "mission_text": "Kami ay nakatuon sa paglikha ng mga disenyo na timpla ng pag -andar at aesthetics. Mula sa mga materyales upang mabuo, ang bawat detalye ay mahalaga - nakikita na ang bawat proyekto ay nagsasabi ng sariling natatanging kuwento.",
   "team_title": "Ang aming koponan",
-  "team_text": "Ang aming koponan ay binubuo ng mga madamdaming arkitekto at taga -disenyo mula sa magkakaibang disiplina, nagtutulungan upang magbigay ng propesyonal, malikhaing, at napapanatiling solusyon para sa bawat proyekto."
+  "team_text": "Ang aming koponan ay binubuo ng mga madamdaming arkitekto at taga -disenyo mula sa magkakaibang disiplina, nagtutulungan upang magbigay ng propesyonal, malikhaing, at napapanatiling solusyon para sa bawat proyekto.",
+  "solo_section_title": "Mga highlight ng proyekto ng solo",
+  "solo1_title": "🏢 Isang bloke 35-palapag na apartment @ manjung | CCC ✅ + Strata Pamagat 📜",
+  "project3_title": "🏢 Pag-apruba para sa one-block condominium @ genting sempah📍 Mukim Bentong, Daerah Bentong📝 Pagsumite at Na-verify",
+  "news_slide1_desc": "✅ Inaprubahan ng CCC + Pamagat ng Strata 📜 Garantisadong Kalidad at Kaligtasan.",
+  "news_slide1_title": "🏢 Ang bagong 35-palapag na apartment ay nakumpleto @ manjung"
 }

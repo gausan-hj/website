@@ -3,6 +3,7 @@
   "nav_projects": "Kaupapa",
   "nav_about": "Mō",
   "nav_contact": "Whakapā",
+  "nav_news": "pitopito kōrero",
   "hero_title": "Craft · te hoahoanga · te waahi",
   "hero_text": "Te hoahoa i nga waahi kore, te hono i nga taangata, nga hanganga, me nga kare i roto i te reo hoahoanga.",
   "btn_view_projects": "Tirohia nga kaupapa",
@@ -28,5 +29,10 @@
   "mission_title": "To tatou misioni",
   "mission_text": "Kei te kaha taatau ki te hanga hoahoa hei whakakotahi i nga mahi me nga hakihaki. Mai i nga taonga hei hanga, nga korero taipitopito-whakarite kia korero ia kaupapa ki tana ake korero motuhake.",
   "team_title": "To tatou kapa",
-  "team_text": "Kei roto i ta maatau roopu nga kaihoahoa me nga kaihoahoa mai i te maha o nga whiu, mahi tahi ki te whakarato i nga mahi ngaio, auaha, kaha hoki mo nga kaupapa katoa."
+  "team_text": "Kei roto i ta maatau roopu nga kaihoahoa me nga kaihoahoa mai i te maha o nga whiu, mahi tahi ki te whakarato i nga mahi ngaio, auaha, kaha hoki mo nga kaupapa katoa.",
+  "solo_section_title": "Nga Tohu Kaupapa Awhina a Solo",
+  "solo1_title": "🏢 Kotahi te poraka 35-storey whare @ Manjung | CCC ✅ + Strata Taitara 📜",
+  "project3_title": "🏢 Te whakaaetanga mo te hono kotahi-poraka @ Ma te Maataki SEKIM Bentong, Daerah Bentong📝 i whakaaehia me te whakaū",
+  "news_slide1_desc": "✅ Ka whakaaetia te CCC taitara mo te kounga me te haumaru me te haumaru.",
+  "news_slide1_title": "🏢 Te whare 35-toa hou kua oti @ Manjung"
 }

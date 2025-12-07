@@ -3,6 +3,7 @@
   "nav_projects": "Tionscadail",
   "nav_about": "Maidir",
   "nav_contact": "Teagmháil",
+  "nav_news": "nuacht",
   "hero_title": "Ceardaíocht · Ailtireacht · Spás",
   "hero_text": "Spásanna gan teorainn a dhearadh, ag nascadh daoine, struchtúir agus mothúcháin trí theanga ailtireachta.",
   "btn_view_projects": "Féach ar Thionscadail",
@@ -28,5 +29,10 @@
   "mission_title": "Ár Misean",
   "mission_text": "Táimid tiomanta dearaí a chruthú a chumasc feidhmiúlacht agus aeistéitic. Ó ábhair go foirm, tá tábhacht le gach mionsonra - ag cinntiú go n-insíonn gach tionscadal a scéal uathúil féin.",
   "team_title": "Ár bhFoireann",
-  "team_text": "Cuimsíonn ár bhfoireann ailtirí agus dearthóirí paiseanta ó dhisciplíní éagsúla, ag obair le chéile chun réitigh ghairmiúla, chruthaitheacha agus inbhuanaithe a sholáthar do gach tionscadal."
+  "team_text": "Cuimsíonn ár bhfoireann ailtirí agus dearthóirí paiseanta ó dhisciplíní éagsúla, ag obair le chéile chun réitigh ghairmiúla, chruthaitheacha agus inbhuanaithe a sholáthar do gach tionscadal.",
+  "solo_section_title": "Buaicphointí Tionscadal Aonair",
+  "solo1_title": "🏢 Árasán 35-Urlár Bloc a hAon @ Manjung | CCC ✅ + Strata Title 📜",
+  "project3_title": "🏢 Faomhadh do Choiscín Aonbhloc @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Aighneacht Faofa & Fíoraithe",
+  "news_slide1_desc": "✅ CCC Faofa + Teideal Strata 📜 Cáilíocht agus sábháilteacht ráthaithe.",
+  "news_slide1_title": "🏢 Árasán Nua 35-Urlár Críochnaithe @ Manjung"
 }

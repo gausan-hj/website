@@ -3,7 +3,8 @@
   "nav_projects": "Projects",
   "nav_about": "Ji dor",
   "nav_contact": "Têkelî",
-  "hero_title": "Hunermend · Mîmarî · Cih",
+  "nav_news": "nûçe",
+  "hero_title": "Hunerî · Mîmarî · Cih",
   "hero_text": "Sêwirana mekanên bêdem, girêdana mirovan, avahî û hestan bi zimanê mîmarî.",
   "btn_view_projects": "Projeyan bibînin",
   "contact_title": "Paqij bûn",
@@ -28,5 +29,10 @@
   "mission_title": "Mîsyona me",
   "mission_text": "Em pabend in ku sêwiranan biafirînin ku fonksiyon û estetîkê tevdigerin. Ji materyalan bigire heya formê, her hûrgulî girîng e - piştrast dike ku her proje çîroka xweya yekta vedibêje.",
   "team_title": "Tîma me",
-  "team_text": "Tîma me ji mîmar û sêwiranên dilşewat ji dîsîplînên cihêreng pêk tê, bi hev re dixebitin ku ji bo her projeyê çareseriyên profesyonel, afirîner û domdar peyda bikin."
+  "team_text": "Tîma me ji mîmar û sêwiranên dilşewat ji dîsîplînên cihêreng pêk tê, bi hev re dixebitin ku ji bo her projeyê çareseriyên profesyonel, afirîner û domdar peyda bikin.",
+  "solo_section_title": "Pêşniyarên Projeya Solo",
+  "solo1_title": "🏢 Apartmanek Yek Block 35-Qat @ Manjung | CCC ✅ + Sernavê Strata 📜",
+  "project3_title": "🏢 Pejirandin ji bo Kondomîniya Yek-Block @ Genting Sempah📍 Mukim Bentong, Daerah Bentong",
+  "news_slide1_desc": "✅ CCC Pejirandin + Sernavê Strata 📜 Qalîtî û ewlehî garantî kirin.",
+  "news_slide1_title": "🏢 Apartmana Nû ya 35-Qat @ Manjung Qediya"
 }

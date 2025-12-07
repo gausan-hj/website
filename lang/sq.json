@@ -3,6 +3,7 @@
   "nav_projects": "Projektet",
   "nav_about": "Rreth",
   "nav_contact": "Kontaktoni",
+  "nav_news": "lajme",
   "hero_title": "Artizanati · Arkitektura · Hapësira",
   "hero_text": "Projektimi i hapësirave të përjetshme, lidhja e njerëzve, strukturave dhe emocioneve përmes gjuhës arkitekturore.",
   "btn_view_projects": "Shiko Projektet",
@@ -28,5 +29,10 @@
   "mission_title": "Misioni ynë",
   "mission_text": "Ne jemi të përkushtuar të krijojmë dizajne që ndërthurin funksionalitetin dhe estetikën. Nga materialet tek forma, çdo detaj ka rëndësi—duke siguruar që çdo projekt të tregojë historinë e tij unike.",
   "team_title": "Ekipi ynë",
-  "team_text": "Ekipi ynë përbëhet nga arkitektë dhe projektues të pasionuar nga disiplina të ndryshme, duke punuar së bashku për të ofruar zgjidhje profesionale, kreative dhe të qëndrueshme për çdo projekt."
+  "team_text": "Ekipi ynë përbëhet nga arkitektë dhe projektues të pasionuar nga disiplina të ndryshme, duke punuar së bashku për të ofruar zgjidhje profesionale, kreative dhe të qëndrueshme për çdo projekt.",
+  "solo_section_title": "Pikat kryesore të projektit solo",
+  "solo1_title": "🏢 Apartament 1 Bllok 35 Kate @ Manjung | KKK ✅ + Titulli i Shtresës 📜",
+  "project3_title": "🏢 Miratimi për bashkëpronësinë me një bllok @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Dorëzimi u miratua dhe u verifikua",
+  "news_slide1_desc": "✅ Miratuar nga KKK + Titulli Strata 📜 Cilësi dhe siguri e garantuar.",
+  "news_slide1_title": "🏢 Apartament i ri 35-katësh i përfunduar @ Manjung"
 }

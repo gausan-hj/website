@@ -3,6 +3,7 @@
   "nav_projects": "Proyectos",
   "nav_about": "Acerca de",
   "nav_contact": "Contacto",
+  "nav_news": "noticias",
   "hero_title": "Artesanía · Arquitectura · Espacio",
   "hero_text": "Diseñando espacios atemporales, conectando personas, estructuras y emociones a través del lenguaje arquitectónico.",
   "btn_view_projects": "Ver proyectos",
@@ -25,8 +26,13 @@
   "about_subtitle": "Nuestros principales servicios se encuentran en Perak, Genting, Kedah, Johor y Kuala Lumpur, y también llevamos a cabo proyectos en el extranjero.",
   "philosophy_title": "Nuestra Filosofía",
   "philosophy_text": "La arquitectura es más que solo estructura y espacio: es un diálogo entre las personas y el medio ambiente. Nuestro objetivo es diseñar espacios que equilibren la sencillez, la elegancia y la atemporalidad.",
-  "mission_title": "Nuestra Misión",
+  "mission_title": "Nuestra misión",
   "mission_text": "Estamos comprometidos a crear diseños que combinen funcionalidad y estética. Desde los materiales hasta la forma, cada detalle importa, asegurando que cada proyecto cuente su propia historia única.",
   "team_title": "Nuestro equipo",
-  "team_text": "Nuestro equipo está formado por arquitectos y diseñadores apasionados de diversas disciplinas, que trabajan juntos para brindar soluciones profesionales, creativas y sostenibles para cada proyecto."
+  "team_text": "Nuestro equipo está formado por arquitectos y diseñadores apasionados de diversas disciplinas, que trabajan juntos para brindar soluciones profesionales, creativas y sostenibles para cada proyecto.",
+  "solo_section_title": "Aspectos destacados del proyecto en solitario",
+  "solo1_title": "🏢 Apartamento de un bloque de 35 plantas en Manjung | CCC ✅ + Título de estrato 📜",
+  "project3_title": "🏢 Aprobación para condominio de una cuadra @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Presentación aprobada y verificada",
+  "news_slide1_desc": "✅Aprobado CCC + Título Strata 📜Calidad y seguridad garantizadas.",
+  "news_slide1_title": "🏢 Nuevo apartamento de 35 pisos terminado en Manjung"
 }

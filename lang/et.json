@@ -3,6 +3,7 @@
   "nav_projects": "Projektid",
   "nav_about": "Umbes",
   "nav_contact": "Võtke ühendust",
+  "nav_news": "uudiseid",
   "hero_title": "Käsitöö · Arhitektuur · Ruum",
   "hero_text": "Ajatute ruumide kujundamine, inimeste, struktuuride ja emotsioonide ühendamine läbi arhitektuurikeele.",
   "btn_view_projects": "Vaata projekte",
@@ -28,5 +29,10 @@
   "mission_title": "Meie missioon",
   "mission_text": "Oleme pühendunud disainide loomisele, mis ühendavad funktsionaalsuse ja esteetika. Alates materjalidest kuni vormini on iga detail oluline – tagades, et iga projekt räägib oma ainulaadse loo.",
   "team_title": "Meie meeskond",
-  "team_text": "Meie meeskond koosneb kirglikest arhitektidest ja disaineritest erinevatelt erialadelt, kes töötavad koos, et pakkuda igale projektile professionaalseid, loomingulisi ja jätkusuutlikke lahendusi."
+  "team_text": "Meie meeskond koosneb kirglikest arhitektidest ja disaineritest erinevatelt erialadelt, kes töötavad koos, et pakkuda igale projektile professionaalseid, loomingulisi ja jätkusuutlikke lahendusi.",
+  "solo_section_title": "Sooloprojekti tipphetked",
+  "solo1_title": "🏢 Ühe kvartali 35-korruseline korter @ Manjung | CCC ✅ + Strata Pealkiri 📜",
+  "project3_title": "🏢 Ühekorruse korteriühistu heakskiit @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Esitamine on heaks kiidetud ja kinnitatud",
+  "news_slide1_desc": "✅ CCC heaks kiidetud + Strata tiitel 📜 Kvaliteet ja ohutus garanteeritud.",
+  "news_slide1_title": "🏢 Manjungis valmis uus 35-korruseline korter"
 }

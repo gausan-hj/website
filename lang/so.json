@@ -3,6 +3,7 @@
   "nav_projects": "Mashaariicda",
   "nav_about": "Ku saabsan",
   "nav_contact": "Xiriir",
+  "nav_news": "war",
   "hero_title": "CRAFT · Dhismaha · booska",
   "hero_text": "Naqshadeynta meelaynta waqtigoodu tahay, isku xidhka dadka, qaab-dhismeedka, iyo shucuurta iyada oo loo marayo luqadda qaab dhismeedka.",
   "btn_view_projects": "Eeg Mashaariicda",
@@ -16,7 +17,7 @@
   "social_tiktok": "TikTok",
   "projects_title": "Mashaariicda la soo bandhigay",
   "projects_subtitle": "Sahamiyaan shaqadeena goobta iyo kormeerka",
-  "project1_title": "👷 Kulamada goobta iyo kormeerka 👷",
+  "project1_title": "👷♂ Kulamada goobta iyo kormeerka 👷♀",
   "project2_title": "🏢 Baadhitaan tayo leh: aragti xirfad leh oo ka socota Architect 🏢",
   "btn_prev": "Ee hore",
   "btn_next": "U dhow",
@@ -28,5 +29,10 @@
   "mission_title": "Himiladeenna",
   "mission_text": "Waxaa naga go'an inaan abuuri karno naqshadaha iskudarka waxqabadka iyo suuxinta. Alaabada lagu sameeyo, faahfaahin kasta oo faahfaahin ah ayaa wax ka sheegaya in mashruuc kastaa u sheego sheeko u gaar ah.",
   "team_title": "Kooxdeena",
-  "team_text": "Kooxdayadu waxay ka kooban tahay naqshadeeyeyaal xamaasad leh iyo naqshadeeyayaal ka soo jeeda edbinta kala duwan, iyagoo ka wada shaqeynaya sidii ay u siin lahaayeen xirfadle, hal abuur, iyo xalal waara oo loogu talagalay mashruuc kasta."
+  "team_text": "Kooxdayadu waxay ka kooban tahay naqshadeeyeyaal xamaasad leh iyo naqshadeeyayaal ka soo jeeda edbinta kala duwan, iyagoo ka wada shaqeynaya sidii ay u siin lahaayeen xirfadle, hal abuur, iyo xalal waara oo loogu talagalay mashruuc kasta.",
+  "solo_section_title": "Mashruuca Solo ee Mashruuca",
+  "solo1_title": "🏢 Mid ka mid ah dabaq 35-dabaq ah @ Manjunng | Ccc ✅ + strata cinwaanka 📜",
+  "project3_title": "🏢 Ansixinta hal-bar-karoomka @ Nacfaynta senpah📍 mukim bentong, dhallah Bentong📝 gudbinta la ansixiyay & la xaqiijiyay",
+  "news_slide1_desc": "✅ ccc la ansixiyay + strata cinwaanka 📜 tayada iyo nabdoonaanta.",
+  "news_slide1_title": "🏢 Guryaha cusub ee 35-dabaq ah oo dhameystiran @ Manjung"
 }

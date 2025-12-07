@@ -3,6 +3,7 @@
   "nav_projects": "Verkefni",
   "nav_about": "Um",
   "nav_contact": "Hafðu samband",
+  "nav_news": "fréttir",
   "hero_title": "Handverk · Arkitektúr · Rými",
   "hero_text": "Að hanna tímalaus rými, tengja saman fólk, mannvirki og tilfinningar í gegnum byggingarmál.",
   "btn_view_projects": "Skoða verkefni",
@@ -17,7 +18,7 @@
   "projects_title": "Valin verkefni",
   "projects_subtitle": "Skoðaðu nýleg vinnusvæði okkar og skoðanir",
   "project1_title": "👷‍♂ Veffundir og skoðanir 👷‍♀",
-  "project2_title": "🏢 Gæðaskoðun: Faglegt sjónarhorn frá YC Lee Architect 🏢",
+  "project2_title": "🏢 Gæðaskoðun: faglegt sjónarhorn frá YC Lee Architect 🏢",
   "btn_prev": "Fyrri",
   "btn_next": "Næst",
   "btn_close": "Loka",
@@ -26,7 +27,12 @@
   "philosophy_title": "Heimspeki okkar",
   "philosophy_text": "Arkitektúr er meira en bara uppbygging og rými - það er samræða milli fólks og umhverfis. Við stefnum að því að hanna rými sem halda jafnvægi á einfaldleika, glæsileika og tímaleysi.",
   "mission_title": "Erindi okkar",
-  "mission_text": "Við erum staðráðin í að búa til hönnun sem blandar saman virkni og fagurfræði. Allt frá efni til forms, hvert smáatriði skiptir máli - og tryggir að hvert verkefni segi sína einstöku sögu.",
+  "mission_text": "Við erum staðráðin í að búa til hönnun sem blandar saman virkni og fagurfræði. Allt frá efni til forms, hvert smáatriði skiptir máli - tryggja að hvert verkefni segi sína einstöku sögu.",
   "team_title": "Liðið okkar",
-  "team_text": "Lið okkar samanstendur af ástríðufullum arkitektum og hönnuðum úr ýmsum greinum sem vinna saman að því að veita faglegar, skapandi og sjálfbærar lausnir fyrir hvert verkefni."
+  "team_text": "Lið okkar samanstendur af ástríðufullum arkitektum og hönnuðum úr ýmsum greinum sem vinna saman að því að veita faglegar, skapandi og sjálfbærar lausnir fyrir hvert verkefni.",
+  "solo_section_title": "Hápunktar sólóverkefnisins",
+  "solo1_title": "🏢 Ein blokkar 35 hæða íbúð @ Manjung | CCC ✅ + Strata Titill 📜",
+  "project3_title": "🏢 Samþykki fyrir One-Block Condominium @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Sending samþykkt og staðfest",
+  "news_slide1_desc": "✅ CCC samþykkt + Strata Titill 📜 Gæði og öryggi tryggt.",
+  "news_slide1_title": "🏢 Ný 35 hæða íbúð fullgerð @ Manjung"
 }

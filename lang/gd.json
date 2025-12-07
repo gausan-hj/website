@@ -3,6 +3,7 @@
   "nav_projects": "Pròiseactan",
   "nav_about": "Mu dheidhinn",
   "nav_contact": "Cuir fios",
+  "nav_news": "naidheachdan",
   "hero_title": "Ceàird · Ailtireachd · Àite",
   "hero_text": "A’ dealbhadh àiteachan gun ùine, a’ ceangal dhaoine, structaran agus fhaireachdainnean tro chànan ailtireachd.",
   "btn_view_projects": "Thoir sùil air pròiseactan",
@@ -28,5 +29,10 @@
   "mission_title": "Ar misean",
   "mission_text": "Tha sinn dealasach a thaobh dealbhadh a chruthachadh a bhios a’ measgachadh gnìomhachd agus bòidhchead. Bho stuthan gu cruth, tha a h-uile mion-fhiosrachadh cudromach - a’ dèanamh cinnteach gu bheil gach pròiseact ag innse a sgeulachd shònraichte fhèin.",
   "team_title": "An Sgioba againn",
-  "team_text": "Tha an sgioba againn air a dhèanamh suas de ailtirean dìoghrasach agus luchd-dealbhaidh bho dhiofar chuspairean, ag obair còmhla gus fuasglaidhean proifeasanta, cruthachail agus seasmhach a thoirt seachad airson gach pròiseact."
+  "team_text": "Tha an sgioba againn air a dhèanamh suas de ailtirean dìoghrasach agus luchd-dealbhaidh bho dhiofar chuspairean, ag obair còmhla gus fuasglaidhean proifeasanta, cruthachail agus seasmhach a thoirt seachad airson gach pròiseact.",
+  "solo_section_title": "Prìomh thachartasan pròiseact aon-neach",
+  "solo1_title": "🏢 Aon bhloca àros 35-làr @ Manjung | CCC ✅ + Strata Title 📜",
+  "project3_title": "🏢 Cead airson Condominium aon-bhloc @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Tagradh air aontachadh & air a dhearbhadh",
+  "news_slide1_desc": "✅ CCC Aontaichte + Strata Title 📜 Càileachd is sàbhailteachd cinnteach.",
+  "news_slide1_title": "🏢 Apartment ùr 35-làr air a chrìochnachadh @ Manjung"
 }

@@ -3,6 +3,7 @@
   "nav_projects": "Proġetti",
   "nav_about": "Dwar",
   "nav_contact": "Kuntatt",
+  "nav_news": "aħbarijiet",
   "hero_title": "Inġenji · Arkitettura · Spazju",
   "hero_text": "Iddisinjar ta’ spazji prontezza, jgħaqqdu nies, strutturi, u emozzjonijiet permezz ta’ lingwaġġ arkitettoniku.",
   "btn_view_projects": "Ara Proġetti",
@@ -15,7 +16,7 @@
   "social_instagram": "Instagram",
   "social_tiktok": "TikTok",
   "projects_title": "Proġetti Dehru",
-  "projects_subtitle": "Esplora Xogħol u Spezzjonijiet Riċenti Tagħna fuq is-Sit",
+  "projects_subtitle": "Esplora x-Xogħol u l-Ispezzjonijiet Riċenti Tagħna fuq is-Sit",
   "project1_title": "👷‍♂ Laqgħat u Spezzjonijiet tas-Sit 👷‍♀",
   "project2_title": "🏢 Spezzjoni tal-Kwalità: Perspettiva Professjonali mill-Perit YC Lee 🏢",
   "btn_prev": "Preċedenti",
@@ -28,5 +29,10 @@
   "mission_title": "Il-Missjoni Taghna",
   "mission_text": "Aħna impenjati li noħolqu disinji li jħalltu l-funzjonalità u l-estetika. Mill-materjali sal-forma, kull dettall huwa importanti—li jiġi żgurat li kull proġett jirrakkonta l-istorja unika tiegħu stess.",
   "team_title": "It-tim tagħna",
-  "team_text": "It-tim tagħna jinkludi periti u disinjaturi passjonati minn dixxiplini diversi, li jaħdmu flimkien biex jipprovdu soluzzjonijiet professjonali, kreattivi u sostenibbli għal kull proġett."
+  "team_text": "It-tim tagħna jinkludi periti u disinjaturi passjonati minn dixxiplini diversi, li jaħdmu flimkien biex jipprovdu soluzzjonijiet professjonali, kreattivi u sostenibbli għal kull proġett.",
+  "solo_section_title": "Punti ewlenin tal-Proġett Solo",
+  "solo1_title": "🏢 Appartament ta' Blokk wieħed ta' 35 sular @ Manjung | CCC ✅ + Titolu Strata 📜",
+  "project3_title": "🏢 Approvazzjoni għal One-Block Condominium @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Sottomissjoni Approvata & Verifikata",
+  "news_slide1_desc": "✅ CCC Approved + Strata Title 📜 Kwalità u sigurtà garantiti.",
+  "news_slide1_title": "🏢 Appartament ġdid ta' 35 sular Imlesta @ Manjung"
 }

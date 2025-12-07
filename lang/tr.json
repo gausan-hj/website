@@ -3,6 +3,7 @@
   "nav_projects": "Projeler",
   "nav_about": "Hakkında",
   "nav_contact": "Temas etmek",
+  "nav_news": "haberler",
   "hero_title": "Zanaat · Mimari · Uzay",
   "hero_text": "Zamanın ötesinde mekanlar tasarlamak, insanları, yapıları ve duyguları mimari dil aracılığıyla birbirine bağlamak.",
   "btn_view_projects": "Projeleri Görüntüle",
@@ -28,5 +29,10 @@
   "mission_title": "Misyonumuz",
   "mission_text": "İşlevselliği ve estetiği birleştiren tasarımlar yaratmaya kararlıyız. Malzemelerden forma kadar her ayrıntı önemlidir; her projenin kendi benzersiz hikayesini anlatmasını sağlar.",
   "team_title": "Ekibimiz",
-  "team_text": "Ekibimiz, her projeye profesyonel, yaratıcı ve sürdürülebilir çözümler sunmak için birlikte çalışan, farklı disiplinlerden tutkulu mimarlardan ve tasarımcılardan oluşur."
+  "team_text": "Ekibimiz, her projeye profesyonel, yaratıcı ve sürdürülebilir çözümler sunmak için birlikte çalışan, farklı disiplinlerden tutkulu mimarlardan ve tasarımcılardan oluşur.",
+  "solo_section_title": "Solo Projenin Öne Çıkan Noktaları",
+  "solo1_title": "🏢 Tek Blok 35 Katlı Daire @ Manjung | CCC ✅ + Katman Başlığı 📜",
+  "project3_title": "🏢 Tek Bloklu Daire Onayı @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Gönderim Onaylandı ve Doğrulandı",
+  "news_slide1_desc": "✅ CCC Onaylı + Strata Başlığı 📜 Kalite ve güvenlik garantilidir.",
+  "news_slide1_title": "🏢 Manjung'da Yeni 35 Katlı Daire Tamamlandı"
 }

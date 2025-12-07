@@ -3,6 +3,7 @@
   "nav_projects": "Proiecte",
   "nav_about": "Despre",
   "nav_contact": "Contact",
+  "nav_news": "ştiri",
   "hero_title": "Meșteșug · Arhitectură · Spațiu",
   "hero_text": "Proiectarea de spații atemporale, conectând oameni, structuri și emoții prin limbajul arhitectural.",
   "btn_view_projects": "Vizualizați proiecte",
@@ -26,7 +27,12 @@
   "philosophy_title": "Filosofia noastră",
   "philosophy_text": "Arhitectura este mai mult decât doar structură și spațiu – este un dialog între oameni și mediu. Ne propunem să proiectăm spații care echilibrează simplitatea, eleganța și atemporalitatea.",
   "mission_title": "Misiunea noastră",
-  "mission_text": "Ne angajăm să creăm modele care îmbină funcționalitatea și estetica. De la materiale până la formă, fiecare detaliu contează - asigurându-vă că fiecare proiect își spune propria poveste unică.",
+  "mission_text": "Ne angajăm să creăm modele care îmbină funcționalitatea și estetica. De la materiale până la formă, fiecare detaliu contează - asigurându-vă că fiecare proiect își spune povestea sa unică.",
   "team_title": "Echipa noastră",
-  "team_text": "Echipa noastră este formată din arhitecți și designeri pasionați din diverse discipline, care lucrează împreună pentru a oferi soluții profesionale, creative și durabile pentru fiecare proiect."
+  "team_text": "Echipa noastră este formată din arhitecți și designeri pasionați din diverse discipline, care lucrează împreună pentru a oferi soluții profesionale, creative și durabile pentru fiecare proiect.",
+  "solo_section_title": "Repere ale proiectului Solo",
+  "solo1_title": "🏢 Apartament cu 35 de etaje la un bloc @ Manjung | CCC ✅ + Strata Titlu 📜",
+  "project3_title": "🏢 Aprobare pentru condominiu cu un singur bloc @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Depunerea a fost aprobată și verificată",
+  "news_slide1_desc": "✅ Aprobat CCC + Titlu Strata 📜 Calitate și siguranță garantate.",
+  "news_slide1_title": "🏢 Apartament nou cu 35 de etaje finalizat @ Manjung"
 }

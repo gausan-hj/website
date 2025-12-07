@@ -3,6 +3,7 @@
   "nav_projects": "Projektowanie",
   "nav_about": "O",
   "nav_contact": "Kontakt",
+  "nav_news": "aktualności",
   "hero_title": "Rzemiosło · Architektura · Przestrzeń",
   "hero_text": "Projektowanie ponadczasowych przestrzeni, łączenie ludzi, struktur i emocji poprzez język architektoniczny.",
   "btn_view_projects": "Zobacz projekty",
@@ -15,9 +16,9 @@
   "social_instagram": "Instagrama",
   "social_tiktok": "TikTok",
   "projects_title": "Wyróżnione projekty",
-  "projects_subtitle": "Zapoznaj się z naszymi ostatnimi pracami i inspekcjami w terenie",
+  "projects_subtitle": "Zapoznaj się z naszymi ostatnimi pracami i inspekcjami na miejscu",
   "project1_title": "👷‍♂ Spotkania w terenie i inspekcje 👷‍♀",
-  "project2_title": "🏢Kontrola jakości: profesjonalna perspektywa od YC Lee Architect 🏢",
+  "project2_title": "🏢 Kontrola jakości: profesjonalna perspektywa od YC Lee Architect 🏢",
   "btn_prev": "Poprzedni",
   "btn_next": "Następny",
   "btn_close": "Zamknąć",
@@ -28,5 +29,10 @@
   "mission_title": "Nasza misja",
   "mission_text": "Zależy nam na tworzeniu projektów łączących funkcjonalność i estetykę. Od materiałów po formę, każdy szczegół ma znaczenie – dzięki temu każdy projekt opowiada swoją własną, niepowtarzalną historię.",
   "team_title": "Nasz zespół",
-  "team_text": "Nasz zespół składa się z architektów i projektantów z różnych dziedzin, pracujących razem w celu zapewnienia profesjonalnych, kreatywnych i zrównoważonych rozwiązań dla każdego projektu."
+  "team_text": "Nasz zespół składa się z architektów i projektantów z różnych dziedzin, pracujących razem w celu zapewnienia profesjonalnych, kreatywnych i zrównoważonych rozwiązań dla każdego projektu.",
+  "solo_section_title": "Najważniejsze informacje o projekcie solowym",
+  "solo1_title": "🏢 Jeden blok, 35-piętrowy apartament @ Manjung | CCC ✅ + Tytuł warstwy 📜",
+  "project3_title": "🏢 Zatwierdzenie jednoblokowego apartamentowca @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Zgłoszenie zatwierdzone i zweryfikowane",
+  "news_slide1_desc": "✅Zatwierdzenie CCC + Tytuł Strata 📜 Jakość i bezpieczeństwo gwarantowane.",
+  "news_slide1_title": "🏢 Nowe 35-piętrowe mieszkanie ukończone w Manjung"
 }

@@ -3,6 +3,7 @@
   "nav_projects": "Projecten",
   "nav_about": "Over",
   "nav_contact": "Contact",
+  "nav_news": "nieuws",
   "hero_title": "Ambacht · Architectuur · Ruimte",
   "hero_text": "Het ontwerpen van tijdloze ruimtes, het verbinden van mensen, structuren en emoties door middel van architectonische taal.",
   "btn_view_projects": "Bekijk projecten",
@@ -22,11 +23,16 @@
   "btn_next": "Volgende",
   "btn_close": "Dichtbij",
   "about_title": "Over ons",
-  "about_subtitle": "Onze belangrijkste diensten bevinden zich in Perak, Genting, Kedah, Johor en Kuala Lumpur, en we ondernemen ook buitenlandse projecten.",
+  "about_subtitle": "Onze belangrijkste diensten bevinden zich in Perak, Genting, Kedah, Johor en Kuala Lumpur, en we ondernemen ook projecten in het buitenland.",
   "philosophy_title": "Onze filosofie",
   "philosophy_text": "Architectuur is meer dan alleen structuur en ruimte: het is een dialoog tussen mens en omgeving. Wij streven ernaar ruimtes te ontwerpen die eenvoud, elegantie en tijdloosheid in evenwicht brengen.",
   "mission_title": "Onze missie",
   "mission_text": "Wij streven ernaar ontwerpen te creëren die functionaliteit en esthetiek combineren. Van materiaal tot vorm, elk detail is belangrijk, zodat elk project zijn eigen unieke verhaal vertelt.",
   "team_title": "Ons team",
-  "team_text": "Ons team bestaat uit gepassioneerde architecten en ontwerpers uit diverse disciplines, die samenwerken om voor elk project professionele, creatieve en duurzame oplossingen te bieden."
+  "team_text": "Ons team bestaat uit gepassioneerde architecten en ontwerpers uit diverse disciplines, die samenwerken om voor elk project professionele, creatieve en duurzame oplossingen te bieden.",
+  "solo_section_title": "Hoogtepunten van soloprojecten",
+  "solo1_title": "🏢 Eén blok appartement met 35 verdiepingen @ Manjung | CCC ✅ + Strata-titel 📜",
+  "project3_title": "🏢 Goedkeuring voor One-Block Condominium @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Inzending goedgekeurd en geverifieerd",
+  "news_slide1_desc": "✅ CCC goedgekeurd + Strata-titel 📜 Kwaliteit en veiligheid gegarandeerd.",
+  "news_slide1_title": "🏢 Nieuw appartement van 35 verdiepingen voltooid @ Manjung"
 }

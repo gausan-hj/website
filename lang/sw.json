@@ -3,8 +3,9 @@
   "nav_projects": "Miradi",
   "nav_about": "Kuhusu",
   "nav_contact": "Wasiliana",
+  "nav_news": "habari",
   "hero_title": "Ufundi · Usanifu · Nafasi",
-  "hero_text": "Kubuni nafasi ambazo hazina wakati, kuunganisha watu, miundo, na hisia kupitia lugha ya usanifu.",
+  "hero_text": "Kubuni nafasi zisizo na wakati, kuunganisha watu, miundo, na hisia kupitia lugha ya usanifu.",
   "btn_view_projects": "Tazama miradi",
   "contact_title": "Wasiliana nasi",
   "contact_phone": "Simu: 05-807 6197",
@@ -16,7 +17,7 @@
   "social_tiktok": "Tiktok",
   "projects_title": "Miradi iliyoangaziwa",
   "projects_subtitle": "Chunguza kazi yetu ya hivi karibuni ya tovuti na ukaguzi",
-  "project1_title": "👷‍♂ Mikutano ya Tovuti na ukaguzi 👷‍♀",
+  "project1_title": "👷‍♂ Mikutano ya tovuti na ukaguzi 👷‍♀",
   "project2_title": "Uchunguzi wa ubora: Mtazamo wa kitaalam kutoka kwa mbunifu wa YC Lee 🏢",
   "btn_prev": "Zamani",
   "btn_next": "Ifuatayo",
@@ -28,5 +29,10 @@
   "mission_title": "Ujumbe wetu",
   "mission_text": "Tumejitolea kuunda miundo ambayo inachanganya utendaji na aesthetics. Kutoka kwa vifaa hadi kuunda, kila undani inajali - inasisitiza kwamba kila mradi unasimulia hadithi yake ya kipekee.",
   "team_title": "Timu yetu",
-  "team_text": "Timu yetu inajumuisha wasanifu wenye shauku na wabuni kutoka taaluma tofauti, wakifanya kazi kwa pamoja kutoa suluhisho za kitaalam, ubunifu, na endelevu kwa kila mradi."
+  "team_text": "Timu yetu inajumuisha wasanifu wenye shauku na wabuni kutoka taaluma tofauti, wakifanya kazi kwa pamoja kutoa suluhisho za kitaalam, ubunifu, na endelevu kwa kila mradi.",
+  "solo_section_title": "Vielelezo vya Mradi wa Solo",
+  "solo1_title": "🏢 block moja ya ghorofa 35-ghorofa @ manjung | CCC ✅ + Strata TITLE 📜",
+  "project3_title": "Idhini ya kondomu moja ya block",
+  "news_slide1_desc": "CCC Iliyopitishwa + Kichwa cha Strata 📜 Ubora na usalama umehakikishwa.",
+  "news_slide1_title": "🏢 ghorofa mpya-35 iliyokamilishwa @ Manjung"
 }

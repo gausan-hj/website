@@ -3,6 +3,7 @@
   "nav_projects": "Progetti",
   "nav_about": "Di",
   "nav_contact": "Contatto",
+  "nav_news": "notizia",
   "hero_title": "Artigianato · Architettura · Spazio",
   "hero_text": "Progettare spazi senza tempo, connettendo persone, strutture ed emozioni attraverso il linguaggio architettonico.",
   "btn_view_projects": "Visualizza progetti",
@@ -17,7 +18,7 @@
   "projects_title": "Progetti in primo piano",
   "projects_subtitle": "Esplora i nostri recenti lavori e ispezioni sul sito",
   "project1_title": "👷‍♂ Riunioni e sopralluoghi in cantiere 👷‍♀",
-  "project2_title": "🏢 Ispezione della qualità: una prospettiva professionale da YC Lee Architect 🏢",
+  "project2_title": "🏢 Controllo qualità: una prospettiva professionale da YC Lee Architect 🏢",
   "btn_prev": "Precedente",
   "btn_next": "Prossimo",
   "btn_close": "Vicino",
@@ -28,5 +29,10 @@
   "mission_title": "La nostra missione",
   "mission_text": "Ci impegniamo a creare design che uniscano funzionalità ed estetica. Dai materiali alla forma, ogni dettaglio conta, garantendo che ogni progetto racconti la sua storia unica.",
   "team_title": "La nostra squadra",
-  "team_text": "Il nostro team è composto da architetti e designer appassionati provenienti da diverse discipline, che lavorano insieme per fornire soluzioni professionali, creative e sostenibili per ogni progetto."
+  "team_text": "Il nostro team è composto da architetti e designer appassionati provenienti da diverse discipline, che lavorano insieme per fornire soluzioni professionali, creative e sostenibili per ogni progetto.",
+  "solo_section_title": "Punti salienti del progetto solista",
+  "solo1_title": "🏢 Appartamento in un isolato di 35 piani @ Manjung | CCC ✅ + Titolo a strati 📜",
+  "project3_title": "🏢 Approvazione per un condominio a un blocco @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Inserimento approvato e verificato",
+  "news_slide1_desc": "✅ Approvato CCC + Titolo Strata 📜 Qualità e sicurezza garantite.",
+  "news_slide1_title": "🏢 Nuovo appartamento di 35 piani completato @ Manjung"
 }

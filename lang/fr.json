@@ -3,6 +3,7 @@
   "nav_projects": "Projets",
   "nav_about": "À propos",
   "nav_contact": "Contact",
+  "nav_news": "nouvelles",
   "hero_title": "Artisanat · Architecture · Espace",
   "hero_text": "Concevoir des espaces intemporels, reliant les personnes, les structures et les émotions à travers un langage architectural.",
   "btn_view_projects": "Voir les projets",
@@ -24,9 +25,14 @@
   "about_title": "À propos de nous",
   "about_subtitle": "Nos principaux services se trouvent à Perak, Genting, Kedah, Johor et Kuala Lumpur, et nous entreprenons également des projets à l'étranger.",
   "philosophy_title": "Notre philosophie",
-  "philosophy_text": "L'architecture est bien plus qu'une simple structure et un espace : c'est un dialogue entre les personnes et l'environnement. Notre objectif est de concevoir des espaces qui équilibrent simplicité, élégance et intemporalité.",
-  "mission_title": "Notre Mission",
+  "philosophy_text": "L'architecture est plus qu'une simple structure et un espace : c'est un dialogue entre les personnes et l'environnement. Notre objectif est de concevoir des espaces qui équilibrent simplicité, élégance et intemporalité.",
+  "mission_title": "Notre mission",
   "mission_text": "Nous nous engageons à créer des designs alliant fonctionnalité et esthétique. Des matériaux à la forme, chaque détail compte, garantissant que chaque projet raconte sa propre histoire.",
   "team_title": "Notre équipe",
-  "team_text": "Notre équipe est composée d'architectes et de designers passionnés de diverses disciplines, travaillant ensemble pour fournir des solutions professionnelles, créatives et durables pour chaque projet."
+  "team_text": "Notre équipe est composée d'architectes et de designers passionnés de diverses disciplines, travaillant ensemble pour fournir des solutions professionnelles, créatives et durables pour chaque projet.",
+  "solo_section_title": "Faits saillants du projet solo",
+  "solo1_title": "Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.",
+  "project3_title": "🏢 Approbation pour une copropriété d'un seul bloc @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Soumission approuvée et vérifiée",
+  "news_slide1_desc": "✅ Approuvé CCC + Titre Strata 📜 Qualité et sécurité garanties.",
+  "news_slide1_title": "🏢 Nouvel appartement de 35 étages achevé à Manjung"
 }

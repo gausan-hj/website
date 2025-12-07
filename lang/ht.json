@@ -3,6 +3,7 @@
   "nav_projects": "Pwojè",
   "nav_about": "Konsènan",
   "nav_contact": "Kontakte",
+  "nav_news": "nouvèl",
   "hero_title": "Atizana · Achitekti · Espas",
   "hero_text": "Konsepsyon espas intemporel, konekte moun, estrikti, ak emosyon atravè langaj achitekti.",
   "btn_view_projects": "Gade Pwojè yo",
@@ -15,7 +16,7 @@
   "social_instagram": "Instagram",
   "social_tiktok": "TikTok",
   "projects_title": "Pwojè ki prezante yo",
-  "projects_subtitle": "Eksplore Travay ak Enspeksyon Dènye Nou yo",
+  "projects_subtitle": "Eksplore Dènye Travay ak Enspeksyon nou an",
   "project1_title": "👷‍♂ Reyinyon sit ak enspeksyon 👷‍♀",
   "project2_title": "🏢 Enspeksyon Kalite: Yon pèspektiv pwofesyonèl nan men YC Lee Architect 🏢",
   "btn_prev": "Previous",
@@ -28,5 +29,10 @@
   "mission_title": "Misyon nou",
   "mission_text": "Nou pran angajman pou kreye desen ki melanje fonksyonalite ak estetik. Soti nan materyèl rive nan fòm, chak detay enpòtan - asire ke chak pwojè rakonte pwòp istwa inik li yo.",
   "team_title": "Ekip nou an",
-  "team_text": "Ekip nou an gen ladann achitèk pasyone ak konsèpteur ki soti nan divès disiplin, k ap travay ansanm pou bay solisyon pwofesyonèl, kreyatif ak dirab pou chak pwojè."
+  "team_text": "Ekip nou an gen ladann achitèk pasyone ak konsèpteur ki soti nan divès disiplin, k ap travay ansanm pou bay solisyon pwofesyonèl, kreyatif ak dirab pou chak pwojè.",
+  "solo_section_title": "Pwen esansyèl pwojè solo",
+  "solo1_title": "🏢 Apatman yon blòk 35 etaj @ Manjung | CCC ✅ + Strata Tit 📜",
+  "project3_title": "🏢 Apwobasyon pou One-Block Condominium @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Soumisyon Apwouve & Verifye",
+  "news_slide1_desc": "✅ CCC Apwouve + Strata Tit 📜 Kalite ak sekirite garanti.",
+  "news_slide1_title": "🏢 Nouvo apatman 35 etaj fini @ Manjung"
 }

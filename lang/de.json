@@ -3,6 +3,7 @@
   "nav_projects": "Projekte",
   "nav_about": "Um",
   "nav_contact": "Kontakt",
+  "nav_news": "Nachricht",
   "hero_title": "Handwerk · Architektur · Raum",
   "hero_text": "Zeitlose Räume entwerfen, Menschen, Strukturen und Emotionen durch architektonische Sprache verbinden.",
   "btn_view_projects": "Projekte anzeigen",
@@ -22,11 +23,16 @@
   "btn_next": "Nächste",
   "btn_close": "Schließen",
   "about_title": "Über uns",
-  "about_subtitle": "Unsere Hauptstandorte sind Perak, Genting, Kedah, Johor und Kuala Lumpur, außerdem führen wir auch Projekte im Ausland durch.",
+  "about_subtitle": "Unsere Hauptdienstleistungen liegen in Perak, Genting, Kedah, Johor und Kuala Lumpur, außerdem führen wir auch Projekte im Ausland durch.",
   "philosophy_title": "Unsere Philosophie",
   "philosophy_text": "Architektur ist mehr als nur Struktur und Raum – sie ist ein Dialog zwischen Mensch und Umwelt. Unser Ziel ist es, Räume zu entwerfen, die Einfachheit, Eleganz und Zeitlosigkeit in Einklang bringen.",
   "mission_title": "Unsere Mission",
   "mission_text": "Wir sind bestrebt, Designs zu schaffen, die Funktionalität und Ästhetik vereinen. Von den Materialien bis zur Form zählt jedes Detail – so wird sichergestellt, dass jedes Projekt seine eigene, einzigartige Geschichte erzählt.",
   "team_title": "Unser Team",
-  "team_text": "Unser Team besteht aus leidenschaftlichen Architekten und Designern unterschiedlicher Disziplinen, die zusammenarbeiten, um für jedes Projekt professionelle, kreative und nachhaltige Lösungen zu bieten."
+  "team_text": "Unser Team besteht aus leidenschaftlichen Architekten und Designern unterschiedlicher Disziplinen, die zusammenarbeiten, um für jedes Projekt professionelle, kreative und nachhaltige Lösungen zu bieten.",
+  "solo_section_title": "Höhepunkte des Soloprojekts",
+  "solo1_title": "🏢 Ein Block 35-stöckiges Apartment @ Manjung | CCC ✅ + Strata-Titel 📜",
+  "project3_title": "🏢 Genehmigung für Ein-Block-Eigentumswohnung @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Einreichung genehmigt und verifiziert",
+  "news_slide1_desc": "✅ CCC-genehmigt + Strata-Titel 📜 Qualität und Sicherheit garantiert.",
+  "news_slide1_title": "🏢 Neue 35-stöckige Wohnung in Manjung fertiggestellt"
 }

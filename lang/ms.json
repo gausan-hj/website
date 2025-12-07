@@ -3,6 +3,7 @@
   "nav_projects": "Projek",
   "nav_about": "Mengenai",
   "nav_contact": "Hubungi",
+  "nav_news": "berita",
   "hero_title": "Kraf · Senibina · Ruang",
   "hero_text": "Merancang ruang abadi, menghubungkan orang, struktur, dan emosi melalui bahasa seni bina.",
   "btn_view_projects": "Lihat projek",
@@ -16,7 +17,7 @@
   "social_tiktok": "Tiktok",
   "projects_title": "Projek -projek yang diketengahkan",
   "projects_subtitle": "Terokai kerja dan pemeriksaan laman web baru -baru ini",
-  "project1_title": "Mesyuarat dan Pemeriksaan Tapak 👷‍♂ 👷‍♀",
+  "project1_title": "Mesyuarat dan Pemeriksaan Laman 👷‍♂ 👷‍♀",
   "project2_title": "🏢 Pemeriksaan Kualiti: Perspektif Profesional dari YC Lee Architect 🏢",
   "btn_prev": "Sebelumnya",
   "btn_next": "Seterusnya",
@@ -28,5 +29,10 @@
   "mission_title": "Misi kami",
   "mission_text": "Kami komited untuk mewujudkan reka bentuk yang menggabungkan fungsi dan estetika. Dari bahan -bahan untuk membentuk, setiap perkara terperinci -menegaskan bahawa setiap projek menceritakan kisah uniknya sendiri.",
   "team_title": "Pasukan kami",
-  "team_text": "Pasukan kami terdiri daripada arkitek dan pereka yang bersemangat dari pelbagai disiplin, bekerjasama untuk menyediakan penyelesaian profesional, kreatif, dan mampan untuk setiap projek."
+  "team_text": "Pasukan kami terdiri daripada arkitek dan pereka yang bersemangat dari pelbagai disiplin, bekerjasama untuk menyediakan penyelesaian profesional, kreatif, dan mampan untuk setiap projek.",
+  "solo_section_title": "Sorotan projek solo",
+  "solo1_title": "🏢 Satu pangsapuri 35-tingkat blok @ Manjung | CCC ✅ + Tajuk Strata 📜",
+  "project3_title": "🏢 Kelulusan untuk kondominium satu blok @ genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Penyerahan Diluluskan & Disahkan",
+  "news_slide1_desc": "✅ CCC Diluluskan + Tajuk Strata 📜 Kualiti dan Keselamatan Dijamin.",
+  "news_slide1_title": "🏢 Pangsapuri 35-tingkat baru selesai @ manjung"
 }

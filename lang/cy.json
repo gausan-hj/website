@@ -3,6 +3,7 @@
   "nav_projects": "Prosiectau",
   "nav_about": "Ynghylch",
   "nav_contact": "Cysylltwch",
+  "nav_news": "newyddion",
   "hero_title": "Crefft · Pensaernïaeth · Gofod",
   "hero_text": "Dylunio gofodau oesol, cysylltu pobl, strwythurau, ac emosiynau trwy iaith bensaernïol.",
   "btn_view_projects": "Gweld Prosiectau",
@@ -28,5 +29,10 @@
   "mission_title": "Ein Cenhadaeth",
   "mission_text": "Rydym wedi ymrwymo i greu dyluniadau sy'n cyfuno ymarferoldeb ac estheteg. O ddeunyddiau i ffurf, mae pob manylyn yn bwysig - gan sicrhau bod pob prosiect yn adrodd ei stori unigryw ei hun.",
   "team_title": "Ein Tîm",
-  "team_text": "Mae ein tîm yn cynnwys penseiri a dylunwyr angerddol o ddisgyblaethau amrywiol, gan gydweithio i ddarparu atebion proffesiynol, creadigol a chynaliadwy ar gyfer pob prosiect."
+  "team_text": "Mae ein tîm yn cynnwys penseiri a dylunwyr angerddol o ddisgyblaethau amrywiol, gan gydweithio i ddarparu atebion proffesiynol, creadigol a chynaliadwy ar gyfer pob prosiect.",
+  "solo_section_title": "Uchafbwyntiau'r Prosiect Unawd",
+  "solo1_title": "🏢 Fflat Un Bloc 35 Llawr yn Manjung | CSC ✅ + Strata Title 📜",
+  "project3_title": "🏢 Cymeradwyaeth ar gyfer Condominium Un Bloc @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Cymeradwywyd a Gwiriwyd y Cyflwyniad",
+  "news_slide1_desc": "✅ Cymeradwy CSC + Teitl Strata 📜 Ansawdd a diogelwch wedi'i warantu.",
+  "news_slide1_title": "🏢 Fflat 35 Llawr Newydd wedi'i Gwblhau yn Manjung"
 }

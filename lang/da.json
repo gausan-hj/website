@@ -3,8 +3,9 @@
   "nav_projects": "Projekter",
   "nav_about": "Om",
   "nav_contact": "Kontakte",
+  "nav_news": "nyheder",
   "hero_title": "Håndværk · Arkitektur · Rum",
-  "hero_text": "At designe tidløse rum, forbinde mennesker, strukturer og følelser gennem arkitektonisk sprog.",
+  "hero_text": "Design af tidløse rum, forbinder mennesker, strukturer og følelser gennem arkitektonisk sprog.",
   "btn_view_projects": "Se projekter",
   "contact_title": "Kontakt os",
   "contact_phone": "Telefon: 05-807 6197",
@@ -28,5 +29,10 @@
   "mission_title": "Vores Mission",
   "mission_text": "Vi er forpligtet til at skabe design, der blander funktionalitet og æstetik. Fra materialer til form, hver detalje betyder noget - at sikre, at hvert projekt fortæller sin egen unikke historie.",
   "team_title": "Vores team",
-  "team_text": "Vores team består af passionerede arkitekter og designere fra forskellige discipliner, der arbejder sammen om at levere professionelle, kreative og bæredygtige løsninger til ethvert projekt."
+  "team_text": "Vores team består af passionerede arkitekter og designere fra forskellige discipliner, der arbejder sammen om at levere professionelle, kreative og bæredygtige løsninger til ethvert projekt.",
+  "solo_section_title": "Soloprojektets højdepunkter",
+  "solo1_title": "🏢 One Block 35-Etagers lejlighed @ Manjung | CCC ✅ + Strata Titel 📜",
+  "project3_title": "🏢 Godkendelse til One-Block Condominium @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Indsendelse godkendt og verificeret",
+  "news_slide1_desc": "✅ CCC Godkendt + Strata Titel 📜 Kvalitet og sikkerhed garanteret.",
+  "news_slide1_title": "🏢 Ny 35-etagers lejlighed færdiggjort @ Manjung"
 }

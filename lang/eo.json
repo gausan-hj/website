@@ -3,8 +3,9 @@
   "nav_projects": "Projektoj",
   "nav_about": "Pri",
   "nav_contact": "Kontaktu",
+  "nav_news": "novaĵoj",
   "hero_title": "Metio · Arkitekturo · Spaco",
-  "hero_text": "Desegni sentempajn spacojn, ligante homojn, strukturojn kaj emociojn per arkitektura lingvo.",
+  "hero_text": "Desegni sentempajn spacojn, konektante homojn, strukturojn kaj emociojn per arkitektura lingvo.",
   "btn_view_projects": "Rigardu Projektojn",
   "contact_title": "Kontaktu Nin",
   "contact_phone": "Telefono: 05-807 6197",
@@ -28,5 +29,10 @@
   "mission_title": "Nia Misio",
   "mission_text": "Ni kompromitas krei dezajnojn, kiuj miksas funkciecon kaj estetikon. De materialoj ĝis formo, ĉiu detalo gravas—certante, ke ĉiu projekto rakontas sian propran unikan historion.",
   "team_title": "Nia Teamo",
-  "team_text": "Nia teamo konsistas el pasiaj arkitektoj kaj projektistoj de diversaj disciplinoj, laborantaj kune por provizi profesiajn, kreivajn kaj daŭrigeblajn solvojn por ĉiu projekto."
+  "team_text": "Nia teamo konsistas el pasiaj arkitektoj kaj projektistoj de diversaj disciplinoj, laborantaj kune por provizi profesiajn, kreivajn kaj daŭrigeblajn solvojn por ĉiu projekto.",
+  "solo_section_title": "Solludaj Projektaj Kulminaĵoj",
+  "solo1_title": "🏢 Unu Bloka 35-etaĝa Apartamento @ Manjung | CCC ✅ + Strata Titolo 📜",
+  "project3_title": "🏢 Aprobo por Unu-Bloka Condominio @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Submetiĝo Aprobita & Kontrolita",
+  "news_slide1_desc": "✅ CCC Aprobita + Strata Titolo 📜 Kvalito kaj sekureco garantiitaj.",
+  "news_slide1_title": "🏢 Nova 35-etaĝa Apartamento Finiĝis @ Manjung"
 }

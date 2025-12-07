@@ -1,61 +1,38 @@
 {
-
-"nav_home": "Ngarep",
-
-"nav_projects": "Proyek",
-
-"nav_about": "Babagan",
-
-"nav_contact": "Kontak",
-
-"hero_title": "Kerajinan · Arsitektur · Ruang",
-
-"hero_text": "Ngrancang ruang tanpa wates, nyambungake wong, struktur, lan emosi liwat basa arsitektur."
-
- "btn_view_projects": "Deleng Proyek",
-
-"contact_title": "Hubungi Kami",
-
-"contact_phone": "Telpon: 05-807 6197",
-
-"contact_email": "Email: ycleearchitect@gmail.com",
-
-"contact_hours": "Jam Kantor: Senin nganti Jumat, 9:00 AM – 5:00 PM",
-
-"social_follow": "Tindakake Kami",
-
-"social_facebook": "Facebook",
-
-"social_instagram": "Instagram",
-
-"social_tiktok": "TikTok",
-
-"projects_title": "Proyek Unggulan",
-
-"projects_subtitle": "Jelajahi Pekerjaan lan Inspeksi Situs Anyar Kami",
-
-"project1_title": "👷‍♂ Rapat lan Inspeksi Situs 👷‍♀",
-
-"project2_title": "🏢 Inspeksi Kualitas: Perspektif Profesional saka YC Lee Architect  🏢",
-
-"btn_prev": "Sadurunge",
-
-"btn_next": "Sabanjure",
-
-"btn_close": "Tutup",
-
-"about_title": "Babagan Kita",
-
-"about_subtitle": "Layanan utama kita ana ing Perak, Genting, Kedah, Johor, lan Kuala Lumpur, lan kita uga nindakake proyek ing luar negeri."
-
-"philosophy_title": "Filosofi Kita",
-
-"philosophy_text": "Arsitektur luwih saka mung struktur lan ruang—iku dialog antarane wong lan lingkungan. Kita ngarahake kanggo ngrancang ruang sing nyeimbangake kesederhanaan, keanggunan, lan keabadian."
-
-"mission_title": "Misi Kita",
-
-"mission_text": "Kita setya nggawe desain sing nggabungake fungsi lan estetika. Saka bahan nganti bentuk, saben detail penting—mesthine saben proyek nyritakake crita unik dhewe."
-
- "team_title": "Tim Kita"
-
-"team_text": "Tim kita dumadi saka arsitek lan desainer sing semangat saka macem-macem disiplin ilmu, sing kerja bareng kanggo nyedhiyakake solusi profesional, kreatif, lan lestari kanggo saben proyek."
+  "nav_home": "Home",
+  "nav_projects": "Projects",
+  "nav_about": "About",
+  "nav_contact": "Contact",
+  "nav_news": "news",
+  "hero_title": "Craft · Architecture · Space",
+  "hero_text": "Designing timeless spaces, connecting people, structures, and emotions through architectural language.",
+  "btn_view_projects": "View Projects",
+  "contact_title": "Contact Us",
+  "contact_phone": "Phone: 05-807 6197",
+  "contact_email": "Email: ycleearchitect@gmail.com",
+  "contact_hours": "Office Hours: Monday to Friday, 9:00 AM – 5:00 PM",
+  "social_follow": "Follow Us",
+  "social_facebook": "Facebook",
+  "social_instagram": "Instagram",
+  "social_tiktok": "TikTok",
+  "projects_title": "Featured Projects",
+  "projects_subtitle": "Explore Our Recent Site Work and Inspections",
+  "project1_title": "👷‍♂ Site Meetings and Inspections 👷‍♀",
+  "project2_title": "🏢 Quality Inspection: A Professional Perspective from YC Lee Architect 🏢",
+  "btn_prev": "Previous",
+  "btn_next": "Next",
+  "btn_close": "Close",
+  "about_title": "About Us",
+  "about_subtitle": "Our main services are in Perak, Genting, Kedah, Johor, and Kuala Lumpur, and we also undertake overseas projects.",
+  "philosophy_title": "Our Philosophy",
+  "philosophy_text": "Architecture is more than just structure and space—it's a dialogue between people and the environment. We aim to design spaces that balance simplicity, elegance, and timelessness.",
+  "mission_title": "Our Mission",
+  "mission_text": "We are committed to creating designs that blend functionality and aesthetics. From materials to form, every detail matters—ensuring that each project tells its own unique story.",
+  "team_title": "Our Team",
+  "team_text": "Our team comprises passionate architects and designers from diverse disciplines, working together to provide professional, creative, and sustainable solutions for every project.",
+  "solo_section_title": "Solo Project Highlights",
+  "solo1_title": "🏢 One Block 35-Storey Apartment @ Manjung | CCC ✅ + Strata Title 📜",
+  "project3_title": "🏢 Approval for One-Block Condominium @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Submission Approved & Verified",
+  "news_slide1_desc": "✅ CCC Approved + Strata Title 📜 Quality and safety guaranteed.",
+  "news_slide1_title": "🏢 New 35-Storey Apartment Completed @ Manjung"
+}

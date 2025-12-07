@@ -3,13 +3,14 @@
   "nav_projects": "Projektai",
   "nav_about": "Apie",
   "nav_contact": "Susisiekite",
+  "nav_news": "naujienos",
   "hero_title": "Amatai · Architektūra · Erdvė",
   "hero_text": "Kuriame nesenstančias erdves, sujungiame žmones, struktūras ir emocijas per architektūrinę kalbą.",
   "btn_view_projects": "Peržiūrėti projektus",
   "contact_title": "Susisiekite su mumis",
   "contact_phone": "Telefonas: 05-807 6197",
   "contact_email": "paštas: ycleearchitect@gmail.com",
-  "contact_hours": "Darbo laikas: nuo pirmadienio iki penktadienio, 9.00 – 17.00 val",
+  "contact_hours": "Darbo laikas: nuo pirmadienio iki penktadienio, 9:00 – 17:00 val",
   "social_follow": "Sekite mus",
   "social_facebook": "Facebook",
   "social_instagram": "Instagramas",
@@ -28,5 +29,10 @@
   "mission_title": "Mūsų misija",
   "mission_text": "Esame įsipareigoję kurti dizainus, kuriuose derinamas funkcionalumas ir estetika. Nuo medžiagų iki formos – svarbi kiekviena detalė – užtikrinama, kad kiekvienas projektas pasakytų savo unikalią istoriją.",
   "team_title": "Mūsų komanda",
-  "team_text": "Mūsų komandą sudaro aistringi architektai ir dizaineriai iš įvairių disciplinų, kurie dirba kartu siekdami profesionalių, kūrybingų ir tvarių sprendimų kiekvienam projektui."
+  "team_text": "Mūsų komandą sudaro aistringi architektai ir dizaineriai iš įvairių sričių, kurie dirba kartu, kad kiekvienam projektui pateiktų profesionalius, kūrybiškus ir tvarius sprendimus.",
+  "solo_section_title": "Solo projekto akcentai",
+  "solo1_title": "🏢 Vieno bloko 35 aukštų butas @ Manjung | CCC ✅ + Strata pavadinimas 📜",
+  "project3_title": "🏢 Vieno bloko daugiabučio buto patvirtinimas @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Pateikimas patvirtintas ir patikrintas",
+  "news_slide1_desc": "✅ Patvirtinta CCC + Strata titulas 📜 Garantuojama kokybė ir saugumas.",
+  "news_slide1_title": "🏢 Baigtas naujas 35 aukštų butas @ Manjung"
 }

@@ -3,6 +3,7 @@
   "nav_projects": "Projekti",
   "nav_about": "O tem",
   "nav_contact": "Kontakt",
+  "nav_news": "novice",
   "hero_title": "Obrt · Arhitektura · Vesolje",
   "hero_text": "Oblikovanje brezčasnih prostorov, povezovanje ljudi, struktur in čustev skozi arhitekturni jezik.",
   "btn_view_projects": "Ogled projektov",
@@ -26,7 +27,12 @@
   "philosophy_title": "Naša filozofija",
   "philosophy_text": "Arhitektura je več kot le struktura in prostor – je dialog med ljudmi in okoljem. Naš cilj je oblikovati prostore, ki uravnotežijo preprostost, eleganco in brezčasnost.",
   "mission_title": "Naše poslanstvo",
-  "mission_text": "Zavezani smo ustvarjanju dizajnov, ki združujejo funkcionalnost in estetiko. Od materialov do oblike, vsaka podrobnost je pomembna – zagotavljamo, da vsak projekt pripoveduje svojo edinstveno zgodbo.",
+  "mission_text": "Zavezani smo ustvarjanju dizajnov, ki združujejo funkcionalnost in estetiko. Od materialov do oblike, vsaka podrobnost je pomembna – zagotavljanje, da vsak projekt pripoveduje svojo edinstveno zgodbo.",
   "team_title": "Naša ekipa",
-  "team_text": "Našo ekipo sestavljajo strastni arhitekti in oblikovalci iz različnih disciplin, ki sodelujejo pri zagotavljanju profesionalnih, kreativnih in trajnostnih rešitev za vsak projekt."
+  "team_text": "Našo ekipo sestavljajo strastni arhitekti in oblikovalci iz različnih disciplin, ki sodelujejo pri zagotavljanju profesionalnih, kreativnih in trajnostnih rešitev za vsak projekt.",
+  "solo_section_title": "Poudarki solo projekta",
+  "solo1_title": "🏢 35-nadstropno stanovanje v enem bloku @ Manjung | CCC ✅ + naslov Strata 📜",
+  "project3_title": "🏢 Odobritev za kondominij v enem bloku @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Predložitev odobrena in preverjena",
+  "news_slide1_desc": "✅ Odobreno CCC + naslov Strata 📜 Zagotovljena kakovost in varnost.",
+  "news_slide1_title": "🏢 Dokončano novo 35-nadstropno stanovanje @ Manjung"
 }

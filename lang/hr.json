@@ -3,6 +3,7 @@
   "nav_projects": "Projekti",
   "nav_about": "Oko",
   "nav_contact": "Kontakt",
+  "nav_news": "vijesti",
   "hero_title": "Obrt · Arhitektura · Prostor",
   "hero_text": "Dizajniranje bezvremenskih prostora, povezivanje ljudi, struktura i emocija kroz arhitektonski jezik.",
   "btn_view_projects": "Prikaži projekte",
@@ -24,9 +25,14 @@
   "about_title": "O nama",
   "about_subtitle": "Naše glavne usluge su u Peraku, Gentingu, Kedahu, Johoru i Kuala Lumpuru, a također provodimo projekte u inozemstvu.",
   "philosophy_title": "Naša filozofija",
-  "philosophy_text": "Arhitektura je više od same strukture i prostora – to je dijalog između ljudi i okoliša. Cilj nam je dizajnirati prostore koji balansiraju jednostavnost, eleganciju i bezvremenost.",
+  "philosophy_text": "Arhitektura je više od same strukture i prostora - to je dijalog između ljudi i okoliša. Cilj nam je dizajnirati prostore koji balansiraju jednostavnost, eleganciju i bezvremenost.",
   "mission_title": "Naša misija",
   "mission_text": "Predani smo stvaranju dizajna koji spaja funkcionalnost i estetiku. Od materijala do oblika, svaki detalj je bitan—obezbeđujući da svaki projekt priča svoju jedinstvenu priču.",
   "team_title": "Naš tim",
-  "team_text": "Naš tim sastoji se od strastvenih arhitekata i dizajnera iz različitih disciplina koji zajedno rade na pružanju profesionalnih, kreativnih i održivih rješenja za svaki projekt."
+  "team_text": "Naš tim sastoji se od strastvenih arhitekata i dizajnera iz različitih disciplina koji zajedno rade na pružanju profesionalnih, kreativnih i održivih rješenja za svaki projekt.",
+  "solo_section_title": "Istaknute točke solo projekta",
+  "solo1_title": "🏢 Stan na 35 katova u jednom bloku @ Manjung | CCC ✅ + Strata naslov 📜",
+  "project3_title": "🏢 Odobrenje za stan u jednoj zgradi @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Prijava odobrena i potvrđena",
+  "news_slide1_desc": "✅ CCC odobreno + Strata naslov 📜 Zajamčena kvaliteta i sigurnost.",
+  "news_slide1_title": "🏢 Dovršen novi stan od 35 katova @ Manjung"
 }

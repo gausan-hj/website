@@ -3,6 +3,7 @@
   "nav_projects": "Merero",
   "nav_about": "About",
   "nav_contact": "Ikopanye le",
+  "nav_news": "Litaba",
   "hero_title": "Craft · Lisebelisoa",
   "hero_text": "Ho rala libaka tse se nang nako, batho, maemo, le maikutlo a puo ea bokhachane.",
   "btn_view_projects": "Sheba merero",
@@ -16,8 +17,8 @@
   "social_tiktok": "Tiktok",
   "projects_title": "Merero e netefalitsoeng",
   "projects_subtitle": "Lekola mosebetsi oa rona oa morao-rao le tlhahlobo",
-  "project1_title": "👷Likopano tsa libaka le tlhahlobo 👷",
-  "project2_title": "🏢Tlhahlobo ea boleng: Boemo bo botle ba 'mele bo tsoang ho YC Lee Arpertitect 🏢",
+  "project1_title": "Likopano tsa libaka le tlhahlobo 👷♀",
+  "project2_title": "Tlhahlobo ea boleng: Boemo bo botle ba 'mele bo tsoang ho YC Lee Arpertitect 🏢",
   "btn_prev": "E fetileng",
   "btn_next": "E 'ngoe",
   "btn_close": "Haufi",
@@ -28,5 +29,10 @@
   "mission_title": "Morero oa rona",
   "mission_text": "Re ikemiselitse ho etsa meralo e meraro eo re sebetsang le eona le li-aesthetics. Ho lisebelisoa ho theha, lintlha tsohle li bohlokoa - ho netefatsa hore projec ea eona e bua pale ea eona e ikhethang.",
   "team_title": "Sehlopha sa rona",
-  "team_text": "Sehlopha sa rona se na le lithahasello tsa meralo ea meralo ea meralo le babuelli ba fapaneng, ho sebetsa 'moho ho fana ka tharollo ea setsebi, bo tsitsitseng bakeng sa morero o mong le o mong."
+  "team_text": "Sehlopha sa rona se na le lithahasello tsa meralo ea meralo ea meralo le babuelli ba fapaneng, ho sebetsa 'moho ho fana ka tharollo ea setsebi, bo tsitsitseng bakeng sa morero o mong le o mong.",
+  "solo_section_title": "Solo Projection Lintlha",
+  "solo1_title": "🏢 One Croke 35-Sperey Apartment @ Mancung | CCC ✅ + sehlooho sa STrata 📜",
+  "project3_title": "Retumente ka CondomInimium e le 'ngoe @ Lohatso Sempah📍 Mukim Betheng Convent",
+  "news_slide1_desc": "Sehlooho sa \"scC se lumelletsoeng + Strata\"",
+  "news_slide1_title": "Apart e ncha 35-Storey e phethetsoe @ manjung"
 }

@@ -3,6 +3,7 @@
   "nav_projects": "Projektit",
   "nav_about": "Noin",
   "nav_contact": "Ota yhteyttä",
+  "nav_news": "uutiset",
   "hero_title": "Käsityö · Arkkitehtuuri · Avaruus",
   "hero_text": "Suunnittelemme ajattomia tiloja, yhdistävät ihmisiä, rakenteita ja tunteita arkkitehtuurikielen avulla.",
   "btn_view_projects": "Näytä projektit",
@@ -28,5 +29,10 @@
   "mission_title": "Tehtävämme",
   "mission_text": "Olemme sitoutuneet luomaan malleja, joissa yhdistyvät toiminnallisuus ja estetiikka. Materiaaleista muotoon jokainen yksityiskohta on tärkeä – varmistaa, että jokainen projekti kertoo oman ainutlaatuisen tarinansa.",
   "team_title": "Meidän tiimi",
-  "team_text": "Tiimiimme kuuluu intohimoisia arkkitehteja ja suunnittelijoita eri aloilta, jotka työskentelevät yhdessä tarjotakseen ammattimaisia, luovia ja kestäviä ratkaisuja jokaiseen projektiin."
+  "team_text": "Tiimimme koostuu intohimoisista arkkitehdeistä ja suunnittelijoista eri aloilta, jotka työskentelevät yhdessä tarjotakseen ammattimaisia, luovia ja kestäviä ratkaisuja jokaiseen projektiin.",
+  "solo_section_title": "Yksilöprojektin kohokohdat",
+  "solo1_title": "🏢 One Block 35-kerroksinen huoneisto @ Manjung | CCC ✅ + Strata Title 📜",
+  "project3_title": "🏢 Hyväksyntä yhden lohkon asunnolle @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Lähetys hyväksytty ja vahvistettu",
+  "news_slide1_desc": "✅ CCC Hyväksytty + Strata Title 📜 Laatu ja turvallisuus taattu.",
+  "news_slide1_title": "🏢 Uusi 35-kerroksinen huoneisto valmis @ Manjung"
 }

@@ -3,6 +3,7 @@
   "nav_projects": "Taslamalar",
   "nav_about": "Hakda",
   "nav_contact": "Aragatnaşyk",
+  "nav_news": "Habarlar",
   "hero_title": "Maslahaty · Arhitektura · giňişlik",
   "hero_text": "Arthoşektura dili bilen birleşdirýän wagtsyz ýerleri, birleşdirýän ýerleri, desgalary we duýgulary birleşdirýän boşluklary dizaýn edýär.",
   "btn_view_projects": "Taslamalary görmek",
@@ -16,8 +17,8 @@
   "social_tiktok": "Tiktok",
   "projects_title": "Aýratynlandyrylan taslamalar",
   "projects_subtitle": "Soňky sahypamyzyň işimizi we barlaglarymyzy öwreniň",
-  "project1_title": "👷 Saýt sahypalary we barlaglar 👷",
-  "project2_title": "🏢The Hil barlagy: YC Lee Arhitektordan hünär perspektiwasy 🏢",
+  "project1_title": "👷♂ Saýt sahypalary we barlaglar 👷♀",
+  "project2_title": "The Hil barlagy: YC Li Arhitektordan hünär perspektiwasy 🏢",
   "btn_prev": "Öňki",
   "btn_next": "Indiki",
   "btn_close": "Ýakyn",
@@ -28,5 +29,10 @@
   "mission_title": "Biziň wezipämiz",
   "mission_text": "Bir funksializasiýa we estetikany basyp almagy maksat edinýäris. Mataldan dürlidan tapawutlanýar, her taslamanyň özboluşly wakasyny gürrüň berýän ähli jikme-jiklikleri üpjün etmek.",
   "team_title": "Toparymyz",
-  "team_text": "Toparymyz, her bir taslama üçin hünär, döredijilik, döredijilik, döredijilik, döredijilik, döredijilik we gaýtadan durnukly çözgütler üçin sergideňerleri we dizaýnçylarydyr."
+  "team_text": "Toparymyz, her bir taslama üçin hünär, döredijilik, döredijilik, döredijilik, döredijilik, döredijilik we gaýtadan durnukly çözgütler üçin sergideňerleri we dizaýnçylarydyr.",
+  "solo_section_title": "Solo taslamasynyň esasy taraplary",
+  "solo1_title": "Floum bir pilde 35 gatly kwartira @ manjung | CCC ✅ + gatlak ady 📜",
+  "project3_title": "Bir bit Prezowinium üçin ic!",
+  "news_slide1_desc": "✅ CCC tassyklanan + stata ady 📜 Hiň hil we howpsuzlyk kepillendirilen.",
+  "news_slide1_title": "🏢 täze 35-gatly kwartira @ Manjung"
 }

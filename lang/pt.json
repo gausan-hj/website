@@ -3,6 +3,7 @@
   "nav_projects": "Projetos",
   "nav_about": "Sobre",
   "nav_contact": "Contato",
+  "nav_news": "notícias",
   "hero_title": "Artesanato · Arquitetura · Espaço",
   "hero_text": "Projetando espaços atemporais, conectando pessoas, estruturas e emoções através da linguagem arquitetônica.",
   "btn_view_projects": "Ver projetos",
@@ -17,7 +18,7 @@
   "projects_title": "Projetos em destaque",
   "projects_subtitle": "Explore nossos recentes trabalhos e inspeções no local",
   "project1_title": "👷‍♂ Reuniões e inspeções no local 👷‍♀",
-  "project2_title": "🏢 Inspeção de qualidade: uma perspectiva profissional do YC Lee Architect 🏢",
+  "project2_title": "🏢 Inspeção de Qualidade: Uma Perspectiva Profissional do YC Lee Architect 🏢",
   "btn_prev": "Anterior",
   "btn_next": "Próximo",
   "btn_close": "Fechar",
@@ -28,5 +29,10 @@
   "mission_title": "Nossa Missão",
   "mission_text": "Estamos empenhados em criar designs que combinem funcionalidade e estética. Dos materiais à forma, cada detalhe é importante – garantindo que cada projeto conte sua própria história única.",
   "team_title": "Nossa equipe",
-  "team_text": "Nossa equipe é formada por arquitetos e designers apaixonados de diversas disciplinas, trabalhando juntos para fornecer soluções profissionais, criativas e sustentáveis ​​para cada projeto."
+  "team_text": "Nossa equipe é formada por arquitetos e designers apaixonados de diversas disciplinas, trabalhando juntos para fornecer soluções profissionais, criativas e sustentáveis ​​para cada projeto.",
+  "solo_section_title": "Destaques do projeto solo",
+  "solo1_title": "🏢 Apartamento de um quarteirão e 35 andares em Manjung | CCC ✅ + Título dos estratos 📜",
+  "project3_title": "🏢 Aprovação para condomínio de um quarteirão em Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Envio aprovado e verificado",
+  "news_slide1_desc": "✅ Aprovado CCC + Título Strata 📜 Qualidade e segurança garantidas.",
+  "news_slide1_title": "🏢 Novo apartamento de 35 andares concluído em Manjung"
 }

@@ -3,6 +3,7 @@
   "nav_projects": "Layihələr",
   "nav_about": "Haqqında",
   "nav_contact": "Əlaqə",
+  "nav_news": "xəbəri",
   "hero_title": "Craft · Memarlıq · Məkan",
   "hero_text": "Memarlıq dili ilə insanları, quruluşları və duyğuları birləşdirən ebedi məkanların hazırlanması.",
   "btn_view_projects": "Layihələrə baxın",
@@ -28,5 +29,10 @@
   "mission_title": "Missiyamız",
   "mission_text": "İşləməyi və estetikasını qarışdıran dizaynlar yaratmağa qərarlıyıq. Materiallardan formalaşmaq üçün hər bir layihənin hər bir layihənin özünəməxsus hekayəsini izah etməsini təmin edir.",
   "team_title": "Komandamız",
-  "team_text": "Komandamız hər bir layihə üçün peşəkar, yaradıcı və davamlı həlləri təmin etmək üçün birlikdə çalışan müxtəlif fənlərdən olan ehtiraslı memarlar və dizaynerlərdən ibarətdir."
+  "team_text": "Komandamız hər bir layihə üçün peşəkar, yaradıcı və davamlı həlləri təmin etmək üçün birlikdə çalışan müxtəlif fənlərdən olan ehtiraslı memarlar və dizaynerlərdən ibarətdir.",
+  "solo_section_title": "Solo Layihə məqamları",
+  "solo1_title": "🏢 Bir blok 35 mərtəbəli mənzil @ manjung | CCC ✅ + Strata başlığı 📜",
+  "project3_title": "🏢 Bir blok kondominium üçün təsdiqləmə @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 təqdimat təsdiq edildi və təsdiqləndi",
+  "news_slide1_desc": "✅ CCC təsdiq edilmiş + Strata başlığı 📜 Keyfiyyət və təhlükəsizlik zəmanəti.",
+  "news_slide1_title": "🏢 Yeni 35 mərtəbəli mənzil bitdi @ Manjung"
 }

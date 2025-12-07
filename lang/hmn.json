@@ -3,6 +3,7 @@
   "nav_projects": "Tej hauj lwm",
   "nav_about": "Txog",
   "nav_contact": "Tus neeg yus paub",
+  "nav_news": "txoj moo",
   "hero_title": "Kws txhais lus · Architecture",
   "hero_text": "Kev tsim cov chaw timeless, sib txuas cov neeg, thiab kev xav los ntawm cov lus kos duab.",
   "btn_view_projects": "Saib Cov Haujlwm",
@@ -28,5 +29,10 @@
   "mission_title": "Peb Lub Luag Haujlwm",
   "mission_text": "Peb tau cog lus los tsim cov qauv tsim uas muab kev ua haujlwm zoo thiab kev ua kom zoo nkauj. Los ntawm cov ntaub ntawv rau daim ntawv, txhua qhov nthuav dav-kom ntseeg tau tias txhua qhov haujlwm qhia nws tus kheej zaj dab neeg tshwj xeeb.",
   "team_title": "Peb pab neeg",
-  "team_text": "Peb pab neeg muaj cov kws tsim txuj kev nyiam thiab cov neeg tsim qauv los ntawm kev ua haujlwm sib txawv, muaj tswv yim, thiab cov kev daws teeb meem zoo rau txhua qhov haujlwm."
+  "team_text": "Peb pab neeg muaj cov kws tsim txuj kev nyiam thiab cov neeg tsim qauv los ntawm kev ua haujlwm sib txawv, muaj tswv yim, thiab cov kev daws teeb meem zoo rau txhua qhov haujlwm.",
+  "solo_section_title": "Solo Project cov ntsiab lus tseem ceeb",
+  "solo1_title": "Ib lub thaiv 35-storey chav tsev @ mujung | CCC ✅ + strata lub npe 📜",
+  "project3_title": "🏢 Pom zoo rau ib-block condominium @ genting sempah Mukom Bentong, Daerah Bentongi Seem Kev Pom Zoo & Tshawb Xyuas",
+  "news_slide1_desc": "✅ CCC tau pom zoo + Strata cov npe 📜 Qhov zoo thiab kev nyab xeeb lav.",
+  "news_slide1_title": "🏢 Cov chav tsev tshiab tau ua tiav @ mujung"
 }

@@ -3,6 +3,7 @@
   "nav_projects": "Ntchito",
   "nav_about": "Za",
   "nav_contact": "Peza",
+  "nav_news": "nkhani",
   "hero_title": "Katswiri",
   "hero_text": "Popanga malo opanda nthawi, kulumikiza anthu, nyumba, ndi malingaliro kudzera m'ngalankhulidwe.",
   "btn_view_projects": "Onani mapulojekiti",
@@ -28,5 +29,10 @@
   "mission_title": "Ntchito zathu",
   "mission_text": "Ndife odzipereka popanga mapangidwe omwe amaphatikiza magwiridwe antchito komanso zikhalidwe. Kuchokera ku zida kuti apange, chilichonse chimakhudza zomwe zimapangitsa - kuwonetsetsa kuti puloje iliyonse ikunenanso za nkhani yapadera.",
   "team_title": "Gulu lathu",
-  "team_text": "Gulu lathu limakhala ndi mamangidwe othandizira ndi opanga opanga malo osiyanasiyana, kugwira ntchito limodzi kuti ipereke mwayi, kulenga, komanso zothandiza pa ntchito iliyonse."
+  "team_text": "Gulu lathu limakhala ndi mamangidwe othandizira ndi opanga opanga malo osiyanasiyana, kugwira ntchito limodzi kuti ipereke mwayi, kulenga, komanso zothandiza pa ntchito iliyonse.",
+  "solo_section_title": "Solo Project",
+  "solo1_title": "🏢 Chingwe chimodzi 35-chosungira @ Manjung | CCC ✅ + Strata ya Strata 📜",
+  "project3_title": "🏢 Kuvomerezedwa kwa TOMOMINE TROMINIum @ SEPAS @ Mukim Bentong, Daerah Bentong📝 kugonjera ndi kutsimikiziridwa",
+  "news_slide1_desc": "✅ CCC yovomerezeka + ya Strata ya Strata 📜 yabwino ndi chitetezo chotsimikizika.",
+  "news_slide1_title": "🏢 nyumba yatsopano 35"
 }

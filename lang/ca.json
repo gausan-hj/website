@@ -1,8 +1,9 @@
 {
-  "nav_home": "Casa",
+  "nav_home": "a casa",
   "nav_projects": "Projectes",
   "nav_about": "Sobre",
   "nav_contact": "Contacte",
+  "nav_news": "notícies",
   "hero_title": "Artesania · Arquitectura · Espai",
   "hero_text": "Dissenyant espais atemporals, connectant persones, estructures i emocions a través del llenguatge arquitectònic.",
   "btn_view_projects": "Veure Projectes",
@@ -24,9 +25,14 @@
   "about_title": "Sobre Nosaltres",
   "about_subtitle": "Els nostres serveis principals es troben a Perak, Genting, Kedah, Johor i Kuala Lumpur, i també duem a terme projectes a l'estranger.",
   "philosophy_title": "La nostra filosofia",
-  "philosophy_text": "L'arquitectura és més que una estructura i un espai: és un diàleg entre les persones i l'entorn. Pretenem dissenyar espais que equilibrin simplicitat, elegància i atemporalitat.",
+  "philosophy_text": "L'arquitectura és més que una estructura i un espai, és un diàleg entre les persones i l'entorn. Pretenem dissenyar espais que equilibrin simplicitat, elegància i atemporalitat.",
   "mission_title": "La nostra missió",
   "mission_text": "Ens comprometem a crear dissenys que combinen funcionalitat i estètica. Des dels materials fins a la forma, cada detall importa, garantint que cada projecte expliqui la seva pròpia història única.",
   "team_title": "El nostre equip",
-  "team_text": "El nostre equip està format per arquitectes i dissenyadors apassionats de diverses disciplines, treballant junts per oferir solucions professionals, creatives i sostenibles per a cada projecte."
+  "team_text": "El nostre equip està format per arquitectes i dissenyadors apassionats de diverses disciplines, treballant junts per oferir solucions professionals, creatives i sostenibles per a cada projecte.",
+  "solo_section_title": "Aspectes destacats del projecte en solitari",
+  "solo1_title": "🏢 Apartament d'un bloc de 35 plantes @ Manjung | CCC ✅ + Strata Title 📜",
+  "project3_title": "🏢 Aprovació del condomini d'un bloc @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Presentació aprovada i verificada",
+  "news_slide1_desc": "✅ Aprovat CCC + Títol Strata 📜 Qualitat i seguretat garantides.",
+  "news_slide1_title": "🏢 Nou apartament de 35 plantes acabat @ Manjung"
 }

@@ -3,6 +3,7 @@
   "nav_projects": "Prosjekter",
   "nav_about": "Om",
   "nav_contact": "Kontakt",
+  "nav_news": "nyheter",
   "hero_title": "Håndverk · Arkitektur · Rom",
   "hero_text": "Designe tidløse rom, koble mennesker, strukturer og følelser gjennom arkitektonisk språk.",
   "btn_view_projects": "Se prosjekter",
@@ -28,5 +29,10 @@
   "mission_title": "Vårt oppdrag",
   "mission_text": "Vi er forpliktet til å lage design som blander funksjonalitet og estetikk. Fra materialer til form, hver detalj er viktig – for å sikre at hvert prosjekt forteller sin egen unike historie.",
   "team_title": "Teamet vårt",
-  "team_text": "Teamet vårt består av lidenskapelige arkitekter og designere fra ulike disipliner, som jobber sammen for å tilby profesjonelle, kreative og bærekraftige løsninger for hvert prosjekt."
+  "team_text": "Teamet vårt består av lidenskapelige arkitekter og designere fra forskjellige disipliner, som jobber sammen for å tilby profesjonelle, kreative og bærekraftige løsninger for hvert prosjekt.",
+  "solo_section_title": "Høydepunkter i soloprosjektet",
+  "solo1_title": "🏢 One Block 35-etasjes leilighet @ Manjung | CCC ✅ + Strata Tittel 📜",
+  "project3_title": "🏢 Godkjenning for One-Block Condominium @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 Innlevering godkjent og bekreftet",
+  "news_slide1_desc": "✅ CCC-godkjent + Strata-tittel 📜 Kvalitet og sikkerhet garantert.",
+  "news_slide1_title": "🏢 Ny 35-etasjes leilighet ferdigstilt @ Manjung"
 }

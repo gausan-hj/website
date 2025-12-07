@@ -3,6 +3,7 @@
   "nav_projects": "프로젝트",
   "nav_about": "에 대한",
   "nav_contact": "연락하다",
+  "nav_news": "소식",
   "hero_title": "공예 · 건축 · 우주",
   "hero_text": "시대를 초월한 공간을 디자인하고 건축 언어를 통해 사람, 구조, 감정을 연결합니다.",
   "btn_view_projects": "프로젝트 보기",
@@ -28,5 +29,10 @@
   "mission_title": "우리의 사명",
   "mission_text": "우리는 기능성과 미학이 조화를 이루는 디자인을 만들기 위해 최선을 다하고 있습니다. 재료부터 형태까지 모든 세부 사항이 중요하므로 각 프로젝트는 고유한 스토리를 전달합니다.",
   "team_title": "우리 팀",
-  "team_text": "우리 팀은 다양한 분야의 열정적인 건축가와 디자이너로 구성되어 있으며, 협력하여 모든 프로젝트에 전문적이고 창의적이며 지속 가능한 솔루션을 제공합니다."
+  "team_text": "우리 팀은 다양한 분야의 열정적인 건축가와 디자이너로 구성되어 있으며, 협력하여 모든 프로젝트에 전문적이고 창의적이며 지속 가능한 솔루션을 제공합니다.",
+  "solo_section_title": "솔로 프로젝트 하이라이트",
+  "solo1_title": "🏢 원블록 35층 아파트 @ 만중 | CCC ✅ + 스트라타 제목 📜",
+  "project3_title": "🏢 원블록 콘도미니엄 승인 @ Genting Sempah📍 Mukim Bentong, Daerah Bentong📝 제출 승인 및 검증",
+  "news_slide1_desc": "✅ CCC 승인 + Strata Title 📜 품질과 안전이 보장됩니다.",
+  "news_slide1_title": "🏢 새 35층 아파트 완공 @ 만중"
 }
