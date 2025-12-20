@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Merry Christmas | YC LEE ARCHITECT</title>
+
+  <style>
+    /* ===== 全局 ===== */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #0c1c36, #061224);
+      color: white;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    /* ===== 左上角公司名 ===== */
+    .brand {
+      position: absolute;
+      top: 20px;
+      left: 40px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      z-index: 10;
+    }
+
+    .brand span {
+      color: orange;
+    }
+
+    /* ===== 中央祝福 ===== */
+    .center {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .card {
+      max-width: 700px;
+      padding: 60px 40px;
+      border-radius: 20px;
+      background: linear-gradient(
+        145deg,
+        rgba(255,165,0,0.08),
+        rgba(10,30,60,0.95)
+      );
+      border: 1px solid rgba(255,165,0,0.35);
+      box-shadow: 0 0 40px rgba(255,165,0,0.25);
+      animation: fadeUp 1.8s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card h1 {
+      font-size: 3rem;
+      color: orange;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .line {
+      width: 90px;
+      height: 3px;
+      background: orange;
+      margin: 0 auto 30px;
+      border-radius: 3px;
+    }
+
+    .card p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #d6deef;
+    }
+
+    /* ===== 光晕装饰 ===== */
+    .glow {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(255,165,0,0.25), transparent 70%);
+      top: -140px;
+      right: -140px;
+      border-radius: 50%;
+      animation: pulse 6s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1); opacity: 0.6; }
+      to   { transform: scale(1.25); opacity: 1; }
+    }
+
+    /* ===== 雪花 ===== */
+    .snow {
+      position: fixed;
+      top: -10px;
+      color: rgba(255,255,255,0.8);
+      font-size: 14px;
+      animation: fall linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+
+    /* ===== 响应式 ===== */
+    @media (max-width: 768px) {
+      .brand {
+        left: 20px;
+        font-size: 1.2rem;
+      }
+
+      .card h1 {
+        font-size: 2.2rem;
+      }
+
+      .card p {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 左上角公司名 -->
+  <div class="brand">
+    <span>YC</span> LEE ARCHITECT
+  </div>
+
+  <!-- 光晕 -->
+  <div class="glow"></div>
+
+  <!-- 中央祝福 -->
+  <div class="center">
+    <div class="card">
+      <h1>🎄 Merry Christmas 🎄</h1>
+      <div class="line"></div>
+      <p>
+        May this Christmas bring warmth, peace, and inspiration.<br>
+        Wishing you joyful moments, meaningful connections,<br>
+        and a year ahead filled with creativity and hope.
+      </p>
+    </div>
+  </div>
+
+  <!-- 雪花 -->
+  <script>
+    function createSnow() {
+      const snow = document.createElement('div');
+      snow.className = 'snow';
+      snow.innerHTML = '❄';
+      snow.style.left = Math.random() * window.innerWidth + 'px';
+      snow.style.animationDuration = (5 + Math.random() * 5) + 's';
+      snow.style.opacity = Math.random();
+      snow.style.fontSize = (10 + Math.random() * 16) + 'px';
+      document.body.appendChild(snow);
+
+      setTimeout(() => {
+        snow.remove();
+      }, 10000);
+    }
+
+    setInterval(createSnow, 180);
+  </script>
+
+</body>
+</html>
