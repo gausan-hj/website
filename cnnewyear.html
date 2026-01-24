@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>马年新春祝福</title>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a, #0f172a);
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            from { transform: translateY(-100px); opacity: 1; }
+            to { transform: translateY(100vh); opacity: 0; }
+        }
+
+        .floating-star {
+            position: absolute;
+            animation: float 4s ease-in-out infinite;
+            color: #f97316;
+        }
+
+        @keyframes float {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f97316;
+            text-shadow: 0 0 15px #f97316;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .lang-btn {
+            padding: .5rem 1rem;
+            border: 2px solid #f97316;
+            background: transparent;
+            color: #f97316;
+            border-radius: 9999px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .lang-btn.active {
+            background: #f97316;
+            color: #fff;
+        }
+
+        .main-content {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1.5rem;
+            z-index: 10;
+            position: relative;
+        }
+
+        .greeting {
+            font-size: 3.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg,#ef4444,#f97316,#dc2626);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            50% { transform: scale(1.05); }
+        }
+
+        .subtitle {
+            color: #fed7aa;
+            font-size: 1.3rem;
+            margin: 1.5rem 0;
+            max-width: 650px;
+        }
+
+        .date-box {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            background: rgba(15,23,42,.6);
+            border: 1px solid rgba(249,115,22,.4);
+            color: #fdba74;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            text-align: center;
+            color: rgba(254,215,170,.7);
+            padding: 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+
+<header class="header">
+    <div class="logo">🧧 马年新春</div>
+    <div class="language-selector">
+        <button class="lang-btn active" data-lang="zh">ZH</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ms">MS</button>
+    </div>
+</header>
+
+<main class="main-content">
+    <h1 class="greeting" id="greeting">马年大吉 · 新春快乐</h1>
+    <p class="subtitle" id="subtitle">
+        愿马年带来奔腾的希望、坚定的步伐与丰盛的收获
+    </p>
+
+    <div class="date-box" id="date">
+        📅 2026 年 2 月 17 日（农历新年）
+    </div>
+</main>
+
+<footer>
+    © 2026 农历新年祝福 | 马到成功 🐎
+</footer>
+
+</div>
+
+<script>
+const translations = {
+    zh: {
+        greeting: '马年大吉 · 新春快乐',
+        subtitle: '愿马年带来奔腾的希望、坚定的步伐与丰盛的收获',
+        date: '📅 2026 年 2 月 17 日（农历新年）'
+    },
+    en: {
+        greeting: 'Happy Year of the Horse!',
+        subtitle: 'May the Year of the Horse bring strength, progress, and great success',
+        date: '📅 February 17, 2026 (Lunar New Year)'
+    },
+    ms: {
+        greeting: 'Selamat Tahun Kuda!',
+        subtitle: 'Semoga Tahun Kuda membawa kekuatan, kemajuan dan kejayaan',
+        date: '📅 17 Februari 2026 (Tahun Baru Cina)'
+    }
+};
+
+function updateLanguage(lang) {
+    greeting.textContent = translations[lang].greeting;
+    subtitle.textContent = translations[lang].subtitle;
+    date.textContent = translations[lang].date;
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => updateLanguage(btn.dataset.lang));
+});
+
+// 简单喜庆装饰
+for(let i=0;i<20;i++){
+    const c=document.createElement('div');
+    c.className='confetti';
+    c.style.left=Math.random()*100+'vw';
+    c.style.backgroundColor=['#f97316','#ef4444','#f59e0b'][Math.floor(Math.random()*3)];
+    c.style.animationDuration=3+Math.random()*3+'s';
+    document.body.appendChild(c);
+}
+</script>
+
+</body>
+</html>
