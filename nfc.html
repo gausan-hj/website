@@ -1,1 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深蓝·橙 · NFC打卡终端</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+        }
 
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at 10% 20%, #0a2f44, #02131e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        /* 主卡片——深蓝基调，橙光点缀 */
+        .nfc-terminal {
+            max-width: 500px;
+            width: 100%;
+            background: #0b2b3f;  /* 深蓝底层 */
+            border-radius: 3.5rem 3.5rem 2.5rem 2.5rem;
+            box-shadow: 0 30px 40px -15px rgba(0,0,0,0.7), 
+                        0 0 0 2px #ff8c1a inset,        /* 内层橙框 */
+                        0 0 0 4px #0e3e55 inset;        /* 深蓝内嵌 */
+            padding: 2.2rem 1.8rem 2.5rem 1.8rem;
+            transition: all 0.2s;
+        }
+
+        /* 顶部天线区域 —— 模拟NFC线圈 */
+        .nfc-antenna {
+            background: #1e506b;
+            background-image: repeating-linear-gradient(45deg, #ff8c1a22 0px, #ff8c1a22 12px, #2c6a8c 12px, #2c6a8c 24px);
+            border-radius: 100px;
+            padding: 0.8rem 1.5rem;
+            margin-bottom: 2rem;
+            border: 2px solid #ff8c1a;
+            box-shadow: 0 0 15px #ff8c1a66;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            font-weight: 600;
+            text-shadow: 0 2px 3px black;
+            letter-spacing: 2px;
+        }
+
+        .wave-icon {
+            font-size: 2rem;
+            filter: drop-shadow(0 0 6px #ff8c1a);
+            color: #ffb05c;
+        }
+
+        .nfc-chip {
+            background: #d97000;
+            color: #02131e;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            box-shadow: 0 0 0 2px #ffbc6e, 0 0 0 4px #063046;
+        }
+
+        /* 屏幕区域 — 深邃黑蓝底 + 橙字 */
+        .display-panel {
+            background: #021e2b;
+            border: 3px solid #ff8c1a;
+            border-radius: 2rem;
+            padding: 1.5rem 1.2rem;
+            margin-bottom: 2rem;
+            box-shadow: inset 0 -5px 8px #00000066, 0 10px 15px -5px #020b11;
+        }
+
+        .time-date {
+            display: flex;
+            justify-content: space-between;
+            color: #ffb96a;
+            font-weight: 500;
+            font-size: 1.2rem;
+            border-bottom: 1px dashed #ff8c1a80;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .user-id-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 1rem 0 0.8rem 0;
+            background: #0b3a4e;
+            padding: 0.7rem 1rem;
+            border-radius: 3rem;
+            border: 1px solid #ff8c1a;
+        }
+
+        .id-label {
+            color: #ffb155;
+            font-weight: 300;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .id-value {
+            color: white;
+            font-weight: 600;
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            text-shadow: 0 0 8px #ff8c1a;
+        }
+
+        .status-badge {
+            background: #ff8c1a20;
+            border-radius: 2rem;
+            padding: 0.6rem 1.2rem;
+            text-align: center;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.4rem;
+            border: 1px solid #ff8c1a;
+            backdrop-filter: blur(2px);
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .status-light {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #ff8c1a;
+            box-shadow: 0 0 12px #ffa94d;
+        }
+        .status-light.checked-in {
+            background: #4cda64;
+            box-shadow: 0 0 12px #7cfc00;
+        }
+        .status-light.checked-out {
+            background: #ff4d4d;
+            box-shadow: 0 0 12px #ff5555;
+        }
+
+        /* 刷卡按钮 — 主橙 + 深蓝点缀 */
+        .tap-area {
+            background: #0c3346;
+            border: 2px solid #ff8c1a;
+            border-radius: 4rem;
+            padding: 1.3rem 0.5rem;
+            margin: 2rem 0 1.2rem 0;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            box-shadow: 0 8px 0 #02131e, 0 10px 25px #0000007a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .tap-area:active {
+            transform: translateY(5px);
+            box-shadow: 0 3px 0 #02131e, 0 8px 15px #0000007a;
+        }
+
+        .tap-icon {
+            font-size: 2.5rem;
+            color: #ffae44;
+            filter: drop-shadow(0 0 6px #f90);
+        }
+
+        .tap-text {
+            color: white;
+            font-weight: 700;
+            font-size: 2rem;
+            letter-spacing: 3px;
+            text-shadow: 0 3px 0 #631d00;
+        }
+
+        .hint-nfc {
+            color: #ffc891;
+            text-align: center;
+            font-size: 1rem;
+            background: #022231;
+            padding: 0.4rem;
+            border-radius: 2rem;
+            width: fit-content;
+            margin: 0 auto 0.8rem auto;
+            border: 1px solid #ff8c1a80;
+        }
+
+        /* 员工快速切换 — 用深蓝/橙点缀 */
+        .employee-options {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 1.8rem 0 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .emp-btn {
+            background: #123d54;
+            border: 2px solid #ff8c1a;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 3rem;
+            cursor: pointer;
+            transition: 0.1s;
+            box-shadow: 0 3px 0 #02131e;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .emp-btn.active {
+            background: #ff8c1a;
+            border-color: #ffdbad;
+            color: #02131e;
+            box-shadow: 0 0 15px #ffa53b;
+            font-weight: 700;
+        }
+
+        .emp-btn:active {
+            transform: translateY(3px);
+            box-shadow: 0 0px 0 #02131e;
+        }
+
+        .history-log {
+            background: #021e2bcc;
+            border-radius: 1.8rem;
+            padding: 1rem 1.2rem;
+            margin-top: 2rem;
+            border: 2px solid #ff8c1a;
+            backdrop-filter: blur(2px);
+        }
+
+        .log-title {
+            color: #ffb155;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #log-list {
+            list-style: none;
+            max-height: 120px;
+            overflow-y: auto;
+            padding-right: 5px;
+            color: #d9d9d9;
+            font-size: 0.9rem;
+        }
+
+        #log-list li {
+            padding: 0.3rem 0;
+            border-bottom: 1px dotted #ff8c1a60;
+            display: flex;
+            gap: 8px;
+        }
+
+        .log-time {
+            color: #ffad4d;
+            font-weight: 600;
+        }
+
+        /* 自定义滚动条 */
+        #log-list::-webkit-scrollbar {
+            width: 5px;
+        }
+        #log-list::-webkit-scrollbar-track {
+            background: #032c3b;
+        }
+        #log-list::-webkit-scrollbar-thumb {
+            background: #ff8c1a;
+            border-radius: 10px;
+        }
+
+        footer {
+            color: #ffc89180;
+            font-size: 0.7rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="nfc-terminal">
+        <!-- 天线装饰 橙/深蓝 -->
+        <div class="nfc-antenna">
+            <span class="wave-icon">⬩⬩⬩</span>
+            <span class="nfc-chip">NFC</span>
+            <span class="wave-icon" style="transform: scaleX(-1);">⬩⬩⬩</span>
+        </div>
+
+        <!-- 主显示面板 深蓝色块 + 橙色高亮 -->
+        <div class="display-panel">
+            <div class="time-date">
+                <span id="current-time">13:45:22</span>
+                <span id="current-date">2026-03-08</span>
+            </div>
+            <!-- 当前打卡用户 (模拟NFC卡片ID) -->
+            <div class="user-id-placeholder">
+                <span class="id-label">📇 NFC UID</span>
+                <span class="id-value" id="nfc-uid-display">8A 3F C2 91</span>
+            </div>
+            <!-- 打卡状态区域 橙/深蓝 -->
+            <div class="status-badge" id="status-badge">
+                <span class="status-light" id="status-led"></span>
+                <span id="status-text">等待打卡</span>
+            </div>
+        </div>
+
+        <!-- 大大的「触碰打卡」按钮 —— 橙色核心 -->
+        <div class="tap-area" id="tap-button">
+            <span class="tap-icon">📱⬩📇</span>
+            <span class="tap-text">触碰打卡</span>
+        </div>
+        <div class="hint-nfc">⚡ 把NFC卡片/手机靠近读卡器 ⚡</div>
+
+        <!-- 员工快捷切换 —— 深蓝底 + 橙边 -->
+        <div class="employee-options" id="employee-list">
+            <!-- 由JS动态生成 保证UID联动，也可直接硬编码但动态更干净 -->
+        </div>
+
+        <!-- 历史记录面板 保持深蓝/橙 -->
+        <div class="history-log">
+            <div class="log-title">
+                <span>📋 最近打卡</span>
+                <span style="color:#ff8c1a;">⏱️</span>
+            </div>
+            <ul id="log-list">
+                <li><span class="log-time">13:30</span> 张明 (IN) · UID 8A3F</li>
+                <li><span class="log-time">12:15</span> 李丽 (OUT) · UID 5B7E</li>
+                <li><span class="log-time">09:02</span> 王强 (IN) · UID C291</li>
+            </ul>
+        </div>
+        <footer>深蓝·橙 | NFC 打卡终端 v1.0</footer>
+    </div>
+
+    <script>
+        (function() {
+            // ---------- 深蓝+橙色主题 NFC 模拟打卡 ----------
+            // 预置员工数据 (名字 + 虚拟NFC UID)
+            const employees = [
+                { name: '张明', uid: '8A 3F C2 91' },
+                { name: '李丽', uid: '5B 7E 4A 13' },
+                { name: '王强', uid: 'C2 91 6D 58' },
+                { name: '赵岩', uid: '3D 0F A7 84' }
+            ];
+
+            // 当前选中的员工索引 (默认第一个)
+            let currentEmpIndex = 0;      // 张明
+
+            // 打卡状态: 'in' 或 'out' (简单交替, 每人独立, 这里为了演示整体状态同步当前员工)
+            let checkStatus = new Array(employees.length).fill('out'); // 全部初始为 out (下班)
+
+            // DOM 元素
+            const uidDisplay = document.getElementById('nfc-uid-display');
+            const statusLed = document.getElementById('status-led');
+            const statusText = document.getElementById('status-text');
+            const tapBtn = document.getElementById('tap-button');
+            const timeSpan = document.getElementById('current-time');
+            const dateSpan = document.getElementById('current-date');
+            const logList = document.getElementById('log-list');
+            const empContainer = document.getElementById('employee-list');
+
+            // 辅助函数: 更新UI上的时间/日期 (每0.5秒刷新)
+            function updateDateTime() {
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const seconds = String(now.getSeconds()).padStart(2, '0');
+                timeSpan.innerText = `${hours}:${minutes}:${seconds}`;
+
+                const year = now.getFullYear();
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                const day = String(now.getDate()).padStart(2, '0');
+                dateSpan.innerText = `${year}-${month}-${day}`;
+            }
+            setInterval(updateDateTime, 500);
+            updateDateTime();
+
+            // 根据当前员工刷新界面 (UID 和 状态显示)
+            function refreshDisplayForCurrentEmp() {
+                const emp = employees[currentEmpIndex];
+                uidDisplay.innerText = emp.uid;
+
+                // 更新状态灯和文字
+                const curStatus = checkStatus[currentEmpIndex]; // 'in' 或 'out'
+                if (curStatus === 'in') {
+                    statusLed.className = 'status-light checked-in';
+                    statusText.innerText = '✅ 已上班 (IN)';
+                } else {
+                    statusLed.className = 'status-light checked-out';
+                    statusText.innerText = '⭕ 已下班 (OUT)';
+                }
+            }
+
+            // 更新员工按钮的激活样式
+            function updateActiveButton() {
+                const allBtns = document.querySelectorAll('.emp-btn');
+                allBtns.forEach((btn, idx) => {
+                    if (idx === currentEmpIndex) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
+
+            // 添加一条打卡记录到日志 (上面区域)
+            function addLogEntry(empName, action, uidShort) {
+                const now = new Date();
+                const timeStr = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+                const li = document.createElement('li');
+                li.innerHTML = `<span class="log-time">${timeStr}</span> ${empName} (${action}) · UID ${uidShort}`;
+                logList.prepend(li); // 最新在上方
+                if (logList.children.length > 6) {
+                    logList.removeChild(logList.lastElementChild);
+                }
+            }
+
+            // 打卡逻辑 (触碰模拟)
+            function handleTap() {
+                const emp = employees[currentEmpIndex];
+                const currentStatus = checkStatus[currentEmpIndex]; // 'in' 或 'out'
+                const newStatus = currentStatus === 'in' ? 'out' : 'in'; // 交替
+                checkStatus[currentEmpIndex] = newStatus;
+
+                // 生成简短UID用于日志 (去掉空格取前4字符)
+                const uidShort = emp.uid.replace(/\s/g, '').slice(0,4);
+
+                // 动作文字
+                const action = newStatus === 'in' ? 'IN 上班' : 'OUT 下班';
+                addLogEntry(emp.name, action, uidShort);
+
+                // 刷新界面 (状态灯/文字)
+                refreshDisplayForCurrentEmp();
+
+                // (可选) 轻微触感, 按钮动画已在css :active
+            }
+
+            // 切换员工
+            function switchEmployee(index) {
+                if (index === currentEmpIndex) return;
+                currentEmpIndex = index;
+                refreshDisplayForCurrentEmp();
+                updateActiveButton();
+            }
+
+            // 渲染员工按钮
+            function renderEmployeeButtons() {
+                empContainer.innerHTML = '';
+                employees.forEach((emp, idx) => {
+                    const btn = document.createElement('div');
+                    btn.className = `emp-btn ${idx === currentEmpIndex ? 'active' : ''}`;
+                    // 放一个小橙点
+                    btn.innerHTML = `<span style="color:#ff8c1a;">⬤</span> ${emp.name}`;
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        switchEmployee(idx);
+                    });
+                    empContainer.appendChild(btn);
+                });
+            }
+
+            // 打卡按钮事件
+            tapBtn.addEventListener('click', handleTap);
+
+            // 初始化: 渲染按钮, 刷新显示, 添加几条默认日志更契合主题
+            renderEmployeeButtons();
+            refreshDisplayForCurrentEmp();
+
+            // 为了丰富深蓝/橙效果, 预置几条日志 (包含新员工)
+            setTimeout(() => {
+                // 初始日志更生动, 但保留一些
+                logList.innerHTML = ''; // 清空硬编码示例
+                addLogEntry('张明', 'IN 上班', '8A3F');
+                addLogEntry('李丽', 'OUT 下班', '5B7E');
+                addLogEntry('王强', 'IN 上班', 'C291');
+                addLogEntry('赵岩', 'OUT 下班', '3D0F');
+            }, 10);
+
+            // 额外小细节: 模拟NFC感应区触碰也可以用键盘快捷键(隐藏小彩蛋), 不加也可以.
+            // 完全符合主色调: 深蓝背景、亮橙点缀。
+        })();
+    </script>
+</body>
+</html>
