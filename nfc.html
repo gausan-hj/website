@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFC打卡 · 深蓝橙 · 灵动版</title>
-    <!-- 引入 SheetJS 用于导出 Excel -->
-    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <title>NFC打卡 · 黑白橙蓝主题</title>
     <style>
         * {
             margin: 0;
@@ -16,10 +14,13 @@
 
         body {
             min-height: 100vh;
-            background: linear-gradient(145deg, #0a1c2c 0%, #123a4d 100%);
+            background: #ffffff;
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(10, 26, 58, 0.02) 0%, transparent 50%);
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             padding: 20px;
         }
 
@@ -32,26 +33,25 @@
             gap: 24px;
         }
 
-        /* ========= 左侧主打卡区 ========= */
+        /* ===== 左侧主打卡区 - 纯白背景 ===== */
         .left-panel {
-            background: #ffffff0a;
-            backdrop-filter: blur(16px);
+            background: #ffffff;
             border-radius: 48px;
             padding: 32px;
-            border: 2px solid #ff8c1a;
-            box-shadow: 0 30px 50px -15px #00000080, inset 0 0 30px #ff8c1a20;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
             display: flex;
             flex-direction: column;
             overflow: hidden;
         }
 
-        /* 顶部状态栏 */
+        /* 顶部状态栏 - 黑白灰 */
         .status-bar {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #ff8c1a40;
+            align-items: center;
+            padding-bottom: 24px;
+            border-bottom: 2px solid #f5f5f5;
         }
 
         .logo-area {
@@ -61,544 +61,615 @@
         }
 
         .logo-icon {
-            width: 52px;
-            height: 52px;
-            background: #0a1f2e;
-            border-radius: 18px;
+            width: 48px;
+            height: 48px;
+            background: #000000;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            color: #ff8c1a;
-            border: 2px solid #ff8c1a;
-            box-shadow: 0 0 15px #ff8c1a;
+            color: white;
+            font-size: 1.8rem;
         }
 
         .logo-text h2 {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+            color: #000000;
+            font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 1.2;
         }
 
         .logo-text p {
-            color: #ffb05c;
-            font-size: 0.8rem;
+            color: #666666;
+            font-size: 0.85rem;
+            font-weight: 400;
         }
 
-        .connection {
-            background: #0f2a3a;
-            border-radius: 40px;
-            padding: 8px 20px;
-            border: 1px solid #ff8c1a;
+        .connection-status {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            background: #f8f8f8;
+            padding: 8px 16px;
+            border-radius: 40px;
+            border: 1px solid #eeeeee;
         }
 
-        .pulse-dot {
-            width: 12px;
-            height: 12px;
-            background: #4caf50;
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #0a1a3a;
             border-radius: 50%;
-            box-shadow: 0 0 12px #8bc34a;
-            animation: pulse 1.8s infinite;
+            animation: pulse 1.5s infinite;
         }
 
         @keyframes pulse {
             0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.3); }
+            50% { opacity: 0.5; transform: scale(1.2); }
         }
 
-        .connection span {
-            color: #ffdbad;
-            font-weight: 500;
+        .connection-status span {
+            color: #333333;
             font-size: 0.9rem;
+            font-weight: 500;
         }
 
-        /* 中央打卡区 */
-        .punch-area {
+        /* 主打卡区域 */
+        .main-card-area {
             flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             position: relative;
+            min-height: 500px;
         }
 
-        .nfc-ring {
+        /* NFC卡片容器 */
+        .nfc-card-container {
             position: relative;
-            width: 280px;
-            height: 280px;
+            width: 360px;
+            height: 420px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
         }
 
-        .outer-ring {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 4px solid #ff8c1a;
-            box-shadow: 0 0 30px #ff8c1a80, inset 0 0 30px #ff8c1a40;
-            animation: rotate 8s linear infinite;
-        }
-
-        .inner-ring {
-            position: absolute;
-            width: 80%;
-            height: 80%;
-            border-radius: 50%;
-            border: 2px dashed #ff8c1a;
-            animation: rotateReverse 6s linear infinite;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes rotateReverse {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(-360deg); }
-        }
-
-        .core {
-            width: 160px;
-            height: 160px;
-            background: #0f2a3a;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 3px solid #ff8c1a;
-            box-shadow: 0 0 40px #ff8c1a;
-            z-index: 2;
-            transition: all 0.2s;
-        }
-
-        .core span {
-            font-size: 3.5rem;
-            filter: drop-shadow(0 0 10px #f90);
-        }
-
-        /* 对勾动画容器 */
-        .check-animation {
+        /* 主圆圈 - 黑色 */
+        .circle-wrapper {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 200px;
-            height: 200px;
-            pointer-events: none;
+            width: 240px;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             z-index: 10;
+        }
+
+        .hollow-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid #000000;
+            background: transparent;
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.02), 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .circle-pulse {
+            animation: circleScale 2s ease-in-out infinite;
+        }
+
+        @keyframes circleScale {
+            0%, 100% { 
+                transform: scale(1); 
+                border-color: #000000;
+            }
+            50% { 
+                transform: scale(1.1); 
+                border-color: #ff8c00;
+                box-shadow: 0 0 20px rgba(255, 140, 0, 0.3);
+            }
+        }
+
+        .hollow-circle::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border-radius: 50%;
+            border: 2px dashed rgba(255, 140, 0, 0.3);
+        }
+
+        /* 对勾容器 - 橙色 */
+        .check-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 15;
+            pointer-events: none;
             opacity: 0;
             transition: opacity 0.2s;
         }
 
-        .check-animation.show {
+        .check-container.show {
             opacity: 1;
         }
 
-        .check-svg {
-            width: 100%;
-            height: 100%;
+        .checkmark-svg {
+            width: 100px;
+            height: 100px;
+            filter: drop-shadow(0 4px 8px rgba(255, 140, 0, 0.2));
         }
 
-        .check-circle {
-            stroke: #ff8c1a;
+        .checkmark-circle {
+            stroke: #ff8c00;
             stroke-width: 4;
             stroke-dasharray: 166;
             stroke-dashoffset: 166;
             fill: none;
-            animation: draw 0.6s ease forwards;
+            animation: drawCircle 0.5s cubic-bezier(0.65, 0, 0.45, 1) forwards;
         }
 
-        .check-path {
-            stroke: #ff8c1a;
+        .checkmark-path {
+            stroke: #ff8c00;
             stroke-width: 6;
             stroke-linecap: round;
+            stroke-linejoin: round;
             stroke-dasharray: 48;
             stroke-dashoffset: 48;
             fill: none;
-            animation: draw 0.4s 0.3s ease forwards;
+            animation: drawCheck 0.4s cubic-bezier(0.65, 0, 0.45, 1) 0.3s forwards;
         }
 
-        @keyframes draw {
-            to { stroke-dashoffset: 0; }
+        @keyframes drawCircle {
+            100% { stroke-dashoffset: 0; }
         }
 
-        /* 员工信息卡片（打卡后浮现） */
-        .employee-card {
+        @keyframes drawCheck {
+            100% { stroke-dashoffset: 0; }
+        }
+
+        /* 发光圆圈 - 橙色 */
+        .glow-circle {
             position: absolute;
-            top: 60%;
+            top: 50%;
             left: 50%;
-            transform: translate(-50%, -20%);
-            width: 300px;
-            background: #112f40;
-            backdrop-filter: blur(20px);
+            transform: translate(-50%, -50%);
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            background: transparent;
+            border: 4px solid #ff8c00;
+            box-shadow: 0 0 40px rgba(255, 140, 0, 0.2);
+            z-index: 19;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            animation: glowRotate 3s linear infinite;
+        }
+
+        .glow-circle.show {
+            opacity: 1;
+        }
+
+        .glow-circle::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border-radius: 50%;
+            border: 2px dashed rgba(255, 140, 0, 0.3);
+        }
+
+        @keyframes glowRotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* 个人资讯卡片 - 纯白 + 黑色文字 */
+        .info-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 320px;
+            background: #ffffff;
             border-radius: 40px;
-            padding: 24px;
-            border: 2px solid #ff8c1a;
-            box-shadow: 0 30px 40px -15px black;
+            padding: 28px;
+            box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.2);
+            border: 1px solid #f0f0f0;
             z-index: 20;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             opacity: 0;
             pointer-events: none;
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            color: white;
         }
 
-        .employee-card.show {
+        .info-card.show {
             opacity: 1;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
+            pointer-events: auto;
         }
 
-        .card-header {
+        .info-header {
             display: flex;
             align-items: center;
-            gap: 16px;
-            margin-bottom: 20px;
+            gap: 20px;
+            margin-bottom: 24px;
         }
 
-        .avatar {
-            width: 70px;
-            height: 70px;
-            background: #ff8c1a;
+        .info-avatar {
+            width: 80px;
+            height: 80px;
+            background: #0a1a3a;
             border-radius: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
-            color: #0a1f2e;
-        }
-
-        .info h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .info p {
-            color: #ffc285;
-            font-size: 0.9rem;
-        }
-
-        .details {
-            background: #0a202e;
-            border-radius: 28px;
-            padding: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .detail-item .label {
-            color: #a0c6d9;
-            font-size: 0.75rem;
-        }
-
-        .detail-item .value {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #ffc285;
-        }
-
-        .badge {
-            background: #ff8c1a;
-            padding: 6px 16px;
-            border-radius: 40px;
-            font-weight: 600;
-            color: #02131e;
-        }
-
-        /* 底部状态与测试按钮 */
-        .bottom-actions {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #0f2635;
-            border-radius: 60px;
-            padding: 8px 16px 8px 24px;
-            border: 1px solid #ff8c1a;
-            margin-top: 20px;
-        }
-
-        .status-message {
-            color: #ffc891;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .test-btn {
-            background: #ff8c1a;
-            border: none;
-            color: #02131e;
-            font-weight: 700;
-            padding: 12px 30px;
-            border-radius: 60px;
-            font-size: 1rem;
-            cursor: pointer;
-            box-shadow: 0 5px 0 #b15f0a;
-            transition: 0.1s;
-            border: 2px solid #ffdbb5;
-        }
-
-        .test-btn:active {
-            transform: translateY(4px);
-            box-shadow: 0 1px 0 #b15f0a;
-        }
-
-        /* ========= 右侧历史记录区 ========= */
-        .right-panel {
-            background: #ffffff0a;
-            backdrop-filter: blur(16px);
-            border-radius: 48px;
-            padding: 32px 24px;
-            border: 2px solid #ff8c1a;
-            box-shadow: 0 30px 50px -15px #00000080;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .right-header {
-            margin-bottom: 20px;
-        }
-
-        .right-header h2 {
+            font-size: 3rem;
             color: white;
+        }
+
+        .info-title h2 {
+            color: #000000;
             font-size: 2rem;
             font-weight: 600;
-            margin-bottom: 5px;
+            line-height: 1.2;
         }
 
-        .date-badge {
-            display: flex;
-            gap: 15px;
-            color: #ffc891;
-            font-size: 0.9rem;
+        .info-title p {
+            color: #666666;
+            font-size: 1rem;
+            margin-top: 4px;
         }
 
-        .date-badge span {
-            background: #1f4055;
-            padding: 4px 15px;
-            border-radius: 40px;
-            border: 1px solid #ff8c1a;
-        }
-
-        /* 统计卡片 */
-        .stats-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .stat-card {
-            background: #0f2635;
+        .info-details {
+            background: #fafafa;
             border-radius: 28px;
-            padding: 18px;
-            border: 1px solid #ff8c1a;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #f0f0f0;
         }
 
-        .stat-label {
-            color: #c0d9e8;
+        .detail-item {
+            text-align: center;
+        }
+
+        .detail-label {
+            color: #999999;
             font-size: 0.85rem;
             margin-bottom: 4px;
         }
 
-        .stat-number {
-            color: white;
-            font-size: 2.5rem;
-            font-weight: 700;
-            line-height: 1;
+        .detail-value {
+            color: #000000;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
-        .stat-trend {
-            color: #ffae42;
+        .badge-orange {
+            background: #ff8c00;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-weight: 500;
+        }
+
+        /* 状态文字 */
+        .status-text {
+            margin-top: 30px;
+            color: #333333;
+            font-size: 1.1rem;
+            background: #fafafa;
+            padding: 12px 32px;
+            border-radius: 60px;
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .status-text.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* 测试按钮 - 黑橙 */
+        .test-btn {
+            margin-top: 20px;
+            background: #ffffff;
+            border: 2px solid #000000;
+            color: #000000;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+
+        .test-btn:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        /* ===== 右侧历史记录区 ===== */
+        .right-panel {
+            background: #ffffff;
+            border-radius: 48px;
+            padding: 32px 24px;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 右侧头部 */
+        .right-header {
+            margin-bottom: 24px;
+        }
+
+        .right-header h2 {
+            color: #000000;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .date-range {
+            color: #666666;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .date-range span {
+            background: #f8f8f8;
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: #ff8c00;
+            font-weight: 500;
+            border: 1px solid #f0f0f0;
+        }
+
+        /* 统计卡片 - 黑白 */
+        .stats-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: #fafafa;
+            border-radius: 24px;
+            padding: 16px;
+            border: 1px solid #f0f0f0;
+        }
+
+        .stat-label {
+            color: #666666;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            color: #000000;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .stat-sub {
+            color: #ff8c00;
             font-size: 0.8rem;
-            margin-top: 5px;
+            margin-top: 4px;
         }
 
         /* 操作按钮组 */
-        .btn-group {
+        .action-buttons {
             display: flex;
-            gap: 12px;
-            margin-bottom: 28px;
+            gap: 10px;
+            margin-bottom: 24px;
         }
 
-        .btn-excel {
+        .excel-btn {
             flex: 1;
-            background: #ff8c1a;
+            background: #0a1a3a;
+            color: white;
             border: none;
-            color: #02131e;
-            font-weight: 600;
             padding: 12px;
             border-radius: 40px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            cursor: pointer;
-            border: 2px solid #ffb868;
-            transition: 0.2s;
+            font-weight: 500;
         }
 
-        .btn-excel:hover {
-            background: #e67c0f;
+        .excel-btn:hover {
+            background: #0f2250;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px #ff8c1a40;
+            box-shadow: 0 8px 15px rgba(10, 26, 58, 0.15);
         }
 
-        .btn-filter {
-            background: #1d4055;
-            border: 1px solid #ff8c1a;
-            color: white;
-            padding: 12px 20px;
+        .filter-btn {
+            background: #ffffff;
+            border: 2px solid #000000;
+            color: #000000;
+            padding: 12px 16px;
             border-radius: 40px;
+            font-size: 0.95rem;
             cursor: pointer;
+            transition: all 0.2s;
             display: flex;
             align-items: center;
             gap: 6px;
-            transition: 0.2s;
+            font-weight: 500;
         }
 
-        .btn-filter:hover {
-            background: #2b5570;
+        .filter-btn:hover {
+            background: #000000;
+            color: #ffffff;
         }
 
-        /* 记录列表 */
-        .records-list {
+        /* 历史记录列表 */
+        .history-list {
             flex: 1;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
             gap: 10px;
-            padding-right: 5px;
+            padding-right: 4px;
         }
 
-        .records-list::-webkit-scrollbar {
-            width: 5px;
+        .history-list::-webkit-scrollbar {
+            width: 6px;
         }
 
-        .records-list::-webkit-scrollbar-track {
-            background: #1e3f53;
+        .history-list::-webkit-scrollbar-track {
+            background: #f5f5f5;
             border-radius: 10px;
         }
 
-        .records-list::-webkit-scrollbar-thumb {
-            background: #ff8c1a;
+        .history-list::-webkit-scrollbar-thumb {
+            background: #cccccc;
             border-radius: 10px;
         }
 
-        .record-item {
-            background: #0f2a3a;
-            border-radius: 24px;
+        .history-item {
+            background: #fafafa;
+            border-radius: 20px;
             padding: 16px;
             display: flex;
             align-items: center;
-            gap: 15px;
-            border: 1px solid #ff8c1a60;
-            transition: 0.2s;
-            animation: slideIn 0.3s;
+            gap: 16px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.2s;
+            animation: slideIn 0.3s ease;
         }
 
-        .record-item:hover {
-            border-color: #ff8c1a;
-            background: #14384b;
-            transform: translateX(5px);
+        .history-item:hover {
+            border-color: #ff8c00;
+            transform: translateX(4px);
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(255, 140, 0, 0.08);
         }
 
         @keyframes slideIn {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
-        .record-avatar {
+        .history-avatar {
             width: 48px;
             height: 48px;
-            background: #ff8c1a;
-            border-radius: 20px;
+            background: #0a1a3a;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            color: #02131e;
-            font-weight: 600;
+            font-size: 1.6rem;
+            color: white;
         }
 
-        .record-info {
+        .history-info {
             flex: 1;
         }
 
-        .record-name {
-            color: white;
-            font-weight: 600;
+        .history-name {
+            color: #000000;
             font-size: 1.1rem;
-            margin-bottom: 3px;
+            font-weight: 600;
+            margin-bottom: 4px;
         }
 
-        .record-meta {
+        .history-meta {
             display: flex;
-            gap: 10px;
-            color: #b0d4e8;
+            gap: 8px;
+            color: #666666;
             font-size: 0.8rem;
         }
 
-        .record-meta span {
-            background: #1f4055;
-            padding: 2px 10px;
-            border-radius: 30px;
+        .history-meta span {
+            background: #ffffff;
+            padding: 2px 8px;
+            border-radius: 16px;
+            border: 1px solid #f0f0f0;
         }
 
-        .record-time {
+        .history-date {
             text-align: right;
         }
 
-        .record-time .date {
-            color: #ffae42;
+        .history-date .date {
+            color: #ff8c00;
             font-weight: 600;
+            font-size: 0.9rem;
         }
 
-        .record-time .time {
-            color: #a0bed0;
-            font-size: 0.7rem;
+        .history-date .time {
+            color: #999999;
+            font-size: 0.75rem;
+            margin-top: 2px;
         }
 
-        /* 飞入目标点 */
-        .fly-destination {
+        /* 飞入目标 */
+        .fly-target {
             position: absolute;
             top: 100px;
             right: 50px;
             width: 50px;
             height: 50px;
-            border-radius: 50%;
-            background: #ff8c1a30;
-            border: 2px dashed #ff8c1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ff8c1a;
-            font-size: 1.5rem;
+            border-radius: 25px;
+            background: rgba(255, 140, 0, 0.08);
+            border: 2px dashed #ff8c00;
             opacity: 0;
             transition: opacity 0.3s;
             pointer-events: none;
             z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #ff8c00;
         }
 
-        .fly-destination.show {
+        .fly-target.show {
             opacity: 1;
-            animation: bounce 0.6s infinite;
+            animation: targetPulse 0.5s infinite;
         }
 
-        @keyframes bounce {
-            0%,100%{ transform: scale(1); }
-            50%{ transform: scale(1.1); }
+        @keyframes targetPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
+        /* 飞入路径 */
         .flight-path {
             position: fixed;
             top: 0;
@@ -609,328 +680,432 @@
             z-index: 9999;
         }
 
-        .flight-particle {
+        .flight-line {
             position: absolute;
-            width: 5px;
-            height: 5px;
-            background: #ff8c1a;
+            top: 50%;
+            left: 50%;
+            width: 3px;
+            height: 3px;
+            background: #ff8c00;
+            box-shadow: 0 0 15px #ff8c00;
             border-radius: 50%;
-            box-shadow: 0 0 20px #f90;
-            animation: fly 0.8s ease-out forwards;
+            animation: flyLine 0.8s ease-out forwards;
         }
 
-        @keyframes fly {
-            0% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0; transform: translate(200px, -100px) scale(0); }
+        @keyframes flyLine {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(calc(50vw + 100px), 100px) scale(0);
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- 飞入路径容器 -->
     <div class="flight-path" id="flightPath"></div>
-    <div class="fly-destination" id="flyDest">📥</div>
 
     <div class="dashboard">
-        <!-- 左侧 -->
+        <!-- 左侧：主打卡区 -->
         <div class="left-panel">
+            <!-- 顶部状态栏 -->
             <div class="status-bar">
                 <div class="logo-area">
-                    <div class="logo-icon">⚡</div>
+                    <div class="logo-icon">📱</div>
                     <div class="logo-text">
-                        <h2>NFC TAP</h2>
-                        <p>深蓝·橙 灵动版</p>
+                        <h2>NFC考勤</h2>
+                        <p>靠近即打卡</p>
                     </div>
                 </div>
-                <div class="connection">
-                    <div class="pulse-dot"></div>
-                    <span>读卡器在线</span>
+                <div class="connection-status">
+                    <div class="status-dot"></div>
+                    <span>持续待机中</span>
                 </div>
             </div>
 
-            <div class="punch-area">
-                <div class="nfc-ring" id="tapRing">
-                    <div class="outer-ring"></div>
-                    <div class="inner-ring"></div>
-                    <div class="core">
-                        <span>📱</span>
+            <!-- 主打卡区域 -->
+            <div class="main-card-area">
+                <div class="nfc-card-container">
+                    <!-- 主圆圈 - 黑色 -->
+                    <div class="circle-wrapper" id="circleWrapper">
+                        <div class="hollow-circle circle-pulse" id="hollowCircle"></div>
+                    </div>
+
+                    <!-- 对勾容器 - 橙色 -->
+                    <div class="check-container" id="checkContainer">
+                        <svg class="checkmark-svg" viewBox="0 0 52 52">
+                            <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                            <path class="checkmark-path" fill="none" d="M14 27l7 7 16-16"/>
+                        </svg>
+                    </div>
+
+                    <!-- 发光圆圈 - 橙色 -->
+                    <div class="glow-circle" id="glowCircle"></div>
+
+                    <!-- 个人资讯卡片 - 白色 -->
+                    <div class="info-card" id="infoCard">
+                        <div class="info-header">
+                            <div class="info-avatar" id="infoAvatar">👨‍💻</div>
+                            <div class="info-title">
+                                <h2 id="infoName">张明远</h2>
+                                <p id="infoDept">研发中心 · 架构组</p>
+                            </div>
+                        </div>
+                        <div class="info-details">
+                            <div class="detail-item">
+                                <div class="detail-label">工号</div>
+                                <div class="detail-value" id="infoId">HW-2304</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">打卡时间</div>
+                                <div class="detail-value" id="infoTime">08:32</div>
+                            </div>
+                            <span class="badge-orange" id="infoStatus">已打卡</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 对勾动画 -->
-                <div class="check-animation" id="checkAnim">
-                    <svg class="check-svg" viewBox="0 0 52 52">
-                        <circle class="check-circle" cx="26" cy="26" r="25" fill="none"/>
-                        <path class="check-path" fill="none" d="M14 27l7 7 16-16"/>
-                    </svg>
-                </div>
+                <!-- 状态文字 -->
+                <div class="status-text" id="statusText">⚪ 等待NFC卡片...</div>
 
-                <!-- 信息卡片 -->
-                <div class="employee-card" id="empCard">
-                    <div class="card-header">
-                        <div class="avatar" id="cardAvatar">👤</div>
-                        <div class="info">
-                            <h3 id="cardName">张明远</h3>
-                            <p id="cardDept">研发中心 · 架构组</p>
-                        </div>
-                    </div>
-                    <div class="details">
-                        <div class="detail-item">
-                            <div class="label">工号</div>
-                            <div class="value" id="cardId">HW-2304</div>
-                        </div>
-                        <div class="detail-item">
-                            <div class="label">打卡时间</div>
-                            <div class="value" id="cardTime">08:32</div>
-                        </div>
-                        <span class="badge">已打卡</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bottom-actions">
-                <div class="status-message" id="statusMsg">
-                    <span>⚪</span> 等待触碰NFC...
-                </div>
-                <button class="test-btn" id="simulateBtn">模拟打卡</button>
+                <!-- 测试按钮 -->
+                <button class="test-btn" id="testBtn">🔄 模拟打卡</button>
             </div>
         </div>
 
-        <!-- 右侧 -->
+        <!-- 右侧：历史记录区 -->
         <div class="right-panel">
+            <!-- 飞入目标 -->
+            <div class="fly-target" id="flyTarget">📥</div>
+
+            <!-- 右侧头部 -->
             <div class="right-header">
                 <h2>打卡记录</h2>
-                <div class="date-badge">
-                    <span>📅 2026-03-08 ~ 03-14</span>
-                    <span>本月累计 <span id="totalCount">0</span></span>
+                <div class="date-range">
+                    <span>📅 2024年3月</span>
+                    <span>本月累计 <span id="totalCountSpan">0</span> 次</span>
                 </div>
             </div>
 
-            <div class="stats-row">
+            <!-- 统计卡片 -->
+            <div class="stats-cards">
                 <div class="stat-card">
                     <div class="stat-label">今日打卡</div>
-                    <div class="stat-number" id="todayCount">0</div>
-                    <div class="stat-trend">⬆️ 较昨日 +3</div>
+                    <div class="stat-value" id="todayCount">0</div>
+                    <div class="stat-sub">已签到</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">连续打卡</div>
-                    <div class="stat-number" id="streakCount">5</div>
-                    <div class="stat-trend">🏆 最高 12天</div>
+                    <div class="stat-value" id="streakCount">3</div>
+                    <div class="stat-sub">最高 12天</div>
                 </div>
             </div>
 
-            <div class="btn-group">
-                <button class="btn-excel" id="excelBtn"><span>📊</span> 导出 Excel</button>
-                <button class="btn-filter" id="filterBtn"><span>📅</span> 筛选</button>
+            <!-- 操作按钮 -->
+            <div class="action-buttons">
+                <button class="excel-btn" id="excelBtn">
+                    <span>📊</span> 导出Excel
+                </button>
+                <button class="filter-btn" id="filterBtn">
+                    <span>📅</span> 本月
+                </button>
             </div>
 
-            <div class="records-list" id="recordsList"></div>
+            <!-- 历史记录列表 -->
+            <div class="history-list" id="historyList">
+                <!-- 动态插入 -->
+            </div>
         </div>
     </div>
 
+    <!-- 引入SheetJS -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+
     <script>
         (function() {
-            // ---------- 模拟数据 ----------
-            const staff = [
-                { name: '张明远', dept: '研发中心 · 架构组', id: 'HW-2304', avatar: '👨‍💻' },
-                { name: '李思睿', dept: '产品部 · 设计组', id: 'HW-1789', avatar: '👩‍🎨' },
-                { name: '王华强', dept: '测试部 · 自动化', id: 'HW-5521', avatar: '👨‍🔧' },
-                { name: '赵一鸣', dept: '销售部 · 华东区', id: 'HW-3321', avatar: '👨‍💼' },
-                { name: '孙小美', dept: '人事部 · 招聘组', id: 'HW-7788', avatar: '👩‍💼' },
-                { name: '陈飞', dept: '研发中心 · 后端', id: 'HW-9912', avatar: '👨‍🏫' }
-            ];
-
-            // DOM
-            const tapRing = document.getElementById('tapRing');
-            const checkAnim = document.getElementById('checkAnim');
-            const empCard = document.getElementById('empCard');
-            const statusMsg = document.getElementById('statusMsg');
-            const flyDest = document.getElementById('flyDest');
+            // DOM元素
+            const circleWrapper = document.getElementById('circleWrapper');
+            const hollowCircle = document.getElementById('hollowCircle');
+            const checkContainer = document.getElementById('checkContainer');
+            const glowCircle = document.getElementById('glowCircle');
+            const statusText = document.getElementById('statusText');
+            const infoCard = document.getElementById('infoCard');
+            const flyTarget = document.getElementById('flyTarget');
             const flightPath = document.getElementById('flightPath');
-            const simulateBtn = document.getElementById('simulateBtn');
+            const testBtn = document.getElementById('testBtn');
             const excelBtn = document.getElementById('excelBtn');
             const filterBtn = document.getElementById('filterBtn');
-            const recordsList = document.getElementById('recordsList');
-            const todayCountSpan = document.getElementById('todayCount');
-            const totalCountSpan = document.getElementById('totalCount');
-            const streakCountSpan = document.getElementById('streakCount');
+            const historyList = document.getElementById('historyList');
+            const todayCount = document.getElementById('todayCount');
+            const totalCountSpan = document.getElementById('totalCountSpan');
+            const streakCount = document.getElementById('streakCount');
+            
+            // 资讯元素
+            const infoAvatar = document.getElementById('infoAvatar');
+            const infoName = document.getElementById('infoName');
+            const infoDept = document.getElementById('infoDept');
+            const infoId = document.getElementById('infoId');
+            const infoTime = document.getElementById('infoTime');
 
-            // 卡片元素
-            const cardAvatar = document.getElementById('cardAvatar');
-            const cardName = document.getElementById('cardName');
-            const cardDept = document.getElementById('cardDept');
-            const cardId = document.getElementById('cardId');
-            const cardTime = document.getElementById('cardTime');
+            // 状态
+            let nfcReader = null;
+            let isScanning = false;
+            let timeoutId = null;
+            let checkTimeoutId = null;
+            let historyRecords = [];
 
-            // 状态变量
-            let history = []; // 存储记录 { name, dept, empId, avatar, date, time, displayDate, displayTime }
-            let timer1 = null, timer2 = null;
+            // 员工数据库
+            const staffDatabase = [
+                {
+                    name: '张明远',
+                    dept: '研发中心 · 架构组',
+                    id: 'HW-2304',
+                    avatar: '👨‍💻'
+                },
+                {
+                    name: '李思睿',
+                    dept: '产品部 · 设计组',
+                    id: 'HW-1789',
+                    avatar: '👩‍🎨'
+                },
+                {
+                    name: '王华强',
+                    dept: '测试部 · 自动化',
+                    id: 'HW-5521',
+                    avatar: '👨‍🔧'
+                },
+                {
+                    name: '赵一鸣',
+                    dept: '销售部 · 华东区',
+                    id: 'HW-3321',
+                    avatar: '👨‍💼'
+                },
+                {
+                    name: '孙小美',
+                    dept: '人事部 · 招聘组',
+                    id: 'HW-7788',
+                    avatar: '👩‍💼'
+                }
+            ];
 
-            // 获取当前时间
-            function nowDateTime() {
-                const d = new Date();
-                const year = d.getFullYear();
-                const month = (d.getMonth()+1).toString().padStart(2,'0');
-                const day = d.getDate().toString().padStart(2,'0');
-                const hours = d.getHours().toString().padStart(2,'0');
-                const mins = d.getMinutes().toString().padStart(2,'0');
+            // 获取当前完整日期时间
+            function getCurrentDateTime() {
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = (now.getMonth() + 1).toString().padStart(2, '0');
+                const day = now.getDate().toString().padStart(2, '0');
+                const hours = now.getHours().toString().padStart(2, '0');
+                const minutes = now.getMinutes().toString().padStart(2, '0');
                 return {
                     date: `${year}-${month}-${day}`,
-                    time: `${hours}:${mins}`,
+                    time: `${hours}:${minutes}`,
                     displayDate: `${month}/${day}`,
-                    displayTime: `${hours}:${mins}`
+                    displayTime: `${hours}:${minutes}`
                 };
             }
 
-            // 添加记录
-            function addRecord(employee) {
-                const dt = nowDateTime();
-                const record = {
-                    ...employee,
+            // 显示飞入路径
+            function showFlightPath() {
+                const line = document.createElement('div');
+                line.className = 'flight-line';
+                flightPath.appendChild(line);
+                setTimeout(() => line.remove(), 800);
+            }
+
+            // 重置对勾动画
+            function resetCheckAnimation() {
+                const svg = checkContainer.querySelector('svg');
+                const newSvg = svg.cloneNode(true);
+                checkContainer.replaceChild(newSvg, svg);
+            }
+
+            // 添加新记录
+            function addHistoryRecord(employee) {
+                const dt = getCurrentDateTime();
+                
+                const newRecord = {
+                    id: Date.now(),
+                    name: employee.name,
+                    dept: employee.dept.split('·')[0].trim(),
+                    fullDept: employee.dept,
+                    empId: employee.id,
+                    avatar: employee.avatar,
                     date: dt.date,
                     time: dt.time,
                     displayDate: dt.displayDate,
                     displayTime: dt.displayTime
                 };
-                history.unshift(record);
-                renderList();
-                updateStats();
+                
+                historyRecords.unshift(newRecord);
+                renderHistoryList();
+                updateCounts();
             }
 
-            // 渲染列表
-            function renderList() {
-                if (history.length === 0) {
-                    recordsList.innerHTML = `<div class="record-item" style="opacity:0.7;"><div class="record-avatar">⏳</div><div class="record-info"><div class="record-name">暂无打卡</div><div class="record-meta"><span>--</span></div></div><div class="record-time"><div class="date">--</div><div class="time">--:--</div></div></div>`;
+            // 渲染历史列表
+            function renderHistoryList() {
+                if (historyRecords.length === 0) {
+                    historyList.innerHTML = '<div class="history-item" style="opacity: 0.6;"><div class="history-avatar">⏳</div><div class="history-info"><div class="history-name">等待打卡...</div><div class="history-meta"><span>--</span></div></div><div class="history-date"><div class="date">--</div><div class="time">--:--</div></div></div>';
                     return;
                 }
+
                 let html = '';
-                history.slice(0, 12).forEach(r => {
+                historyRecords.slice(0, 10).forEach(record => {
                     html += `
-                        <div class="record-item">
-                            <div class="record-avatar">${r.avatar}</div>
-                            <div class="record-info">
-                                <div class="record-name">${r.name}</div>
-                                <div class="record-meta">
-                                    <span>${r.dept.split('·')[0].trim()}</span>
-                                    <span>${r.id}</span>
+                        <div class="history-item">
+                            <div class="history-avatar">${record.avatar}</div>
+                            <div class="history-info">
+                                <div class="history-name">${record.name}</div>
+                                <div class="history-meta">
+                                    <span>${record.dept}</span>
+                                    <span>${record.empId}</span>
                                 </div>
                             </div>
-                            <div class="record-time">
-                                <div class="date">${r.displayDate}</div>
-                                <div class="time">${r.displayTime}</div>
+                            <div class="history-date">
+                                <div class="date">${record.displayDate}</div>
+                                <div class="time">${record.displayTime}</div>
                             </div>
                         </div>
                     `;
                 });
-                recordsList.innerHTML = html;
+                historyList.innerHTML = html;
             }
 
-            // 更新统计数据
-            function updateStats() {
+            // 更新计数
+            function updateCounts() {
                 const today = new Date().toISOString().slice(0,10);
-                const todayCount = history.filter(r => r.date === today).length;
-                document.getElementById('todayCount').textContent = todayCount;
-                totalCountSpan.textContent = history.length;
-                // 模拟连续打卡 (取历史长度，但不超过7)
-                const streak = Math.min(history.length, 7);
-                streakCountSpan.textContent = streak || 5;
+                const todayCount_num = historyRecords.filter(r => r.date === today).length;
+                todayCount.textContent = todayCount_num;
+                totalCountSpan.textContent = historyRecords.length;
+                
+                // 计算连续打卡（模拟）
+                const streak = Math.min(historyRecords.length, 7);
+                streakCount.textContent = streak;
             }
 
-            // 飞入动画
-            function createFlight() {
-                const particle = document.createElement('div');
-                particle.className = 'flight-particle';
-                particle.style.left = '50%';
-                particle.style.top = '50%';
-                flightPath.appendChild(particle);
-                setTimeout(() => particle.remove(), 800);
+            // 导出Excel
+            function exportToExcel() {
+                let excelData = [];
+                excelData.push(['日期', '时间', '姓名', '部门', '工号', '打卡状态']);
+                
+                if (historyRecords.length === 0) {
+                    excelData.push(['暂无打卡记录', '', '', '', '', '']);
+                } else {
+                    historyRecords.forEach(record => {
+                        excelData.push([
+                            record.date,
+                            record.time,
+                            record.name,
+                            record.fullDept || record.dept,
+                            record.empId,
+                            '已打卡'
+                        ]);
+                    });
+                }
+                
+                const wb = XLSX.utils.book_new();
+                const ws = XLSX.utils.aoa_to_sheet(excelData);
+                
+                ws['!cols'] = [
+                    { wch: 12 }, { wch: 8 }, { wch: 12 }, 
+                    { wch: 20 }, { wch: 12 }, { wch: 8 }
+                ];
+                
+                XLSX.utils.book_append_sheet(wb, ws, '打卡记录');
+                XLSX.writeFile(wb, `打卡记录_${new Date().toISOString().slice(0,10)}.xlsx`);
             }
 
             // 打卡成功动画
-            function punchSuccess() {
-                // 随机选一个员工
-                const emp = staff[Math.floor(Math.random() * staff.length)];
-                const dt = nowDateTime();
+            function showPunchSuccess() {
+                const employee = staffDatabase[Math.floor(Math.random() * staffDatabase.length)];
 
-                // 更新卡片内容
-                cardAvatar.textContent = emp.avatar;
-                cardName.textContent = emp.name;
-                cardDept.textContent = emp.dept;
-                cardId.textContent = emp.id;
-                cardTime.textContent = dt.displayTime;
+                if (timeoutId) clearTimeout(timeoutId);
+                if (checkTimeoutId) clearTimeout(checkTimeoutId);
 
-                // 显示卡片和飞入目标
-                empCard.classList.add('show');
-                flyDest.classList.add('show');
-                statusMsg.innerHTML = `<span>🟢</span> 打卡成功 (${emp.name})`;
-
-                // 清除之前的定时器
-                if (timer1) clearTimeout(timer1);
-                if (timer2) clearTimeout(timer2);
-
-                timer1 = setTimeout(() => {
-                    // 飞入效果
-                    createFlight();
-                    // 添加记录
-                    addRecord(emp);
-                    // 隐藏卡片和飞入目标
-                    empCard.classList.remove('show');
-                    flyDest.classList.remove('show');
-
-                    // 显示对勾
-                    checkAnim.classList.add('show');
-                    // 重置对勾动画 (通过重新克隆)
-                    const svg = checkAnim.querySelector('svg');
-                    const newSvg = svg.cloneNode(true);
-                    checkAnim.replaceChild(newSvg, svg);
-
-                    timer2 = setTimeout(() => {
-                        checkAnim.classList.remove('show');
-                        statusMsg.innerHTML = `<span>⚪</span> 等待触碰NFC...`;
-                    }, 1200);
+                hollowCircle.classList.remove('circle-pulse');
+                statusText.classList.add('hidden');
+                
+                const dt = getCurrentDateTime();
+                infoAvatar.textContent = employee.avatar;
+                infoName.textContent = employee.name;
+                infoDept.textContent = employee.dept;
+                infoId.textContent = employee.id;
+                infoTime.textContent = dt.displayTime;
+                
+                infoCard.classList.add('show');
+                glowCircle.classList.add('show');
+                flyTarget.classList.add('show');
+                
+                timeoutId = setTimeout(() => {
+                    showFlightPath();
+                    addHistoryRecord(employee);
+                    
+                    infoCard.classList.remove('show');
+                    glowCircle.classList.remove('show');
+                    flyTarget.classList.remove('show');
+                    
+                    resetCheckAnimation();
+                    checkContainer.classList.add('show');
+                    
+                    checkTimeoutId = setTimeout(() => {
+                        checkContainer.classList.remove('show');
+                        hollowCircle.classList.add('circle-pulse');
+                        statusText.classList.remove('hidden');
+                        statusText.innerHTML = '⚪ 等待NFC卡片...';
+                        timeoutId = null;
+                        checkTimeoutId = null;
+                    }, 1500);
+                    
                 }, 1500);
             }
 
-            // 模拟NFC检测 (实际浏览器NFC API需HTTPS且Android)
-            if ('NDEFReader' in window) {
+            // 初始化NFC
+            async function initNfc() {
+                if (!('NDEFReader' in window)) {
+                    statusText.innerHTML = '❌ 浏览器不支持NFC';
+                    return;
+                }
+
                 try {
-                    const reader = new NDEFReader();
-                    reader.addEventListener('reading', () => punchSuccess());
-                    reader.scan().catch(() => {}); // 静默失败，依靠模拟按钮
-                } catch (e) {}
+                    nfcReader = new NDEFReader();
+                    nfcReader.addEventListener('reading', () => showPunchSuccess());
+                    await nfcReader.scan();
+                    isScanning = true;
+                    statusText.innerHTML = '🟢 持续待机中...';
+                } catch (error) {
+                    statusText.innerHTML = '❌ NFC启动失败';
+                }
             }
 
-            // 事件绑定
-            tapRing.addEventListener('click', punchSuccess);
-            simulateBtn.addEventListener('click', punchSuccess);
+            // 事件监听
+            testBtn.addEventListener('click', showPunchSuccess);
+            excelBtn.addEventListener('click', exportToExcel);
+            filterBtn.addEventListener('click', () => alert('筛选功能开发中'));
 
-            excelBtn.addEventListener('click', () => {
-                // 使用SheetJS导出Excel
-                let data = [['日期', '时间', '姓名', '部门', '工号']];
-                history.forEach(r => {
-                    data.push([r.date, r.time, r.name, r.dept, r.id]);
-                });
-                if (history.length === 0) data.push(['暂无记录', '', '', '', '']);
-                const wb = XLSX.utils.book_new();
-                const ws = XLSX.utils.aoa_to_sheet(data);
-                ws['!cols'] = [{wch:12}, {wch:8}, {wch:12}, {wch:22}, {wch:12}];
-                XLSX.utils.book_append_sheet(wb, ws, '打卡记录');
-                XLSX.writeFile(wb, `打卡记录_${new Date().toISOString().slice(0,10)}.xlsx`);
+            // 初始化
+            window.addEventListener('load', () => {
+                initNfc();
+                
+                // 添加示例数据
+                setTimeout(() => {
+                    if (historyRecords.length === 0) {
+                        addHistoryRecord(staffDatabase[0]);
+                        setTimeout(() => addHistoryRecord(staffDatabase[1]), 300);
+                        setTimeout(() => addHistoryRecord(staffDatabase[2]), 600);
+                        setTimeout(() => addHistoryRecord(staffDatabase[3]), 900);
+                    }
+                }, 1000);
             });
 
-            filterBtn.addEventListener('click', () => alert('筛选面板演示 · 可按日期、部门筛选'));
-
-            // 初始化几条示例记录
-            setTimeout(() => {
-                if (history.length === 0) {
-                    addRecord(staff[0]);
-                    setTimeout(() => addRecord(staff[1]), 200);
-                    setTimeout(() => addRecord(staff[2]), 400);
+            // 清理
+            window.addEventListener('beforeunload', async () => {
+                if (isScanning && nfcReader) {
+                    try { await nfcReader.stop(); } catch (e) {}
                 }
-            }, 500);
-
-            // 清理定时器
-            window.addEventListener('beforeunload', () => {
-                if (timer1) clearTimeout(timer1);
-                if (timer2) clearTimeout(timer2);
+                if (timeoutId) clearTimeout(timeoutId);
+                if (checkTimeoutId) clearTimeout(checkTimeoutId);
             });
         })();
     </script>
